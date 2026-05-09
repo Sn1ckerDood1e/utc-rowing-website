@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0c1f3d;
+
+  /* UTC brand */
+  --utc-navy: #002649;
+  --utc-navy-deep: #001633;
+  --utc-gold: #c8b682;
+  --utc-gold-bright: #e6cf95;
+
+  /* neutrals */
+  --muted: #f4f5f7;
+  --muted-foreground: #5b6577;
+  --border: #e2e5eb;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-utc-navy: var(--utc-navy);
+  --color-utc-navy-deep: var(--utc-navy-deep);
+  --color-utc-gold: var(--utc-gold);
+  --color-utc-gold-bright: var(--utc-gold-bright);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Long-form content (history page) */
+.prose-utc {
+  max-width: 70ch;
+  line-height: 1.7;
+}
+.prose-utc h2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: var(--utc-navy);
+  border-bottom: 2px solid var(--utc-gold);
+  padding-bottom: 0.5rem;
+}
+.prose-utc h3 {
+  font-size: 1.375rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--utc-navy);
+}
+.prose-utc p {
+  margin-bottom: 1rem;
+}
+.prose-utc ul,
+.prose-utc ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.prose-utc ul {
+  list-style: disc;
+}
+.prose-utc ol {
+  list-style: decimal;
+}
+.prose-utc li {
+  margin-bottom: 0.25rem;
+}
+.prose-utc strong {
+  color: var(--utc-navy);
+  font-weight: 600;
+}
+.prose-utc a {
+  color: var(--utc-navy);
+  text-decoration: underline;
+  text-decoration-color: var(--utc-gold);
+  text-underline-offset: 3px;
+}
+.prose-utc blockquote {
+  border-left: 4px solid var(--utc-gold);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--muted-foreground);
+}
+.prose-utc hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2.5rem 0;
+}
