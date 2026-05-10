@@ -1,5 +1,3 @@
-import { UTCMark } from "@/components/svg-rowing";
-
 export const metadata = {
   title: "Privacy · UTC Rowing",
   description:
@@ -13,7 +11,6 @@ export default function PrivacyPage() {
     <>
       <section className="bg-utc-navy text-white">
         <div className="mx-auto max-w-3xl px-4 py-16">
-          <UTCMark className="w-12 h-12 mb-4" />
           <p className="text-utc-gold uppercase text-sm tracking-[0.25em] font-semibold mb-3">
             Policy
           </p>

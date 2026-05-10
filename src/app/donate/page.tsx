@@ -1,11 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight, UTCMark, RiverBendCurve } from "@/components/svg-rowing";
+import { ChevronRight, RiverBendCurve } from "@/components/svg-rowing";
 
 export const metadata = {
   title: "Support UTC Rowing",
   description:
-    "Help rebuild UTC Rowing — covered rack space at Chattanooga Rowing, replacement 8+ shells, and the path back to ACRA-level competition.",
+    "Help rebuild UTC Rowing — covered racks at the boathouse, an on-campus indoor training room, and the path back to ACRA-level competition.",
 };
 
 const GIVING_URL =
@@ -22,7 +21,7 @@ const TIERS = [
   {
     label: "Monthly sustaining donor",
     amount: "$25 / $50 / $100 / $250",
-    detail: "Monthly giving is what builds the program back. Sustained, predictable, real.",
+    detail: "Monthly giving is what builds the program back.",
     cta: "Give monthly",
     href: GIVING_URL,
     featured: true,
@@ -36,26 +35,36 @@ const TIERS = [
   },
 ];
 
+// UTC fleet inventory (May 2026): 16 shells, all on the trailer outside since
+// 2023, all weather-damaged, several with structural damage.
+//   6× 8+    Vespoli (1988–2012) — Biderman, EPB Telecom, William Raoul,
+//            John Fish III, Dan Berry, Lee Patton
+//   1× 4x    Empacher "Chattanooga" (1980s/90s) — hull breach
+//   5× 4+    Vespoli (1996–2009) — Little Debbie, Black Magic, Ultralight,
+//            SGA Walker, Ron Nelson
+//   1× 2-    Vespoli 2000 — John & Mike Madzi
+//   2× 2x    Vespoli 1987 — Patton, Lookout
+//   1× 1x    Swift 2020 — Scrappy (the only modern shell)
 const NEEDS = [
   {
-    title: "Covered rack space — a 20×80 pole barn",
-    estimate: "Top priority",
-    why: "UTC needs dedicated covered rack space at Chattanooga Rowing — a 20×80 pole barn at the boathouse — protected outdoor storage that keeps shells safe between practices and frees the program from improvised arrangements.",
+    title: "Covered racks at the boathouse — a 20×80 pole barn",
+    estimate: "Top priority · Fall 2026",
+    why: "Sixteen UTC shells have lived on the team trailer outside since 2023 — six eights, five fours, a pair, two doubles, a single, and the Empacher quad. Every one of them has weather damage; several have structural damage. A 20×80 pole barn at the boathouse gets the better-condition hulls off the trailer and onto stretchers we can actually maintain.",
   },
   {
-    title: "Replacement 8+ shell",
-    estimate: "ACRA-grade",
-    why: "Our long-term direction is racing eights. Replacing UTC's eight with an ACRA-grade competitive shell is the centerpiece capital ask — and it's how the resurrection era starts to compete at the level UTC's history demands.",
+    title: "Repair the Empacher 'Chattanooga' (4x)",
+    estimate: "Boat-specific",
+    why: "UTC's own quad — an Empacher from the 1980s/90s named for the city — is sidelined by a hole in the hull big enough to put a fist through. The crew is racing ACRA on a 4x loaned from Vespoli. Patching the Empacher puts a competition-grade four-seat sculling boat back on the water under UTC colors.",
   },
   {
-    title: "Replacement small boats",
-    estimate: "Fleet renewal",
-    why: "Modernizing 4+ and 4x equipment so every UTC crew — novice and varsity — rows on shells that match what they meet at the line.",
+    title: "Maclellan Gym indoor training room",
+    estimate: "On-campus",
+    why: "UTC has a room in Maclellan Gymnasium reserved for the team. It needs a clean-out, paint, lights, a roof repair (it leaks, with possible mold), and ergs to outfit it. Once it's done the crew can train on campus on its own schedule.",
   },
   {
-    title: "Race travel + indoor training",
-    estimate: "Operational",
-    why: "Spring travel circuit (SIRA, Dad Vail, ACRA), TIRC operations, and ergometer / training-room equipment for the dryland program.",
+    title: "Bridge: Lookout Rowing Club partnership",
+    estimate: "Spring 2026",
+    why: "This semester the four athletes joined Lookout Rowing Club so they could train and race on water-worthy equipment. LRC keeps the boys on the water while the racks and Empacher repair get funded. Membership and shared-equipment fees are real line items.",
   },
 ];
 
@@ -69,15 +78,18 @@ export default function DonatePage() {
           <div className="grid gap-10 lg:gap-14 lg:grid-cols-[1.15fr_1fr] lg:items-center">
             {/* Photo first on mobile, second on lg */}
             <div className="order-1 lg:order-2 relative rounded-xl overflow-hidden shadow-2xl shadow-utc-navy-deep/50 ring-1 ring-white/10 max-w-md mx-auto lg:max-w-none">
-              <Image
-                src="/photos/m4x-acra-prep-close.jpg"
-                alt="UTC Rowing's 2026 ACRA crew — Abraham Mako, Tyler Burkett, Conner Richardson, Jay Pollard — racing on the Tennessee River"
-                width={1920}
-                height={3414}
-                sizes="(max-width: 1024px) 90vw, 480px"
-                preload
+              <video
                 className="w-full h-auto block"
-              />
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                poster="/videos/m4x-acra-prep-poster.jpg"
+                aria-label="UTC Rowing's 2026 ACRA crew at the May 2 scrimmage in Oak Ridge — Abraham Mako, Tyler Burkett, Conner Richardson, Jay Pollard"
+              >
+                <source src="/videos/m4x-acra-prep.mp4" type="video/mp4" />
+              </video>
               <div
                 aria-hidden
                 className="absolute inset-0 bg-gradient-to-t from-utc-navy-deep/60 via-transparent to-transparent"
@@ -101,12 +113,13 @@ export default function DonatePage() {
               </h1>
               <p className="text-xl text-white/80 leading-relaxed">
                 An Olympic gold. Three USRowing Academic All-Americans in one season. Rowing on
-                the Tennessee River since 1971.
+                the Tennessee River between the Walnut Street Bridge and Williams Island since 1971.
               </p>
               <p className="text-lg text-white/75 mt-3">
-                The program is back with four athletes and one M4x. Where we go from here — the
-                covered rack space, the racing eight — is decided by what alumni and friends help
-                us build.
+                The program is back with four athletes and one M4x. Racing this year&rsquo;s M4x on
+                a Vespoli loaner &mdash; UTC&rsquo;s own 4x has a hole in the hull big enough to put
+                a fist through. Where we go from here — the covered rack space, the racing eight —
+                is decided by what alumni and friends help us build.
               </p>
             </div>
           </div>
@@ -133,8 +146,9 @@ export default function DonatePage() {
                   </p>
                 </div>
                 <p className="text-utc-navy/80 text-base sm:text-lg leading-snug">
-                  Four athletes, one M4x, racing at Lake Lanier in seven days. Every gift before
-                  May 17 lands on this crew&rsquo;s travel and the next boat behind them.
+                  Four athletes, one M4x, racing at Melton Hill Lake in Oak Ridge in seven days.
+                  Every gift before May 17 goes to this crew&rsquo;s travel and the next boat
+                  behind them.
                 </p>
               </div>
               <a
@@ -188,7 +202,7 @@ export default function DonatePage() {
               How to give
             </p>
             <h2 className="font-display text-3xl sm:text-4xl font-bold leading-tight">
-              Three paths. <span className="italic text-utc-gold-bright">All flow through UTC&rsquo;s official giving portal.</span>
+              Three paths <span className="italic text-utc-gold-bright">in.</span>
             </h2>
           </div>
 
@@ -252,7 +266,6 @@ export default function DonatePage() {
       {/* Alternative help */}
       <section className="bg-paper">
         <div className="mx-auto max-w-3xl px-4 py-16 text-center">
-          <UTCMark className="w-16 h-16 mb-4" />
           <p className="font-display text-2xl text-utc-navy">
             Not ready to give?{" "}
             <Link href="/submit" className="link-draw text-utc-gold-deep">

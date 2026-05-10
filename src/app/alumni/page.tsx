@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { createSupabasePublicClient } from "@/lib/supabase/public";
 import { AlumniSearch } from "@/components/alumni-search";
 import type { Alumni } from "@/types/domain";
 
@@ -15,7 +15,8 @@ export default async function AlumniPage() {
   let initial: Alumni[] = [];
   let dbReady = true;
   try {
-    const supabase = await createSupabaseServerClient();
+    // Anon-only client — no cookies, so /alumni stays statically renderable / ISR-eligible.
+    const supabase = createSupabasePublicClient();
     const { data, error } = await supabase
       .from("alumni")
       .select(
@@ -69,6 +70,24 @@ export default async function AlumniPage() {
           ) : (
             <AlumniSearch initialAlumni={initial} />
           )}
+        </div>
+      </section>
+
+      <section className="bg-utc-navy text-white">
+        <div className="mx-auto max-w-3xl px-4 py-16 text-center">
+          <h2 className="font-display text-3xl sm:text-4xl font-bold mb-4 leading-tight">
+            Didn&rsquo;t find yourself?
+          </h2>
+          <p className="text-white/75 max-w-xl mx-auto mb-8">
+            The roster is built from regatta results and lineup sheets. Plenty of names never
+            made it onto either. If yours is one of them, fix it.
+          </p>
+          <Link
+            href="/submit"
+            className="inline-flex items-center gap-2 bg-utc-gold text-utc-navy-deep font-semibold px-7 py-3.5 rounded-md hover:bg-utc-gold-bright transition-all hover:shadow-xl"
+          >
+            Add yourself to the roster →
+          </Link>
         </div>
       </section>
     </>

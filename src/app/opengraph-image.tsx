@@ -61,18 +61,41 @@ export default function OpengraphImage() {
           </div>
         </div>
 
-        {/* Wordmark */}
+        {/* Wordmark — stacked: UTC big serif gold over spaced ROWING */}
         <div
           style={{
             display: "flex",
-            fontSize: 168,
-            fontWeight: 700,
-            lineHeight: 1.02,
-            letterSpacing: "-0.02em",
-            color: WHITE,
+            flexDirection: "column",
+            lineHeight: 1,
           }}
         >
-          UTC Rowing
+          <div
+            style={{
+              display: "flex",
+              fontSize: 200,
+              fontWeight: 800,
+              lineHeight: 1,
+              letterSpacing: "-0.02em",
+              color: GOLD_BRIGHT,
+            }}
+          >
+            UTC
+          </div>
+          <div
+            style={{
+              display: "flex",
+              fontSize: 56,
+              fontWeight: 600,
+              letterSpacing: 18,
+              marginTop: 18,
+              textTransform: "uppercase",
+              color: WHITE,
+              fontFamily:
+                "ui-sans-serif, system-ui, -apple-system, sans-serif",
+            }}
+          >
+            Rowing
+          </div>
         </div>
 
         {/* Gold accent line under wordmark */}

@@ -4,7 +4,7 @@ export const ERA_LABELS: Record<Era, string> = {
   founding: "Founding (pre-1983)",
   carney: "Carney era (1983–1989)",
   espeseth: "Espeseth era (1989–2017)",
-  worth: "Worth era (2018–2024)",
+  worth: "Worth era (2018–2022/23)",
   resurrection: "Resurrection (2025–)",
 };
 

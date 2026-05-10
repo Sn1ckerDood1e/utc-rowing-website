@@ -3,7 +3,7 @@ export default function Loading() {
     <div className="min-h-[70vh] flex items-center justify-center bg-utc-navy text-white">
       <div className="text-center animate-fade-in">
         <p className="text-utc-gold uppercase text-xs tracking-[0.25em] font-semibold mb-3">
-          Loading
+          Hold water&hellip;
         </p>
         <h1
           className="font-display text-4xl sm:text-5xl font-bold animate-pulse-ring"

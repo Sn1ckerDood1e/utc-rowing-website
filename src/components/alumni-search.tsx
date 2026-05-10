@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useMemo, useState, useTransition } from "react";
 import { searchAlumni } from "@/app/alumni/actions";
 import type { Alumni } from "@/types/domain";
@@ -47,17 +48,18 @@ export function AlumniSearch({
 
   return (
     <div>
-      <div className="sticky top-16 bg-white border-b border-border z-10 -mx-4 px-4 py-4 mb-6">
+      <div className="sticky top-[73px] bg-white border-b border-border z-10 -mx-4 px-4 py-4 mb-6">
         <input
           type="search"
           placeholder="Search alumni by name..."
+          aria-label="Search alumni by name"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           className="w-full max-w-xl px-4 py-3 border border-border rounded text-base focus:outline-none focus:ring-2 focus:ring-utc-gold"
         />
         <p className="mt-2 text-sm text-muted-foreground">
           {isPending
-            ? "Searching..."
+            ? "Searching…"
             : `${results.length.toLocaleString()} alumni`}
           {query && !isPending && ` match "${query}"`}
         </p>
@@ -69,7 +71,15 @@ export function AlumniSearch({
       >
         {results.length === 0 && (
           <p className="text-muted-foreground py-8 text-center">
-            No matches. Try a different spelling or initial.
+            No match for that name. Try a different spelling, an initial, or — if they should
+            be here —{" "}
+            <Link
+              href="/submit"
+              className="text-utc-navy font-semibold underline decoration-utc-gold underline-offset-4"
+            >
+              add them
+            </Link>
+            .
           </p>
         )}
 

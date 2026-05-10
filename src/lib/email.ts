@@ -20,13 +20,16 @@ export async function sendSubmissionConfirmation(args: {
     return;
   }
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://utcrowing.org";
+  const submitUrl = `${siteUrl}/submit`;
+
   return r.emails.send({
     from: FROM,
     to: args.to,
     subject: "Thanks for submitting to UTC Rowing alumni",
     html: `<p>Hi ${escapeHtml(args.name)},</p>
 <p>Thank you for adding to the UTC Rowing alumni record. We've received your submission and a coach or volunteer will review it shortly.</p>
-<p>If you have a photo, document, or additional story to share, you can submit again at any time at <a href="https://utcrowing.org/submit">utcrowing.org/submit</a>.</p>
+<p>If you have a photo, document, or additional story to share, you can submit again at any time at <a href="${submitUrl}">${submitUrl}</a>.</p>
 <p>Go Mocs.</p>
 <p>— UTC Rowing</p>`,
   });

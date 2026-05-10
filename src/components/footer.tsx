@@ -6,19 +6,17 @@ export function Footer() {
     <footer className="bg-utc-navy text-white/80 mt-auto relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,rgba(200,182,130,0.06),transparent_50%)]" />
 
-      <div className="relative mx-auto max-w-6xl px-4 py-14 grid gap-10 sm:grid-cols-3 text-sm">
+      <div className="relative mx-auto max-w-6xl px-4 pt-10 pb-4">
+        <Link href="/" className="inline-flex items-center">
+          <UTCMark className="text-lg text-white" />
+        </Link>
+      </div>
+
+      <div className="relative mx-auto max-w-6xl px-4 pb-14 grid gap-10 sm:grid-cols-3 text-sm">
         <div>
-          <div className="flex items-center gap-2 mb-3">
-            <span className="inline-block w-7 h-7 rounded-full bg-gradient-to-br from-utc-gold-bright to-utc-gold-deep flex items-center justify-center text-utc-navy-deep font-mono text-xs font-bold">
-              U
-            </span>
-            <p className="font-display text-lg font-bold text-white">
-              <span className="text-utc-gold">UTC</span> Rowing
-            </p>
-          </div>
           <p className="text-white/70 leading-relaxed">
-            University of Tennessee at Chattanooga. Club sport since 1983. Olympic gold to ACRA, on
-            the Tennessee River.
+            University of Tennessee at Chattanooga. Rowing at UTC since 1971 · Competing since
+            1983. Olympic gold to ACRA, on the Tennessee River.
           </p>
           <p className="mt-4">
             <Link
@@ -32,39 +30,61 @@ export function Footer() {
 
         <div>
           <p className="font-semibold text-utc-gold uppercase text-xs tracking-[0.2em] mb-3">
-            Help us rebuild the record
+            On this site
           </p>
-          <p className="text-white/70 mb-3 leading-relaxed">
-            We&rsquo;re collecting alumni stories, photos, and corrections. Every contribution
-            makes the picture more complete.
-          </p>
-          <Link
-            href="/submit"
-            className="inline-flex items-center gap-1 text-utc-gold-bright link-draw font-semibold"
-          >
-            Submit your story →
-          </Link>
+          <ul className="space-y-2">
+            <li>
+              <Link href="/" className="hover:text-utc-gold-bright transition-colors">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/history" className="hover:text-utc-gold-bright transition-colors">
+                History
+              </Link>
+            </li>
+            <li>
+              <Link href="/team" className="hover:text-utc-gold-bright transition-colors">
+                Team
+              </Link>
+            </li>
+            <li>
+              <Link href="/alumni" className="hover:text-utc-gold-bright transition-colors">
+                Alumni
+              </Link>
+            </li>
+            <li>
+              <Link href="/journal" className="hover:text-utc-gold-bright transition-colors">
+                Journal
+              </Link>
+            </li>
+          </ul>
         </div>
 
         <div>
           <p className="font-semibold text-utc-gold uppercase text-xs tracking-[0.2em] mb-3">
-            Connect
+            Get involved
           </p>
           <ul className="space-y-2">
+            <li>
+              <Link href="/submit" className="hover:text-utc-gold-bright transition-colors">
+                Submit your story
+              </Link>
+            </li>
+            <li>
+              <Link href="/donate" className="hover:text-utc-gold-bright transition-colors">
+                Donate
+              </Link>
+            </li>
             <li>
               <Link href="/contact" className="hover:text-utc-gold-bright transition-colors">
                 Contact
               </Link>
             </li>
             <li>
-              <a
-                href="https://utcrowing.org"
-                className="hover:text-utc-gold-bright transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Program site
-              </a>
+              <Link href="/privacy" className="hover:text-utc-gold-bright transition-colors">
+                Privacy
+              </Link>
             </li>
             <li>
               <a
@@ -81,11 +101,8 @@ export function Footer() {
       </div>
 
       <div className="relative border-t border-white/10">
-        <div className="mx-auto max-w-6xl px-4 py-5 flex items-center justify-between text-xs text-white/75">
+        <div className="mx-auto max-w-6xl px-4 py-5 text-xs text-white/75">
           <p>© {new Date().getFullYear()} UTC Rowing alumni community.</p>
-          <span className="opacity-50" aria-hidden>
-            <UTCMark className="w-8 h-8" />
-          </span>
         </div>
       </div>
     </footer>

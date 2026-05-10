@@ -69,6 +69,15 @@ export async function POST(req: Request) {
     );
   }
 
+  if (!inserted) {
+    console.error("[/api/submit] insert returned no row");
+    return NextResponse.json(
+      { error: "Could not save submission" },
+      { status: 500 }
+    );
+  }
+  const id = inserted.id;
+
   // Fire-and-forget emails — don't fail the request if email fails
   Promise.allSettled([
     sendSubmissionConfirmation({
@@ -76,7 +85,7 @@ export async function POST(req: Request) {
       name: data.submitter_name,
     }),
     notifyAdminOfSubmission({
-      submissionId: inserted!.id,
+      submissionId: id,
       submitterName: data.submitter_name,
       submitterEmail: data.submitter_email,
       formLevel: data.form_level,
@@ -89,5 +98,5 @@ export async function POST(req: Request) {
     }
   });
 
-  return NextResponse.json({ ok: true, id: inserted!.id });
+  return NextResponse.json({ ok: true, id });
 }
