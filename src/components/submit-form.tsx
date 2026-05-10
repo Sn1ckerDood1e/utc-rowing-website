@@ -206,14 +206,22 @@ function Field({
   required?: boolean;
   children: React.ReactNode;
 }) {
+  // Wrap the input inside the <label> for automatic association.
+  // Browsers + screen readers + Playwright's getByLabel all recognize this pattern.
   return (
     <div>
-      <label className="block text-sm font-semibold text-utc-navy mb-1">
-        {label}
-        {required && <span className="text-red-600 ml-0.5">*</span>}
+      <label className="block">
+        <span className="block text-sm font-semibold text-utc-navy mb-1">
+          {label}
+          {required && <span className="text-red-600 ml-0.5">*</span>}
+        </span>
+        {hint && (
+          <span className="block text-xs text-muted-foreground mb-1.5">
+            {hint}
+          </span>
+        )}
+        {children}
       </label>
-      {hint && <p className="text-xs text-muted-foreground mb-1.5">{hint}</p>}
-      {children}
       {error && <p className="text-xs text-red-600 mt-1">{error}</p>}
     </div>
   );

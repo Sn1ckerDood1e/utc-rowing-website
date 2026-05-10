@@ -54,7 +54,13 @@ export default function HistoryPage() {
           </div>
 
           <article className="prose-utc mx-auto">
-            <MDXRemote source={source} />
+            <MDXRemote
+              source={source}
+              components={{
+                // The page already has a hero <h1>; demote markdown h1s to h2.
+                h1: (props) => <h2 {...props} />,
+              }}
+            />
           </article>
         </div>
       </section>
