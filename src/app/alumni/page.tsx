@@ -22,7 +22,12 @@ export default async function AlumniPage() {
     if (error) throw error;
     initial = (data ?? []) as Alumni[];
   } catch (e) {
-    console.warn("Alumni DB not reachable:", e);
+    console.error("[/alumni] Supabase fetch failed", {
+      message: e instanceof Error ? e.message : String(e),
+      hasUrl: !!process.env.NEXT_PUBLIC_SUPABASE_URL,
+      hasAnonKey: !!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+      urlPrefix: process.env.NEXT_PUBLIC_SUPABASE_URL?.slice(0, 30),
+    });
     dbReady = false;
   }
 

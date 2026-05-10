@@ -10,8 +10,12 @@ export default async function Home() {
       .select("*", { count: "exact", head: true })
       .eq("is_published", true);
     alumniCount = count;
-  } catch {
-    // Supabase env not configured yet during local dev — fall back to known total.
+  } catch (e) {
+    console.error("[/] Supabase count failed", {
+      message: e instanceof Error ? e.message : String(e),
+      hasUrl: !!process.env.NEXT_PUBLIC_SUPABASE_URL,
+      hasAnonKey: !!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+    });
     alumniCount = null;
   }
 
