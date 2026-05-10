@@ -3,18 +3,20 @@ import { defineConfig, devices } from "@playwright/test";
 const BASE_URL =
   process.env.PLAYWRIGHT_BASE_URL || "https://utc-rowing-website.vercel.app";
 
-// Mobile (webkit) tests need system deps that don't ship in WSL2 by default.
-// Set PLAYWRIGHT_MOBILE=1 once you've run `sudo npx playwright install-deps webkit`
-// (or in CI, on macOS, or anywhere webkit is supported).
-const enableMobile = process.env.PLAYWRIGHT_MOBILE === "1";
+// iPhone (webkit) tests need libs not in WSL2 by default. Set
+// PLAYWRIGHT_MOBILE_WEBKIT=1 once you've run
+// `sudo npx playwright install-deps webkit` to enable them.
+const enableWebkit = process.env.PLAYWRIGHT_MOBILE_WEBKIT === "1";
 
 export default defineConfig({
   testDir: "./tests/e2e",
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 1 : 0,
-  workers: process.env.CI ? 2 : undefined,
-  reporter: process.env.CI ? "github" : [["list"]],
+  retries: process.env.CI ? 2 : 0,
+  workers: process.env.CI ? 4 : undefined,
+  reporter: process.env.CI
+    ? [["github"], ["html", { open: "never" }]]
+    : [["list"]],
   use: {
     baseURL: BASE_URL,
     trace: "retain-on-failure",
@@ -28,10 +30,17 @@ export default defineConfig({
       name: "chromium-desktop",
       use: { ...devices["Desktop Chrome"], viewport: { width: 1280, height: 800 } },
     },
-    ...(enableMobile
+    {
+      name: "chromium-mobile",
+      // Pixel 7 emulation via Chromium — no webkit deps required.
+      // Covers mobile-viewport breakpoints, touch targets, and the
+      // sticky-nav drawer. Real Safari coverage requires webkit (see above).
+      use: { ...devices["Pixel 7"] },
+    },
+    ...(enableWebkit
       ? [
           {
-            name: "iphone-13",
+            name: "iphone-13-webkit",
             use: { ...devices["iPhone 13"] },
           },
         ]

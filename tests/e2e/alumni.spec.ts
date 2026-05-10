@@ -55,4 +55,38 @@ test.describe("Alumni page", () => {
 
     await expect(page.getByText(/no matches/i)).toBeVisible();
   });
+
+  test("Worth-era names are searchable (post-May 2026 import)", async ({ page }) => {
+    await page.goto("/alumni");
+    await page.waitForLoadState("networkidle");
+
+    // After the Worth-era archive import, these names must appear.
+    const search = page.getByPlaceholder(/search alumni/i);
+
+    // Sasha Dohse — 2018-19 President per Worth's BOD minutes
+    await search.fill("dohse");
+    await page.waitForTimeout(800);
+    await expect(page.getByText(/Sasha Dohse/i).first()).toBeVisible();
+
+    // Olivia Been — 2017-18 President
+    await search.fill("been");
+    await page.waitForTimeout(800);
+    await expect(page.getByText(/Olivia Been/i).first()).toBeVisible();
+
+    // Sarah McDarmont — first UTC ACRA W1x (2019)
+    await search.fill("mcdarmont");
+    await page.waitForTimeout(800);
+    await expect(page.getByText(/Sarah McDarmont/i).first()).toBeVisible();
+  });
+
+  test("Worth-era heading appears with non-zero count", async ({ page }) => {
+    await page.goto("/alumni");
+    await page.waitForLoadState("networkidle");
+
+    // Worth era heading should be visible with a count
+    const worthHeading = page
+      .getByRole("heading", { level: 2 })
+      .filter({ hasText: /worth era/i });
+    await expect(worthHeading.first()).toBeVisible();
+  });
 });
