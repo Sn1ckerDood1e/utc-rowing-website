@@ -15,12 +15,11 @@ export default function ContactPage() {
         <Image
           src="/photos/pair-tennessee-river.jpg"
           alt="UTC Rowing pair on the Tennessee River."
-          width={1920}
-          height={1080}
+          fill
           sizes="100vw"
           preload
           quality={75}
-          className="absolute inset-0 w-full h-full object-cover object-center"
+          className="object-cover object-center"
         />
 
         {/* Navy gradient for legibility */}
@@ -62,7 +61,26 @@ export default function ContactPage() {
             <p className="mt-3 text-sm text-foreground/80">
               Chattanooga Rowing Club — 1001 Riverside Dr, Chattanooga, TN
             </p>
-            {/* TODO(launch): phone + Instagram + Facebook handles */}
+            <p className="mt-3 text-sm text-foreground/80">
+              <a
+                href="tel:+14236024277"
+                className="link-draw text-utc-navy font-semibold"
+              >
+                (423) 602-4277
+              </a>
+            </p>
+            <p className="mt-2 text-sm text-foreground/80">
+              Instagram:{" "}
+              <a
+                href="https://www.instagram.com/utc_rowing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-draw text-utc-navy font-semibold"
+              >
+                @utc_rowing
+              </a>
+            </p>
+            {/* TODO(launch): Facebook handle — coach hasn't provided one yet */}
           </div>
 
           <div>
@@ -107,7 +125,7 @@ export default function ContactPage() {
             <ul className="text-foreground/80 text-sm space-y-1">
               <li>UTC Club Sports</li>
               <li>ACRA — South region</li>
-              <li>SIRA — Southern Intercollegiate Rowing</li>
+              <li>SIRA — Southeast Intercollegiate Rowing Association</li>
               <li>USRowing collegiate club member</li>
               <li>Lookout Rowing Club · William Raoul Rowing Center</li>
             </ul>

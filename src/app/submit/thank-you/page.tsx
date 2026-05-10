@@ -17,8 +17,8 @@ export default function ThankYouPage() {
           </p>
           <h1 className="font-display text-5xl sm:text-6xl font-bold mb-5">Thank you.</h1>
           <p className="text-lg text-white/85 max-w-xl mx-auto">
-            Your submission is in. A coach or volunteer will review it shortly. If you provided an
-            email, you should receive a confirmation in a few minutes.
+            Your submission is in. Coach Kinsey or a volunteer will review it shortly. If you
+            provided an email, you should receive a confirmation in a few minutes.
           </p>
         </div>
       </section>

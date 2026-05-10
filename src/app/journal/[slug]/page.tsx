@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -70,6 +71,23 @@ export default async function JournalPostPage({
           </h1>
         </div>
       </section>
+
+      {post.hero && (
+        <section className="bg-paper">
+          <div className="mx-auto max-w-3xl px-4 pt-10">
+            <figure className="relative overflow-hidden rounded-xl shadow-lg aspect-[16/9]">
+              <Image
+                src={post.hero}
+                alt={post.heroAlt ?? ""}
+                fill
+                sizes="(max-width: 768px) 100vw, 768px"
+                priority
+                className="object-cover"
+              />
+            </figure>
+          </div>
+        </section>
+      )}
 
       <section className="bg-paper">
         <article className="mx-auto max-w-2xl px-4 py-16 font-serif text-foreground/85 text-lg leading-[1.75]">

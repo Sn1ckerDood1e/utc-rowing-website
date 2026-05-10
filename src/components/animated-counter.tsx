@@ -15,28 +15,23 @@ export function AnimatedCounter({
   suffix?: string;
   className?: string;
 }) {
-  // SSR renders the FINAL value so the page is correct without JS / before hydration.
-  const [value, setValue] = useState(end);
+  // SSR renders 0 so there is no post-hydration flash from `end` back to 0.
+  // The count-up animation runs after mount when the element scrolls into view.
+  // Reduced-motion users get `end` immediately (no animation) once mounted.
+  const [value, setValue] = useState(0);
   const [started, setStarted] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
-  const didMountRef = useRef(false);
 
-  // On mount, reset to 0 so the count-up animation has somewhere to count from.
   useEffect(() => {
-    if (didMountRef.current) return;
-    didMountRef.current = true;
+    if (!ref.current || started) return;
     const reduceMotion =
       typeof window !== "undefined" &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduceMotion) {
       setValue(end);
-    } else {
-      setValue(0);
+      setStarted(true);
+      return;
     }
-  }, [end]);
-
-  useEffect(() => {
-    if (!ref.current || started) return;
     const obs = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
@@ -48,7 +43,7 @@ export function AnimatedCounter({
     );
     obs.observe(ref.current);
     return () => obs.disconnect();
-  }, [started]);
+  }, [started, end]);
 
   useEffect(() => {
     if (!started) return;

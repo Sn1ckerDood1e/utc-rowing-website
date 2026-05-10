@@ -18,8 +18,8 @@ export function Footer() {
       <div className="relative mx-auto max-w-6xl px-4 pb-14 grid gap-10 sm:grid-cols-3 text-sm">
         <div>
           <p className="text-white/70 leading-relaxed">
-            University of Tennessee at Chattanooga. Club sport since 1983. Olympic gold to ACRA, on
-            the Tennessee River.
+            University of Tennessee at Chattanooga. Rowing at UTC since 1971 · Competing since
+            1983. Olympic gold to ACRA, on the Tennessee River.
           </p>
           <p className="mt-4">
             <Link
@@ -88,16 +88,6 @@ export function Footer() {
               <Link href="/privacy" className="hover:text-utc-gold-bright transition-colors">
                 Privacy
               </Link>
-            </li>
-            <li>
-              <a
-                href="https://utcrowing.org"
-                className="hover:text-utc-gold-bright transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Program site
-              </a>
             </li>
             <li>
               <a

@@ -47,10 +47,11 @@ export function AlumniSearch({
 
   return (
     <div>
-      <div className="sticky top-16 bg-white border-b border-border z-10 -mx-4 px-4 py-4 mb-6">
+      <div className="sticky top-[73px] bg-white border-b border-border z-10 -mx-4 px-4 py-4 mb-6">
         <input
           type="search"
           placeholder="Search alumni by name..."
+          aria-label="Search alumni by name"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           className="w-full max-w-xl px-4 py-3 border border-border rounded text-base focus:outline-none focus:ring-2 focus:ring-utc-gold"

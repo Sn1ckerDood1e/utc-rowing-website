@@ -428,15 +428,15 @@ export const ERAS: Era[] = [
   },
 
   // =========================================================================
-  // Worth Era — 2018-2024
+  // Worth Era — 2018-2022/23
   // =========================================================================
   {
     slug: "worth",
     label: "Worth Era",
-    span: "2018 — 2024",
+    span: "2018 — 2022/23",
     gradient: "from-utc-gold-deep to-river-blue",
     intro:
-      "A Chattanooga rowing product takes over. The next 30 years get foundation-laid. Then COVID + a barge loss end the chapter early.",
+      "A Chattanooga rowing product takes over. The next 30 years get foundation-laid. Then COVID in 2020, the December 2022 – January 2023 barge loss, and a slow exit from competition end the chapter.",
     moments: [
       {
         year: "2017",
@@ -488,11 +488,11 @@ export const ERAS: Era[] = [
         kind: "person",
       },
       {
-        year: "2022",
+        year: "2022-23",
         sortYear: 2022,
         title: "SIRA at Oak Ridge — and the barges go",
         summary:
-          "UTC races SIRA at Oak Ridge, April 15-16, 2022. The 2022 club-sports banquet recognizes Karoline Bonastia (MVP) and Steven Stanford (HOT). Later in 2022 UTC's barges are lost — the program's river-access infrastructure is gone.",
+          "UTC races SIRA at Oak Ridge, April 15-16, 2022. The 2022 club-sports banquet recognizes Karoline Bonastia (MVP) and Steven Stanford (HOT). Between December 2022 and January 2023, UTC's barges are lost — the program's river-access infrastructure is gone.",
         kind: "challenge",
       },
       {
@@ -504,11 +504,11 @@ export const ERAS: Era[] = [
         kind: "person",
       },
       {
-        year: "2024",
-        sortYear: 2024,
+        year: "2022-23",
+        sortYear: 2023.5,
         title: "End of the Worth chapter",
         summary:
-          "Detailed event-by-event UTC results from 2018-2024 are largely gated behind RegattaCentral's bot protections and have not been recovered for this timeline. We know UTC competed at ACRA, Dad Vail, Hooch, SIRA, and the regional regattas through this entire window. The exact placings remain on the open-question list — and the alumni-submission form is the most likely path to closing it.",
+          "Detailed event-by-event UTC results from the Worth years are largely gated behind RegattaCentral's bot protections and have not been recovered for this timeline. We know UTC competed at ACRA, Dad Vail, Hooch, SIRA, and the regional regattas through this entire window. The exact placings remain on the open-question list — and the alumni-submission form is the most likely path to closing it.",
         kind: "transition",
       },
     ],
@@ -523,14 +523,14 @@ export const ERAS: Era[] = [
     span: "2025 — now",
     gradient: "from-river-blue to-utc-gold-bright",
     intro:
-      "Four athletes, an aging fleet, and a head coach two months out of mechatronics school. The program is back.",
+      "Four athletes, an aging fleet, and a head coach fresh out of mechatronics school. The program is back.",
     moments: [
       {
         year: "2025",
         sortYear: 2025,
         title: "Restart, Fall 2025",
         summary:
-          "Abraham Mako and Michael Kinsey co-restart UTC Rowing. Four athletes total. ACRA M4x. The first competitive UTC crew since the program went dark.",
+          "Michael Kinsey takes over as head coach and the program restarts. Four athletes total, with Abraham Mako — a Chattanooga Juniors product who transferred in from Chattanooga State Rowing — as the most experienced rower in the boat. ACRA M4x. The first competitive UTC crew since the program went dark.",
         kind: "founding",
       },
       {
@@ -552,9 +552,9 @@ export const ERAS: Era[] = [
       {
         year: "2026",
         sortYear: 2026,
-        title: "ACRA Nationals — May 17",
+        title: "ACRA Nationals — May 17, Oak Ridge",
         summary:
-          "UTC's M4x — Abraham Mako, Conner, Tyler, Jay — race at ACRA Nationals on May 17, 2026. The first UTC ACRA crew since the program restarted. The site you're reading was built for this moment.",
+          "UTC's M4x — bow Jay Pollard, 2 Tyler Burkett, 3 Conner Richardson, stroke Abraham Mako — races at ACRA Nationals on Melton Hill Lake in Oak Ridge, TN, on May 17, 2026. All four are UTC class of 2027; Conner, Tyler, and Jay are U.S. Army active duty. Mako, the most experienced rower in the boat, started at Chattanooga Juniors and helped launch Chattanooga State Rowing before transferring to UTC. The other three first sat in a shell on April 6, 2026 — six weeks before the line. The first UTC ACRA crew since the program restarted.",
         kind: "achievement",
       },
     ],

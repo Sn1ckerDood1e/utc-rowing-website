@@ -101,7 +101,7 @@ export default async function Home() {
               <span className="text-gradient-gold italic">the Tennessee River.</span>
             </h1>
             <p className="mt-6 text-xl sm:text-2xl text-white/85 max-w-2xl leading-relaxed">
-              Fifty-five years of crews. One Olympic gold. Three USRowing All-Americans in a
+              Half a century of crews. One Olympic gold. Three USRowing Academic All-Americans in a
               single year.{" "}
               <span className="text-utc-gold-bright font-semibold">
                 {alumniCount.toLocaleString()} alumni
@@ -165,7 +165,7 @@ export default async function Home() {
                     <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500" />
                   </span>
                   <p className="text-utc-navy uppercase text-xs tracking-[0.25em] font-bold">
-                    Racing now · ACRA Nationals · May 17, 2026
+                    Racing in 7 days · ACRA Nationals · May 17, 2026
                   </p>
                 </div>
                 <h2 className="font-display text-2xl sm:text-3xl font-bold text-utc-navy">
@@ -210,6 +210,7 @@ export default async function Home() {
         <div className="absolute inset-0 bg-utc-navy/85 pointer-events-none" aria-hidden />
         <div className="relative mx-auto max-w-6xl px-4 py-20 sm:py-28">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 text-center">
+            {/* TODO(2027): bump to 56 / derive from year */}
             <Stat number={55} suffix="" label="years on the river" hint="1971 — present" />
             <Stat number={alumniCount} label="alumni on the roster" hint="and growing" />
             <Stat number={1} label="Olympic gold medal" hint="Beery · Athens 2004" />

@@ -3,57 +3,70 @@ slug: 2026-05-10-pre-acra-where-we-are
 title: "Pre-ACRA: Where We Are"
 author: "Michael Kinsey, Head Coach"
 date: 2026-05-10
-excerpt: "A week out from ACRA, with four athletes, a borrowed shed, and a program that refused to stay dead."
+hero: /photos/abraham-single-boathouse.jpg
+heroAlt: "Abraham Mako rowing a single past the Lookout Rowing Club boathouse at sunset."
+excerpt: "A week out from ACRA at Melton Hill Lake. Three of the four athletes started rowing six weeks ago. Here's where the program actually is — the boat, the equipment, and what fall '26 needs to look like."
 ---
 
-A week from now four athletes from UTC will be on the line at Lake Lanier in
-the M4x at the ACRA Championships. That sentence still feels strange to type.
-For most of the last five years there was no UTC Rowing program to speak of.
-The team went dark during COVID, the trailer and most of the fleet went out
-the door in 2022, and the club existed mostly as a name in the alumni group
-chat. Last fall, four students said they wanted to row, and a handful of
-alumni said they would help us figure out how. That is the entire reason any
-of this is happening.
+A week from now, four UTC athletes will be at Melton Hill Lake in Oak Ridge
+for the ACRA Championships, racing the M4x. The number on the side of the
+boat says May 17, 2026. The number that matters more is April 6, 2026 — the
+day after Easter. That is the day Tyler Burkett, Conner Richardson, and Jay
+Pollard each sat in a rowing shell for the first time. Six weeks ago.
 
-The athletes are Abraham Mako, Tyler Burkett, Conner Richardson, and Jay
-Pollard. None of them came in as recruited rowers. Two of them had never
-sat in a boat before September. They have erged in the dark, run hill
-repeats up Cardiac, fixed riggers with vise grips, and put a quad together
-that — on a good day — actually moves. They have earned the right to race
-under the UTC name on May 17.
+The lineup, bow to stern: Jay Pollard, Tyler Burkett, Conner Richardson,
+Abraham Mako stroking. Mako is the only one with real water under him —
+he rowed at Chattanooga Juniors, helped Jack Cawood start Chattanooga
+State Rowing, and transferred to UTC to row in the resurrected program.
+He is the most experienced rower in the boat. He is not a co-founder of
+UTC Rowing, and I want that on the record because the earlier draft of
+this post got it wrong. The boat sets up around Mako because the bow
+three are still learning what a clean catch feels like.
 
-We are racing as guests at the William Raoul Rowing Center in Chattanooga,
-under the umbrella of the Chattanooga Rowing Club, who have been more
-generous with rack space and coaching time than we had any right to ask for.
-The 4x sitting on stretchers there is on loan. The launch is on loan. Most
-of the oars are on loan. That is a temporary arrangement, and the next thing
-we are building is a permanent one.
+All four are UTC class of 2027 — one shared season, not a multi-year arc.
+Three of them — Conner, Tyler, and Jay — are U.S. Army active duty
+earning their UTC degrees alongside their service. I mention that once
+and move on; they don't lead with it either. Erg pieces happen between
+obligations that are not negotiable. They show up anyway.
 
-The 1996 trailer arson is the story I keep coming back to this spring. UTC
-Rowing lost almost everything to that fire — boats, oars, riggers, trailer.
-The program rebuilt anyway, and went on to its strongest decade. I am not
-going to pretend losing the fleet in 2022 was the same kind of moment, but
-the lesson rhymes. Equipment burns, equipment walks off, equipment ages
-out. The program continues if the people decide it does. That is what the
-1996 generation taught us, and that is what this fall taught us again.
+On Saturday May 2 we drove to Oak Ridge for a scrimmage on Melton Hill,
+the same lake the championship runs on. We went up two weeks early on
+purpose — you cannot simulate the line, the warm-up dock pressure, or
+a competitive 2k on your home river. At some point the boat has to be
+on the course with other boats. We got those race miles. The footage
+on the donate and team pages is from that morning.
 
-The next concrete thing is a 20 by 80 foot pole barn at the Chattanooga
-Rowing site — covered rack space for our boats and the club's, dry storage
-for oars and slings, and somewhere to do indoor work that is not a parking
-lot. It is the smallest physical home that lets the program plan past the
-next regatta. We are about a third of the way to funded. Names on the
-beams will get attached to specific athletes for as long as the building
-stands.
+About the equipment. UTC owns sixteen shells. They have lived on the
+team trailer, outside, since 2023. The Empacher 4x "Chattanooga" — the
+1980s/90s boat — has a hole in the hull big enough to put a fist
+through. Most of the fleet is twenty-plus years old. The newest hull
+we own is a 2020 Swift 1x the boys call "Scrappy." That is the
+inventory. It is why the four of them joined Lookout Rowing Club this
+semester, and it is why the boat going to ACRA is borrowed water-worthy
+equipment, not ours.
 
-To the alumni who answered emails this fall, who showed up to bring an
-ergometer, a check, or a few hours of coaching time — thank you. There is
-no version of this season where the program races at ACRA without you.
+What fall '26 needs to look like, concretely:
 
-Looking past Saturday: post-ACRA we start recruiting for fall '26. The
-goal is a men's eight on the water by next October.
+- A 20×80 pole barn at the boathouse, so the UTC shells worth saving
+  live under cover instead of on a trailer in the weather.
+- The on-campus room at Maclellan Gym turned into a real indoor
+  training space — clean-out, lights, paint, a leaking roof patched,
+  possible mold work, ergs in the room.
+- Move the UTC fleet to Chattanooga Rowing's footprint while the
+  storage gets built.
+- A men's eight and a women's four, both filled out, by September.
 
-If you want to help: the donate page is at /donate, and if you rowed at
-UTC and are not on the roster yet, the submission form is at /submit.
-Both make a difference.
+The regatta calendar I am building toward, in order: Head of the
+Hooch with alumni boats entered, TIRC with an alumni event, SIRA,
+ACRA. Each of those is a place for graduates of this program to
+come back into a UTC seat. That is not symbolic. The fastest path
+to a competitive eight in 2027 is alumni rowers in the boat now,
+not three years from now.
+
+Saturday is the race. After Saturday is the slower work — recruiting
+for fall, fixing the storage problem, and finishing the equipment
+audit. If you want a hand in any of that: /donate is real, /submit
+is how we close the alumni gaps, and the Hooch alumni boats need
+names against seats. Come pull.
 
 — Coach Kinsey

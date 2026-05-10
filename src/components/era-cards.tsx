@@ -46,11 +46,11 @@ export function EraCards({ eraCounts }: { eraCounts: Record<string, number> }) {
     {
       slug: "worth",
       label: "Worth era",
-      span: "2018 – 2024",
+      span: "2018 – 2022/23",
       count: eraCounts.worth ?? null,
-      headline: "Cohort that needs surfacing",
+      headline: "A roster we still need to fill in",
       detail:
-        "Worth-era racing through 2022 then COVID + barge loss. Almost zero roster data on file. The biggest gap we're asking alumni to close.",
+        "Racing through 2022, then the boats lost in the December 2022 – January 2023 ice and a slow exit from competition. Almost zero roster data on file — the biggest gap we're asking alumni to close.",
       gradient: "from-utc-gold-deep to-river-blue",
     },
     {
@@ -60,7 +60,7 @@ export function EraCards({ eraCounts }: { eraCounts: Record<string, number> }) {
       count: eraCounts.resurrection ?? null,
       headline: "ACRA-bound, Fall 2025 restart",
       detail:
-        "Four athletes, one M4x, an aging fleet, and a head coach two months out of mechatronics school. The program is back.",
+        "Four athletes, one M4x, an aging fleet, and a head coach fresh out of mechatronics school. The program is back.",
       gradient: "from-river-blue to-utc-gold-bright",
     },
   ];
