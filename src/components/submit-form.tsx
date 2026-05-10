@@ -81,7 +81,7 @@ export function SubmitForm() {
           type="text"
           autoComplete="name"
           {...register("submitter_name")}
-          className="w-full px-3 py-2.5 border border-border rounded text-base bg-white focus:outline-none focus:ring-2 focus:ring-utc-gold"
+          className="w-full px-3 py-3 border border-border rounded text-base bg-white focus:outline-none focus:ring-2 focus:ring-utc-gold"
         />
       </Field>
 
@@ -96,7 +96,7 @@ export function SubmitForm() {
           inputMode="email"
           autoComplete="email"
           {...register("submitter_email")}
-          className="w-full px-3 py-2.5 border border-border rounded text-base bg-white focus:outline-none focus:ring-2 focus:ring-utc-gold"
+          className="w-full px-3 py-3 border border-border rounded text-base bg-white focus:outline-none focus:ring-2 focus:ring-utc-gold"
         />
       </Field>
 
@@ -107,7 +107,7 @@ export function SubmitForm() {
         <input
           type="text"
           {...register("years_rowed")}
-          className="w-full px-3 py-2.5 border border-border rounded text-base bg-white focus:outline-none focus:ring-2 focus:ring-utc-gold"
+          className="w-full px-3 py-3 border border-border rounded text-base bg-white focus:outline-none focus:ring-2 focus:ring-utc-gold"
           placeholder="e.g. 2003–2006"
         />
       </Field>
@@ -116,7 +116,7 @@ export function SubmitForm() {
         <input
           type="text"
           {...register("coach_during_rowing")}
-          className="w-full px-3 py-2.5 border border-border rounded text-base bg-white focus:outline-none focus:ring-2 focus:ring-utc-gold"
+          className="w-full px-3 py-3 border border-border rounded text-base bg-white focus:outline-none focus:ring-2 focus:ring-utc-gold"
           placeholder="e.g. Espeseth"
         />
       </Field>
@@ -134,7 +134,7 @@ export function SubmitForm() {
       {showLevel2 && (
         <div className="space-y-5 border-t border-border pt-5">
           <Field label="What are you sharing?" hint="Optional — pick whichever fits best.">
-            <select {...register("topic")} className="w-full px-3 py-2.5 border border-border rounded text-base bg-white focus:outline-none focus:ring-2 focus:ring-utc-gold">
+            <select {...register("topic")} className="w-full px-3 py-3 border border-border rounded text-base bg-white focus:outline-none focus:ring-2 focus:ring-utc-gold">
               <option value="">Select a type…</option>
               {TOPICS.map((t) => (
                 <option key={t.value} value={t.value}>
@@ -151,13 +151,13 @@ export function SubmitForm() {
             <textarea
               rows={6}
               {...register("body")}
-              className="w-full px-3 py-2.5 border border-border rounded text-base bg-white focus:outline-none focus:ring-2 focus:ring-utc-gold resize-y min-h-[8rem]"
+              className="w-full px-3 py-3 border border-border rounded text-base bg-white focus:outline-none focus:ring-2 focus:ring-utc-gold resize-y min-h-[8rem]"
               placeholder="Anything you'd like a future UTC rower to know — a memory, a teammate, a boat name, a correction to your roster entry."
             />
           </Field>
 
           <Field label="Can we publish this with attribution?">
-            <select {...register("publish_permission")} className="w-full px-3 py-2.5 border border-border rounded text-base bg-white focus:outline-none focus:ring-2 focus:ring-utc-gold">
+            <select {...register("publish_permission")} className="w-full px-3 py-3 border border-border rounded text-base bg-white focus:outline-none focus:ring-2 focus:ring-utc-gold">
               <option value="attributed">Yes — publish with my name</option>
               <option value="anonymous">Publish anonymously</option>
               <option value="internal">Internal record only — don&rsquo;t publish</option>

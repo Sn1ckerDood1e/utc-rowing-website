@@ -129,9 +129,10 @@ export function InteractiveTimeline() {
   function jumpToEra(slug: Era["slug"]) {
     const el = eraSectionRefs.current.get(slug);
     if (!el) return;
-    const headerOffset = 96; // sticky nav height
-    const top = el.getBoundingClientRect().top + window.scrollY - headerOffset;
-    window.scrollTo({ top, behavior: "smooth" });
+    // `scroll-mt-32` on each era <section> tells the browser how far below
+    // the viewport top to land — so the sticky nav (~64px) and era rail
+    // (~49px) don't cover the chapter heading. Just smooth-scroll natively.
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   return (
@@ -199,7 +200,7 @@ export function InteractiveTimeline() {
             ref={(el) => {
               if (el) eraSectionRefs.current.set(era.slug, el);
             }}
-            className="relative pt-16 pb-8"
+            className="relative pt-16 pb-8 scroll-mt-32"
           >
             {/* Era cover */}
             <div

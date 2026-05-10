@@ -149,7 +149,7 @@ export default function TeamPage() {
             </h2>
           </div>
 
-          <div className="bg-white border border-border rounded-2xl shadow-sm overflow-hidden grid sm:grid-cols-[320px_1fr]">
+          <div className="bg-white border border-border rounded-2xl shadow-sm overflow-hidden grid md:grid-cols-[320px_1fr]">
             <div className="relative bg-utc-navy-deep">
               <Image
                 src="/photos/kinsey-headshot.jpg"
@@ -157,7 +157,7 @@ export default function TeamPage() {
                 width={1280}
                 height={824}
                 preload
-                sizes="(min-width: 640px) 320px, 100vw"
+                sizes="(min-width: 768px) 320px, 100vw"
                 className="w-full h-full object-cover object-center"
               />
             </div>
@@ -242,7 +242,7 @@ export default function TeamPage() {
                       />
                     </div>
                   )}
-                  <div className="p-6 flex flex-col">
+                  <div className="p-6 flex flex-col min-h-[280px]">
                     <p className="text-utc-gold-deep uppercase text-[11px] tracking-[0.22em] font-bold mb-2">
                       {a.seat}
                     </p>

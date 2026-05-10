@@ -95,7 +95,7 @@ export default async function Home() {
             <p className="text-utc-gold uppercase text-sm tracking-[0.25em] font-semibold mb-5">
               Rowing at UTC since 1971 · Competing since 1983
             </p>
-            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
               Fifty-five years on
               <br />
               <span className="text-gradient-gold italic">the Tennessee River.</span>
@@ -172,11 +172,11 @@ export default async function Home() {
                 <h2 className="font-display text-2xl sm:text-3xl font-bold text-utc-navy">
                   <span className="whitespace-nowrap">Abraham Mako</span>
                   {" · "}
-                  Tyler Burkett
+                  <span className="whitespace-nowrap">Tyler Burkett</span>
                   {" · "}
-                  Conner Richardson
+                  <span className="whitespace-nowrap">Conner Richardson</span>
                   {" · "}
-                  Jay Pollard
+                  <span className="whitespace-nowrap">Jay Pollard</span>
                   <span className="block text-base font-normal text-utc-navy/65 font-sans mt-1">
                     UTC&rsquo;s first ACRA crew since the program restarted Fall 2025. Coached by
                     Michael Kinsey.
