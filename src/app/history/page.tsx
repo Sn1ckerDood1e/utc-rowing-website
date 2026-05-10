@@ -1,29 +1,27 @@
-import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
-import { readMarkdown } from "@/lib/content";
+import { InteractiveTimeline } from "@/components/interactive-timeline";
 import { OarMark } from "@/components/svg-rowing";
+import { TIMELINE_TOTAL_MOMENTS, ERAS } from "@/lib/timeline-data";
 
 export const metadata = {
   title: "History — UTC Rowing",
   description:
-    "Fifty years of rowing in Chattanooga. The UTC Rowing program from 1974 founding through the 2025 resurrection.",
+    "Fifty-five years of rowing at UTC. The interactive timeline from the 1971 Pocock donation through the 2026 ACRA crew.",
 };
 
 export default function HistoryPage() {
-  const source = readMarkdown("timeline.md");
-
   return (
     <>
-      {/* Editorial cover */}
+      {/* Cover */}
       <section className="bg-utc-navy text-white relative overflow-hidden border-b-4 border-utc-gold">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(200,182,130,0.12),transparent_60%)]" />
-        <div className="relative mx-auto max-w-4xl px-4 py-20 text-center">
+        <div className="relative mx-auto max-w-4xl px-4 py-16 text-center">
           <div className="inline-flex items-center gap-3 mb-6">
             <span className="text-utc-gold w-12">
               <OarMark className="w-12" />
             </span>
             <p className="text-utc-gold uppercase text-xs tracking-[0.3em] font-semibold">
-              Volume 1 · Our Story
+              The interactive timeline
             </p>
             <span className="text-utc-gold w-12 -scale-x-100">
               <OarMark className="w-12" />
@@ -35,34 +33,20 @@ export default function HistoryPage() {
             <span className="italic text-gradient-gold">a history</span>
           </h1>
           <p className="font-display text-lg italic text-white/70 mt-6 max-w-2xl mx-auto">
-            From the founding of the Lookout Rowing Club in 1974 through the resurrection of UTC
-            Rowing in 2025 — compiled from primary sources in the program archive, public records,
+            From the 1971 Pocock donation through the 2026 ACRA crew —{" "}
+            {TIMELINE_TOTAL_MOMENTS} moments across {ERAS.length} eras of UTC Rowing.
+            Compiled from primary sources in the program archive, public records,
             and alumni recollections.
           </p>
           <p className="text-xs text-white/50 mt-6 uppercase tracking-widest">
-            Last revised May 2026 · Verified across 200+ archival documents
+            Tap any moment to read more · Last revised May 2026
           </p>
         </div>
       </section>
 
-      {/* Article body */}
+      {/* Interactive timeline */}
       <section className="bg-paper-grain">
-        <div className="mx-auto max-w-4xl px-4 py-16">
-          {/* Drop cap intro accent */}
-          <div className="text-center mb-12">
-            <span className="inline-block w-24 h-0.5 bg-utc-gold" />
-          </div>
-
-          <article className="prose-utc mx-auto">
-            <MDXRemote
-              source={source}
-              components={{
-                // The page already has a hero <h1>; demote markdown h1s to h2.
-                h1: (props) => <h2 {...props} />,
-              }}
-            />
-          </article>
-        </div>
+        <InteractiveTimeline />
       </section>
 
       {/* Footer CTA */}
