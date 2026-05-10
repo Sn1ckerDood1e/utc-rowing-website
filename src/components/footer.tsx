@@ -67,11 +67,11 @@ export function Footer() {
             </li>
             <li>
               <a
-                href="https://gomocs.com/giving"
+                href="https://giving.utc.edu/campaigns/42934/donations/new?_gl=1*pfvcug*_gcl_au*MzkyNTMzNTAwLjE3NzUwNjQzMzM."
                 className="hover:text-utc-gold-bright transition-colors"
                 rel="noreferrer"
               >
-                gomocs.com/giving
+                Give to UTC Rowing
               </a>
             </li>
           </ul>

@@ -26,7 +26,7 @@ Pages:
 - `/alumni` — Searchable roster, grouped by era
 - `/submit` — Form 1 (alumni signup) + Form 2 (memory/correction)
 - `/submit/thank-you`
-- `/donate` — Links to gomocs.com/giving
+- `/donate` — Links to giving.utc.edu campaign 42934 (UTC Rowing)
 - `/contact`
 - `/api/submit` — POST handler that writes to Supabase + sends emails
 

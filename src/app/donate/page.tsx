@@ -4,57 +4,57 @@ import { ChevronRight, OarMark, RiverBendCurve } from "@/components/svg-rowing";
 export const metadata = {
   title: "Support UTC Rowing",
   description:
-    "Help rebuild UTC Rowing — boats, the boathouse expansion, ACRA travel, and equipment.",
+    "Help rebuild UTC Rowing — covered rack space at Chattanooga Rowing, replacement 8+ shells, and the path back to ACRA-level competition.",
 };
+
+const GIVING_URL =
+  "https://giving.utc.edu/campaigns/42934/donations/new?_gl=1*pfvcug*_gcl_au*MzkyNTMzNTAwLjE3NzUwNjQzMzM.";
 
 const TIERS = [
   {
     label: "Single donation",
     amount: "Any amount",
-    detail: "Goes to the rowing program through UTC Athletics' giving portal.",
+    detail: "Goes to the rowing program through UTC's official giving portal.",
     cta: "Give once",
-    href: "https://gomocs.com/sports/2018/9/26/giving.aspx",
-    accent: "bg-utc-gold/20",
+    href: GIVING_URL,
   },
   {
     label: "Monthly sustaining donor",
     amount: "$25 / $50 / $100 / $250",
     detail: "Monthly giving is what builds the program back. Sustained, predictable, real.",
     cta: "Give monthly",
-    href: "https://gomocs.com/sports/2018/9/26/giving.aspx",
-    accent: "bg-utc-gold/30",
+    href: GIVING_URL,
     featured: true,
   },
   {
     label: "Named giving",
-    amount: "$1k seat → $100k+ bay",
-    detail: "Name a seat, an oar, a boat, or the boathouse bay. Email to coordinate.",
+    amount: "$1k seat → $25k 8+",
+    detail: "Name a seat in the new eight, name the boat, or sponsor a covered rack bay. Email to coordinate.",
     cta: "Email Coach Kinsey",
     href: "mailto:kinseymi@radl.solutions?subject=UTC%20Rowing%20named%20giving",
-    accent: "bg-river-blue/20",
   },
 ];
 
 const NEEDS = [
   {
-    title: "20 × 80 pole barn",
-    estimate: "Capital project",
-    why: "Boathouse expansion + secure on-site equipment storage. Currently UTC operates without dedicated covered storage.",
+    title: "Covered rack space",
+    estimate: "Top priority",
+    why: "UTC needs dedicated covered rack space at Chattanooga Rowing — protected outdoor storage that keeps shells safe between practices and frees the program from improvised arrangements.",
   },
   {
-    title: "Replacement barges",
-    estimate: "High priority",
-    why: "UTC's barges were lost in the 2022 flood. Restoring practice infrastructure is the most direct path to growing the team back.",
+    title: "Replacement 8+ shell",
+    estimate: "ACRA-grade",
+    why: "Our long-term direction is racing eights. Replacing UTC's eight with an ACRA-grade competitive shell is the centerpiece capital ask — and it's how the resurrection era starts to compete at the level UTC's history demands.",
   },
   {
-    title: "ACRA-level shells",
-    estimate: "4x and 8+",
-    why: "Modern shells to compete at the American Collegiate Rowing Association national level. Current ACRA crew rows on borrowed equipment.",
+    title: "Replacement small boats",
+    estimate: "Fleet renewal",
+    why: "Modernizing 4+ and 4x equipment so every UTC crew — novice and varsity — rows on shells that match what they meet at the line.",
   },
   {
-    title: "Trailer + tow vehicle",
-    estimate: "Travel-critical",
-    why: "Reliable transport to away regattas. Spring travel circuit covers SIRA, Dad Vail, and ACRA Nationals.",
+    title: "Race travel + indoor training",
+    estimate: "Operational",
+    why: "Spring travel circuit (SIRA, Dad Vail, ACRA), TIRC operations, and ergometer / training-room equipment for the dryland program.",
   },
 ];
 
@@ -72,15 +72,16 @@ export default function DonatePage() {
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] mb-6">
               Help bring UTC Rowing
               <br />
-              <span className="text-gradient-gold italic">all the way back.</span>
+              <span className="text-gradient-gold italic">back to the eight.</span>
             </h1>
             <p className="text-xl text-white/80 max-w-2xl leading-relaxed">
-              An Olympic gold medalist. Three USRowing All-Americans in a single year. Forty-plus
-              years of Tennessee River competitors.
+              An Olympic gold medalist. Three USRowing Academic All-Americans in a single year.
+              Forty-plus years of Tennessee River competitors.
             </p>
             <p className="text-lg text-white/65 max-w-2xl mt-3">
-              After a hard chapter, the program is back with four athletes. We&rsquo;re asking the
-              alumni community to help us rebuild what comes next.
+              The program is back with four athletes and one M4x. Where we go from here — the
+              covered rack space, the racing eight — is decided by what alumni and friends help
+              us build.
             </p>
           </div>
         </div>
@@ -98,7 +99,7 @@ export default function DonatePage() {
               Where the money goes
             </p>
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-utc-navy leading-tight">
-              Concrete needs, not abstractions.
+              Concrete needs, in priority order.
             </h2>
           </div>
           <div className="grid gap-5 sm:grid-cols-2">
@@ -129,7 +130,7 @@ export default function DonatePage() {
               How to give
             </p>
             <h2 className="font-display text-3xl sm:text-4xl font-bold leading-tight">
-              Three paths. <span className="italic text-utc-gold-bright">All flow through UTC Athletics.</span>
+              Three paths. <span className="italic text-utc-gold-bright">All flow through UTC&rsquo;s official giving portal.</span>
             </h2>
           </div>
 
@@ -148,9 +149,7 @@ export default function DonatePage() {
                     Recommended
                   </span>
                 )}
-                <h3 className={`font-display text-xl font-bold mb-2 ${t.featured ? "" : ""}`}>
-                  {t.label}
-                </h3>
+                <h3 className="font-display text-xl font-bold mb-2">{t.label}</h3>
                 <p
                   className={`font-mono-numbers text-2xl font-bold mb-3 ${
                     t.featured ? "text-utc-navy-deep" : "text-utc-gold-bright"
@@ -158,7 +157,11 @@ export default function DonatePage() {
                 >
                   {t.amount}
                 </p>
-                <p className={`text-sm mb-6 leading-relaxed ${t.featured ? "text-utc-navy-deep/85" : "text-white/70"}`}>
+                <p
+                  className={`text-sm mb-6 leading-relaxed ${
+                    t.featured ? "text-utc-navy-deep/85" : "text-white/70"
+                  }`}
+                >
                   {t.detail}
                 </p>
                 <a
@@ -178,9 +181,8 @@ export default function DonatePage() {
           </div>
 
           <p className="mt-8 text-sm text-white/50 max-w-3xl">
-            Donations route through UTC Athletics&rsquo; official giving portal. Tag the gift{" "}
-            &ldquo;Rowing&rdquo; or &ldquo;Club Sports — Rowing&rdquo; if prompted. UTC is a
-            qualified 501(c)(3) tax-exempt institution.
+            All gifts route through UTC&rsquo;s official giving portal — campaign 42934 is dedicated
+            to UTC Rowing. UTC is a qualified 501(c)(3) tax-exempt institution.
           </p>
         </div>
       </section>
