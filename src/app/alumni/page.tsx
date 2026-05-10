@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { createSupabasePublicClient } from "@/lib/supabase/public";
 import { AlumniSearch } from "@/components/alumni-search";
 import type { Alumni } from "@/types/domain";
 
@@ -15,7 +15,8 @@ export default async function AlumniPage() {
   let initial: Alumni[] = [];
   let dbReady = true;
   try {
-    const supabase = await createSupabaseServerClient();
+    // Anon-only client — no cookies, so /alumni stays statically renderable / ISR-eligible.
+    const supabase = createSupabasePublicClient();
     const { data, error } = await supabase
       .from("alumni")
       .select(

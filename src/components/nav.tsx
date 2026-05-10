@@ -6,9 +6,9 @@ import { UTCMark } from "./svg-rowing";
 
 const links = [
   { href: "/history", label: "History" },
+  { href: "/team", label: "Team" },
   { href: "/alumni", label: "Alumni" },
-  { href: "/submit", label: "Submit" },
-  { href: "/donate", label: "Donate" },
+  { href: "/journal", label: "Journal" },
   { href: "/contact", label: "Contact" },
 ];
 

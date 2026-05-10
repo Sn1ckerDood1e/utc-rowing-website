@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight, UTCMark, RiverBendCurve } from "@/components/svg-rowing";
 
@@ -69,15 +68,18 @@ export default function DonatePage() {
           <div className="grid gap-10 lg:gap-14 lg:grid-cols-[1.15fr_1fr] lg:items-center">
             {/* Photo first on mobile, second on lg */}
             <div className="order-1 lg:order-2 relative rounded-xl overflow-hidden shadow-2xl shadow-utc-navy-deep/50 ring-1 ring-white/10 max-w-md mx-auto lg:max-w-none">
-              <Image
-                src="/photos/m4x-acra-prep-close.jpg"
-                alt="UTC Rowing's 2026 ACRA crew — Abraham Mako, Tyler Burkett, Conner Richardson, Jay Pollard — racing on the Tennessee River"
-                width={1920}
-                height={3414}
-                sizes="(max-width: 1024px) 90vw, 480px"
-                preload
+              <video
                 className="w-full h-auto block"
-              />
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                poster="/videos/m4x-acra-prep-poster.jpg"
+                aria-label="UTC Rowing's 2026 ACRA crew — Abraham Mako, Tyler Burkett, Conner Richardson, Jay Pollard — racing on the Tennessee River"
+              >
+                <source src="/videos/m4x-acra-prep.mp4" type="video/mp4" />
+              </video>
               <div
                 aria-hidden
                 className="absolute inset-0 bg-gradient-to-t from-utc-navy-deep/60 via-transparent to-transparent"

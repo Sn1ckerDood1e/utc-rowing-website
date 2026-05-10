@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { createSupabasePublicClient } from "@/lib/supabase/public";
 import { AnimatedCounter } from "@/components/animated-counter";
 import { FeaturedAlumni } from "@/components/featured-alumni";
 import { EraCards } from "@/components/era-cards";
@@ -25,7 +25,8 @@ export default async function Home() {
   };
 
   try {
-    const supabase = await createSupabaseServerClient();
+    // Anon-only client — no cookies, so the route stays statically renderable / ISR-eligible.
+    const supabase = createSupabasePublicClient();
     // Single round-trip: pull all published alumni eras and tally in JS.
     const { data, error } = await supabase
       .from("alumni")
@@ -53,7 +54,7 @@ export default async function Home() {
           HERO — full-bleed athletic
          ============================================================ */}
       <section className="relative bg-utc-navy-darker text-white overflow-hidden">
-        {/* Full-bleed hero photograph (LCP) */}
+        {/* SSR baseline: photograph (LCP) — guaranteed paint, also the video poster fallback */}
         <Image
           src="/photos/morning-row-tennessee.jpg"
           alt="UTC Rowing crew on the Tennessee River at night, with the Hunter Museum in the background"
@@ -64,7 +65,26 @@ export default async function Home() {
           className="object-cover object-center"
         />
 
-        {/* Navy gradient overlay for legibility */}
+        {/*
+          Atmospheric loop layered over the photo. Plays once it's playable;
+          poster covers the gap on slow connections. Muted + playsInline +
+          autoPlay are all required for iOS autoplay.
+        */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster="/videos/pair-tennessee-river-poster.jpg"
+          aria-hidden="true"
+        >
+          <source src="/videos/pair-tennessee-river.webm" type="video/webm" />
+          <source src="/videos/pair-tennessee-river.mp4" type="video/mp4" />
+        </video>
+
+        {/* Navy gradient overlay for legibility — sits on TOP of both photo and video */}
         <div
           className="absolute inset-0 bg-gradient-to-br from-utc-navy/90 via-utc-navy/60 to-transparent pointer-events-none"
           aria-hidden

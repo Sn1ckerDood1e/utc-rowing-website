@@ -1,10 +1,10 @@
 /**
  * UTC Rowing brand graphics.
  *
- * UTCMark is the canonical emblem — a navy disc with a gold serif "U" and an
- * oar passing through it. Use it in nav, footer, page headers, favicons,
- * and any place the program needs a visual anchor. For faded accents, wrap
- * in a parent with `opacity-*`.
+ * UTCMark is the canonical emblem — a navy disc with a gold ring and crossed
+ * gold oars (X). Use it in nav, footer, page headers, favicons, and any
+ * place the program needs a visual anchor. For faded accents, wrap in a
+ * parent with `opacity-*`.
  */
 
 export function UTCMark({ className = "" }: { className?: string }) {
@@ -15,42 +15,16 @@ export function UTCMark({ className = "" }: { className?: string }) {
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden
     >
-      {/* Navy disc */}
       <circle cx="32" cy="32" r="30" fill="#002D62" />
-      {/* Subtle gold ring */}
-      <circle
-        cx="32"
-        cy="32"
-        r="29"
-        fill="none"
-        stroke="#FFD200"
-        strokeWidth="0.6"
-        strokeOpacity="0.45"
-      />
-      {/* Serif "U" — stroked outline, with feet */}
-      <path
-        d="M 22 17 V 36 Q 22 43 29 43 H 35 Q 42 43 42 36 V 17"
-        fill="none"
-        stroke="#FFD200"
-        strokeWidth="3.4"
-        strokeLinecap="butt"
-      />
-      <line x1="17.5" y1="17" x2="26.5" y2="17" stroke="#FFD200" strokeWidth="3" />
-      <line x1="37.5" y1="17" x2="46.5" y2="17" stroke="#FFD200" strokeWidth="3" />
-      {/* Horizontal oar through center of U */}
-      <line
-        x1="9"
-        y1="29"
-        x2="50"
-        y2="29"
-        stroke="#FFD200"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-      />
-      {/* Right blade */}
-      <ellipse cx="54" cy="29" rx="3.6" ry="2" fill="#FFD200" />
-      {/* Left handle */}
-      <rect x="7" y="27.4" width="3.4" height="3.2" rx="0.6" fill="#FFD200" />
+      <circle cx="32" cy="32" r="27" fill="none" stroke="#FFD200" strokeWidth="1.2" />
+      {/* Oar 1: handle BL → blade TR */}
+      <line x1="14" y1="50" x2="50" y2="14" stroke="#FFD200" strokeWidth="2.6" strokeLinecap="round" />
+      <ellipse cx="51" cy="13" rx="6.5" ry="2.6" fill="#FFD200" transform="rotate(-45 51 13)" />
+      <circle cx="14" cy="50" r="2" fill="#FFD200" />
+      {/* Oar 2: handle BR → blade TL */}
+      <line x1="50" y1="50" x2="14" y2="14" stroke="#FFD200" strokeWidth="2.6" strokeLinecap="round" />
+      <ellipse cx="13" cy="13" rx="6.5" ry="2.6" fill="#FFD200" transform="rotate(45 13 13)" />
+      <circle cx="50" cy="50" r="2" fill="#FFD200" />
     </svg>
   );
 }

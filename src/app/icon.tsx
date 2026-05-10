@@ -16,32 +16,15 @@ export default function Icon() {
           background: "transparent",
         }}
       >
-        <svg
-          width="32"
-          height="32"
-          viewBox="0 0 64 64"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <svg width="32" height="32" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
           <circle cx="32" cy="32" r="30" fill="#002D62" />
-          <path
-            d="M 22 17 V 36 Q 22 43 29 43 H 35 Q 42 43 42 36 V 17"
-            fill="none"
-            stroke="#FFD200"
-            strokeWidth="3.4"
-          />
-          <line x1="17.5" y1="17" x2="26.5" y2="17" stroke="#FFD200" strokeWidth="3" />
-          <line x1="37.5" y1="17" x2="46.5" y2="17" stroke="#FFD200" strokeWidth="3" />
-          <line
-            x1="9"
-            y1="29"
-            x2="50"
-            y2="29"
-            stroke="#FFD200"
-            strokeWidth="1.8"
-            strokeLinecap="round"
-          />
-          <ellipse cx="54" cy="29" rx="3.6" ry="2" fill="#FFD200" />
-          <rect x="7" y="27.4" width="3.4" height="3.2" rx="0.6" fill="#FFD200" />
+          <circle cx="32" cy="32" r="27" fill="none" stroke="#FFD200" strokeWidth="1.2" />
+          <line x1="14" y1="50" x2="50" y2="14" stroke="#FFD200" strokeWidth="2.6" strokeLinecap="round" />
+          <ellipse cx="51" cy="13" rx="6.5" ry="2.6" fill="#FFD200" transform="rotate(-45 51 13)" />
+          <circle cx="14" cy="50" r="2" fill="#FFD200" />
+          <line x1="50" y1="50" x2="14" y2="14" stroke="#FFD200" strokeWidth="2.6" strokeLinecap="round" />
+          <ellipse cx="13" cy="13" rx="6.5" ry="2.6" fill="#FFD200" transform="rotate(45 13 13)" />
+          <circle cx="50" cy="50" r="2" fill="#FFD200" />
         </svg>
       </div>
     ),
