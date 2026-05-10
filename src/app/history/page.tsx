@@ -14,7 +14,7 @@ export default function HistoryPage() {
     <>
       {/* Cover */}
       <section className="relative overflow-hidden border-b-4 border-utc-gold bg-utc-navy text-white">
-        <div className="relative w-full min-h-[70vh] sm:min-h-[80vh]">
+        <div className="relative w-full min-h-[55vh] sm:min-h-[80vh]">
           <Image
             src="/photos/utc-crew-1996-salvage.jpg"
             alt="UTC Rowing athletes carrying damaged shells through a field in 1996, after a trailer arson destroyed much of the program's fleet"
@@ -25,7 +25,7 @@ export default function HistoryPage() {
           />
           {/* Navy gradient overlay for text legibility */}
           <div className="absolute inset-0 bg-gradient-to-t from-utc-navy/95 via-utc-navy/40 to-transparent" />
-          <div className="relative mx-auto flex min-h-[70vh] sm:min-h-[80vh] max-w-4xl flex-col justify-end px-4 pb-16 pt-24 text-center">
+          <div className="relative mx-auto flex min-h-[55vh] sm:min-h-[80vh] max-w-4xl flex-col justify-end px-4 pb-16 pt-24 text-center">
             <p className="text-utc-gold uppercase text-xs tracking-[0.3em] font-semibold mb-6">
               The interactive timeline
             </p>

@@ -206,7 +206,7 @@ export default function DonatePage() {
             </h2>
           </div>
 
-          <div className="grid gap-4 sm:gap-5 sm:grid-cols-3 overflow-visible">
+          <div className="grid gap-4 sm:gap-5 md:grid-cols-3 overflow-visible">
             {TIERS.map((t) => (
               <div
                 key={t.label}

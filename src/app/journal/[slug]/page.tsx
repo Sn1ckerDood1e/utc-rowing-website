@@ -58,7 +58,7 @@ export default async function JournalPostPage({
       <section className="relative bg-utc-navy text-white overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(200,182,130,0.12),transparent_55%)]" />
         <div className="relative mx-auto max-w-3xl px-4 py-16">
-          <UTCMark className="w-12 h-12 mb-4" />
+          <UTCMark className="text-3xl mb-4 text-utc-gold-bright" />
           <p className="text-utc-gold uppercase text-sm tracking-[0.25em] font-semibold mb-3">
             <time dateTime={post.date}>{formatPostDate(post.date)}</time>
             <span aria-hidden> · </span>

@@ -48,7 +48,7 @@ export function AlumniSearch({
 
   return (
     <div>
-      <div className="sticky top-[73px] bg-white border-b border-border z-10 -mx-4 px-4 py-4 mb-6">
+      <div className="sticky top-16 bg-white border-b border-border z-10 -mx-4 px-4 py-4 mb-6">
         <input
           type="search"
           placeholder="Search alumni by name..."
