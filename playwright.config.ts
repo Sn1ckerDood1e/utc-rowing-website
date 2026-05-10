@@ -3,6 +3,11 @@ import { defineConfig, devices } from "@playwright/test";
 const BASE_URL =
   process.env.PLAYWRIGHT_BASE_URL || "https://utc-rowing-website.vercel.app";
 
+// Mobile (webkit) tests need system deps that don't ship in WSL2 by default.
+// Set PLAYWRIGHT_MOBILE=1 once you've run `sudo npx playwright install-deps webkit`
+// (or in CI, on macOS, or anywhere webkit is supported).
+const enableMobile = process.env.PLAYWRIGHT_MOBILE === "1";
+
 export default defineConfig({
   testDir: "./tests/e2e",
   fullyParallel: true,
@@ -23,9 +28,13 @@ export default defineConfig({
       name: "chromium-desktop",
       use: { ...devices["Desktop Chrome"], viewport: { width: 1280, height: 800 } },
     },
-    {
-      name: "iphone-13",
-      use: { ...devices["iPhone 13"] },
-    },
+    ...(enableMobile
+      ? [
+          {
+            name: "iphone-13",
+            use: { ...devices["iPhone 13"] },
+          },
+        ]
+      : []),
   ],
 });

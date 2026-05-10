@@ -10,12 +10,14 @@ This README is the deployment runbook. Follow it top-to-bottom to get the site l
 
 ```
 src/app/                 # Next.js App Router pages
-src/components/          # nav, footer, alumni-search, submit-form
+src/components/          # nav, footer, hero pieces, submit-form, SVG illustrations
 src/lib/                 # supabase clients, email (Resend), markdown loader
 src/types/               # domain types
 content/timeline.md      # public history (rendered on /history)
-supabase/migrations/     # SQL migrations (run via `supabase db push`)
+supabase/migrations/     # SQL migrations (apply via Supabase Studio or `supabase db push`)
 scripts/import-alumni-csv.ts   # one-off: load 433 canonical alumni
+tests/e2e/               # Playwright end-to-end tests
+playwright.config.ts     # test config (baseURL = production by default)
 ```
 
 Pages:
@@ -203,6 +205,44 @@ After ACRA:
 - Email the broader alumni community with race results + the site link
 - Pull stats: how many submissions, what topics, what gaps closed
 - Plan v1 features based on what alumni actually used
+
+---
+
+## Running E2E tests
+
+We have a Playwright suite at `tests/e2e/` covering all six pages, the submit
+form (including a real submission round-trip), search/filter behavior, and RLS
+security checks.
+
+By default tests run against the **production** URL
+(`https://utc-rowing-website.vercel.app`). Override via env:
+
+```bash
+PLAYWRIGHT_BASE_URL=http://localhost:3000 npx playwright test
+```
+
+```bash
+# First time only:
+npx playwright install chromium
+
+# Run tests:
+npx playwright test
+# → 21 tests across home, alumni, submit, static-pages, security
+```
+
+To enable iPhone emulation tests too, you need webkit + system deps:
+```bash
+sudo npx playwright install-deps webkit
+npx playwright install webkit
+PLAYWRIGHT_MOBILE=1 npx playwright test
+```
+
+Each submit-form test inserts a real `*@test.invalid` row into the production
+`submissions` table. They're harmless but accumulate over time; you can clean
+them up with one SQL line in Supabase Studio:
+```sql
+delete from public.submissions where submitter_email like '%@test.invalid';
+```
 
 ---
 
