@@ -271,9 +271,9 @@ export function InteractiveTimeline() {
                         data-testid={`moment-${era.slug}-${idx}`}
                         className={`relative md:grid md:grid-cols-[1fr_auto_1fr] md:gap-6 md:items-start opacity-0 translate-y-3 transition-all duration-700 [&.is-visible]:opacity-100 [&.is-visible]:translate-y-0 motion-reduce:!opacity-100 motion-reduce:!translate-y-0`}
                       >
-                        {/* Left side card (desktop) */}
+                        {/* Left side card (desktop only) */}
                         <div
-                          className={`${
+                          className={`hidden ${
                             isLeft ? "md:block" : "md:invisible md:h-0"
                           } md:text-right`}
                         >
@@ -287,7 +287,7 @@ export function InteractiveTimeline() {
                           )}
                         </div>
 
-                        {/* Center marker */}
+                        {/* Center marker (desktop only) */}
                         <div className="hidden md:flex flex-col items-center pt-6">
                           <span
                             className={`relative inline-flex w-4 h-4 rounded-full ${meta.dot} ring-8 ${meta.ring}`}
@@ -301,9 +301,9 @@ export function InteractiveTimeline() {
                           </span>
                         </div>
 
-                        {/* Right side card (desktop) — also the mobile card */}
+                        {/* Right side card (desktop only) */}
                         <div
-                          className={`${
+                          className={`hidden ${
                             !isLeft ? "md:block" : "md:invisible md:h-0"
                           }`}
                         >
@@ -314,22 +314,17 @@ export function InteractiveTimeline() {
                               onToggle={() => toggleExpanded(id)}
                             />
                           )}
-
-                          {/* Mobile (single column): always render the card */}
-                          {isLeft && (
-                            <div className="md:hidden">
-                              <MomentCard
-                                moment={moment}
-                                isExpanded={isExpanded}
-                                onToggle={() => toggleExpanded(id)}
-                                showMobileMarker
-                              />
-                            </div>
-                          )}
                         </div>
 
-                        {/* Mobile-only marker for cards that would be on the left in desktop */}
-                        {/* (Already rendered inside the right col when isLeft is true above; nothing else needed) */}
+                        {/* Mobile single-column card — exactly one per moment */}
+                        <div className="md:hidden">
+                          <MomentCard
+                            moment={moment}
+                            isExpanded={isExpanded}
+                            onToggle={() => toggleExpanded(id)}
+                            showMobileMarker
+                          />
+                        </div>
                       </li>
                     );
                   })}

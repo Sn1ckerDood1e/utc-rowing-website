@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { UTCMark } from "@/components/svg-rowing";
 
 export const metadata = {
   title: "Team · UTC Rowing",
@@ -11,6 +12,9 @@ type Athlete = {
   name: string;
   seat: string;
   classYear: string;
+  hometown: string;
+  major: string;
+  affiliation?: string; // e.g. "U.S. Army active duty" — omit for civilian rowers
   bio: string;
   photo?: { src: string; width: number; height: number; alt: string };
 };
@@ -24,7 +28,9 @@ const ROSTER: Athlete[] = [
     name: "Abraham Mako",
     seat: "Stroke · 4 seat",
     classYear: "Class of 2027",
-    bio: "The program's most experienced rower and the stroke seat of the M4x. Started at Chattanooga Juniors, helped Jack Cawood stand up Chattanooga State Rowing, then transferred to UTC and co-founded the resurrected UTC Rowing with Coach Kinsey in Fall 2025. Sets the rate the other three follow.",
+    hometown: "Chattanooga, TN",
+    major: "Political Science & Public Service: Public Law",
+    bio: "The program's most experienced rower and the stroke seat of the M4x. Came up through Chattanooga Junior Rowing, then helped Jack Cawood stand up Chattanooga State Rowing before transferring to UTC. Sets the rate the other three follow.",
     photo: {
       src: "/photos/abraham-single-aquarium.jpg",
       width: 1280,
@@ -35,20 +41,41 @@ const ROSTER: Athlete[] = [
   {
     name: "Conner Richardson",
     seat: "3 seat",
-    classYear: "Class of 2027 · U.S. Army active duty",
+    classYear: "Class of 2027",
+    hometown: "Hanau, Germany",
+    major: "Applied Leadership",
+    affiliation: "U.S. Army active duty",
     bio: "First pulled an oar on April 6, 2026 — the day after Easter, about six weeks before ACRA.",
   },
   {
     name: "Tyler Burkett",
     seat: "2 seat",
-    classYear: "Class of 2027 · U.S. Army active duty",
+    classYear: "Class of 2027",
+    hometown: "Red Lion, PA",
+    major: "Applied Leadership",
+    affiliation: "U.S. Army active duty",
     bio: "First day in a boat: April 6, 2026. Six weeks of training before nationals.",
   },
   {
     name: "Jay Pollard",
     seat: "Bow · 1 seat",
-    classYear: "Class of 2027 · U.S. Army active duty",
+    classYear: "Class of 2027",
+    hometown: "Kingston, NY",
+    major: "Applied Leadership",
+    affiliation: "U.S. Army active duty",
     bio: "Started rowing April 6, 2026. Anchors the bow and balances the boat from the seat that feels every wobble first.",
+  },
+];
+
+// Athletes joining the program for 2026–27 — not in the ACRA M4x.
+const INCOMING: Athlete[] = [
+  {
+    name: "Paxton Anderson",
+    seat: "Joining Fall 2026",
+    classYear: "Class of 2027",
+    hometown: "Chattanooga, TN",
+    major: "Mechanical Engineering",
+    bio: "Joins the squad over summer and fall 2026.",
   },
 ];
 
@@ -137,12 +164,12 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Coach */}
+      {/* Program leadership — head coach + faculty sponsor */}
       <section className="bg-paper-grain">
         <div className="mx-auto max-w-5xl px-4 py-20">
           <div className="mb-10 max-w-2xl">
             <p className="text-utc-navy/60 uppercase text-xs tracking-[0.2em] font-semibold mb-3">
-              Head coach
+              Program leadership
             </p>
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-utc-navy leading-tight">
               The coach who brought the program back.
@@ -203,6 +230,27 @@ export default function TeamPage() {
               </Link>
             </div>
           </div>
+
+          {/* Faculty sponsor — smaller, sits below the coach card */}
+          <div className="mt-6 bg-white border border-border rounded-2xl shadow-sm overflow-hidden grid sm:grid-cols-[200px_1fr]">
+            <div className="relative bg-gradient-to-br from-utc-navy-deep via-utc-navy to-utc-navy-deep flex items-center justify-center aspect-[4/5] sm:aspect-auto sm:min-h-[180px]">
+              <UTCMark className="text-3xl text-white/85" />
+            </div>
+            <div className="p-6 sm:p-7">
+              <p className="text-utc-gold-deep uppercase text-[11px] tracking-[0.2em] font-semibold mb-2">
+                Faculty sponsor · May 2026 – present
+              </p>
+              <h3 className="font-display text-xl sm:text-2xl font-bold text-utc-navy mb-2">
+                Joel Harden
+              </h3>
+              <p className="text-foreground/80 leading-relaxed text-sm">
+                UTC faculty member who agreed to advise the program in May
+                2026, formalizing the club&rsquo;s academic standing as the
+                M4x heads to ACRA.
+              </p>
+              {/* TODO(launch): Joel's department + bio + headshot */}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -249,9 +297,19 @@ export default function TeamPage() {
                     <h3 className="font-display text-2xl font-bold text-utc-navy mb-2">
                       {a.name}
                     </h3>
-                    {/* TODO(launch): hometown — coach to fill in */}
-                    <p className="text-xs text-utc-navy/60 uppercase tracking-[0.18em] font-semibold mb-2">
-                      {a.classYear}
+                    <p className="text-xs text-utc-navy/60 uppercase tracking-[0.18em] font-semibold mb-1">
+                      {a.classYear} · {a.hometown}
+                    </p>
+                    <p className="text-xs text-utc-navy/55 mb-3 leading-snug">
+                      {a.major}
+                      {a.affiliation && (
+                        <>
+                          {" · "}
+                          <span className="text-utc-navy/70 font-medium">
+                            {a.affiliation}
+                          </span>
+                        </>
+                      )}
                     </p>
                     <p className="text-sm text-foreground/80 leading-relaxed">
                       {a.bio}
@@ -287,6 +345,50 @@ export default function TeamPage() {
               </figcaption>
             </figure>
           </div>
+        </div>
+      </section>
+
+      {/* Joining the program — incoming athletes (visually distinct from M4x) */}
+      <section className="bg-paper-grain border-t border-border/60">
+        <div className="mx-auto max-w-6xl px-4 py-16">
+          <div className="mb-8 max-w-2xl">
+            <p className="text-utc-navy/60 uppercase text-xs tracking-[0.2em] font-semibold mb-3">
+              Joining the program
+            </p>
+            <h2 className="font-display text-2xl sm:text-3xl font-bold text-utc-navy leading-tight">
+              Coming in this fall.
+            </h2>
+            <p className="mt-3 text-sm text-foreground/70">
+              Athletes confirmed for 2026&ndash;27 who aren&rsquo;t in the
+              ACRA boat. They start over the summer and join the squad
+              full-time in the fall.
+            </p>
+          </div>
+
+          <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {INCOMING.map((a) => (
+              <li
+                key={a.name}
+                className="bg-white/70 border border-border/70 rounded-xl shadow-sm p-5 flex flex-col min-h-[280px]"
+              >
+                <p className="inline-flex self-start items-center text-utc-gold-deep uppercase text-[10px] tracking-[0.22em] font-bold bg-utc-gold/15 border border-utc-gold/30 rounded-full px-2.5 py-0.5 mb-3">
+                  Fall 2026
+                </p>
+                <h3 className="font-display text-xl font-bold text-utc-navy mb-2">
+                  {a.name}
+                </h3>
+                <p className="text-xs text-utc-navy/60 uppercase tracking-[0.18em] font-semibold mb-1">
+                  {a.classYear} · {a.hometown}
+                </p>
+                <p className="text-xs text-utc-navy/55 mb-3 leading-snug">
+                  {a.major}
+                </p>
+                <p className="text-sm text-foreground/75 leading-relaxed">
+                  {a.bio}
+                </p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
