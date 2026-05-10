@@ -13,7 +13,7 @@ import {
 const ERA_KEYS = ["founding", "carney", "espeseth", "worth", "resurrection"] as const;
 
 export default async function Home() {
-  let alumniCount = 429;
+  let alumniCount = 507;
   const eraCounts: Record<string, number> = {
     founding: 0,
     carney: 0,
@@ -83,7 +83,10 @@ export default async function Home() {
             </h1>
             <p className="mt-6 text-xl sm:text-2xl text-white/80 max-w-2xl leading-relaxed">
               An Olympic gold. Three USRowing All-Americans in a single year. The Tennessee
-              Indoor Rowing Championships. <span className="text-utc-gold-bright font-semibold">429 alumni</span>{" "}
+              Indoor Rowing Championships.{" "}
+              <span className="text-utc-gold-bright font-semibold">
+                {alumniCount.toLocaleString()} alumni
+              </span>{" "}
               and counting.
             </p>
             <p className="mt-3 text-lg text-white/65 max-w-2xl">
@@ -192,9 +195,10 @@ export default async function Home() {
             It&rsquo;s in alumni filing cabinets, phones, and memory.
           </h2>
           <p className="text-lg text-white/75 max-w-2xl mx-auto mb-10">
-            We have 429 names on file. We&rsquo;re missing thousands of stories, hundreds of photos,
-            and most of what made each crew unforgettable to itself. If you rowed at UTC — or know
-            someone who did — your contribution makes the picture more complete.
+            We have {alumniCount.toLocaleString()} names on file. We&rsquo;re missing thousands of
+            stories, hundreds of photos, and most of what made each crew unforgettable to itself.
+            If you rowed at UTC — or know someone who did — your contribution makes the picture
+            more complete.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Link
