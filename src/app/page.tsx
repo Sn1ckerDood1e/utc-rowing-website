@@ -74,12 +74,12 @@ export default async function Home() {
         <div className="relative mx-auto max-w-6xl px-4 pt-20 pb-32 sm:pt-28 sm:pb-44">
           <div className="max-w-3xl animate-fade-up">
             <p className="text-utc-gold uppercase text-sm tracking-[0.25em] font-semibold mb-5">
-              Established 1983 · Tennessee River
+              Rowing at UTC since 1971 · Competing since 1983
             </p>
             <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
-              Forty years on the
+              Fifty-five years on
               <br />
-              <span className="text-gradient-gold italic">Tennessee River.</span>
+              <span className="text-gradient-gold italic">the Tennessee River.</span>
             </h1>
             <p className="mt-6 text-xl sm:text-2xl text-white/80 max-w-2xl leading-relaxed">
               An Olympic gold. Three USRowing All-Americans in a single year. The Tennessee
@@ -165,7 +165,7 @@ export default async function Home() {
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:py-28">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 text-center">
-            <Stat number={42} suffix="" label="years of UTC Rowing" hint="1983 — present" />
+            <Stat number={55} suffix="" label="years on the river" hint="1971 — present" />
             <Stat number={alumniCount} label="alumni on the roster" hint="and growing" />
             <Stat number={1} label="Olympic gold medal" hint="Beery · Athens 2004" />
           </div>

@@ -76,7 +76,7 @@ export default function DonatePage() {
             </h1>
             <p className="text-xl text-white/80 max-w-2xl leading-relaxed">
               An Olympic gold medalist. Three USRowing Academic All-Americans in a single year.
-              Forty-plus years of Tennessee River competitors.
+              Rowing on the Tennessee River since 1971.
             </p>
             <p className="text-lg text-white/65 max-w-2xl mt-3">
               The program is back with four athletes and one M4x. Where we go from here — the

@@ -1,18 +1,30 @@
-# UTC Rowing — A Timeline (1974–2026)
+# UTC Rowing — A Timeline (1971–2026)
 
-*A narrative history of the University of Tennessee at Chattanooga rowing program, drawn from the UTC ARC archive — primary documents, Lookout Rowing Club newsletters, regatta programs, news clippings, and interviews. Every claim here traces back to a source. The companion file* TIMELINE-SOURCES.md *carries the citations.*
+*A narrative history of the University of Tennessee at Chattanooga rowing program, drawn from the UTC ARC archive — primary documents, Lookout Rowing Club newsletters, regatta programs, news clippings, the UTC Rowing Constitution + Handbook, and interviews. Every claim here traces back to a source. The companion file* TIMELINE-SOURCES.md *carries the citations.*
 
 UTC Rowing has been a club sport — never NCAA varsity — for its entire history. That status is the single biggest reason institutional records are thin, and it's the reason this archive exists. What follows is the program's story as the documentary record currently supports it.
 
 ---
 
+## The First Pulls (1971–1974)
+
+Rowing at UTC begins on paper in **1971**, when **William G. "Bill" Raoul** — a Lookout Mountain native, Dartmouth Class of 1933, decorated WWII artillery officer, and Cavalier Corporation executive — donated **eight Pocock single shells** to the school. UTC stood up an HPER (Health, Physical Education, and Recreation) class around the donation, and a small group of students started moving boats on the Tennessee River. There is no formal club, no coach in residence, and no competitive program yet — but the equipment, the river, and the student interest are all in place.
+
 ## The Founding Era (1974–1983)
 
-In 1974, **William G. "Bill" Raoul** — a Lookout Mountain native, Dartmouth Class of 1933, decorated WWII artillery officer, and Cavalier Corporation executive — taught himself to row at age 57 and went looking for company on the Tennessee River. He found it in **Jack Fish**, a TVA engineer, and **Terry Carney**, a UTC professor who had rowed at Kent School and at MIT. The three of them founded the modern **Lookout Rowing Club** that year, taking the name from a Chattanooga rowing club they'd discovered in an 1876 newspaper account. Initial membership was about fifteen people drawn from the community and from UTC.
+In **1974**, Raoul taught himself to row at age 57 and went looking for company on the river. He found it in **Jack Fish**, a TVA engineer, and **Terry Carney**, a UTC professor who had rowed at Kent School and at MIT. The three of them founded the modern **Lookout Rowing Club** that year, taking the name from a Chattanooga rowing club they'd discovered in an 1876 newspaper account. Initial membership was about fifteen people drawn from the community and from UTC.
 
 For roughly the first decade, UTC affiliates rowed under LRC's umbrella. There is no public record of a separate "UTC rowing team" before 1983 — the club, the equipment, and the coaching were one and the same.
 
-In **1983**, with **Terry Carney** coaching, UTC began competing as its own program at regattas. A primary-source photo from the 1983–1985 LRC scrapbook identifies **Randy Larramore** as a UTC sculler in that early Carney window — the first UTC-specific alumnus name documented in the archive. Carney's competitive record from 1983 to 1989 is otherwise a gap; LRC archives or Carney himself remain the most likely source.
+In **1977**, LRC obtained its first refurbished freight barge — the floating dock and storage platform that made river access workable for the growing club. A second barge, donated by **Pete Seridino in 1987**, would later become the dedicated UTC barge.
+
+In **1983**, with **Terry Carney** coaching, UTC began competing as its own program at regattas. A primary-source photo from the 1983–1985 LRC scrapbook identifies **Randy Larramore** as a UTC sculler in that early Carney window — the first UTC-specific alumnus name documented in the archive.
+
+### 1985 — UTC's first medal
+A UTC Men's Novice 4+ won the **Head of the Chattahoochie regatta in Atlanta** — the program's first competitive medal of any kind, two years into Carney's coaching tenure. (Source: UTC Rowing Constitution, Article 2a.)
+
+### 1988 — UTC's first national-championship medal
+At the **Dad Vail Regatta** in Philadelphia, **Coach Carney took a Women's Varsity 4+ to a third-place finish** in their division — the first UTC medal at a national-championship regatta. (Source: UTC Rowing Constitution.) The result came one year before Carney would hand off head-coaching duties to a former Olympian.
 
 ## The Espeseth Era Begins (1989)
 
@@ -128,13 +140,19 @@ The late Espeseth era is unusually well-documented in the UTC ARC. UTC's 2010–
 
 UTC won TIRC every documented year. The 2015 standings: UTC 403.5, Murray State 386.5, UT-Knoxville 255.5, Berry 181.5, NSU 157.
 
-### 2017 — Espeseth retires after 28 years
+### 2016–2017 — The program nearly ends, then alumni save it
 
-After 28 seasons as UTC's head coach — the longest tenure in the program's history — **Robert Espeseth** retired in 2017. He remained part of the Chattanooga rowing community and continued to assist UTC Rowing informally with merchandise and fundraising operations into the 2020s.
+In fall 2016, UTC Rowing was told the program would be **terminated at the end of Spring 2017** — driven by the loss of barge maintenance funding that had previously been carried by McCallie School. Coach Espeseth communicated the impending shutdown to the alumni network, and a rapid alumni response (organized in part by **Keith Bruce**, UTC's first-ever USRowing Academic All-American 1993–94) made the case to the Athletic Department for keeping the program running.
+
+The campaign worked. UTC opened a head-coach search in spring 2017 with a clear performance bar: the new coach would be expected to deliver a sustainable annual fundraising plan. **Robert Espeseth** stepped down after 28 seasons — the longest coaching tenure in UTC Rowing's history — and remained engaged with the program informally as a volunteer assistant on merchandise and fundraising operations.
+
+This is the bridge between the Espeseth era and what came next: **the program almost ended, and alumni kept it alive long enough for a new coach to be hired.** The donate page on this site — and the alumni-network rebuild this whole project is here to support — both trace back to that 2016–17 moment.
 
 ## The Worth Era (2018–~2024)
 
-**Ryan Worth** became UTC's head coach for the 2018 season. Worth was a Chattanooga rowing product himself — first documented at the 2005 TIRC Never-Ever Men event under Chattanooga Junior Rowing affiliation at age 17 — and a past Concept2 World Record holder in the 20–29 age category for cumulative meters in 24 hours. He also held Guinness World Records as part of the first catamaran to row an ocean and the first crew of 16 to row an ocean. Before UTC he spent two years as an assistant coach at Stetson University (2015–17). His row2k team-page introduction set the outlook plainly: the program was working to "establish the basis for the next 30 years."
+**Ryan Worth** was hired in spring 2017 (interview April 17, 2017) and took over as head coach for the 2017–18 season. Worth was a Chattanooga rowing product himself — first documented at the 2005 TIRC Never-Ever Men event under Chattanooga Junior Rowing affiliation at age 17 — and a past Concept2 World Record holder in the 20–29 age category for cumulative meters in 24 hours. He also held Guinness World Records as part of the first catamaran to row an ocean and the first crew of 16 to row an ocean. Before UTC he spent two years as an assistant coach at Stetson University (2015–17). His row2k team-page introduction set the outlook plainly: the program was working to "establish the basis for the next 30 years."
+
+Worth's coaching staff in 2017–18 included **Drew Steadman** (UTC alumnus, 2013-onward rower, fresh BS in Exercise Science at the time of hire) as Lead Novice Coach, **Jessica Brand** as assistant, and **Aaron Shimel** as a returning assistant. **Konstantine Vlasis** joined as an assistant in Fall 2018. **Dr. Brian O'Leary** became faculty advisor that fall and would carry that role into the 2020s.
 
 Worth formally registered the club's **Constitution of UTC Rowing** on **August 27, 2018** and built a three-tier program: drop-in Group Fitness Classes (Maclellan Rowing Room, ARC membership only); Club Members ($100/semester, water practices Sun/Wed/Fri evenings); and a Travel Squad ($200/semester) racing in Knoxville, Nashville, Gainesville, Tampa, Orlando, Charleston, and Boston.
 

@@ -15,12 +15,12 @@ export function EraCards({ eraCounts }: { eraCounts: Record<string, number> }) {
   const eras: Era[] = [
     {
       slug: "founding",
-      label: "Founding",
-      span: "1974 – 1983",
+      label: "First pulls",
+      span: "1971 – 1983",
       count: eraCounts.founding ?? null,
-      headline: "Lookout Rowing Club born",
+      headline: "Pocock shells, an HPER class, and LRC",
       detail:
-        "Bill Raoul, Jack Fish, and Terry Carney start LRC. UTC affiliates row under the LRC umbrella.",
+        "Bill Raoul donates 8 Pocock singles to UTC in 1971. In 1974 he, Jack Fish, and Terry Carney found Lookout Rowing Club. UTC affiliates row under the LRC umbrella.",
       gradient: "from-utc-navy-darker to-river-blue-dark",
     },
     {
@@ -28,9 +28,9 @@ export function EraCards({ eraCounts }: { eraCounts: Record<string, number> }) {
       label: "Carney era",
       span: "1983 – 1989",
       count: eraCounts.carney ?? null,
-      headline: "First UTC crews on the river",
+      headline: "First UTC crews and first medals",
       detail:
-        "Coach Terry Carney (Kent School, MIT) takes UTC into competition. Most of this era is undocumented — we need alumni to fill it in.",
+        "Coach Terry Carney takes UTC into competition. 1985: first medal (M Nov 4+, Hooch Atlanta). 1988: first national-championship medal (W V 4+ bronze, Dad Vail).",
       gradient: "from-river-blue-dark to-utc-navy",
     },
     {
