@@ -21,13 +21,13 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "UTC Rowing — Forty Years on the Tennessee River",
+  title: "UTC Rowing — Fifty-Five Years on the Tennessee River",
   description:
-    "Rowing at the University of Tennessee at Chattanooga since 1983. Olympic gold, USRowing All-Americans, the Tennessee Indoor Rowing Championships, and a program rebuilding for ACRA. Alumni roster, history, and how to support the team.",
+    "Rowing at the University of Tennessee at Chattanooga since 1971. Olympic gold, USRowing All-Americans, the Tennessee Indoor Rowing Championships, and a program rebuilding for ACRA. Alumni roster, history, and how to support the team.",
   openGraph: {
-    title: "UTC Rowing — Forty Years on the Tennessee River",
+    title: "UTC Rowing — Fifty-Five Years on the Tennessee River",
     description:
-      "Olympic gold, three USRowing AAs in one year, and 429 alumni. The UTC Rowing program — past, present, and how alumni are bringing it back.",
+      "Olympic gold, three USRowing AAs in one year, and 500+ alumni. The UTC Rowing program — past, present, and how alumni are bringing it back.",
     type: "website",
   },
 };
