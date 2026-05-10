@@ -185,7 +185,7 @@ export const ERAS: Era[] = [
         sortYear: 1990.5,
         title: "UTC marked attending at SIRA roll-call",
         summary:
-          "By Nov 30 1990 UTC is on the SIRA membership roster — a founding-era member of the Southern Intercollegiate Rowing Association within months of Espeseth's hire.",
+          "By Nov 30 1990 UTC is on the SIRA membership roster — a founding-era member of the Southeast Intercollegiate Rowing Association within months of Espeseth's hire.",
         kind: "milestone",
       },
       {
@@ -351,7 +351,7 @@ export const ERAS: Era[] = [
         sortYear: 2003,
         title: "Beery's international medals roll in",
         summary:
-          "World Championship gold in the U.S. men's eight in 2003, 2005, and 2007. Olympic silver at Beijing 2008. The interval that includes the Athens gold.",
+          "Three more World Championship golds: 2003 coxed pair (Milan), 2005 men's eight, 2007 coxed four. Olympic silver at Beijing 2008. The interval that includes the Athens gold.",
         kind: "achievement",
       },
       {
@@ -436,7 +436,7 @@ export const ERAS: Era[] = [
     span: "2018 — 2022/23",
     gradient: "from-utc-gold-deep to-river-blue",
     intro:
-      "A Chattanooga rowing product takes over. The next 30 years get foundation-laid. Then COVID in 2020, the December 2022 – January 2023 barge loss, and a slow exit from competition end the chapter.",
+      "A Chattanooga rowing product takes over. He sets up the next 30 years. Then COVID in 2020, the December 2022 – January 2023 barge loss, and a slow exit from competition end the chapter.",
     moments: [
       {
         year: "2017",
@@ -530,7 +530,7 @@ export const ERAS: Era[] = [
         sortYear: 2025,
         title: "Restart, Fall 2025",
         summary:
-          "Michael Kinsey takes over as head coach and the program restarts. Four athletes total, with Abraham Mako — a Chattanooga Juniors product who transferred in from Chattanooga State Rowing — as the most experienced rower in the boat. ACRA M4x. The first competitive UTC crew since the program went dark.",
+          "Coach Michael Kinsey and Abraham Mako co-found the resurrected UTC Rowing. Mako — a Chattanooga Juniors product who'd helped Jack Cawood start Chattanooga State Rowing before transferring to UTC — is the most experienced rower in the boat. Four athletes total, ACRA M4x. The first competitive UTC crew since the program went dark.",
         kind: "founding",
       },
       {
@@ -554,7 +554,7 @@ export const ERAS: Era[] = [
         sortYear: 2026,
         title: "ACRA Nationals — May 17, Oak Ridge",
         summary:
-          "UTC's M4x — bow Jay Pollard, 2 Tyler Burkett, 3 Conner Richardson, stroke Abraham Mako — races at ACRA Nationals on Melton Hill Lake in Oak Ridge, TN, on May 17, 2026. All four are UTC class of 2027; Conner, Tyler, and Jay are U.S. Army active duty. Mako, the most experienced rower in the boat, started at Chattanooga Juniors and helped launch Chattanooga State Rowing before transferring to UTC. The other three first sat in a shell on April 6, 2026 — six weeks before the line. The first UTC ACRA crew since the program restarted.",
+          "UTC's M4x — bow Jay Pollard, 2 Tyler Burkett, 3 Conner Richardson, stroke Abraham Mako — races at ACRA Nationals on Melton Hill Lake in Oak Ridge, TN, on May 17, 2026. Racing a Vespoli loaner 4x — UTC's own Empacher 'Chattanooga' is sidelined by a hull breach. All four are UTC class of 2027; Conner, Tyler, and Jay are U.S. Army active duty. Mako, the most experienced rower in the boat, started at Chattanooga Juniors, helped launch Chattanooga State Rowing with Jack Cawood, then transferred to UTC and co-founded the resurrected program with Coach Kinsey. The other three first sat in a shell on April 6, 2026 — six weeks before the line. The first UTC ACRA crew since the program restarted.",
         kind: "achievement",
       },
     ],

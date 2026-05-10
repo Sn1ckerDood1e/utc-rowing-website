@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { UTCMark } from "@/components/svg-rowing";
 import { formatPostDate, getAllPosts } from "@/lib/journal";
 
 export const metadata = {
@@ -15,7 +14,6 @@ export default function JournalIndexPage() {
       <section className="relative bg-utc-navy text-white overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(200,182,130,0.12),transparent_55%)]" />
         <div className="relative mx-auto max-w-3xl px-4 py-16">
-          <UTCMark className="w-12 h-12 mb-4" />
           <p className="text-utc-gold uppercase text-sm tracking-[0.25em] font-semibold mb-3">
             From the boathouse
           </p>
@@ -69,6 +67,20 @@ export default function JournalIndexPage() {
                 </li>
               ))}
             </ul>
+          )}
+
+          {posts.length > 0 && (
+            <div className="mt-16 pt-10 border-t border-border text-center">
+              <p className="font-serif text-foreground/80 text-lg">
+                The crew races ACRA Nationals May 17.{" "}
+                <Link
+                  href="/donate"
+                  className="text-utc-navy font-semibold underline decoration-utc-gold underline-offset-4 hover:text-utc-gold-deep"
+                >
+                  Send the crew off →
+                </Link>
+              </p>
+            </div>
           )}
         </div>
       </section>

@@ -13,10 +13,10 @@ export default function NotFound() {
           404
         </p>
         <h1 className="font-display text-4xl sm:text-5xl font-bold leading-tight">
-          We couldn&rsquo;t find that page.
+          Off course.
         </h1>
         <p className="mt-5 text-white/75">
-          It may have moved, or never existed at all. Try one of these instead.
+          Try one of these instead.
         </p>
         <div className="mt-10 flex flex-wrap gap-3 justify-center">
           <Link

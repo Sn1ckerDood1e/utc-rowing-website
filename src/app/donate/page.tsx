@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ChevronRight, UTCMark, RiverBendCurve } from "@/components/svg-rowing";
+import { ChevronRight, RiverBendCurve } from "@/components/svg-rowing";
 
 export const metadata = {
   title: "Support UTC Rowing",
@@ -21,7 +21,7 @@ const TIERS = [
   {
     label: "Monthly sustaining donor",
     amount: "$25 / $50 / $100 / $250",
-    detail: "Monthly giving is what builds the program back. Sustained, predictable, real.",
+    detail: "Monthly giving is what builds the program back.",
     cta: "Give monthly",
     href: GIVING_URL,
     featured: true,
@@ -54,7 +54,7 @@ const NEEDS = [
   {
     title: "Repair the Empacher 'Chattanooga' (4x)",
     estimate: "Boat-specific",
-    why: "UTC's own quad — an Empacher from the 1980s/90s named for the city — is sidelined by a hole in the hull. Patching it puts a competition-grade four-seat sculling boat back on the water under UTC colors.",
+    why: "UTC's own quad — an Empacher from the 1980s/90s named for the city — is sidelined by a hole in the hull big enough to put a fist through. The crew is racing ACRA on a 4x loaned from Vespoli. Patching the Empacher puts a competition-grade four-seat sculling boat back on the water under UTC colors.",
   },
   {
     title: "Maclellan Gym indoor training room",
@@ -64,7 +64,7 @@ const NEEDS = [
   {
     title: "Bridge: Lookout Rowing Club partnership",
     estimate: "Spring 2026",
-    why: "This semester the four athletes joined Lookout Rowing Club so they could train and race on water-worthy equipment. LRC is the bridge that keeps the boys on the water while the racks and the Empacher repair get funded. Membership and shared-equipment fees are real line items.",
+    why: "This semester the four athletes joined Lookout Rowing Club so they could train and race on water-worthy equipment. LRC keeps the boys on the water while the racks and Empacher repair get funded. Membership and shared-equipment fees are real line items.",
   },
 ];
 
@@ -113,12 +113,13 @@ export default function DonatePage() {
               </h1>
               <p className="text-xl text-white/80 leading-relaxed">
                 An Olympic gold. Three USRowing Academic All-Americans in one season. Rowing on
-                the Tennessee River since 1971.
+                the Tennessee River between the Walnut Street Bridge and Williams Island since 1971.
               </p>
               <p className="text-lg text-white/75 mt-3">
-                The program is back with four athletes and one M4x. Where we go from here — the
-                covered rack space, the racing eight — is decided by what alumni and friends help
-                us build.
+                The program is back with four athletes and one M4x. Racing this year&rsquo;s M4x on
+                a Vespoli loaner &mdash; UTC&rsquo;s own 4x has a hole in the hull big enough to put
+                a fist through. Where we go from here — the covered rack space, the racing eight —
+                is decided by what alumni and friends help us build.
               </p>
             </div>
           </div>
@@ -146,7 +147,7 @@ export default function DonatePage() {
                 </div>
                 <p className="text-utc-navy/80 text-base sm:text-lg leading-snug">
                   Four athletes, one M4x, racing at Melton Hill Lake in Oak Ridge in seven days.
-                  Every gift before May 17 lands on this crew&rsquo;s travel and the next boat
+                  Every gift before May 17 goes to this crew&rsquo;s travel and the next boat
                   behind them.
                 </p>
               </div>
@@ -201,7 +202,7 @@ export default function DonatePage() {
               How to give
             </p>
             <h2 className="font-display text-3xl sm:text-4xl font-bold leading-tight">
-              Three paths. <span className="italic text-utc-gold-bright">All flow through UTC&rsquo;s official giving portal.</span>
+              Three paths <span className="italic text-utc-gold-bright">in.</span>
             </h2>
           </div>
 
@@ -265,7 +266,6 @@ export default function DonatePage() {
       {/* Alternative help */}
       <section className="bg-paper">
         <div className="mx-auto max-w-3xl px-4 py-16 text-center">
-          <UTCMark className="w-16 h-16 mb-4" />
           <p className="font-display text-2xl text-utc-navy">
             Not ready to give?{" "}
             <Link href="/submit" className="link-draw text-utc-gold-deep">

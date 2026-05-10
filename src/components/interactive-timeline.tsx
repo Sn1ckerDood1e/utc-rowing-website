@@ -426,7 +426,7 @@ function MomentCard({
             className="mt-3 inline-flex items-center gap-1 text-utc-navy text-sm font-semibold link-draw"
             aria-expanded={isExpanded}
           >
-            {isExpanded ? "Show less" : "Read more"}
+            {isExpanded ? "Collapse" : "More on this moment"}
             <svg
               viewBox="0 0 24 24"
               className={`w-4 h-4 transition-transform ${isExpanded ? "rotate-180" : ""}`}

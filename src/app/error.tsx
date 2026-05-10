@@ -24,7 +24,7 @@ export default function Error({
           Something went wrong
         </p>
         <h1 className="font-display text-4xl sm:text-5xl font-bold leading-tight">
-          We hit a snag.
+          Caught a crab.
         </h1>
         <p className="mt-5 text-white/75">
           An unexpected error came up while loading this page. You can try again
@@ -47,7 +47,7 @@ export default function Error({
             href="/"
             className="bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold px-7 py-3.5 rounded-md hover:bg-white/20 hover:border-utc-gold/60 transition-all"
           >
-            Back to home
+            &larr; Back to home
           </Link>
         </div>
       </div>

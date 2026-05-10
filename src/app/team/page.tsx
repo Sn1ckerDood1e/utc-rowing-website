@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { UTCMark } from "@/components/svg-rowing";
 
 export const metadata = {
   title: "Team · UTC Rowing",
@@ -25,7 +24,7 @@ const ROSTER: Athlete[] = [
     name: "Abraham Mako",
     seat: "Stroke · 4 seat",
     classYear: "Class of 2027",
-    bio: "The program's most experienced rower and the bow-stroke of the M4x. Started at Chattanooga Juniors, then helped Jack Cawood stand up Chattanooga State Rowing before transferring to UTC. Sets the rate the other three follow.",
+    bio: "The program's most experienced rower and the stroke seat of the M4x. Started at Chattanooga Juniors, helped Jack Cawood stand up Chattanooga State Rowing, then transferred to UTC and co-founded the resurrected UTC Rowing with Coach Kinsey in Fall 2025. Sets the rate the other three follow.",
     photo: {
       src: "/photos/abraham-single-aquarium.jpg",
       width: 1280,
@@ -67,7 +66,7 @@ const UPCOMING: Regatta[] = [
     name: "ACRA Championships",
     date: "May 17, 2026",
     location: "Melton Hill Lake · Oak Ridge, TN",
-    entries: "Men's M4x — the immediate target",
+    entries: "Men's M4x — the immediate target. Racing a 4x on loan from Vespoli; UTC's own Empacher is sidelined.",
   },
   {
     name: "Head of the Hooch",
@@ -76,7 +75,7 @@ const UPCOMING: Regatta[] = [
     entries: "UTC boats, including alumni boat(s)",
   },
   {
-    name: "TIRC — Tennessee Intercollegiate Rowing Championship",
+    name: "TIRC — Tennessee Indoor Rowing Championships",
     date: "Spring 2027",
     location: "Tennessee",
     entries: "UTC entries plus an alumni event",
@@ -125,7 +124,6 @@ export default function TeamPage() {
         />
 
         <div className="relative mx-auto max-w-3xl px-4 pt-32 pb-20 sm:pt-44 sm:pb-28">
-          <UTCMark className="w-12 h-12 mb-4" />
           <p className="text-utc-gold uppercase text-sm tracking-[0.25em] font-semibold mb-3">
             The 2026 program
           </p>
@@ -133,7 +131,8 @@ export default function TeamPage() {
             This year&rsquo;s boat.
           </h1>
           <p className="mt-5 text-lg sm:text-xl text-white/85 max-w-2xl leading-relaxed">
-            Four athletes, one M4x, racing the Tennessee River and the country.
+            On the Tennessee River out of the William Raoul Rowing Center,
+            training toward ACRA.
           </p>
         </div>
       </section>
@@ -345,6 +344,39 @@ export default function TeamPage() {
           <p className="mt-6 text-sm text-muted-foreground">
             Dates beyond ACRA 2026 firm up as regatta calendars publish.
           </p>
+        </div>
+      </section>
+
+      {/* Footer CTA — mirrors /history pattern */}
+      <section className="relative bg-utc-navy text-white overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(200,182,130,0.15),transparent_50%)]" />
+        <div className="relative mx-auto max-w-4xl px-4 py-20 text-center">
+          <p className="text-utc-gold uppercase text-xs tracking-[0.25em] font-semibold mb-4">
+            Help the crew
+          </p>
+          <h2 className="font-display text-3xl sm:text-4xl font-bold mb-5 leading-tight">
+            ACRA is one week out.
+            <br className="hidden sm:block" />
+            <span className="italic text-utc-gold-bright">The boat goes where alumni take it.</span>
+          </h2>
+          <p className="text-lg text-white/75 max-w-2xl mx-auto mb-10">
+            Travel, the Vespoli loaner, the Empacher repair, racks at the boathouse — every
+            piece of the rebuild rides on the people who came before this crew.
+          </p>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <Link
+              href="/donate"
+              className="bg-utc-gold text-utc-navy-deep font-semibold px-7 py-3.5 rounded-md hover:bg-utc-gold-bright transition-all hover:shadow-xl"
+            >
+              Send the crew off &rarr;
+            </Link>
+            <Link
+              href="/submit"
+              className="bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold px-7 py-3.5 rounded-md hover:bg-white/20 transition-all"
+            >
+              I rowed at UTC &rarr;
+            </Link>
+          </div>
         </div>
       </section>
     </>

@@ -88,7 +88,7 @@ export function FeaturedAlumni() {
             UTC has produced <span className="text-gradient-gold">Olympians, scholars, and lifers.</span>
           </h2>
           <p className="mt-5 text-white/70 text-lg">
-            A program our size shouldn&apos;t produce résumés like these. We did anyway.
+            These names came out of a club. They didn&rsquo;t act like one.
           </p>
         </div>
 

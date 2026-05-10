@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { UTCMark } from "@/components/svg-rowing";
 
 export const metadata = {
   title: "Contact — UTC Rowing",
@@ -14,7 +13,7 @@ export default function ContactPage() {
       <section className="relative bg-utc-navy text-white overflow-hidden">
         <Image
           src="/photos/pair-tennessee-river.jpg"
-          alt="UTC Rowing pair on the Tennessee River."
+          alt="UTC Rowing pair at sunset on the Tennessee River below Lookout Mountain."
           fill
           sizes="100vw"
           preload
@@ -29,13 +28,12 @@ export default function ContactPage() {
         />
 
         <div className="relative mx-auto max-w-3xl px-4 pt-32 pb-16 sm:pt-44">
-          <UTCMark className="w-12 h-12 mb-4" />
           <p className="text-utc-gold uppercase text-sm tracking-[0.25em] font-semibold mb-3">
             Get in touch
           </p>
           <h1 className="font-display text-4xl sm:text-5xl font-bold">Contact</h1>
           <p className="mt-4 text-lg text-white/80 max-w-2xl">
-            One inbox, one coach, one river.
+            One inbox, one coach, one Tennessee.
           </p>
         </div>
       </section>

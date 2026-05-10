@@ -106,6 +106,34 @@ export default async function JournalPostPage({
           </p>
         </article>
       </section>
+
+      <section className="bg-utc-navy text-white">
+        <div className="mx-auto max-w-3xl px-4 py-16 text-center">
+          <p className="text-utc-gold uppercase text-xs tracking-[0.25em] font-semibold mb-4">
+            Two ways in
+          </p>
+          <h2 className="font-display text-3xl sm:text-4xl font-bold mb-5 leading-tight">
+            If this hit, do something with it.
+          </h2>
+          <p className="text-white/75 max-w-xl mx-auto mb-8">
+            Help us fill in the record, or back the crew racing for it.
+          </p>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <Link
+              href="/submit"
+              className="bg-utc-gold text-utc-navy-deep font-semibold px-7 py-3.5 rounded-md hover:bg-utc-gold-bright transition-all hover:shadow-xl inline-flex items-center gap-2"
+            >
+              Add yourself to the roster →
+            </Link>
+            <Link
+              href="/donate"
+              className="bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold px-7 py-3.5 rounded-md hover:bg-white/20 hover:border-utc-gold/60 transition-all"
+            >
+              Send the crew off →
+            </Link>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

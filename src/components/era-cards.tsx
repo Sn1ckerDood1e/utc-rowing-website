@@ -60,7 +60,7 @@ export function EraCards({ eraCounts }: { eraCounts: Record<string, number> }) {
       count: eraCounts.resurrection ?? null,
       headline: "ACRA-bound, Fall 2025 restart",
       detail:
-        "Four athletes, one M4x, an aging fleet, and a head coach fresh out of mechatronics school. The program is back.",
+        "Coach Michael Kinsey and Abraham Mako restart the program in Fall 2025. A four-athlete restart on aging shells, with a head coach five months past graduation. The program is back.",
       gradient: "from-river-blue to-utc-gold-bright",
     },
   ];
@@ -73,7 +73,7 @@ export function EraCards({ eraCounts }: { eraCounts: Record<string, number> }) {
             Five eras
           </p>
           <h2 className="font-display text-4xl sm:text-5xl font-bold text-utc-navy leading-tight">
-            One river. Five chapters. <span className="italic text-utc-gold-deep">One program.</span>
+            One Tennessee. Five chapters. <span className="italic text-utc-gold-deep">One program.</span>
           </h2>
         </div>
 

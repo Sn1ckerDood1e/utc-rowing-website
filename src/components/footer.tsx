@@ -7,11 +7,8 @@ export function Footer() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,rgba(200,182,130,0.06),transparent_50%)]" />
 
       <div className="relative mx-auto max-w-6xl px-4 pt-10 pb-4">
-        <Link href="/" className="inline-flex items-center gap-2.5 font-display">
-          <UTCMark className="w-10 h-10 shrink-0" />
-          <span className="font-display text-base font-bold text-white">
-            <span className="text-utc-gold">UTC</span> Rowing
-          </span>
+        <Link href="/" className="inline-flex items-center">
+          <UTCMark className="text-lg text-white" />
         </Link>
       </div>
 
@@ -33,7 +30,7 @@ export function Footer() {
 
         <div>
           <p className="font-semibold text-utc-gold uppercase text-xs tracking-[0.2em] mb-3">
-            Explore
+            On this site
           </p>
           <ul className="space-y-2">
             <li>
@@ -66,7 +63,7 @@ export function Footer() {
 
         <div>
           <p className="font-semibold text-utc-gold uppercase text-xs tracking-[0.2em] mb-3">
-            Connect
+            Get involved
           </p>
           <ul className="space-y-2">
             <li>

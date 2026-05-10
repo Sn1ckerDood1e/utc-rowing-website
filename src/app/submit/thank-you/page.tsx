@@ -25,19 +25,22 @@ export default function ThankYouPage() {
 
       <section className="bg-paper">
         <div className="mx-auto max-w-3xl px-4 py-16 text-center">
-          <h2 className="font-display text-2xl font-bold text-utc-navy mb-3">
-            What&rsquo;s next
+          <p className="text-utc-gold-deep uppercase text-xs tracking-[0.25em] font-bold mb-3">
+            ACRA Nationals · May 17
+          </p>
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-utc-navy mb-4 leading-tight">
+            One more thing.
           </h2>
           <p className="text-foreground/80 mb-8 max-w-xl mx-auto">
-            The more submissions we get, the more complete the record gets. If a teammate comes to
-            mind right now, would you nudge them?
+            UTC&rsquo;s first ACRA crew since the program restarted races in seven days. You just
+            helped the record. Help the boat get to the line.
           </p>
-          <div className="flex flex-wrap gap-3 justify-center">
+          <div className="flex flex-wrap gap-3 justify-center items-center">
             <Link
-              href="/submit"
-              className="bg-utc-navy text-white font-semibold px-6 py-3 rounded-md hover:bg-utc-navy-deep transition-colors inline-flex items-center gap-1.5"
+              href="/donate"
+              className="bg-utc-gold text-utc-navy-deep font-semibold px-7 py-3.5 rounded-md hover:bg-utc-gold-bright transition-all hover:shadow-xl inline-flex items-center gap-2"
             >
-              Submit another
+              Send the crew off
               <ChevronRight className="w-4 h-4" />
             </Link>
             <Link
@@ -46,13 +49,16 @@ export default function ThankYouPage() {
             >
               Browse alumni
             </Link>
-            <Link
-              href="/history"
-              className="bg-white border border-utc-navy text-utc-navy font-semibold px-6 py-3 rounded-md hover:bg-utc-navy hover:text-white transition-colors"
-            >
-              Read the history
-            </Link>
           </div>
+          <p className="mt-8 text-sm text-muted-foreground">
+            Got another name?{" "}
+            <Link
+              href="/submit"
+              className="text-utc-navy font-semibold underline decoration-utc-gold underline-offset-4 hover:text-utc-gold-deep"
+            >
+              Submit another →
+            </Link>
+          </p>
         </div>
       </section>
     </>

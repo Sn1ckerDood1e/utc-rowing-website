@@ -20,14 +20,10 @@ export function Nav() {
       <div className="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
         <Link
           href="/"
-          className="flex items-center gap-2.5 font-display text-xl font-bold tracking-tight"
+          className="inline-flex items-center"
           onClick={() => setOpen(false)}
         >
-          <UTCMark className="w-9 h-9 shrink-0" />
-          <span>
-            <span className="text-utc-gold">UTC</span>
-            <span className="ml-1.5">Rowing</span>
-          </span>
+          <UTCMark className="text-base text-white" />
         </Link>
 
         {/* Desktop nav */}

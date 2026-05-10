@@ -1,31 +1,29 @@
 /**
  * UTC Rowing brand graphics.
  *
- * UTCMark is the canonical emblem — a navy disc with a gold ring and crossed
- * gold oars (X). Use it in nav, footer, page headers, favicons, and any
- * place the program needs a visual anchor. For faded accents, wrap in a
- * parent with `opacity-*`.
+ * UTCMark is the canonical wordmark — a pure typographic lockup with "UTC"
+ * set large in the Playfair display serif (gold) stacked over a smaller,
+ * letter-spaced uppercase "Rowing" in the sans body face. No disc, no oars,
+ * no icon — the type IS the mark. Use it in nav, footer, page headers, and
+ * any place the program needs a visual anchor. For faded accents, wrap in a
+ * parent with `opacity-*`. The component inherits color from its parent for
+ * the "Rowing" tag (via `text-current`), so it adapts to navy or white
+ * backgrounds; only the "UTC" stays gold.
  */
 
 export function UTCMark({ className = "" }: { className?: string }) {
   return (
-    <svg
-      viewBox="0 0 64 64"
-      className={className}
-      xmlns="http://www.w3.org/2000/svg"
+    <span
+      className={`inline-flex flex-col leading-none font-display select-none ${className}`}
       aria-hidden
     >
-      <circle cx="32" cy="32" r="30" fill="#002D62" />
-      <circle cx="32" cy="32" r="27" fill="none" stroke="#FFD200" strokeWidth="1.2" />
-      {/* Oar 1: handle BL → blade TR */}
-      <line x1="14" y1="50" x2="50" y2="14" stroke="#FFD200" strokeWidth="2.6" strokeLinecap="round" />
-      <ellipse cx="51" cy="13" rx="6.5" ry="2.6" fill="#FFD200" transform="rotate(-45 51 13)" />
-      <circle cx="14" cy="50" r="2" fill="#FFD200" />
-      {/* Oar 2: handle BR → blade TL */}
-      <line x1="50" y1="50" x2="14" y2="14" stroke="#FFD200" strokeWidth="2.6" strokeLinecap="round" />
-      <ellipse cx="13" cy="13" rx="6.5" ry="2.6" fill="#FFD200" transform="rotate(45 13 13)" />
-      <circle cx="50" cy="50" r="2" fill="#FFD200" />
-    </svg>
+      <span className="text-utc-gold-bright font-bold text-[1.4em] tracking-tight">
+        UTC
+      </span>
+      <span className="text-current uppercase tracking-[0.28em] text-[0.55em] font-semibold mt-0.5">
+        Rowing
+      </span>
+    </span>
   );
 }
 

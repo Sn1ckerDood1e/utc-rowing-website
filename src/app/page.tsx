@@ -109,37 +109,38 @@ export default async function Home() {
               and counting.
             </p>
             <p className="mt-3 text-lg text-white/70 max-w-2xl">
-              We&rsquo;re rebuilding the program — and we need every alum to help us tell its story.
+              We&rsquo;re rebuilding the program from the same stretch of water under the Walnut
+              Street Bridge, and we need every alum to help us tell its story.
             </p>
             <div className="mt-10 flex flex-wrap gap-3 animate-fade-up delay-200">
               <Link
-                href="/history"
+                href="/donate"
                 className="bg-utc-gold text-utc-navy-deep font-semibold px-7 py-3.5 rounded-md hover:bg-utc-gold-bright transition-all hover:shadow-xl hover:shadow-utc-gold/30 inline-flex items-center gap-2"
               >
-                Read our history
+                Send the crew off
                 <ChevronRight className="w-4 h-4" />
               </Link>
               <Link
                 href="/submit"
                 className="bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold px-7 py-3.5 rounded-md hover:bg-white/20 hover:border-utc-gold/60 transition-all"
               >
-                I rowed at UTC
+                I rowed at UTC →
               </Link>
-              {/* Desktop: third CTA inline with the others */}
+              {/* Desktop: tertiary text-link */}
               <Link
-                href="/donate"
+                href="/history"
                 className="hidden sm:inline-flex text-white/80 underline decoration-utc-gold underline-offset-8 decoration-2 px-3 py-3.5 text-base hover:text-utc-gold-bright transition-colors items-center"
               >
-                Support the team →
+                Read our history
               </Link>
             </div>
-            {/* Mobile: third CTA as quieter text-link on its own row */}
+            {/* Mobile: tertiary as quieter text-link on its own row */}
             <div className="mt-4 sm:hidden">
               <Link
-                href="/donate"
+                href="/history"
                 className="text-white/75 underline decoration-utc-gold underline-offset-4 decoration-1 text-sm hover:text-utc-gold-bright transition-colors"
               >
-                Support the team →
+                Read our history
               </Link>
             </div>
           </div>
@@ -186,7 +187,7 @@ export default async function Home() {
                 href="/donate"
                 className="bg-utc-navy text-white font-semibold px-6 py-3.5 rounded-md hover:bg-utc-navy-deep transition-all hover:shadow-lg whitespace-nowrap inline-flex items-center justify-center gap-2"
               >
-                Send them off
+                Send the crew off
                 <ChevronRight className="w-4 h-4" />
               </Link>
             </div>
@@ -243,8 +244,8 @@ export default async function Home() {
           <p className="text-lg text-white/75 max-w-2xl mx-auto mb-10">
             We have {alumniCount.toLocaleString()} names on file. We&rsquo;re missing thousands of
             stories, hundreds of photos, and most of what made each crew unforgettable to itself.
-            If you rowed at UTC — or know someone who did — your contribution makes the picture
-            more complete.
+            If you rowed at UTC, or know someone who did, your contribution closes the gaps in
+            the record.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Link
