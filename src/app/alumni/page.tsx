@@ -1,6 +1,9 @@
+import Link from "next/link";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { AlumniSearch } from "@/components/alumni-search";
 import type { Alumni } from "@/types/domain";
+
+export const revalidate = 3600;
 
 export const metadata = {
   title: "Alumni — UTC Rowing",
@@ -15,7 +18,9 @@ export default async function AlumniPage() {
     const supabase = await createSupabaseServerClient();
     const { data, error } = await supabase
       .from("alumni")
-      .select("*")
+      .select(
+        "id, canonical_name, era, first_year, last_year, variants, regattas, achievements"
+      )
       .eq("is_published", true)
       .order("canonical_name", { ascending: true })
       .limit(500);
@@ -44,14 +49,14 @@ export default async function AlumniPage() {
           </h1>
           <p className="text-lg text-white/80 max-w-3xl leading-relaxed">
             {initial.length > 0
-              ? `${initial.length.toLocaleString()} alumni on file, drawn from regatta results, lineup sheets, and program archives spanning 1989 to 2017. Search by name or scroll by era.`
+              ? `${initial.length.toLocaleString()} alumni on file, drawn from regatta results, lineup sheets, and program archives spanning 1983 to today. Search by name or scroll by era.`
               : "Alumni roster — currently loading."}
           </p>
           <p className="mt-3 text-base text-white/65 max-w-3xl">
             If you don&rsquo;t see yourself,{" "}
-            <a href="/submit" className="link-draw text-utc-gold-bright font-semibold">
+            <Link href="/submit" className="link-draw text-utc-gold-bright font-semibold">
               add yourself
-            </a>
+            </Link>
             . If a teammate comes to mind, nudge them.
           </p>
         </div>

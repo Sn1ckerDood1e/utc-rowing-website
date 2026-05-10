@@ -1,19 +1,21 @@
+import Image from "next/image";
 import Link from "next/link";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { AnimatedCounter } from "@/components/animated-counter";
 import { FeaturedAlumni } from "@/components/featured-alumni";
 import { EraCards } from "@/components/era-cards";
 import {
-  RowingShellSilhouette,
-  WaterRipplePattern,
   RiverBendCurve,
   ChevronRight,
 } from "@/components/svg-rowing";
 
+export const revalidate = 3600;
+
 const ERA_KEYS = ["founding", "carney", "espeseth", "worth", "resurrection"] as const;
+type EraKey = (typeof ERA_KEYS)[number];
 
 export default async function Home() {
-  let alumniCount = 507;
+  let alumniCount = 0;
   const eraCounts: Record<string, number> = {
     founding: 0,
     carney: 0,
@@ -24,19 +26,20 @@ export default async function Home() {
 
   try {
     const supabase = await createSupabaseServerClient();
-    const { count } = await supabase
+    // Single round-trip: pull all published alumni eras and tally in JS.
+    const { data, error } = await supabase
       .from("alumni")
-      .select("*", { count: "exact", head: true })
+      .select("era")
       .eq("is_published", true);
-    if (count !== null) alumniCount = count;
-
-    for (const era of ERA_KEYS) {
-      const { count: c } = await supabase
-        .from("alumni")
-        .select("*", { count: "exact", head: true })
-        .eq("is_published", true)
-        .eq("era", era);
-      eraCounts[era] = c ?? 0;
+    if (error) throw error;
+    if (data) {
+      alumniCount = data.length;
+      for (const row of data) {
+        const era = (row as { era: string | null }).era;
+        if (era && (ERA_KEYS as readonly string[]).includes(era)) {
+          eraCounts[era as EraKey] += 1;
+        }
+      }
     }
   } catch (e) {
     console.error("[/] Supabase fetch failed", {
@@ -49,27 +52,23 @@ export default async function Home() {
       {/* ============================================================
           HERO — full-bleed athletic
          ============================================================ */}
-      <section className="relative bg-river-gradient text-white overflow-hidden">
-        {/* Water ripple texture */}
-        <div className="absolute inset-0 text-utc-gold-bright opacity-50 pointer-events-none">
-          <WaterRipplePattern />
-        </div>
-
-        {/* Glowing orbs */}
-        <div
-          className="absolute top-20 -right-20 w-96 h-96 bg-utc-gold rounded-full blur-3xl opacity-20 animate-pulse-ring"
-          aria-hidden
-        />
-        <div
-          className="absolute bottom-40 -left-20 w-72 h-72 bg-river-blue-light rounded-full blur-3xl opacity-25 animate-pulse-ring"
-          aria-hidden
-          style={{ animationDelay: "1.5s" }}
+      <section className="relative bg-utc-navy-darker text-white overflow-hidden">
+        {/* Full-bleed hero photograph (LCP) */}
+        <Image
+          src="/photos/morning-row-tennessee.jpg"
+          alt="UTC Rowing crew on the Tennessee River at night, with the Hunter Museum in the background"
+          fill
+          sizes="100vw"
+          preload
+          quality={75}
+          className="object-cover object-center"
         />
 
-        {/* Animated rowing shell gliding across */}
-        <div className="absolute top-1/2 left-0 w-full h-20 -translate-y-12 text-utc-gold/40 pointer-events-none animate-glide" aria-hidden>
-          <RowingShellSilhouette className="w-[600px]" />
-        </div>
+        {/* Navy gradient overlay for legibility */}
+        <div
+          className="absolute inset-0 bg-gradient-to-br from-utc-navy/90 via-utc-navy/60 to-transparent pointer-events-none"
+          aria-hidden
+        />
 
         <div className="relative mx-auto max-w-6xl px-4 pt-20 pb-32 sm:pt-28 sm:pb-44">
           <div className="max-w-3xl animate-fade-up">
@@ -81,15 +80,15 @@ export default async function Home() {
               <br />
               <span className="text-gradient-gold italic">the Tennessee River.</span>
             </h1>
-            <p className="mt-6 text-xl sm:text-2xl text-white/80 max-w-2xl leading-relaxed">
-              An Olympic gold. Three USRowing All-Americans in a single year. The Tennessee
-              Indoor Rowing Championships.{" "}
+            <p className="mt-6 text-xl sm:text-2xl text-white/85 max-w-2xl leading-relaxed">
+              Fifty-five years of crews. One Olympic gold. Three USRowing All-Americans in a
+              single year.{" "}
               <span className="text-utc-gold-bright font-semibold">
                 {alumniCount.toLocaleString()} alumni
               </span>{" "}
               and counting.
             </p>
-            <p className="mt-3 text-lg text-white/65 max-w-2xl">
+            <p className="mt-3 text-lg text-white/70 max-w-2xl">
               We&rsquo;re rebuilding the program — and we need every alum to help us tell its story.
             </p>
             <div className="mt-10 flex flex-wrap gap-3 animate-fade-up delay-200">
@@ -106,9 +105,19 @@ export default async function Home() {
               >
                 I rowed at UTC
               </Link>
+              {/* Desktop: third CTA inline with the others */}
               <Link
                 href="/donate"
-                className="text-white/80 underline decoration-utc-gold underline-offset-8 decoration-2 px-3 py-3.5 hover:text-utc-gold-bright transition-colors"
+                className="hidden sm:inline-flex text-white/80 underline decoration-utc-gold underline-offset-8 decoration-2 px-3 py-3.5 text-base hover:text-utc-gold-bright transition-colors items-center"
+              >
+                Support the team →
+              </Link>
+            </div>
+            {/* Mobile: third CTA as quieter text-link on its own row */}
+            <div className="mt-4 sm:hidden">
+              <Link
+                href="/donate"
+                className="text-white/75 underline decoration-utc-gold underline-offset-4 decoration-1 text-sm hover:text-utc-gold-bright transition-colors"
               >
                 Support the team →
               </Link>
@@ -117,7 +126,7 @@ export default async function Home() {
         </div>
 
         {/* River bend transition into next section */}
-        <div className="absolute bottom-0 left-0 right-0 text-paper" aria-hidden>
+        <div className="absolute bottom-0 left-0 right-0 text-paper pointer-events-none" aria-hidden>
           <RiverBendCurve className="w-full h-24 sm:h-32" />
         </div>
       </section>
@@ -140,7 +149,13 @@ export default async function Home() {
                   </p>
                 </div>
                 <h2 className="font-display text-2xl sm:text-3xl font-bold text-utc-navy">
-                  Mako · Conner · Tyler · Jay
+                  <span className="whitespace-nowrap">Abraham Mako</span>
+                  {" · "}
+                  Tyler Burkett
+                  {" · "}
+                  Conner Richardson
+                  {" · "}
+                  Jay Pollard
                   <span className="block text-base font-normal text-utc-navy/65 font-sans mt-1">
                     UTC&rsquo;s first ACRA crew since the program restarted Fall 2025. Coached by
                     Michael Kinsey.
@@ -162,8 +177,18 @@ export default async function Home() {
       {/* ============================================================
           STATS — animated count-up
          ============================================================ */}
-      <section className="bg-paper">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:py-28">
+      <section className="relative overflow-hidden bg-utc-navy">
+        <Image
+          src="/photos/pair-tennessee-river.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          quality={70}
+          className="object-cover object-center"
+          aria-hidden
+        />
+        <div className="absolute inset-0 bg-utc-navy/85 pointer-events-none" aria-hidden />
+        <div className="relative mx-auto max-w-6xl px-4 py-20 sm:py-28">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 text-center">
             <Stat number={55} suffix="" label="years on the river" hint="1971 — present" />
             <Stat number={alumniCount} label="alumni on the roster" hint="and growing" />
@@ -236,11 +261,11 @@ function Stat({
       <AnimatedCounter
         end={number}
         suffix={suffix}
-        className="block font-display text-6xl sm:text-7xl font-bold text-utc-navy"
+        className="block font-display text-6xl sm:text-7xl font-bold text-utc-gold-bright"
       />
-      <div className="mt-3 text-base font-medium text-utc-navy/80">{label}</div>
+      <div className="mt-3 text-base font-medium text-white/85">{label}</div>
       {hint && (
-        <div className="mt-1 text-sm text-muted-foreground italic">{hint}</div>
+        <div className="mt-1 text-sm text-white/60 italic">{hint}</div>
       )}
     </div>
   );

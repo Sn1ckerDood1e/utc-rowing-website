@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { UTCMark } from "./svg-rowing";
 
 const links = [
   { href: "/history", label: "History" },
@@ -22,9 +23,7 @@ export function Nav() {
           className="flex items-center gap-2.5 font-display text-xl font-bold tracking-tight"
           onClick={() => setOpen(false)}
         >
-          <span className="inline-block w-8 h-8 rounded-full bg-gradient-to-br from-utc-gold-bright to-utc-gold-deep flex items-center justify-center text-utc-navy-deep font-mono text-sm">
-            U
-          </span>
+          <UTCMark className="w-9 h-9 shrink-0" />
           <span>
             <span className="text-utc-gold">UTC</span>
             <span className="ml-1.5">Rowing</span>
@@ -60,6 +59,7 @@ export function Nav() {
           type="button"
           aria-label="Toggle menu"
           aria-expanded={open}
+          aria-controls="mobile-nav"
           onClick={() => setOpen((v) => !v)}
           className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded hover:bg-white/10"
         >
@@ -71,7 +71,7 @@ export function Nav() {
 
       {/* Mobile drawer */}
       {open && (
-        <nav className="md:hidden border-t border-white/10 bg-utc-navy-deep">
+        <nav id="mobile-nav" className="md:hidden border-t border-white/10 bg-utc-navy-deep">
           <ul className="px-4 py-3 flex flex-col gap-1">
             {links.map((l) => (
               <li key={l.href}>

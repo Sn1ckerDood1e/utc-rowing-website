@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useTransition } from "react";
+import { useEffect, useMemo, useState, useTransition } from "react";
 import { searchAlumni } from "@/app/alumni/actions";
 import type { Alumni } from "@/types/domain";
 import { ERA_LABELS } from "@/types/domain";
@@ -28,11 +28,15 @@ export function AlumniSearch({
     return () => clearTimeout(handle);
   }, [query, initialAlumni]);
 
-  // Group by era
-  const byEra = results.reduce<Record<string, Alumni[]>>((acc, a) => {
-    (acc[a.era] ||= []).push(a);
-    return acc;
-  }, {});
+  // Group by era (memoized so it doesn't re-run every keystroke)
+  const byEra = useMemo(
+    () =>
+      results.reduce<Record<string, Alumni[]>>((acc, a) => {
+        (acc[a.era] ||= []).push(a);
+        return acc;
+      }, {}),
+    [results]
+  );
   const eraOrder: (keyof typeof ERA_LABELS)[] = [
     "founding",
     "carney",
@@ -43,7 +47,7 @@ export function AlumniSearch({
 
   return (
     <div>
-      <div className="sticky top-0 bg-white border-b border-border z-10 -mx-4 px-4 py-4 mb-6">
+      <div className="sticky top-16 bg-white border-b border-border z-10 -mx-4 px-4 py-4 mb-6">
         <input
           type="search"
           placeholder="Search alumni by name..."
@@ -59,31 +63,36 @@ export function AlumniSearch({
         </p>
       </div>
 
-      {results.length === 0 && (
-        <p className="text-muted-foreground py-8 text-center">
-          No matches. Try a different spelling or initial.
-        </p>
-      )}
+      <div
+        aria-busy={isPending}
+        className={`transition-opacity ${isPending ? "opacity-60" : "opacity-100"}`}
+      >
+        {results.length === 0 && (
+          <p className="text-muted-foreground py-8 text-center">
+            No matches. Try a different spelling or initial.
+          </p>
+        )}
 
-      {eraOrder.map((era) => {
-        const list = byEra[era];
-        if (!list || list.length === 0) return null;
-        return (
-          <section key={era} className="mb-12">
-            <h2 className="text-xl font-bold text-utc-navy border-b-2 border-utc-gold pb-1 mb-4">
-              {ERA_LABELS[era]}{" "}
-              <span className="text-base font-normal text-muted-foreground">
-                ({list.length})
-              </span>
-            </h2>
-            <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {list.map((a) => (
-                <AlumniCard key={a.id} a={a} />
-              ))}
-            </ul>
-          </section>
-        );
-      })}
+        {eraOrder.map((era) => {
+          const list = byEra[era];
+          if (!list || list.length === 0) return null;
+          return (
+            <section key={era} className="mb-12">
+              <h2 className="text-xl font-bold text-utc-navy border-b-2 border-utc-gold pb-1 mb-4">
+                {ERA_LABELS[era]}{" "}
+                <span className="text-base font-normal text-muted-foreground">
+                  ({list.length})
+                </span>
+              </h2>
+              <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {list.map((a) => (
+                  <AlumniCard key={a.id} a={a} />
+                ))}
+              </ul>
+            </section>
+          );
+        })}
+      </div>
     </div>
   );
 }
@@ -102,7 +111,7 @@ function AlumniCard({ a }: { a: Alumni }) {
     .slice(0, 3);
 
   return (
-    <li className="border border-border rounded p-3 hover:border-utc-gold transition-colors">
+    <li className="border border-border rounded p-3 hover:border-utc-gold transition-colors focus-visible:ring-2 focus-visible:ring-utc-gold focus-visible:outline-none">
       <div className="font-semibold text-utc-navy">{a.canonical_name}</div>
       <div className="text-xs text-muted-foreground mt-0.5">
         {years || "Years on file: unknown"}

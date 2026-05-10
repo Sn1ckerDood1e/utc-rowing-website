@@ -15,9 +15,25 @@ export function AnimatedCounter({
   suffix?: string;
   className?: string;
 }) {
-  const [value, setValue] = useState(0);
+  // SSR renders the FINAL value so the page is correct without JS / before hydration.
+  const [value, setValue] = useState(end);
   const [started, setStarted] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
+  const didMountRef = useRef(false);
+
+  // On mount, reset to 0 so the count-up animation has somewhere to count from.
+  useEffect(() => {
+    if (didMountRef.current) return;
+    didMountRef.current = true;
+    const reduceMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) {
+      setValue(end);
+    } else {
+      setValue(0);
+    }
+  }, [end]);
 
   useEffect(() => {
     if (!ref.current || started) return;
@@ -36,6 +52,13 @@ export function AnimatedCounter({
 
   useEffect(() => {
     if (!started) return;
+    const reduceMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) {
+      setValue(end);
+      return;
+    }
     const start = performance.now();
     let frameId: number;
     const tick = (now: number) => {

@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { OarMark } from "./svg-rowing";
+import { UTCMark } from "./svg-rowing";
 
 export function Footer() {
   return (
-    <footer className="bg-utc-navy-darker text-white/80 mt-auto relative overflow-hidden">
+    <footer className="bg-utc-navy text-white/80 mt-auto relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,rgba(200,182,130,0.06),transparent_50%)]" />
 
       <div className="relative mx-auto max-w-6xl px-4 py-14 grid gap-10 sm:grid-cols-3 text-sm">
@@ -60,7 +60,8 @@ export function Footer() {
               <a
                 href="https://utcrowing.org"
                 className="hover:text-utc-gold-bright transition-colors"
-                rel="noreferrer"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Program site
               </a>
@@ -69,7 +70,8 @@ export function Footer() {
               <a
                 href="https://giving.utc.edu/campaigns/42934/donations/new?_gl=1*pfvcug*_gcl_au*MzkyNTMzNTAwLjE3NzUwNjQzMzM."
                 className="hover:text-utc-gold-bright transition-colors"
-                rel="noreferrer"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Give to UTC Rowing
               </a>
@@ -79,10 +81,10 @@ export function Footer() {
       </div>
 
       <div className="relative border-t border-white/10">
-        <div className="mx-auto max-w-6xl px-4 py-5 flex items-center justify-between text-xs text-white/50">
+        <div className="mx-auto max-w-6xl px-4 py-5 flex items-center justify-between text-xs text-white/75">
           <p>© {new Date().getFullYear()} UTC Rowing alumni community.</p>
-          <span className="text-utc-gold/40 w-16">
-            <OarMark className="w-16" />
+          <span className="opacity-50" aria-hidden>
+            <UTCMark className="w-8 h-8" />
           </span>
         </div>
       </div>
