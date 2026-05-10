@@ -82,6 +82,7 @@ export function EraCards({ eraCounts }: { eraCounts: Record<string, number> }) {
             <Link
               key={era.slug}
               href={`/alumni#${era.slug}`}
+              aria-label={`Browse ${era.label} alumni`}
               className="group relative overflow-hidden rounded-xl bg-utc-navy text-white transition-transform duration-300 hover:translate-y-[-3px] hover:shadow-2xl"
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${era.gradient} opacity-90`} />
@@ -100,7 +101,7 @@ export function EraCards({ eraCounts }: { eraCounts: Record<string, number> }) {
                       <div className="font-mono-numbers text-3xl font-bold text-utc-gold-bright">
                         {era.count}
                       </div>
-                      <div className="text-white/50 text-[10px] uppercase tracking-widest">
+                      <div className="text-white/75 text-xs uppercase tracking-widest">
                         on file
                       </div>
                     </div>
@@ -110,7 +111,10 @@ export function EraCards({ eraCounts }: { eraCounts: Record<string, number> }) {
                 <p className="font-semibold text-white mb-2 mt-2">{era.headline}</p>
                 <p className="text-white/70 text-sm leading-relaxed flex-1">{era.detail}</p>
 
-                <div className="mt-4 inline-flex items-center text-utc-gold-bright text-sm font-semibold">
+                <div
+                  aria-hidden="true"
+                  className="mt-4 inline-flex items-center text-utc-gold-bright text-sm font-semibold"
+                >
                   Browse {era.label.toLowerCase()} alumni
                   <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
                 </div>

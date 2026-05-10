@@ -1,7 +1,37 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ERAS, type Era, type Moment } from "@/lib/timeline-data";
+
+/**
+ * Era cover photos. Keyed by era slug. Eras without an entry render as
+ * gradient-only (existing behavior). Photos are placed behind the gradient
+ * via absolute positioning + object-cover; the gradient is layered on top
+ * with reduced opacity so the chapter text remains legible.
+ */
+const ERA_COVER_PHOTOS: Partial<
+  Record<
+    Era["slug"],
+    { src: string; alt: string; objectPosition?: string }
+  >
+> = {
+  carney: {
+    // The Carney era closes with the 1996 trailer arson — the era's
+    // most-documented event. Use the salvage photo (athletes carrying
+    // broken hulls) over the burned-trailer shot: it shows the response,
+    // not just the damage.
+    src: "/photos/utc-crew-1996-salvage.jpg",
+    alt: "Black-and-white photo of UTC Crew athletes carrying a broken hull through a field after the 1996 trailer arson.",
+    objectPosition: "center",
+  },
+  resurrection: {
+    src: "/photos/m4x-acra-prep-distant.jpg",
+    alt: "UTC Rowing's 2026 men's quad on the race course in ACRA preparation, distant view of the full lane.",
+    // Portrait crop — anchor toward the top of the frame so the boat stays in view.
+    objectPosition: "center top",
+  },
+};
 
 const KIND_META: Record<
   Moment["kind"],
@@ -106,9 +136,24 @@ export function InteractiveTimeline() {
 
   return (
     <div className="relative">
+      {/*
+        JS-disabled fallback: if scripts don't run, the IntersectionObserver
+        above never fires and `is-visible` is never added. Force the
+        revealed state via a <noscript>-scoped style so cards remain
+        readable. (motion-reduce is handled inline on the <li>.)
+      */}
+      <noscript>
+        <style>{`
+          [data-moment-card] {
+            opacity: 1 !important;
+            transform: none !important;
+          }
+        `}</style>
+      </noscript>
+
       {/* Era-jump rail (sticky under main nav) */}
       <div
-        className="sticky top-[64px] z-40 bg-paper/95 backdrop-blur-md border-b border-border"
+        className="sticky top-16 z-40 bg-paper/95 backdrop-blur-md border-b border-border shadow-sm"
         data-testid="era-rail"
       >
         <div className="mx-auto max-w-6xl px-4">
@@ -160,6 +205,28 @@ export function InteractiveTimeline() {
             <div
               className={`relative overflow-hidden rounded-2xl bg-gradient-to-br ${era.gradient} text-white shadow-xl mb-12`}
             >
+              {ERA_COVER_PHOTOS[era.slug] && (
+                <Image
+                  src={ERA_COVER_PHOTOS[era.slug]!.src}
+                  alt={ERA_COVER_PHOTOS[era.slug]!.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1152px"
+                  loading="lazy"
+                  className="object-cover"
+                  style={{
+                    objectPosition:
+                      ERA_COVER_PHOTOS[era.slug]!.objectPosition ?? "center",
+                  }}
+                />
+              )}
+              {/* Gradient overlay — re-applied on top of the photo for legibility.
+                  When no photo is present, the parent's bg-gradient still shows through. */}
+              {ERA_COVER_PHOTOS[era.slug] && (
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${era.gradient} opacity-70 pointer-events-none`}
+                  aria-hidden
+                />
+              )}
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.1),transparent_50%)] pointer-events-none" />
               <div className="relative p-8 sm:p-10">
                 <div className="flex items-baseline gap-4 mb-3">
@@ -201,7 +268,7 @@ export function InteractiveTimeline() {
                         key={id}
                         data-moment-card
                         data-testid={`moment-${era.slug}-${idx}`}
-                        className={`relative md:grid md:grid-cols-[1fr_auto_1fr] md:gap-6 md:items-start opacity-0 translate-y-3 transition-all duration-700 [&.is-visible]:opacity-100 [&.is-visible]:translate-y-0`}
+                        className={`relative md:grid md:grid-cols-[1fr_auto_1fr] md:gap-6 md:items-start opacity-0 translate-y-3 transition-all duration-700 [&.is-visible]:opacity-100 [&.is-visible]:translate-y-0 motion-reduce:!opacity-100 motion-reduce:!translate-y-0`}
                       >
                         {/* Left side card (desktop) */}
                         <div

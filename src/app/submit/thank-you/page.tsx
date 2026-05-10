@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ChevronRight, OarMark } from "@/components/svg-rowing";
+import { ChevronRight, UTCMark } from "@/components/svg-rowing";
 
 export const metadata = {
   title: "Thanks — UTC Rowing",
@@ -11,9 +11,7 @@ export default function ThankYouPage() {
       <section className="relative bg-river-gradient text-white overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(200,182,130,0.18),transparent_60%)]" />
         <div className="relative mx-auto max-w-3xl px-4 py-20 text-center">
-          <span className="inline-block text-utc-gold w-16 mb-6 animate-fade-in">
-            <OarMark className="w-16" />
-          </span>
+          <UTCMark className="w-16 h-16 mb-6 animate-fade-in" />
           <p className="text-utc-gold uppercase text-sm tracking-[0.25em] font-semibold mb-4">
             Got it
           </p>

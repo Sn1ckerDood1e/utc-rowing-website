@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
+import { Geist, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
@@ -9,27 +9,50 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
-  weight: ["400", "600", "700", "800"],
+  weight: ["700"],
 });
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://utcrowing.org";
+const SITE_TITLE = "UTC Rowing — Fifty-Five Years on the Tennessee River";
+const SITE_DESCRIPTION =
+  "Rowing at the University of Tennessee at Chattanooga since 1971. Olympic gold, USRowing All-Americans, the Tennessee Indoor Rowing Championships, and a program rebuilding for ACRA. Alumni roster, history, and how to support the team.";
+const SHORT_DESCRIPTION =
+  "Olympic gold, three USRowing AAs in one year, and 500+ alumni. The UTC Rowing program — past, present, and how alumni are bringing it back.";
+
 export const metadata: Metadata = {
-  title: "UTC Rowing — Fifty-Five Years on the Tennessee River",
-  description:
-    "Rowing at the University of Tennessee at Chattanooga since 1971. Olympic gold, USRowing All-Americans, the Tennessee Indoor Rowing Championships, and a program rebuilding for ACRA. Alumni roster, history, and how to support the team.",
+  metadataBase: new URL(SITE_URL),
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
   openGraph: {
-    title: "UTC Rowing — Fifty-Five Years on the Tennessee River",
-    description:
-      "Olympic gold, three USRowing AAs in one year, and 500+ alumni. The UTC Rowing program — past, present, and how alumni are bringing it back.",
+    title: SITE_TITLE,
+    description: SHORT_DESCRIPTION,
+    siteName: "UTC Rowing",
     type: "website",
+    url: SITE_URL,
   },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SHORT_DESCRIPTION,
+  },
+};
+
+const sportsTeamJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SportsTeam",
+  name: "UTC Rowing",
+  sport: "Rowing",
+  url: SITE_URL,
+  foundingDate: "1971",
+  parentOrganization: {
+    "@type": "CollegeOrUniversity",
+    name: "University of Tennessee at Chattanooga",
+  },
+  description:
+    "Alumni community of UTC Rowing — 1971 to today, fifty-five years on the Tennessee River.",
 };
 
 export default function RootLayout({
@@ -40,12 +63,25 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-paper">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:rounded focus:bg-utc-gold focus:px-4 focus:py-2 focus:text-utc-navy"
+        >
+          Skip to main content
+        </a>
         <Nav />
-        <main className="flex-1">{children}</main>
+        <main id="main" tabIndex={-1} className="flex-1">
+          {children}
+        </main>
         <Footer />
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(sportsTeamJsonLd) }}
+        />
       </body>
     </html>
   );

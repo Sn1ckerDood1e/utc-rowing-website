@@ -1,6 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
 import { InteractiveTimeline } from "@/components/interactive-timeline";
-import { OarMark } from "@/components/svg-rowing";
 import { TIMELINE_TOTAL_MOMENTS, ERAS } from "@/lib/timeline-data";
 
 export const metadata = {
@@ -13,34 +13,37 @@ export default function HistoryPage() {
   return (
     <>
       {/* Cover */}
-      <section className="bg-utc-navy text-white relative overflow-hidden border-b-4 border-utc-gold">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(200,182,130,0.12),transparent_60%)]" />
-        <div className="relative mx-auto max-w-4xl px-4 py-16 text-center">
-          <div className="inline-flex items-center gap-3 mb-6">
-            <span className="text-utc-gold w-12">
-              <OarMark className="w-12" />
-            </span>
-            <p className="text-utc-gold uppercase text-xs tracking-[0.3em] font-semibold">
+      <section className="relative overflow-hidden border-b-4 border-utc-gold bg-utc-navy text-white">
+        <div className="relative w-full min-h-[70vh] sm:min-h-[80vh]">
+          <Image
+            src="/photos/utc-crew-1996-salvage.jpg"
+            alt="UTC Rowing athletes carrying damaged shells through a field in 1996, after a trailer arson destroyed much of the program's fleet"
+            fill
+            preload
+            sizes="100vw"
+            className="object-cover object-[center_30%]"
+          />
+          {/* Navy gradient overlay for text legibility */}
+          <div className="absolute inset-0 bg-gradient-to-t from-utc-navy/95 via-utc-navy/40 to-transparent" />
+          <div className="relative mx-auto flex min-h-[70vh] sm:min-h-[80vh] max-w-4xl flex-col justify-end px-4 pb-16 pt-24 text-center">
+            <p className="text-utc-gold uppercase text-xs tracking-[0.3em] font-semibold mb-6">
               The interactive timeline
             </p>
-            <span className="text-utc-gold w-12 -scale-x-100">
-              <OarMark className="w-12" />
-            </span>
+            <h1 className="font-display text-5xl sm:text-6xl font-bold leading-[1.05] tracking-tight">
+              UTC Rowing
+              <br />
+              <span className="italic text-gradient-gold">a history</span>
+            </h1>
+            <p className="font-display text-lg italic text-white/80 mt-6 max-w-2xl mx-auto">
+              From the 1971 Pocock donation through the 2026 ACRA crew —{" "}
+              {TIMELINE_TOTAL_MOMENTS} moments across {ERAS.length} eras of UTC Rowing.
+              Compiled from primary sources in the program archive, public records,
+              and alumni recollections.
+            </p>
+            <p className="text-xs text-white/60 mt-6 uppercase tracking-widest">
+              Tap any moment to read more · Last revised May 2026
+            </p>
           </div>
-          <h1 className="font-display text-5xl sm:text-6xl font-bold leading-[1.05] tracking-tight">
-            UTC Rowing
-            <br />
-            <span className="italic text-gradient-gold">a history</span>
-          </h1>
-          <p className="font-display text-lg italic text-white/70 mt-6 max-w-2xl mx-auto">
-            From the 1971 Pocock donation through the 2026 ACRA crew —{" "}
-            {TIMELINE_TOTAL_MOMENTS} moments across {ERAS.length} eras of UTC Rowing.
-            Compiled from primary sources in the program archive, public records,
-            and alumni recollections.
-          </p>
-          <p className="text-xs text-white/50 mt-6 uppercase tracking-widest">
-            Tap any moment to read more · Last revised May 2026
-          </p>
         </div>
       </section>
 

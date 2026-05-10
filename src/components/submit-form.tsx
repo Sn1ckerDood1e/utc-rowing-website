@@ -54,9 +54,12 @@ export function SubmitForm() {
       body: JSON.stringify({ ...data, form_level: formLevel }),
     });
     if (!res.ok) {
+      // Capture the raw response for debugging, but never surface it to the
+      // user — a 500 stack trace or internal error string can leak details.
       const text = await res.text().catch(() => "");
+      console.error("[/api/submit] failed", { status: res.status, body: text });
       setServerError(
-        text || "Sorry — we couldn't save that submission. Please try again."
+        "Something went wrong submitting — please try again or email kinseymi@radl.solutions."
       );
       return;
     }

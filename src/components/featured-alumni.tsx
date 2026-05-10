@@ -1,7 +1,20 @@
+import type { ReactNode } from "react";
+import Link from "next/link";
 import { MedalIcon } from "./svg-rowing";
 
-const FEATURED = [
+type Featured = {
+  key: string;
+  name: ReactNode;
+  classOf: string;
+  achievement: string;
+  detail: string;
+  medalLabel: string;
+  medalTone: string;
+};
+
+const FEATURED: Featured[] = [
   {
+    key: "beery",
     name: "Dan Beery",
     classOf: "Class of 2000",
     achievement: "Olympic Gold · Athens 2004",
@@ -11,7 +24,14 @@ const FEATURED = [
     medalTone: "from-utc-gold-bright to-utc-gold-deep",
   },
   {
-    name: "Robert Meeks · Paul Turner · Valerie Schlatter",
+    key: "aa-1995-96",
+    name: (
+      <>
+        <span className="whitespace-nowrap">Robert Meeks</span>{" · "}
+        <span className="whitespace-nowrap">Paul Turner</span>{" · "}
+        <span className="whitespace-nowrap">Valerie Schlatter</span>
+      </>
+    ),
     classOf: "1995–96",
     achievement: "Three USRowing Academic All-Americans",
     detail:
@@ -20,6 +40,7 @@ const FEATURED = [
     medalTone: "from-utc-gold-bright to-utc-gold-deep",
   },
   {
+    key: "thomas",
     name: "Stephen Thomas",
     classOf: "Class of 1995",
     achievement: "1997 World Lightweight Quad",
@@ -29,6 +50,7 @@ const FEATURED = [
     medalTone: "from-river-blue-light to-river-blue-dark",
   },
   {
+    key: "bruce",
     name: "Keith Bruce",
     classOf: "Class of 1994",
     achievement: "First UTC USRowing All-American · 1993–94",
@@ -38,6 +60,7 @@ const FEATURED = [
     medalTone: "from-utc-gold-bright to-utc-gold-deep",
   },
   {
+    key: "espeseth",
     name: "Robert Espeseth",
     classOf: "Head Coach 1989–2017",
     achievement: "1984 Olympic Bronze · USRowing Hall of Fame",
@@ -59,7 +82,7 @@ export function FeaturedAlumni() {
       <div className="relative mx-auto max-w-6xl px-4 py-20">
         <div className="mb-12 max-w-2xl">
           <p className="text-utc-gold uppercase text-xs tracking-[0.2em] font-semibold mb-3">
-            Forty years of rowers
+            Fifty-five years of rowers
           </p>
           <h2 className="font-display text-4xl sm:text-5xl font-bold leading-tight">
             UTC has produced <span className="text-gradient-gold">Olympians, scholars, and lifers.</span>
@@ -72,7 +95,7 @@ export function FeaturedAlumni() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {FEATURED.map((f, i) => (
             <article
-              key={f.name}
+              key={f.key}
               className={`relative bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 rounded-xl p-6 hover:border-utc-gold/40 transition-all duration-300 hover:translate-y-[-2px] ${
                 i === 1 ? "lg:col-span-1 sm:col-span-2 lg:col-start-auto" : ""
               }`}
@@ -94,9 +117,9 @@ export function FeaturedAlumni() {
         <p className="mt-10 text-center text-white/50 text-sm">
           More alumni to surface as submissions come in. If you know a UTC rower whose story belongs
           here,{" "}
-          <a href="/submit" className="text-utc-gold-bright link-draw">
+          <Link href="/submit" className="text-utc-gold-bright link-draw">
             tell us
-          </a>
+          </Link>
           .
         </p>
       </div>

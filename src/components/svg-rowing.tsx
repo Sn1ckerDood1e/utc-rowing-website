@@ -1,105 +1,56 @@
 /**
- * Rowing-themed SVG illustrations.
- * All scale via viewBox; color via currentColor where appropriate.
+ * UTC Rowing brand graphics.
+ *
+ * UTCMark is the canonical emblem — a navy disc with a gold serif "U" and an
+ * oar passing through it. Use it in nav, footer, page headers, favicons,
+ * and any place the program needs a visual anchor. For faded accents, wrap
+ * in a parent with `opacity-*`.
  */
 
-export function RowingShellSilhouette({
-  className = "",
-  withWake = true,
-}: {
-  className?: string;
-  withWake?: boolean;
-}) {
+export function UTCMark({ className = "" }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 600 80"
+      viewBox="0 0 64 64"
       className={className}
-      fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden
     >
-      {/* Wake / ripples behind shell */}
-      {withWake && (
-        <>
-          <path
-            d="M5 50 Q 30 46, 60 50 T 130 50 T 200 50"
-            stroke="currentColor"
-            strokeOpacity="0.18"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-          />
-          <path
-            d="M5 56 Q 40 53, 80 56 T 160 56"
-            stroke="currentColor"
-            strokeOpacity="0.12"
-            strokeWidth="1"
-            strokeLinecap="round"
-          />
-        </>
-      )}
-      {/* Shell hull */}
-      <path
-        d="M 80 40 L 510 40 Q 540 40 555 38 Q 565 37 565 35 Q 565 33 555 32 Q 540 30 510 30 L 80 30 Q 50 30 35 32 Q 25 33 25 35 Q 25 37 35 38 Q 50 40 80 40 Z"
-        fill="currentColor"
+      {/* Navy disc */}
+      <circle cx="32" cy="32" r="30" fill="#002D62" />
+      {/* Subtle gold ring */}
+      <circle
+        cx="32"
+        cy="32"
+        r="29"
+        fill="none"
+        stroke="#FFD200"
+        strokeWidth="0.6"
+        strokeOpacity="0.45"
       />
-      {/* Riggers */}
-      <line x1="180" y1="35" x2="180" y2="22" stroke="currentColor" strokeWidth="1.5" />
-      <line x1="240" y1="35" x2="240" y2="22" stroke="currentColor" strokeWidth="1.5" />
-      <line x1="300" y1="35" x2="300" y2="22" stroke="currentColor" strokeWidth="1.5" />
-      <line x1="360" y1="35" x2="360" y2="22" stroke="currentColor" strokeWidth="1.5" />
-      <line x1="420" y1="35" x2="420" y2="22" stroke="currentColor" strokeWidth="1.5" />
-      {/* Oar blades extending up-right (catch position) */}
-      <line x1="180" y1="22" x2="160" y2="6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      <line x1="240" y1="22" x2="220" y2="6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      <line x1="300" y1="22" x2="280" y2="6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      <line x1="360" y1="22" x2="340" y2="6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      <line x1="420" y1="22" x2="400" y2="6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      {/* Oar blade tips */}
-      <ellipse cx="155" cy="5" rx="8" ry="3" fill="currentColor" />
-      <ellipse cx="215" cy="5" rx="8" ry="3" fill="currentColor" />
-      <ellipse cx="275" cy="5" rx="8" ry="3" fill="currentColor" />
-      <ellipse cx="335" cy="5" rx="8" ry="3" fill="currentColor" />
-      <ellipse cx="395" cy="5" rx="8" ry="3" fill="currentColor" />
-    </svg>
-  );
-}
-
-export function OarMark({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 180 40"
-      className={className}
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden
-    >
-      {/* shaft */}
-      <line x1="20" y1="20" x2="160" y2="20" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      {/* blade */}
-      <path d="M 0 20 Q 5 6, 20 12 L 20 28 Q 5 34, 0 20 Z" fill="currentColor" />
-      {/* handle */}
-      <rect x="158" y="14" width="20" height="12" rx="3" fill="currentColor" />
-    </svg>
-  );
-}
-
-export function WaterRipplePattern({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      width="100%"
-      height="100%"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden
-    >
-      <defs>
-        <pattern id="ripples" x="0" y="0" width="200" height="80" patternUnits="userSpaceOnUse">
-          <path d="M 0 40 Q 50 30, 100 40 T 200 40" stroke="currentColor" strokeOpacity="0.18" strokeWidth="1.2" fill="none" />
-          <path d="M 0 60 Q 50 50, 100 60 T 200 60" stroke="currentColor" strokeOpacity="0.12" strokeWidth="1" fill="none" />
-          <path d="M 0 20 Q 50 12, 100 20 T 200 20" stroke="currentColor" strokeOpacity="0.08" strokeWidth="0.8" fill="none" />
-        </pattern>
-      </defs>
-      <rect width="100%" height="100%" fill="url(#ripples)" />
+      {/* Serif "U" — stroked outline, with feet */}
+      <path
+        d="M 22 17 V 36 Q 22 43 29 43 H 35 Q 42 43 42 36 V 17"
+        fill="none"
+        stroke="#FFD200"
+        strokeWidth="3.4"
+        strokeLinecap="butt"
+      />
+      <line x1="17.5" y1="17" x2="26.5" y2="17" stroke="#FFD200" strokeWidth="3" />
+      <line x1="37.5" y1="17" x2="46.5" y2="17" stroke="#FFD200" strokeWidth="3" />
+      {/* Horizontal oar through center of U */}
+      <line
+        x1="9"
+        y1="29"
+        x2="50"
+        y2="29"
+        stroke="#FFD200"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+      />
+      {/* Right blade */}
+      <ellipse cx="54" cy="29" rx="3.6" ry="2" fill="#FFD200" />
+      {/* Left handle */}
+      <rect x="7" y="27.4" width="3.4" height="3.2" rx="0.6" fill="#FFD200" />
     </svg>
   );
 }

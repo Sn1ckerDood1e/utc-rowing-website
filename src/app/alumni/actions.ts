@@ -1,11 +1,22 @@
 "use server";
 
+import { z } from "zod";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import type { Alumni } from "@/types/domain";
 
+// Strip PostgREST filter metacharacters and cap length so user input can't
+// break or be smuggled into the .or() filter below.
+const searchSchema = z
+  .string()
+  .max(100)
+  .transform((s) => s.replace(/[,()*:]/g, "").trim());
+
 export async function searchAlumni(query: string): Promise<Alumni[]> {
+  const cleaned = searchSchema.safeParse(query);
+  if (!cleaned.success) return [];
+  const sanitized = cleaned.data;
+
   const supabase = await createSupabaseServerClient();
-  const trimmed = query.trim();
 
   let q = supabase
     .from("alumni")
@@ -14,9 +25,9 @@ export async function searchAlumni(query: string): Promise<Alumni[]> {
     .order("canonical_name", { ascending: true })
     .limit(500);
 
-  if (trimmed) {
+  if (sanitized) {
     // Search canonical_name + variants. ILIKE on both.
-    const wildcard = `%${trimmed}%`;
+    const wildcard = `%${sanitized}%`;
     q = q.or(`canonical_name.ilike.${wildcard},variants.ilike.${wildcard}`);
   }
 

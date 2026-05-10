@@ -1,5 +1,5 @@
 import { SubmitForm } from "@/components/submit-form";
-import { OarMark } from "@/components/svg-rowing";
+import { UTCMark } from "@/components/svg-rowing";
 
 export const metadata = {
   title: "Submit — UTC Rowing",
@@ -13,9 +13,7 @@ export default function SubmitPage() {
       <section className="relative bg-utc-navy text-white overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(200,182,130,0.12),transparent_55%)]" />
         <div className="relative mx-auto max-w-3xl px-4 py-16">
-          <span className="inline-block text-utc-gold w-12 mb-4">
-            <OarMark className="w-12" />
-          </span>
+          <UTCMark className="w-12 h-12 mb-4" />
           <p className="text-utc-gold uppercase text-sm tracking-[0.25em] font-semibold mb-3">
             Add to the record
           </p>

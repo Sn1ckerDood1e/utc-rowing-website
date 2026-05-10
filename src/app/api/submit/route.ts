@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { createSupabaseAdminClient } from "@/lib/supabase/server";
+import { createSupabaseServerClient } from "@/lib/supabase/server";
 import {
   notifyAdminOfSubmission,
   sendSubmissionConfirmation,
@@ -45,7 +45,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: true });
   }
 
-  const supabase = createSupabaseAdminClient();
+  const supabase = await createSupabaseServerClient();
   const { data: inserted, error } = await supabase
     .from("submissions")
     .insert({

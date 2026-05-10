@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight, OarMark, RiverBendCurve } from "@/components/svg-rowing";
+import { ChevronRight, UTCMark, RiverBendCurve } from "@/components/svg-rowing";
 
 export const metadata = {
   title: "Support UTC Rowing",
@@ -37,9 +38,9 @@ const TIERS = [
 
 const NEEDS = [
   {
-    title: "Covered rack space",
+    title: "Covered rack space — a 20×80 pole barn",
     estimate: "Top priority",
-    why: "UTC needs dedicated covered rack space at Chattanooga Rowing — protected outdoor storage that keeps shells safe between practices and frees the program from improvised arrangements.",
+    why: "UTC needs dedicated covered rack space at Chattanooga Rowing — a 20×80 pole barn at the boathouse — protected outdoor storage that keeps shells safe between practices and frees the program from improvised arrangements.",
   },
   {
     title: "Replacement 8+ shell",
@@ -64,30 +65,87 @@ export default function DonatePage() {
       {/* Hero */}
       <section className="relative bg-river-gradient text-white overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(200,182,130,0.15),transparent_50%)]" />
-        <div className="relative mx-auto max-w-5xl px-4 py-20 sm:py-28">
-          <div className="max-w-3xl">
-            <p className="text-utc-gold uppercase text-sm tracking-[0.25em] font-semibold mb-5">
-              Support the rebuild
-            </p>
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] mb-6">
-              Help bring UTC Rowing
-              <br />
-              <span className="text-gradient-gold italic">back to the eight.</span>
-            </h1>
-            <p className="text-xl text-white/80 max-w-2xl leading-relaxed">
-              An Olympic gold medalist. Three USRowing Academic All-Americans in a single year.
-              Rowing on the Tennessee River since 1971.
-            </p>
-            <p className="text-lg text-white/65 max-w-2xl mt-3">
-              The program is back with four athletes and one M4x. Where we go from here — the
-              covered rack space, the racing eight — is decided by what alumni and friends help
-              us build.
-            </p>
+        <div className="relative mx-auto max-w-6xl px-4 py-16 sm:py-24">
+          <div className="grid gap-10 lg:gap-14 lg:grid-cols-[1.15fr_1fr] lg:items-center">
+            {/* Photo first on mobile, second on lg */}
+            <div className="order-1 lg:order-2 relative rounded-xl overflow-hidden shadow-2xl shadow-utc-navy-deep/50 ring-1 ring-white/10 max-w-md mx-auto lg:max-w-none">
+              <Image
+                src="/photos/m4x-acra-prep-close.jpg"
+                alt="UTC Rowing's 2026 ACRA crew — Abraham Mako, Tyler Burkett, Conner Richardson, Jay Pollard — racing on the Tennessee River"
+                width={1920}
+                height={3414}
+                sizes="(max-width: 1024px) 90vw, 480px"
+                preload
+                className="w-full h-auto block"
+              />
+              <div
+                aria-hidden
+                className="absolute inset-0 bg-gradient-to-t from-utc-navy-deep/60 via-transparent to-transparent"
+              />
+              <p className="absolute bottom-4 left-4 right-4 text-white/95 text-sm font-medium tracking-wide">
+                <span className="text-utc-gold-bright uppercase text-[10px] tracking-[0.25em] font-bold block mb-1">
+                  Fund the boat
+                </span>
+                Mako · Burkett · Richardson · Pollard — ACRA M4x
+              </p>
+            </div>
+
+            <div className="order-2 lg:order-1 max-w-2xl">
+              <p className="text-utc-gold uppercase text-sm tracking-[0.25em] font-semibold mb-5">
+                Support the rebuild
+              </p>
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] mb-6">
+                Help bring UTC Rowing
+                <br />
+                <span className="text-gradient-gold italic">back to ACRA.</span>
+              </h1>
+              <p className="text-xl text-white/80 leading-relaxed">
+                An Olympic gold. Three USRowing Academic All-Americans in one season. Rowing on
+                the Tennessee River since 1971.
+              </p>
+              <p className="text-lg text-white/75 mt-3">
+                The program is back with four athletes and one M4x. Where we go from here — the
+                covered rack space, the racing eight — is decided by what alumni and friends help
+                us build.
+              </p>
+            </div>
           </div>
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 text-paper" aria-hidden>
           <RiverBendCurve className="w-full h-20" />
+        </div>
+      </section>
+
+      {/* Pre-ACRA urgency banner */}
+      <section className="bg-paper relative">
+        <div className="mx-auto max-w-6xl px-4 -mt-10 sm:-mt-12 relative z-10">
+          <div className="bg-gradient-to-r from-utc-gold-bright via-utc-gold to-utc-gold-deep rounded-2xl shadow-2xl shadow-utc-navy/15 p-1">
+            <div className="bg-white rounded-xl p-5 sm:p-6 flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between">
+              <div>
+                <div className="flex items-center gap-2 mb-1.5">
+                  <span className="relative flex h-2.5 w-2.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75" />
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500" />
+                  </span>
+                  <p className="text-utc-navy uppercase text-xs tracking-[0.25em] font-bold">
+                    Pre-ACRA push · Send the crew off May 17
+                  </p>
+                </div>
+                <p className="text-utc-navy/80 text-base sm:text-lg leading-snug">
+                  Four athletes, one M4x, racing at Lake Lanier in seven days. Every gift before
+                  May 17 lands on this crew&rsquo;s travel and the next boat behind them.
+                </p>
+              </div>
+              <a
+                href="#how-to-give"
+                className="bg-utc-navy text-white font-semibold px-5 py-3 rounded-md hover:bg-utc-navy-deep transition-all hover:shadow-lg whitespace-nowrap inline-flex items-center justify-center gap-2 self-start sm:self-auto"
+              >
+                Give now
+                <ChevronRight className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -122,7 +180,7 @@ export default function DonatePage() {
       </section>
 
       {/* How to give */}
-      <section className="bg-utc-navy text-white relative overflow-hidden">
+      <section id="how-to-give" className="bg-utc-navy text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(200,182,130,0.12),transparent_50%)]" />
         <div className="relative mx-auto max-w-5xl px-4 py-20">
           <div className="mb-12 max-w-2xl">
@@ -134,14 +192,14 @@ export default function DonatePage() {
             </h2>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-3">
+          <div className="grid gap-4 sm:gap-5 sm:grid-cols-3 overflow-visible">
             {TIERS.map((t) => (
               <div
                 key={t.label}
-                className={`relative rounded-xl p-6 border ${
+                className={`relative overflow-visible rounded-xl p-6 ${
                   t.featured
-                    ? "bg-gradient-to-br from-utc-gold-bright to-utc-gold text-utc-navy-deep border-utc-gold-bright shadow-2xl shadow-utc-gold/30 scale-[1.02]"
-                    : "bg-white/5 border-white/15 text-white"
+                    ? "bg-gradient-to-br from-utc-gold-bright to-utc-gold text-utc-navy-deep border-2 border-utc-gold shadow-lg shadow-utc-gold/30"
+                    : "border bg-white/5 border-white/15 text-white"
                 }`}
               >
                 {t.featured && (
@@ -180,9 +238,13 @@ export default function DonatePage() {
             ))}
           </div>
 
-          <p className="mt-8 text-sm text-white/50 max-w-3xl">
+          <p className="mt-8 text-sm text-white/75 max-w-3xl">
             All gifts route through UTC&rsquo;s official giving portal — campaign 42934 is dedicated
             to UTC Rowing. UTC is a qualified 501(c)(3) tax-exempt institution.
+          </p>
+          <p className="mt-3 text-sm text-white/70 max-w-3xl italic">
+            Coach Kinsey is two months out of mechatronics school at UTC and restarted the program
+            in Fall 2025 — named gifts go directly to him for the boat fleet.
           </p>
         </div>
       </section>
@@ -190,9 +252,7 @@ export default function DonatePage() {
       {/* Alternative help */}
       <section className="bg-paper">
         <div className="mx-auto max-w-3xl px-4 py-16 text-center">
-          <span className="inline-block text-utc-gold w-16 mb-4">
-            <OarMark className="w-16" />
-          </span>
+          <UTCMark className="w-16 h-16 mb-4" />
           <p className="font-display text-2xl text-utc-navy">
             Not ready to give?{" "}
             <Link href="/submit" className="link-draw text-utc-gold-deep">
