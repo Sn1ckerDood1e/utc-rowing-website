@@ -33,28 +33,32 @@ export default async function AlumniPage() {
 
   return (
     <>
-      <section className="bg-utc-navy text-white">
-        <div className="mx-auto max-w-6xl px-4 py-12">
-          <p className="text-utc-gold uppercase text-sm tracking-widest mb-2">
+      <section className="relative bg-utc-navy text-white overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(200,182,130,0.12),transparent_55%)]" />
+        <div className="relative mx-auto max-w-6xl px-4 py-16">
+          <p className="text-utc-gold uppercase text-sm tracking-[0.25em] font-semibold mb-3">
             The roster
           </p>
-          <h1 className="text-3xl sm:text-4xl font-bold">UTC Rowing Alumni</h1>
-          <p className="mt-3 text-white/80 max-w-3xl">
+          <h1 className="font-display text-4xl sm:text-5xl font-bold leading-[1.05] mb-4">
+            UTC Rowing alumni
+          </h1>
+          <p className="text-lg text-white/80 max-w-3xl leading-relaxed">
             {initial.length > 0
-              ? `${initial.length.toLocaleString()} alumni on file, drawn from regatta results, lineup sheets, and program archives. Search by name or scroll by era. If you don't see yourself, please `
-              : "Alumni roster — currently being loaded. If you don't see yourself, please "}
-            <a
-              href="/submit"
-              className="underline decoration-utc-gold underline-offset-4 hover:text-utc-gold-bright"
-            >
-              add yourself.
+              ? `${initial.length.toLocaleString()} alumni on file, drawn from regatta results, lineup sheets, and program archives spanning 1989 to 2017. Search by name or scroll by era.`
+              : "Alumni roster — currently loading."}
+          </p>
+          <p className="mt-3 text-base text-white/65 max-w-3xl">
+            If you don&rsquo;t see yourself,{" "}
+            <a href="/submit" className="link-draw text-utc-gold-bright font-semibold">
+              add yourself
             </a>
+            . If a teammate comes to mind, nudge them.
           </p>
         </div>
       </section>
 
-      <section className="bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-8">
+      <section className="bg-paper-grain">
+        <div className="mx-auto max-w-6xl px-4 py-12">
           {!dbReady ? (
             <DatabaseNotReady />
           ) : (

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
@@ -14,14 +14,20 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  weight: ["400", "600", "700", "800"],
+});
+
 export const metadata: Metadata = {
-  title: "UTC Rowing — Alumni & History",
+  title: "UTC Rowing — Forty Years on the Tennessee River",
   description:
-    "Rowing at the University of Tennessee at Chattanooga since 1983. Alumni roster, program history, and how to support the team.",
+    "Rowing at the University of Tennessee at Chattanooga since 1983. Olympic gold, USRowing All-Americans, the Tennessee Indoor Rowing Championships, and a program rebuilding for ACRA. Alumni roster, history, and how to support the team.",
   openGraph: {
-    title: "UTC Rowing",
+    title: "UTC Rowing — Forty Years on the Tennessee River",
     description:
-      "Rowing at UTC since 1983. Alumni roster, program history, and how to support the team.",
+      "Olympic gold, three USRowing AAs in one year, and 429 alumni. The UTC Rowing program — past, present, and how alumni are bringing it back.",
     type: "website",
   },
 };
@@ -34,9 +40,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col bg-paper">
         <Nav />
         <main className="flex-1">{children}</main>
         <Footer />

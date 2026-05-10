@@ -1,45 +1,65 @@
 import Link from "next/link";
+import { OarMark } from "./svg-rowing";
 
 export function Footer() {
   return (
-    <footer className="bg-utc-navy-deep text-white/80 mt-auto">
-      <div className="mx-auto max-w-6xl px-4 py-10 grid gap-8 sm:grid-cols-3 text-sm">
+    <footer className="bg-utc-navy-darker text-white/80 mt-auto relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,rgba(200,182,130,0.06),transparent_50%)]" />
+
+      <div className="relative mx-auto max-w-6xl px-4 py-14 grid gap-10 sm:grid-cols-3 text-sm">
         <div>
-          <p className="font-semibold text-utc-gold mb-2">UTC Rowing</p>
-          <p>University of Tennessee at Chattanooga</p>
-          <p>Club sport since 1983</p>
-          <p className="mt-3">
-            <Link href="/donate" className="underline hover:text-utc-gold-bright">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="inline-block w-7 h-7 rounded-full bg-gradient-to-br from-utc-gold-bright to-utc-gold-deep flex items-center justify-center text-utc-navy-deep font-mono text-xs font-bold">
+              U
+            </span>
+            <p className="font-display text-lg font-bold text-white">
+              <span className="text-utc-gold">UTC</span> Rowing
+            </p>
+          </div>
+          <p className="text-white/70 leading-relaxed">
+            University of Tennessee at Chattanooga. Club sport since 1983. Olympic gold to ACRA, on
+            the Tennessee River.
+          </p>
+          <p className="mt-4">
+            <Link
+              href="/donate"
+              className="inline-flex items-center gap-1 text-utc-gold-bright link-draw font-semibold"
+            >
               Support the program →
             </Link>
           </p>
         </div>
 
         <div>
-          <p className="font-semibold text-utc-gold mb-2">Help us rebuild the record</p>
-          <p>
-            We&rsquo;re collecting alumni stories, photos, and corrections.
-            Every contribution makes the picture more complete.
+          <p className="font-semibold text-utc-gold uppercase text-xs tracking-[0.2em] mb-3">
+            Help us rebuild the record
           </p>
-          <p className="mt-3">
-            <Link href="/submit" className="underline hover:text-utc-gold-bright">
-              Submit your story →
-            </Link>
+          <p className="text-white/70 mb-3 leading-relaxed">
+            We&rsquo;re collecting alumni stories, photos, and corrections. Every contribution
+            makes the picture more complete.
           </p>
+          <Link
+            href="/submit"
+            className="inline-flex items-center gap-1 text-utc-gold-bright link-draw font-semibold"
+          >
+            Submit your story →
+          </Link>
         </div>
 
         <div>
-          <p className="font-semibold text-utc-gold mb-2">Connect</p>
-          <ul className="space-y-1">
+          <p className="font-semibold text-utc-gold uppercase text-xs tracking-[0.2em] mb-3">
+            Connect
+          </p>
+          <ul className="space-y-2">
             <li>
-              <Link href="/contact" className="hover:text-utc-gold-bright">
+              <Link href="/contact" className="hover:text-utc-gold-bright transition-colors">
                 Contact
               </Link>
             </li>
             <li>
               <a
                 href="https://utcrowing.org"
-                className="hover:text-utc-gold-bright"
+                className="hover:text-utc-gold-bright transition-colors"
                 rel="noreferrer"
               >
                 Program site
@@ -48,7 +68,7 @@ export function Footer() {
             <li>
               <a
                 href="https://gomocs.com/giving"
-                className="hover:text-utc-gold-bright"
+                className="hover:text-utc-gold-bright transition-colors"
                 rel="noreferrer"
               >
                 gomocs.com/giving
@@ -58,9 +78,12 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/10">
-        <div className="mx-auto max-w-6xl px-4 py-4 text-xs text-white/60">
-          © {new Date().getFullYear()} UTC Rowing alumni community.
+      <div className="relative border-t border-white/10">
+        <div className="mx-auto max-w-6xl px-4 py-5 flex items-center justify-between text-xs text-white/50">
+          <p>© {new Date().getFullYear()} UTC Rowing alumni community.</p>
+          <span className="text-utc-gold/40 w-16">
+            <OarMark className="w-16" />
+          </span>
         </div>
       </div>
     </footer>

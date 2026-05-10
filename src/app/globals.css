@@ -7,13 +7,25 @@
   /* UTC brand */
   --utc-navy: #002649;
   --utc-navy-deep: #001633;
+  --utc-navy-darker: #000d1f;
   --utc-gold: #c8b682;
   --utc-gold-bright: #e6cf95;
+  --utc-gold-deep: #a4925e;
 
-  /* neutrals */
+  /* River accents */
+  --river-blue: #2d5e8c;
+  --river-blue-light: #4a7eaa;
+  --river-blue-dark: #1a3f5f;
+
+  /* Surface tones */
+  --paper: #fdfcf8;
   --muted: #f4f5f7;
   --muted-foreground: #5b6577;
   --border: #e2e5eb;
+  --border-strong: #c9cdd6;
+
+  /* Typography */
+  --font-display: var(--font-playfair, Georgia), serif;
 }
 
 @theme inline {
@@ -21,52 +33,85 @@
   --color-foreground: var(--foreground);
   --color-utc-navy: var(--utc-navy);
   --color-utc-navy-deep: var(--utc-navy-deep);
+  --color-utc-navy-darker: var(--utc-navy-darker);
   --color-utc-gold: var(--utc-gold);
   --color-utc-gold-bright: var(--utc-gold-bright);
+  --color-utc-gold-deep: var(--utc-gold-deep);
+  --color-river-blue: var(--river-blue);
+  --color-river-blue-light: var(--river-blue-light);
+  --color-river-blue-dark: var(--river-blue-dark);
+  --color-paper: var(--paper);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-playfair);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Long-form content (history page) */
+/* Display heading family — serif, used in heritage sections */
+.font-display {
+  font-family: var(--font-playfair), Georgia, "Times New Roman", serif;
+}
+
+/* Stat font — geist mono numerals */
+.font-mono-numbers {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-feature-settings: "tnum";
+}
+
+/* ============================================================
+   Long-form content (history page when rendering markdown)
+   ============================================================ */
 .prose-utc {
   max-width: 70ch;
-  line-height: 1.7;
+  line-height: 1.75;
+  font-size: 1.0625rem;
 }
 .prose-utc h2 {
-  font-size: 1.875rem;
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 2.25rem;
   font-weight: 700;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
+  line-height: 1.15;
+  margin-top: 4rem;
+  margin-bottom: 1.25rem;
   color: var(--utc-navy);
-  border-bottom: 2px solid var(--utc-gold);
-  padding-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+.prose-utc h2::before {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 3px;
+  background: var(--utc-gold);
+  margin-bottom: 1rem;
 }
 .prose-utc h3 {
-  font-size: 1.375rem;
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 1.5rem;
   font-weight: 600;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   margin-bottom: 0.75rem;
   color: var(--utc-navy);
+  letter-spacing: -0.005em;
 }
 .prose-utc p {
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 .prose-utc ul,
 .prose-utc ol {
   margin-left: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 .prose-utc ul {
   list-style: disc;
@@ -75,7 +120,7 @@ body {
   list-style: decimal;
 }
 .prose-utc li {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.4rem;
 }
 .prose-utc strong {
   color: var(--utc-navy);
@@ -85,17 +130,174 @@ body {
   color: var(--utc-navy);
   text-decoration: underline;
   text-decoration-color: var(--utc-gold);
-  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  transition: color 0.15s;
+}
+.prose-utc a:hover {
+  color: var(--river-blue);
 }
 .prose-utc blockquote {
   border-left: 4px solid var(--utc-gold);
-  padding-left: 1rem;
-  margin: 1.5rem 0;
+  padding-left: 1.25rem;
+  margin: 2rem 0;
+  font-family: var(--font-playfair), Georgia, serif;
   font-style: italic;
-  color: var(--muted-foreground);
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--utc-navy);
 }
 .prose-utc hr {
   border: none;
   border-top: 1px solid var(--border);
-  margin: 2.5rem 0;
+  margin: 3rem 0;
+}
+
+/* ============================================================
+   Animations
+   ============================================================ */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes glide {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-20px);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+.animate-glide {
+  animation: glide 14s linear infinite;
+}
+
+.animate-wave {
+  animation: wave 8s ease-in-out infinite;
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 3s ease-in-out infinite;
+}
+
+/* Stagger delays */
+.delay-100 { animation-delay: 100ms; opacity: 0; }
+.delay-200 { animation-delay: 200ms; opacity: 0; }
+.delay-300 { animation-delay: 300ms; opacity: 0; }
+.delay-400 { animation-delay: 400ms; opacity: 0; }
+.delay-500 { animation-delay: 500ms; opacity: 0; }
+
+/* Reduced-motion override */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ============================================================
+   Background utilities
+   ============================================================ */
+.bg-river-gradient {
+  background: linear-gradient(
+    180deg,
+    var(--utc-navy-darker) 0%,
+    var(--utc-navy) 30%,
+    var(--river-blue-dark) 75%,
+    var(--river-blue) 100%
+  );
+}
+
+.bg-paper-grain {
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(200, 182, 130, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(45, 94, 140, 0.04) 0%, transparent 50%);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(
+    135deg,
+    var(--utc-gold-bright) 0%,
+    var(--utc-gold) 50%,
+    var(--utc-gold-deep) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Underline that draws on hover */
+.link-draw {
+  background-image: linear-gradient(var(--utc-gold), var(--utc-gold));
+  background-size: 0% 2px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease;
+  padding-bottom: 2px;
+}
+.link-draw:hover {
+  background-size: 100% 2px;
 }
