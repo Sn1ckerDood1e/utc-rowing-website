@@ -7,7 +7,7 @@ test.describe("Home page", () => {
 
   test("renders hero with mission + CTAs", async ({ page }) => {
     await expect(
-      page.getByRole("heading", { name: /forty years/i, level: 1 })
+      page.getByRole("heading", { name: /fifty.?five years/i, level: 1 })
     ).toBeVisible();
     await expect(
       page.getByRole("link", { name: /read our history/i })
@@ -32,8 +32,10 @@ test.describe("Home page", () => {
     await page.waitForTimeout(2200);
     const stats = page.locator("section").filter({ hasText: /alumni on the roster/i });
     await expect(stats).toBeVisible();
-    // 429 should appear after counter animates
-    await expect(page.getByText(/429/).first()).toBeVisible();
+    // The live alumni count should appear after counter animates.
+    // We check for any 3-digit number 4xx-5xx (currently 507; future-proof).
+    const numberPattern = /\b[45]\d{2}\b/;
+    await expect(page.getByText(numberPattern).first()).toBeVisible();
   });
 
   test("featured-alumni section shows Beery + AAs", async ({ page }) => {

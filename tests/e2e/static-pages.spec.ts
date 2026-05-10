@@ -15,7 +15,7 @@ test.describe("Static pages", () => {
     await expect(page.getByText(/1983/i).first()).toBeVisible();
   });
 
-  test("/donate shows tiers + needs", async ({ page }) => {
+  test("/donate shows tiers + needs + correct giving link", async ({ page }) => {
     await page.goto("/donate");
 
     await expect(
@@ -27,9 +27,20 @@ test.describe("Static pages", () => {
     await expect(page.getByText(/monthly sustaining donor/i).first()).toBeVisible();
     await expect(page.getByText(/named giving/i).first()).toBeVisible();
 
-    // Needs section
-    await expect(page.getByText(/pole barn/i).first()).toBeVisible();
-    await expect(page.getByText(/replacement barges/i).first()).toBeVisible();
+    // Current fundraising priorities (post-May 2026 update)
+    await expect(page.getByText(/covered rack space/i).first()).toBeVisible();
+    await expect(page.getByText(/replacement 8\+/i).first()).toBeVisible();
+
+    // Confirm all "give" CTAs route to giving.utc.edu campaign 42934
+    const giveLinks = page.getByRole("link", { name: /give once|give monthly/i });
+    const count = await giveLinks.count();
+    expect(count).toBeGreaterThanOrEqual(2);
+    for (let i = 0; i < count; i++) {
+      await expect(giveLinks.nth(i)).toHaveAttribute(
+        "href",
+        /giving\.utc\.edu.*42934/
+      );
+    }
   });
 
   test("/contact has email + affiliations", async ({ page }) => {
