@@ -271,11 +271,19 @@ export function InteractiveTimeline() {
                         data-testid={`moment-${era.slug}-${idx}`}
                         className={`relative md:grid md:grid-cols-[1fr_auto_1fr] md:gap-6 md:items-start opacity-0 translate-y-3 transition-all duration-700 [&.is-visible]:opacity-100 [&.is-visible]:translate-y-0 motion-reduce:!opacity-100 motion-reduce:!translate-y-0`}
                       >
-                        {/* Left side card (desktop only) */}
+                        {/* Left side card (desktop only).
+                            NOTE: when this row's card lives on the right, this
+                            cell stays as an empty grid-track placeholder. It
+                            must still be `md:block` so it occupies the left
+                            column — `md:invisible` alone (visibility: hidden)
+                            does NOT override the mobile `hidden` (display:
+                            none), so the marker would otherwise auto-place
+                            into column 1 and the right card into column 2,
+                            collapsing the alternating layout. */}
                         <div
-                          className={`hidden ${
-                            isLeft ? "md:block" : "md:invisible md:h-0"
-                          } md:text-right`}
+                          className={`hidden md:block md:text-right ${
+                            isLeft ? "" : "md:invisible"
+                          }`}
                         >
                           {isLeft && (
                             <MomentCard
@@ -301,10 +309,12 @@ export function InteractiveTimeline() {
                           </span>
                         </div>
 
-                        {/* Right side card (desktop only) */}
+                        {/* Right side card (desktop only). Same placeholder
+                            rule as the left cell — always `md:block` so the
+                            right grid column is occupied even when empty. */}
                         <div
-                          className={`hidden ${
-                            !isLeft ? "md:block" : "md:invisible md:h-0"
+                          className={`hidden md:block ${
+                            !isLeft ? "" : "md:invisible"
                           }`}
                         >
                           {!isLeft && (

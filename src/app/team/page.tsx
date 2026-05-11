@@ -30,7 +30,7 @@ const ROSTER: Athlete[] = [
     classYear: "Class of 2027",
     hometown: "Chattanooga, TN",
     major: "Political Science & Public Service: Public Law",
-    bio: "The program's most experienced rower and the stroke seat of the M4x. Came up through Chattanooga Junior Rowing, then helped Jack Cawood stand up Chattanooga State Rowing before transferring to UTC. Sets the rate the other three follow.",
+    bio: "The program's most experienced rower and the stroke seat of the M4x. Came up through Chattanooga Junior Rowing, then co-founded Chattanooga State Rowing with Jack Cawood before transferring to UTC, where he co-founded the resurrected UTC Rowing program with Coach Kinsey. Sets the rate the other three follow.",
     photo: {
       src: "/photos/abraham-single-aquarium.jpg",
       width: 1280,
@@ -340,10 +340,10 @@ export default function TeamPage() {
                   mentored under Bill Zack, and spent his last two summers
                   coaching at the Craftsbury Outdoor Center in Vermont.
                   Founder of Radl and a UTC mechatronics graduate
-                  (December 2025), with part of his coursework done at
-                  UTSI &mdash; the University of Tennessee Space Institute
-                  &mdash; studying deposition onto carbon fiber for
-                  hypersonic travel.
+                  (December 2025). Spent time at UTSI &mdash; the
+                  University of Tennessee Space Institute &mdash;
+                  researching deposition onto carbon fiber for hypersonic
+                  travel, outside his mechatronics coursework.
                 </p>
                 <p className="text-sm text-foreground/80 leading-relaxed mb-4">
                   Also coaches at Chattanooga State, out of the same
@@ -383,14 +383,20 @@ export default function TeamPage() {
                   Faculty sponsor
                 </p>
                 <h3 className="font-display text-2xl font-bold text-utc-navy mb-2">
-                  Joel Harden
+                  Dr. Joel Harden
                 </h3>
-                <p className="text-sm text-foreground/80 leading-relaxed">
-                  UTC faculty member who agreed to advise the program in May
-                  2026, formalizing the club&rsquo;s academic standing as the
-                  M4x heads to ACRA.
+                <p className="text-xs text-utc-navy/60 uppercase tracking-[0.18em] font-semibold mb-3">
+                  Assistant Professor, Health &amp; Human Performance
                 </p>
-                {/* TODO(launch): Joel's department + bio + headshot */}
+                <p className="text-sm text-foreground/80 leading-relaxed">
+                  Coordinator of UTC&rsquo;s HHP Sports Lab, where students
+                  and community athletes get personalized performance
+                  testing through the College of Health, Education and
+                  Professional Studies. Agreed to advise the rowing program
+                  in May 2026, formalizing the club&rsquo;s academic
+                  standing as the M4x heads to ACRA.
+                </p>
+                {/* TODO(launch): pull official UTC headshot at https://www.utc.edu/sites/default/files/styles/card_image_tablet/public/2025-09/harden-joel-25.jpg */}
               </div>
             </div>
           </div>
