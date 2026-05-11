@@ -164,97 +164,7 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Program leadership — head coach + faculty sponsor */}
-      <section className="bg-paper-grain">
-        <div className="mx-auto max-w-5xl px-4 py-20">
-          <div className="mb-10 max-w-2xl">
-            <p className="text-utc-navy/60 uppercase text-xs tracking-[0.2em] font-semibold mb-3">
-              Program leadership
-            </p>
-            <h2 className="font-display text-3xl sm:text-4xl font-bold text-utc-navy leading-tight">
-              The coach who brought the program back.
-            </h2>
-          </div>
-
-          <div className="bg-white border border-border rounded-2xl shadow-sm overflow-hidden grid md:grid-cols-[320px_1fr]">
-            <div className="relative bg-utc-navy-deep">
-              <Image
-                src="/photos/kinsey-headshot.jpg"
-                alt="Coach Michael Kinsey at a UTC men's basketball game"
-                width={1280}
-                height={824}
-                preload
-                sizes="(min-width: 768px) 320px, 100vw"
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
-
-            <div className="p-6 sm:p-8">
-              <p className="text-utc-gold-deep uppercase text-xs tracking-[0.2em] font-semibold mb-2">
-                Head Coach · December 2025 – present
-              </p>
-              <h3 className="font-display text-2xl sm:text-3xl font-bold text-utc-navy mb-3">
-                Michael Kinsey
-              </h3>
-              <p className="text-foreground/80 leading-relaxed mb-3">
-                Coach Kinsey has been on the launch at Chattanooga Rowing since 2022,
-                mentored under Bill Zack, and spent his last two summers coaching at
-                the Craftsbury Outdoor Center in Vermont. He&rsquo;s a UTC mechatronics
-                graduate (December 2025) and the founder of Radl &mdash; and in Fall
-                2025, five months out from his own graduation, he restarted UTC Rowing.
-              </p>
-              <p className="text-foreground/80 leading-relaxed mb-4">
-                He&rsquo;s also the founding head coach of Chattanooga State Rowing,
-                running both programs out of the same boathouse.
-              </p>
-              <p className="text-foreground/80 leading-relaxed mb-4">
-                <span className="block">
-                  <a
-                    href="mailto:kinseymi@radl.solutions"
-                    className="link-draw text-utc-navy font-semibold"
-                  >
-                    kinseymi@radl.solutions
-                  </a>
-                </span>
-                <span className="block font-mono-numbers text-utc-navy/85">
-                  <a href="tel:+14236024277" className="link-draw">
-                    (423) 602-4277
-                  </a>
-                </span>
-              </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center text-utc-navy font-semibold link-draw"
-              >
-                More ways to get in touch &rarr;
-              </Link>
-            </div>
-          </div>
-
-          {/* Faculty sponsor — smaller, sits below the coach card */}
-          <div className="mt-6 bg-white border border-border rounded-2xl shadow-sm overflow-hidden grid sm:grid-cols-[200px_1fr]">
-            <div className="relative bg-gradient-to-br from-utc-navy-deep via-utc-navy to-utc-navy-deep flex items-center justify-center aspect-[4/5] sm:aspect-auto sm:min-h-[180px]">
-              <UTCMark className="text-3xl text-white/85" />
-            </div>
-            <div className="p-6 sm:p-7">
-              <p className="text-utc-gold-deep uppercase text-[11px] tracking-[0.2em] font-semibold mb-2">
-                Faculty sponsor · May 2026 – present
-              </p>
-              <h3 className="font-display text-xl sm:text-2xl font-bold text-utc-navy mb-2">
-                Joel Harden
-              </h3>
-              <p className="text-foreground/80 leading-relaxed text-sm">
-                UTC faculty member who agreed to advise the program in May
-                2026, formalizing the club&rsquo;s academic standing as the
-                M4x heads to ACRA.
-              </p>
-              {/* TODO(launch): Joel's department + bio + headshot */}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Roster + portrait M4x video */}
+      {/* Roster + portrait M4x video — athletes first */}
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-4 py-20">
           <div className="mb-12 max-w-2xl">
@@ -389,6 +299,101 @@ export default function TeamPage() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      {/* Program leadership — head coach + faculty sponsor, demoted to roughly
+          athlete-card visual weight. Two cards side-by-side on md+. */}
+      <section className="bg-paper-grain border-t border-border/60">
+        <div className="mx-auto max-w-6xl px-4 py-16">
+          <div className="mb-8 max-w-2xl">
+            <p className="text-utc-navy/60 uppercase text-xs tracking-[0.2em] font-semibold mb-3">
+              Program leadership
+            </p>
+            <h2 className="font-display text-2xl sm:text-3xl font-bold text-utc-navy leading-tight">
+              Coaches &amp; staff.
+            </h2>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            {/* Head coach card — same visual weight as an athlete card */}
+            <div className="bg-white border border-border rounded-xl shadow-sm overflow-hidden flex flex-col">
+              <div className="relative aspect-[4/5] bg-utc-navy-deep">
+                <Image
+                  src="/photos/kinsey-headshot.jpg"
+                  alt="Coach Michael Kinsey at a UTC men's basketball game"
+                  width={1280}
+                  height={824}
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
+              <div className="p-6 flex flex-col">
+                <p className="text-utc-gold-deep uppercase text-[11px] tracking-[0.22em] font-bold mb-2">
+                  Head Coach
+                </p>
+                <h3 className="font-display text-2xl font-bold text-utc-navy mb-2">
+                  Michael Kinsey
+                </h3>
+                <p className="text-sm text-foreground/80 leading-relaxed mb-3">
+                  Has been on the launch at Chattanooga Rowing since 2022,
+                  mentored under Bill Zack, and spent his last two summers
+                  coaching at the Craftsbury Outdoor Center in Vermont.
+                  Founder of Radl and a UTC mechatronics graduate
+                  (December 2025), with part of his coursework done at
+                  UTSI &mdash; the University of Tennessee Space Institute
+                  &mdash; studying deposition onto carbon fiber for
+                  hypersonic travel.
+                </p>
+                <p className="text-sm text-foreground/80 leading-relaxed mb-4">
+                  Also coaches at Chattanooga State, out of the same
+                  boathouse.
+                </p>
+                <p className="text-sm leading-relaxed mb-3">
+                  <span className="block">
+                    <a
+                      href="mailto:kinseymi@radl.solutions"
+                      className="link-draw text-utc-navy font-semibold"
+                    >
+                      kinseymi@radl.solutions
+                    </a>
+                  </span>
+                  <span className="block font-mono-numbers text-utc-navy/85">
+                    <a href="tel:+14236024277" className="link-draw">
+                      (423) 602-4277
+                    </a>
+                  </span>
+                </p>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center text-utc-navy font-semibold link-draw text-sm"
+                >
+                  More ways to get in touch &rarr;
+                </Link>
+              </div>
+            </div>
+
+            {/* Faculty sponsor — same shape as coach card, UTC mark instead of photo */}
+            <div className="bg-white border border-border rounded-xl shadow-sm overflow-hidden flex flex-col">
+              <div className="relative aspect-[4/5] bg-gradient-to-br from-utc-navy-deep via-utc-navy to-utc-navy-deep flex items-center justify-center">
+                <UTCMark className="text-5xl text-white/85" />
+              </div>
+              <div className="p-6 flex flex-col">
+                <p className="text-utc-gold-deep uppercase text-[11px] tracking-[0.22em] font-bold mb-2">
+                  Faculty sponsor
+                </p>
+                <h3 className="font-display text-2xl font-bold text-utc-navy mb-2">
+                  Joel Harden
+                </h3>
+                <p className="text-sm text-foreground/80 leading-relaxed">
+                  UTC faculty member who agreed to advise the program in May
+                  2026, formalizing the club&rsquo;s academic standing as the
+                  M4x heads to ACRA.
+                </p>
+                {/* TODO(launch): Joel's department + bio + headshot */}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

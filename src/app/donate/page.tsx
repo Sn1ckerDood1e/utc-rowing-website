@@ -29,8 +29,8 @@ const TIERS = [
   {
     label: "Named giving",
     amount: "$1k seat → $25k 8+",
-    detail: "Name a seat in the new eight, name the boat, or sponsor a covered rack bay. Email to coordinate.",
-    cta: "Email Coach Kinsey",
+    detail: "Named gifts can be directed to specific boats, racks, or training infrastructure. Send a note and we'll match it to the right line item.",
+    cta: "Email the program",
     href: "mailto:kinseymi@radl.solutions?subject=UTC%20Rowing%20named%20giving",
   },
 ];
@@ -49,22 +49,22 @@ const NEEDS = [
   {
     title: "Covered racks at the boathouse — a 20×80 pole barn",
     estimate: "Top priority · Fall 2026",
-    why: "Sixteen UTC shells have lived on the team trailer outside since 2023 — six eights, five fours, a pair, two doubles, a single, and the Empacher quad. Every one of them has weather damage; several have structural damage. A 20×80 pole barn at the boathouse gets the better-condition hulls off the trailer and onto stretchers we can actually maintain.",
+    why: "Sixteen UTC shells live on the team trailer outside, where they've sat since 2023. Every hull has weather damage; several have structural damage. The plan is a fleet of eights to race and pairs to train — none of that is possible while the boats are stacked on a trailer in the open. A 20×80 pole barn at the boathouse gets them under cover and onto stretchers we can actually maintain.",
   },
   {
     title: "Repair the Empacher 'Chattanooga' (4x)",
     estimate: "Boat-specific",
-    why: "UTC's own quad — an Empacher from the 1980s/90s named for the city — is sidelined by a hole in the hull big enough to put a fist through. The crew is racing ACRA on a 4x loaned from Vespoli. Patching the Empacher puts a competition-grade four-seat sculling boat back on the water under UTC colors.",
+    why: "UTC's own quad — an Empacher from the 1980s/90s named for the city — is sidelined by a hole in the hull big enough to put a fist through. Patching it returns a competition-grade sculling boat to the water under UTC colors. The crew is racing ACRA this year on a 4x loaned from Vespoli; the Empacher is the boat behind it.",
   },
   {
     title: "Maclellan Gym indoor training room",
     estimate: "On-campus",
-    why: "UTC has a room in Maclellan Gymnasium reserved for the team. It needs a clean-out, paint, lights, a roof repair (it leaks, with possible mold), and ergs to outfit it. Once it's done the crew can train on campus on its own schedule.",
+    why: "UTC has a room in Maclellan Gymnasium reserved for the team. It needs a clean-out, paint, lights, a roof repair (it leaks, with possible mold), and ergs to outfit it. Year-round training space on campus — not weather-dependent, not borrowed.",
   },
   {
     title: "Bridge: Lookout Rowing Club partnership",
     estimate: "Spring 2026",
-    why: "This semester the four athletes joined Lookout Rowing Club so they could train and race on water-worthy equipment. LRC keeps the boys on the water while the racks and Empacher repair get funded. Membership and shared-equipment fees are real line items.",
+    why: "This semester the four athletes joined Lookout Rowing Club so they could train and race on water-worthy equipment. LRC keeps the program on the water while the racks and the Empacher repair get funded. Membership and shared-equipment fees are real line items — a bridge, not the destination.",
   },
 ];
 
@@ -116,10 +116,11 @@ export default function DonatePage() {
                 the Tennessee River between the Walnut Street Bridge and Williams Island since 1971.
               </p>
               <p className="text-lg text-white/75 mt-3">
-                The program is back with four athletes and one M4x. Racing this year&rsquo;s M4x on
-                a Vespoli loaner &mdash; UTC&rsquo;s own 4x has a hole in the hull big enough to put
-                a fist through. Where we go from here — the covered rack space, the racing eight —
-                is decided by what alumni and friends help us build.
+                The program is back with four athletes and one M4x at ACRA this year, racing on a
+                Vespoli loaner &mdash; UTC&rsquo;s own 4x has a hole in the hull big enough to put a
+                fist through. The longer view is a fleet of eights to race and pairs to train. What
+                gets built — the racks, the boats, the training space — is decided by what alumni
+                and friends fund.
               </p>
             </div>
           </div>
@@ -255,10 +256,6 @@ export default function DonatePage() {
           <p className="mt-8 text-sm text-white/75 max-w-3xl">
             All gifts route through UTC&rsquo;s official giving portal — campaign 42934 is dedicated
             to UTC Rowing. UTC is a qualified 501(c)(3) tax-exempt institution.
-          </p>
-          <p className="mt-3 text-sm text-white/70 max-w-3xl italic">
-            Coach Kinsey is two months out of mechatronics school at UTC and restarted the program
-            in Fall 2025 — named gifts go directly to him for the boat fleet.
           </p>
         </div>
       </section>

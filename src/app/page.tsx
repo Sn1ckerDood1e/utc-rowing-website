@@ -178,8 +178,7 @@ export default async function Home() {
                   {" · "}
                   <span className="whitespace-nowrap">Jay Pollard</span>
                   <span className="block text-base font-normal text-utc-navy/65 font-sans mt-1">
-                    UTC&rsquo;s first ACRA crew since the program restarted Fall 2025. Coached by
-                    Michael Kinsey.
+                    UTC&rsquo;s first ACRA crew since the program restarted Fall 2025.
                   </span>
                 </h2>
               </div>
