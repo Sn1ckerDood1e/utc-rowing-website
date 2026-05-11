@@ -190,7 +190,7 @@ export function SubmitForm() {
         disabled={isSubmitting}
         className="bg-utc-navy text-white font-semibold px-6 py-3 rounded hover:bg-utc-navy-deep transition-colors disabled:opacity-60"
       >
-        {isSubmitting ? "Sending…" : "Submit"}
+        {isSubmitting ? "Sending…" : "Add me to the roster"}
       </button>
     </form>
   );

@@ -80,6 +80,15 @@ export function Nav() {
                 </Link>
               </li>
             ))}
+            <li className="mt-2">
+              <Link
+                href="/donate"
+                onClick={() => setOpen(false)}
+                className="block px-3 py-3 rounded font-semibold text-center bg-utc-gold text-utc-navy-deep hover:bg-utc-gold-bright transition-colors"
+              >
+                Support →
+              </Link>
+            </li>
           </ul>
         </nav>
       )}

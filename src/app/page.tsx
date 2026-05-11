@@ -57,10 +57,11 @@ export default async function Home() {
         {/* SSR baseline: photograph (LCP) — guaranteed paint, also the video poster fallback */}
         <Image
           src="/photos/morning-row-tennessee.jpg"
-          alt="UTC Rowing crew on the Tennessee River at night, with the Hunter Museum in the background"
+          alt="UTC Rowing crew on the Tennessee River, Chattanooga."
           fill
           sizes="100vw"
           preload
+          fetchPriority="high"
           quality={75}
           className="object-cover object-center"
         />
