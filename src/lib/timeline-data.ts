@@ -530,7 +530,7 @@ export const ERAS: Era[] = [
         sortYear: 2025,
         title: "Restart, Fall 2025",
         summary:
-          "UTC Rowing returns. Coach Michael Kinsey and Abraham Mako get a boat back on the water with the first roster in five years — four athletes, ACRA M4x. Mako, a Chattanooga Juniors product who'd helped Jack Cawood launch Chattanooga State Rowing before transferring to UTC, is the most experienced rower in the boat. The first competitive UTC crew since the program went dark.",
+          "UTC Rowing returns. Coach Michael Kinsey and Abraham Mako get a boat back on the water with the first roster in five years — four athletes, ACRA M4x. Mako, a Chattanooga Juniors product who co-founded Chattanooga State Rowing with Jack Cawood before transferring to UTC, is the most experienced rower in the boat. The first competitive UTC crew since the program went dark.",
         kind: "founding",
       },
       {
@@ -554,7 +554,7 @@ export const ERAS: Era[] = [
         sortYear: 2026,
         title: "ACRA Nationals — May 17, Oak Ridge",
         summary:
-          "UTC's M4x — bow Jay Pollard, 2 Tyler Burkett, 3 Conner Richardson, stroke Abraham Mako — races at ACRA Nationals on Melton Hill Lake in Oak Ridge, TN, on May 17, 2026. The boat goes off the line in a Vespoli loaner 4x — UTC's own Empacher 'Chattanooga' is sidelined by a hull breach. All four are UTC class of 2027; Conner, Tyler, and Jay are U.S. Army active duty. Mako, the most experienced rower in the boat, started at Chattanooga Juniors and helped launch Chattanooga State Rowing with Jack Cawood before transferring to UTC. The other three first sat in a shell on April 6, 2026 — six weeks before the line. The first UTC ACRA crew since the program restarted.",
+          "UTC's M4x — bow Jay Pollard, 2 Tyler Burkett, 3 Conner Richardson, stroke Abraham Mako — races at ACRA Nationals on Melton Hill Lake in Oak Ridge, TN, on May 17, 2026. The boat goes off the line in a Vespoli loaner 4x — UTC's own Empacher 'Chattanooga' is sidelined by a hull breach. All four are UTC class of 2027; Conner, Tyler, and Jay are U.S. Army active duty. Mako, the most experienced rower in the boat, started at Chattanooga Juniors and co-founded Chattanooga State Rowing before transferring to UTC. The other three first sat in a shell on April 6, 2026 — six weeks before the line. The first UTC ACRA crew since the program restarted.",
         kind: "achievement",
       },
     ],
