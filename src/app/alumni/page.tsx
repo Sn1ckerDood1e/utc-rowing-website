@@ -20,7 +20,7 @@ export default async function AlumniPage() {
     const { data, error } = await supabase
       .from("alumni")
       .select(
-        "id, canonical_name, era, first_year, last_year, variants, regattas, achievements"
+        "id, canonical_name, era, first_year, last_year, variants, regattas, achievements, sources"
       )
       .eq("is_published", true)
       .order("canonical_name", { ascending: true })

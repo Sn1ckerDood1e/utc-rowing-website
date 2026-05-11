@@ -4,7 +4,7 @@ export const metadata = {
     "How UTC Rowing collects, stores, and protects information submitted by alumni and supporters.",
 };
 
-const LAST_UPDATED = "May 10, 2026";
+const LAST_UPDATED = "May 11, 2026";
 
 export default function PrivacyPage() {
   return (

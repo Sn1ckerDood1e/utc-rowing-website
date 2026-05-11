@@ -86,16 +86,6 @@ export function Footer() {
                 Privacy
               </Link>
             </li>
-            <li>
-              <a
-                href="https://giving.utc.edu/campaigns/42934/donations/new?_gl=1*pfvcug*_gcl_au*MzkyNTMzNTAwLjE3NzUwNjQzMzM."
-                className="hover:text-utc-gold-bright transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Give to UTC Rowing
-              </a>
-            </li>
           </ul>
         </div>
       </div>

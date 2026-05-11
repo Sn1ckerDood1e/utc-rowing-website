@@ -102,8 +102,7 @@ export default async function Home() {
               <span className="text-gradient-gold italic">the Tennessee River.</span>
             </h1>
             <p className="mt-6 text-xl sm:text-2xl text-white/85 max-w-2xl leading-relaxed">
-              Half a century of crews. One Olympic gold. Three USRowing Academic All-Americans in a
-              single year.{" "}
+              One Olympic gold. Three USRowing Academic All-Americans in a single year.{" "}
               <span className="text-utc-gold-bright font-semibold">
                 {alumniCount.toLocaleString()} alumni
               </span>{" "}
@@ -167,7 +166,7 @@ export default async function Home() {
                     <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500" />
                   </span>
                   <p className="text-utc-navy uppercase text-xs tracking-[0.25em] font-bold">
-                    Racing in 7 days · ACRA Nationals · May 17, 2026
+                    Racing Saturday · ACRA Nationals · May 17, 2026
                   </p>
                 </div>
                 <h2 className="font-display text-2xl sm:text-3xl font-bold text-utc-navy">
