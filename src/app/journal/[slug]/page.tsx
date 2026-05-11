@@ -72,21 +72,51 @@ export default async function JournalPostPage({
         </div>
       </section>
 
-      {post.hero && (
+      {post.heroVideo ? (
+        // Portrait-orientation hero video (e.g. phone-shot quad clip,
+        // roughly 9:16). Constrained to a centered max-width column so
+        // it reads as the post's visual lead without dominating the
+        // viewport. Same chrome as the M4x video on /donate — rounded,
+        // shadowed, ring, navy-gradient overlay.
         <section className="bg-paper">
           <div className="mx-auto max-w-3xl px-4 pt-10">
-            <figure className="relative overflow-hidden rounded-xl shadow-lg aspect-[16/9]">
-              <Image
-                src={post.hero}
-                alt={post.heroAlt ?? ""}
-                fill
-                sizes="(max-width: 768px) 100vw, 768px"
-                priority
-                className="object-cover"
+            <figure className="relative overflow-hidden rounded-2xl shadow-2xl shadow-utc-navy-deep/40 ring-1 ring-utc-navy/10 max-w-sm mx-auto">
+              <video
+                className="w-full h-auto block"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                poster={post.heroVideoPoster}
+                aria-label={post.heroAlt ?? post.title}
+              >
+                <source src={post.heroVideo} type="video/mp4" />
+              </video>
+              <div
+                aria-hidden
+                className="absolute inset-0 bg-gradient-to-t from-utc-navy-deep/40 via-transparent to-transparent pointer-events-none"
               />
             </figure>
           </div>
         </section>
+      ) : (
+        post.hero && (
+          <section className="bg-paper">
+            <div className="mx-auto max-w-3xl px-4 pt-10">
+              <figure className="relative overflow-hidden rounded-xl shadow-lg aspect-[16/9]">
+                <Image
+                  src={post.hero}
+                  alt={post.heroAlt ?? ""}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 768px"
+                  priority
+                  className="object-cover"
+                />
+              </figure>
+            </div>
+          </section>
+        )
       )}
 
       <section className="bg-paper">

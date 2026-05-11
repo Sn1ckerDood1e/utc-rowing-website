@@ -39,21 +39,50 @@ export default async function AlumniPage() {
 
   return (
     <>
-      <section className="relative bg-utc-navy text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(200,182,130,0.12),transparent_55%)]" />
-        <div className="relative mx-auto max-w-6xl px-4 py-16">
+      {/*
+        Hero — silhouette video sits behind the h1 + intro. The single
+        at sunset reads as anonymous/everyone, which matches the roster
+        page's "every alum is on this page" tone. Video is a background
+        layer; navy gradient overlay keeps the text legible on top.
+      */}
+      <section className="relative bg-utc-navy-darker text-white overflow-hidden">
+        {/* Background video — fills the section, behind everything else */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster="/videos/single-silhouette-poster.jpg"
+          aria-hidden="true"
+        >
+          <source src="/videos/single-silhouette.mp4" type="video/mp4" />
+        </video>
+
+        {/* Navy gradient overlay for legibility */}
+        <div
+          className="absolute inset-0 bg-gradient-to-br from-utc-navy/90 via-utc-navy/70 to-utc-navy/40 pointer-events-none"
+          aria-hidden
+        />
+        <div
+          className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(200,182,130,0.12),transparent_55%)] pointer-events-none"
+          aria-hidden
+        />
+
+        <div className="relative mx-auto max-w-6xl px-4 py-20 sm:py-24">
           <p className="text-utc-gold uppercase text-sm tracking-[0.25em] font-semibold mb-3">
             The roster
           </p>
           <h1 className="font-display text-4xl sm:text-5xl font-bold leading-[1.05] mb-4">
             UTC Rowing alumni
           </h1>
-          <p className="text-lg text-white/80 max-w-3xl leading-relaxed">
+          <p className="text-lg text-white/85 max-w-3xl leading-relaxed">
             {initial.length > 0
               ? `${initial.length.toLocaleString()} alumni on file, drawn from regatta results, lineup sheets, and program archives spanning 1983 to today. Search by name or scroll by era.`
               : "Alumni roster — currently loading."}
           </p>
-          <p className="mt-3 text-base text-white/65 max-w-3xl">
+          <p className="mt-3 text-base text-white/70 max-w-3xl">
             If you don&rsquo;t see yourself,{" "}
             <Link href="/submit" className="link-draw text-utc-gold-bright font-semibold">
               add yourself
