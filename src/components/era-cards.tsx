@@ -60,7 +60,7 @@ export function EraCards({ eraCounts }: { eraCounts: Record<string, number> }) {
       count: eraCounts.resurrection ?? null,
       headline: "ACRA-bound, Fall 2025 restart",
       detail:
-        "Coach Michael Kinsey and Abraham Mako restart the program in Fall 2025. A four-athlete restart on aging shells, with a head coach five months past graduation. The program is back.",
+        "Four athletes, an ACRA M4x, and the first competitive UTC entry in five years. The fleet is aging and the boathouse is shared, but the boat is on the water and the program is back.",
       gradient: "from-river-blue to-utc-gold-bright",
     },
   ];

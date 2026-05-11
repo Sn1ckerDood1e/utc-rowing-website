@@ -523,14 +523,14 @@ export const ERAS: Era[] = [
     span: "2025 — now",
     gradient: "from-river-blue to-utc-gold-bright",
     intro:
-      "Four athletes, an aging fleet, and a head coach fresh out of mechatronics school. The program is back.",
+      "Four athletes, an aging fleet, and a roster back on the Tennessee. The program is back.",
     moments: [
       {
         year: "2025",
         sortYear: 2025,
         title: "Restart, Fall 2025",
         summary:
-          "Coach Michael Kinsey and Abraham Mako co-found the resurrected UTC Rowing. Mako — a Chattanooga Juniors product who'd helped Jack Cawood start Chattanooga State Rowing before transferring to UTC — is the most experienced rower in the boat. Four athletes total, ACRA M4x. The first competitive UTC crew since the program went dark.",
+          "UTC Rowing returns. Coach Michael Kinsey and Abraham Mako get a boat back on the water with the first roster in five years — four athletes, ACRA M4x. Mako, a Chattanooga Juniors product who'd helped Jack Cawood launch Chattanooga State Rowing before transferring to UTC, is the most experienced rower in the boat. The first competitive UTC crew since the program went dark.",
         kind: "founding",
       },
       {
@@ -538,15 +538,15 @@ export const ERAS: Era[] = [
         sortYear: 2025.3,
         title: "Athletes vs. Engineers — first event",
         summary:
-          "Nov 2025 UTC News covers the inaugural Athletes vs. Engineers Tennessee River Race / Concrete Canoe — UTC's first organized event of the new chapter, naming Mako and Kinsey.",
+          "Nov 2025 UTC News covers the inaugural Athletes vs. Engineers Tennessee River Race / Concrete Canoe — the program's first organized event of the new chapter.",
         kind: "milestone",
       },
       {
         year: "2025",
         sortYear: 2025.5,
-        title: "Michael Kinsey graduates UTC mechatronics",
+        title: "Head coach in place",
         summary:
-          "December 2025: Michael Kinsey graduates with a UTC mechatronics degree and immediately steps into the unpaid Head Coach role at UTC Rowing while also serving as founding Head Coach of Chattanooga State Rowing.",
+          "December 2025: Michael Kinsey graduates UTC mechatronics and steps into the unpaid Head Coach role at UTC Rowing while also serving as founding Head Coach of Chattanooga State Rowing — two collegiate programs sharing one stretch of river.",
         kind: "transition",
       },
       {
@@ -554,7 +554,7 @@ export const ERAS: Era[] = [
         sortYear: 2026,
         title: "ACRA Nationals — May 17, Oak Ridge",
         summary:
-          "UTC's M4x — bow Jay Pollard, 2 Tyler Burkett, 3 Conner Richardson, stroke Abraham Mako — races at ACRA Nationals on Melton Hill Lake in Oak Ridge, TN, on May 17, 2026. Racing a Vespoli loaner 4x — UTC's own Empacher 'Chattanooga' is sidelined by a hull breach. All four are UTC class of 2027; Conner, Tyler, and Jay are U.S. Army active duty. Mako, the most experienced rower in the boat, started at Chattanooga Juniors, helped launch Chattanooga State Rowing with Jack Cawood, then transferred to UTC and co-founded the resurrected program with Coach Kinsey. The other three first sat in a shell on April 6, 2026 — six weeks before the line. The first UTC ACRA crew since the program restarted.",
+          "UTC's M4x — bow Jay Pollard, 2 Tyler Burkett, 3 Conner Richardson, stroke Abraham Mako — races at ACRA Nationals on Melton Hill Lake in Oak Ridge, TN, on May 17, 2026. The boat goes off the line in a Vespoli loaner 4x — UTC's own Empacher 'Chattanooga' is sidelined by a hull breach. All four are UTC class of 2027; Conner, Tyler, and Jay are U.S. Army active duty. Mako, the most experienced rower in the boat, started at Chattanooga Juniors and helped launch Chattanooga State Rowing with Jack Cawood before transferring to UTC. The other three first sat in a shell on April 6, 2026 — six weeks before the line. The first UTC ACRA crew since the program restarted.",
         kind: "achievement",
       },
     ],
