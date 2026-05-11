@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Playfair_Display } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
@@ -82,6 +84,8 @@ export default function RootLayout({
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(sportsTeamJsonLd) }}
         />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
