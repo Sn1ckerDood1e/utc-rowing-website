@@ -93,7 +93,7 @@ const UPCOMING: Regatta[] = [
     name: "ACRA Championships",
     date: "May 17, 2026",
     location: "Melton Hill Lake · Oak Ridge, TN",
-    entries: "Men's M4x — the immediate target. Racing a 4x on loan from Vespoli; UTC's own Empacher is sidelined.",
+    entries: "Men's M4x — the immediate target. Racing a 4x on loan from Vespoli.",
   },
   {
     name: "Head of the Hooch",
@@ -497,7 +497,7 @@ export default function TeamPage() {
             <span className="italic text-utc-gold-bright">The boat goes where alumni take it.</span>
           </h2>
           <p className="text-lg text-white/75 max-w-2xl mx-auto mb-10">
-            Travel, the Vespoli loaner, the Empacher repair, racks at the boathouse — every
+            Travel, the Vespoli loaner, the next boat, racks at the boathouse — every
             piece of the rebuild rides on the people who came before this crew.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">

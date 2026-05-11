@@ -33,7 +33,7 @@ export default function ContactPage() {
           </p>
           <h1 className="font-display text-4xl sm:text-5xl font-bold">Contact</h1>
           <p className="mt-4 text-lg text-white/80 max-w-2xl">
-            One inbox, one coach, one Tennessee.
+            One inbox. One coach.
           </p>
         </div>
       </section>

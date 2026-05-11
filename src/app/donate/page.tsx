@@ -34,7 +34,7 @@ const TIERS = [
   },
   {
     label: "Named giving",
-    amount: "$1k seat → $25k 8+",
+    amount: "Boats · racks · seats",
     detail: "Named gifts can be directed to specific boats, racks, or training infrastructure. Send a note and we'll match it to the right line item.",
     cta: "Email the program",
     href: "mailto:kinseymi@radl.solutions?subject=UTC%20Rowing%20named%20giving",
@@ -70,9 +70,9 @@ const NEEDS: Need[] = [
     },
   },
   {
-    title: "Repair the Empacher 'Chattanooga' (4x)",
-    estimate: "Boat-specific",
-    why: "UTC's own quad — an Empacher from the 1980s/90s named for the city — is sidelined by a hole in the hull big enough to put a fist through. Patching it returns a competition-grade sculling boat to the water under UTC colors. The crew is racing ACRA this year on a 4x loaned from Vespoli; the Empacher is the boat behind it.",
+    title: "Replace the fleet — twenty-five years on average",
+    estimate: "Multi-year · per-hull",
+    why: "Fifteen of UTC's sixteen shells were built before 2013. The Vespoli eights span 1988 through 2012, the Empacher 4x dates to the 1980s/90s, and the only modern hull is a 2020 Swift 1x. Boats of that vintage are heavier, slower, and not what crews race today. The path forward is replacement, not patching — one new hull at a time, starting with what the crew actually races. A modern fleet is what moves a program from rebuilding to contending.",
   },
   {
     title: "Maclellan Gym indoor training room",
@@ -87,7 +87,7 @@ const NEEDS: Need[] = [
   {
     title: "Bridge: Lookout Rowing Club partnership",
     estimate: "Spring 2026",
-    why: "This semester the four athletes joined Lookout Rowing Club so they could train and race on water-worthy equipment. LRC keeps the program on the water while the racks and the Empacher repair get funded. Membership and shared-equipment fees are real line items — a bridge, not the destination.",
+    why: "This semester the four athletes joined Lookout Rowing Club so they could train and race on water-worthy equipment. LRC keeps the program on the water while the racks and the next hulls get funded. Membership and shared-equipment fees are real line items — a bridge, not the destination.",
   },
 ];
 
@@ -170,9 +170,9 @@ export default function DonatePage() {
                   </p>
                 </div>
                 <p className="text-utc-navy/80 text-base sm:text-lg leading-snug">
-                  Four athletes, one M4x, racing at Melton Hill Lake in Oak Ridge in seven days.
-                  Every gift before May 17 goes to this crew&rsquo;s travel and the next boat
-                  behind them.
+                  Four athletes, one M4x, racing at Melton Hill Lake in Oak Ridge on Saturday,
+                  May 17. Every gift before then goes to this crew&rsquo;s travel and the next
+                  boat behind them.
                 </p>
               </div>
               <a
@@ -250,7 +250,7 @@ export default function DonatePage() {
               How to give
             </p>
             <h2 className="font-display text-3xl sm:text-4xl font-bold leading-tight">
-              Three paths <span className="italic text-utc-gold-bright">in.</span>
+              Pick a <span className="italic text-utc-gold-bright">lane.</span>
             </h2>
           </div>
 

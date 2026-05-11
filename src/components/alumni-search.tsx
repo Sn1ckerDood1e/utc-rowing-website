@@ -48,7 +48,7 @@ export function AlumniSearch({
 
   return (
     <div>
-      <div className="sticky top-16 bg-white border-b border-border z-10 -mx-4 px-4 py-4 mb-6">
+      <div className="sticky top-[72px] bg-white border-b border-border z-10 -mx-4 px-4 py-4 mb-6">
         <input
           type="search"
           placeholder="Search alumni by name..."
@@ -139,6 +139,16 @@ function AlumniCard({ a }: { a: Alumni }) {
       {a.achievements && (
         <div className="text-xs text-utc-navy mt-2 font-medium">
           ★ {a.achievements}
+        </div>
+      )}
+      {a.sources && (
+        <div className="mt-2 pt-2 border-t border-border/50">
+          <div className="text-[10px] uppercase tracking-wider text-utc-gold font-semibold mb-0.5">
+            Documented in
+          </div>
+          <div className="text-xs text-foreground/60 line-clamp-2 leading-snug">
+            {a.sources}
+          </div>
         </div>
       )}
     </li>
