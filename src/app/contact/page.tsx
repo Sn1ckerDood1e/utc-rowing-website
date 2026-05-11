@@ -130,6 +130,34 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      <section className="bg-utc-navy text-white">
+        <div className="mx-auto max-w-3xl px-4 py-16 text-center">
+          <p className="text-utc-gold uppercase text-xs tracking-[0.25em] font-semibold mb-4">
+            Two ways in
+          </p>
+          <h2 className="font-display text-3xl sm:text-4xl font-bold mb-5 leading-tight">
+            Back the crew, or join the roster.
+          </h2>
+          <p className="text-white/75 max-w-xl mx-auto mb-8">
+            Email is one path. These are the other two.
+          </p>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <Link
+              href="/donate"
+              className="bg-utc-gold text-utc-navy-deep font-semibold px-7 py-3.5 rounded-md hover:bg-utc-gold-bright transition-all hover:shadow-xl inline-flex items-center gap-2"
+            >
+              Send the crew off →
+            </Link>
+            <Link
+              href="/submit"
+              className="bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold px-7 py-3.5 rounded-md hover:bg-white/20 hover:border-utc-gold/60 transition-all"
+            >
+              Add yourself to the roster →
+            </Link>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

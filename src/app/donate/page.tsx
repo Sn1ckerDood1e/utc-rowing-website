@@ -10,6 +10,11 @@ export const metadata = {
 const GIVING_URL =
   "https://giving.utc.edu/campaigns/42934/donations/new?_gl=1*pfvcug*_gcl_au*MzkyNTMzNTAwLjE3NzUwNjQzMzM.";
 
+// All three tier CTAs open in a new tab (target="_blank") so the visitor
+// doesn't lose the UTC Rowing page when they click through:
+//   - Tier 1 "Give once"        → target="_blank" → giving.utc.edu
+//   - Tier 2 "Give monthly"     → target="_blank" → giving.utc.edu
+//   - Tier 3 "Email the program" → target="_blank" → mailto:
 const TIERS = [
   {
     label: "Single donation",
@@ -239,7 +244,8 @@ export default function DonatePage() {
                 </p>
                 <a
                   href={t.href}
-                  rel="noreferrer"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`inline-flex items-center gap-1.5 font-semibold ${
                     t.featured
                       ? "bg-utc-navy text-white px-5 py-2.5 rounded-md hover:bg-utc-navy-deep transition-colors"

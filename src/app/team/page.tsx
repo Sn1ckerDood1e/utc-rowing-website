@@ -30,7 +30,7 @@ const ROSTER: Athlete[] = [
     classYear: "Class of 2027",
     hometown: "Chattanooga, TN",
     major: "Political Science & Public Service: Public Law",
-    bio: "The program's most experienced rower and the stroke seat of the M4x. Came up through Chattanooga Junior Rowing, then co-founded Chattanooga State Rowing with Jack Cawood before transferring to UTC, where he co-founded the resurrected UTC Rowing program with Coach Kinsey. Sets the rate the other three follow.",
+    bio: "The program's most experienced rower and the stroke seat of the M4x. Came up through Chattanooga Junior Rowing, then co-founded Chattanooga State Rowing with Jack Cawood before transferring to UTC and helping resurrect the program here in Fall 2025. Sets the rate the other three follow.",
     photo: {
       src: "/photos/abraham-single-aquarium.jpg",
       width: 1280,
@@ -188,7 +188,7 @@ export default function TeamPage() {
                   key={a.name}
                   className="bg-white border border-border rounded-xl shadow-sm overflow-hidden flex flex-col"
                 >
-                  {a.photo && (
+                  {a.photo ? (
                     <div className="relative aspect-[4/5] bg-utc-navy-deep">
                       <Image
                         src={a.photo.src}
@@ -198,6 +198,17 @@ export default function TeamPage() {
                         sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
                         className="w-full h-full object-cover"
                       />
+                    </div>
+                  ) : (
+                    // Placeholder photo slot so all four M4x cards carry equal
+                    // visual weight — Mako's portrait doesn't dominate the
+                    // stack. Same UTCMark-on-gradient treatment used on the
+                    // Harden faculty card below.
+                    <div
+                      aria-hidden
+                      className="relative aspect-[4/5] bg-gradient-to-br from-utc-navy-deep via-utc-navy to-utc-navy-deep flex items-center justify-center"
+                    >
+                      <UTCMark className="text-5xl text-white/70" />
                     </div>
                   )}
                   <div className="p-6 flex flex-col min-h-[280px]">
@@ -316,9 +327,11 @@ export default function TeamPage() {
           </div>
 
           <div className="grid gap-5 md:grid-cols-2">
-            {/* Head coach card — same visual weight as an athlete card */}
+            {/* Head coach card — same visual weight as an athlete card.
+                Aspect ratio matches the source headshot (1280×824 ≈ 16:10)
+                so the photo isn't cropped vertically. */}
             <div className="bg-white border border-border rounded-xl shadow-sm overflow-hidden flex flex-col">
-              <div className="relative aspect-[4/5] bg-utc-navy-deep">
+              <div className="relative aspect-[16/10] bg-utc-navy-deep">
                 <Image
                   src="/photos/kinsey-headshot.jpg"
                   alt="Coach Michael Kinsey at a UTC men's basketball game"
