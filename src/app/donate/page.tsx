@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight, RiverBendCurve } from "@/components/svg-rowing";
 
@@ -50,11 +51,23 @@ const TIERS = [
 //   1× 2-    Vespoli 2000 — John & Mike Madzi
 //   2× 2x    Vespoli 1987 — Patton, Lookout
 //   1× 1x    Swift 2020 — Scrappy (the only modern shell)
-const NEEDS = [
+type Need = {
+  title: string;
+  estimate: string;
+  why: string;
+  photo?: { src: string; alt: string; caption: string };
+};
+
+const NEEDS: Need[] = [
   {
     title: "Covered racks at the boathouse — a 20×80 pole barn",
     estimate: "Top priority · Fall 2026",
     why: "Sixteen UTC shells live on the team trailer outside, where they've sat since 2023. Every hull has weather damage; several have structural damage. The plan is a fleet of eights to race and pairs to train — none of that is possible while the boats are stacked on a trailer in the open. A 20×80 pole barn at the boathouse gets them under cover and onto stretchers we can actually maintain.",
+    photo: {
+      src: "/photos/utc-trailer.jpg",
+      alt: "UTC Rowing's team trailer, parked outside with rowing shells stacked on it",
+      caption: "UTC's trailer. Sixteen shells, sitting outside since 2023.",
+    },
   },
   {
     title: "Repair the Empacher 'Chattanooga' (4x)",
@@ -65,6 +78,11 @@ const NEEDS = [
     title: "Maclellan Gym indoor training room",
     estimate: "On-campus",
     why: "UTC has a room in Maclellan Gymnasium reserved for the team. It needs a clean-out, paint, lights, a roof repair (it leaks, with possible mold), and ergs to outfit it. Year-round training space on campus — not weather-dependent, not borrowed.",
+    photo: {
+      src: "/photos/maclellan-gym.jpg",
+      alt: "The Maclellan Gym indoor training room — water-damaged walls, rowing equipment and oars stacked against the walls, wheelchairs from the HHP Sports Lab in the foreground",
+      caption: "The room as it is today.",
+    },
   },
   {
     title: "Bridge: Lookout Rowing Club partnership",
@@ -192,6 +210,30 @@ export default function DonatePage() {
                     {n.estimate}
                   </span>
                 </div>
+                {n.photo && (
+                  // Equipment-honesty photo for the line item. Same visual
+                  // treatment as the M4x hero video — rounded, shadowed,
+                  // navy-gradient overlay, gold caption label. preload={false}
+                  // because these sit below the fold inside the NEEDS grid.
+                  <figure className="relative rounded-lg overflow-hidden shadow-2xl shadow-utc-navy-deep/30 ring-1 ring-utc-navy/10 my-4">
+                    <Image
+                      src={n.photo.src}
+                      alt={n.photo.alt}
+                      width={1920}
+                      height={1440}
+                      sizes="(min-width: 640px) 45vw, 100vw"
+                      preload={false}
+                      className="w-full h-auto block"
+                    />
+                    <div
+                      aria-hidden
+                      className="absolute inset-0 bg-gradient-to-t from-utc-navy-deep/65 via-utc-navy-deep/10 to-transparent pointer-events-none"
+                    />
+                    <figcaption className="absolute bottom-3 left-3 right-3 text-white/95 text-xs font-medium leading-snug">
+                      {n.photo.caption}
+                    </figcaption>
+                  </figure>
+                )}
                 <p className="text-foreground/80">{n.why}</p>
               </div>
             ))}
