@@ -386,10 +386,22 @@ export default function TeamPage() {
               </div>
             </div>
 
-            {/* Faculty sponsor — same shape as coach card, UTC mark instead of photo */}
+            {/* Faculty sponsor — same shape as coach card. Portrait headshot
+                pulled from UTC HHP faculty page; native dimensions 800×1200
+                (2:3), cropped to the athlete-card 4:5 aspect for consistency
+                with the M4x portrait cards above. preload={false} — Joel
+                sits below the fold, not the LCP. */}
             <div className="bg-white border border-border rounded-xl shadow-sm overflow-hidden flex flex-col">
-              <div className="relative aspect-[4/5] bg-gradient-to-br from-utc-navy-deep via-utc-navy to-utc-navy-deep flex items-center justify-center">
-                <UTCMark className="text-5xl text-white/85" />
+              <div className="relative aspect-[4/5] bg-utc-navy-deep">
+                <Image
+                  src="/photos/joel-harden.jpg"
+                  alt="Dr. Joel Harden, UTC Health & Human Performance"
+                  width={800}
+                  height={1200}
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  preload={false}
+                  className="w-full h-full object-cover object-center"
+                />
               </div>
               <div className="p-6 flex flex-col">
                 <p className="text-utc-gold-deep uppercase text-[11px] tracking-[0.22em] font-bold mb-2">
@@ -409,7 +421,6 @@ export default function TeamPage() {
                   in May 2026, formalizing the club&rsquo;s academic
                   standing as the M4x heads to ACRA.
                 </p>
-                {/* TODO(launch): pull official UTC headshot at https://www.utc.edu/sites/default/files/styles/card_image_tablet/public/2025-09/harden-joel-25.jpg */}
               </div>
             </div>
           </div>
