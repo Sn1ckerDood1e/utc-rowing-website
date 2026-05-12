@@ -158,12 +158,12 @@ function AlumniCard({
   return (
     <li className="border border-border rounded p-3 hover:border-utc-gold transition-colors focus-visible:ring-2 focus-visible:ring-utc-gold focus-visible:outline-none flex gap-3">
       {photoSrc && (
-        <div className="relative w-16 h-16 shrink-0 rounded overflow-hidden bg-utc-navy-deep">
+        <div className="relative w-24 h-24 sm:w-28 sm:h-28 shrink-0 rounded overflow-hidden bg-utc-navy-deep">
           <Image
             src={photoSrc}
             alt=""
             fill
-            sizes="64px"
+            sizes="(max-width: 640px) 96px, 112px"
             className="object-cover"
           />
         </div>
