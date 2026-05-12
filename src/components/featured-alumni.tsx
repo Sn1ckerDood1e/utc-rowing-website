@@ -1,77 +1,53 @@
-import type { ReactNode } from "react";
+import Image from "next/image";
 import Link from "next/link";
+import { createSupabasePublicClient } from "@/lib/supabase/public";
+import { photoUrl } from "@/types/domain";
 import { MedalIcon } from "./svg-rowing";
 
-type Featured = {
-  key: string;
-  name: ReactNode;
-  classOf: string;
-  achievement: string;
-  detail: string;
-  medalLabel: string;
-  medalTone: string;
+type FeaturedRow = {
+  id: string;
+  slug: string;
+  canonical_name: string;
+  achievements: string | null;
+  bio: string | null;
+  featured_medal_label: string | null;
+  featured_medal_kind: string | null;
+  featured_class_label: string | null;
+  featured_rank: number | null;
+  featured_photo: {
+    storage_path: string;
+    caption: string | null;
+    submitter_name: string | null;
+    attribution: string | null;
+  } | null;
 };
 
-const FEATURED: Featured[] = [
-  {
-    key: "beery",
-    name: "Dan Beery",
-    classOf: "Class of 2000",
-    achievement: "Olympic Gold · Athens 2004",
-    detail:
-      "The first U.S. men's eight to win Olympic gold in 40 years. World-record 5:19.85 in the heat.",
-    medalLabel: "Gold",
-    medalTone: "from-utc-gold-bright to-utc-gold-deep",
-  },
-  {
-    key: "aa-1995-96",
-    name: (
-      <>
-        <span className="whitespace-nowrap">Robert Meeks</span>{" · "}
-        <span className="whitespace-nowrap">Paul Turner</span>{" · "}
-        <span className="whitespace-nowrap">Valerie Schlatter</span>
-      </>
-    ),
-    classOf: "1995–96",
-    achievement: "Three USRowing Academic All-Americans",
-    detail:
-      "More than any other U.S. college program that year — including Harvard, Yale, MIT, and Princeton.",
-    medalLabel: "AA × 3",
-    medalTone: "from-utc-gold-bright to-utc-gold-deep",
-  },
-  {
-    key: "thomas",
-    name: "Stephen Thomas",
-    classOf: "Class of 1995",
-    achievement: "1997 World Lightweight Quad",
-    detail:
-      "Raced for the U.S. lightweight quad at the World Championships in Aiguebelette.",
-    medalLabel: "Worlds",
-    medalTone: "from-river-blue-light to-river-blue-dark",
-  },
-  {
-    key: "bruce",
-    name: "Keith Bruce",
-    classOf: "Class of 1994",
-    achievement: "First UTC USRowing All-American · 1993–94",
-    detail:
-      "The original — UTC's first USRowing Collegiate Academic All-American, two years before the 1995–96 sweep.",
-    medalLabel: "First",
-    medalTone: "from-utc-gold-bright to-utc-gold-deep",
-  },
-  {
-    key: "espeseth",
-    name: "Robert Espeseth",
-    classOf: "Head Coach 1989–2017",
-    achievement: "1984 Olympic Bronze · USRowing Hall of Fame",
-    detail:
-      "Twenty-eight years at UTC. Coached Beery to gold. Brought the U.S. Women's National Team to Chattanooga for 1996 Olympic prep.",
-    medalLabel: "Coach",
-    medalTone: "from-utc-navy to-utc-navy-deep",
-  },
-];
+const MEDAL_TONES: Record<string, string> = {
+  gold: "from-utc-gold-bright to-utc-gold-deep",
+  first: "from-utc-gold-bright to-utc-gold-deep",
+  national: "from-river-blue-light to-river-blue-dark",
+  coach: "from-utc-navy to-utc-navy-deep",
+};
 
-export function FeaturedAlumni() {
+export async function FeaturedAlumni() {
+  const supabase = createSupabasePublicClient();
+  const { data, error } = await supabase
+    .from("alumni")
+    .select(
+      "id, slug, canonical_name, achievements, bio, featured_medal_label, featured_medal_kind, featured_class_label, featured_rank, featured_photo:featured_photo_id (storage_path, caption, submitter_name, attribution)"
+    )
+    .eq("is_featured", true)
+    .order("featured_rank", { ascending: true, nullsFirst: false })
+    .limit(12);
+
+  if (error) {
+    console.error("[FeaturedAlumni] fetch failed", error.message);
+    return null;
+  }
+
+  const featured = (data ?? []) as unknown as FeaturedRow[];
+  if (featured.length === 0) return null;
+
   return (
     <section className="bg-utc-navy text-white relative overflow-hidden">
       <div className="absolute inset-0 opacity-10 pointer-events-none" aria-hidden>
@@ -85,7 +61,8 @@ export function FeaturedAlumni() {
             Fifty-five years of rowers
           </p>
           <h2 className="font-display text-4xl sm:text-5xl font-bold leading-tight">
-            UTC has produced <span className="text-gradient-gold">Olympians, scholars, and lifers.</span>
+            UTC has produced{" "}
+            <span className="text-gradient-gold italic">Olympians, scholars, and lifers.</span>
           </h2>
           <p className="mt-5 text-white/70 text-lg">
             These names came out of a club. They didn&rsquo;t act like one.
@@ -93,30 +70,69 @@ export function FeaturedAlumni() {
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {FEATURED.map((f, i) => (
-            <article
-              key={f.key}
-              className={`relative bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 rounded-xl p-6 hover:border-utc-gold/40 transition-all duration-300 hover:translate-y-[-2px] ${
-                i === 1 ? "lg:col-span-1 sm:col-span-2 lg:col-start-auto" : ""
-              }`}
-            >
-              <div
-                className={`inline-flex items-center gap-1.5 bg-gradient-to-r ${f.medalTone} text-utc-navy-deep text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full mb-4`}
+          {featured.map((f) => {
+            const tone =
+              MEDAL_TONES[f.featured_medal_kind ?? "gold"] ?? MEDAL_TONES.gold;
+            const photoSrc = f.featured_photo
+              ? photoUrl(f.featured_photo.storage_path)
+              : null;
+            return (
+              <article
+                key={f.id}
+                className="relative bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 rounded-xl overflow-hidden hover:border-utc-gold/40 transition-all duration-300 hover:translate-y-[-2px] flex flex-col"
               >
-                <MedalIcon className="w-3.5 h-3.5" />
-                {f.medalLabel}
-              </div>
-              <h3 className="font-display text-xl font-bold leading-tight mb-1">{f.name}</h3>
-              <p className="text-utc-gold-bright text-sm font-medium mb-3">{f.classOf}</p>
-              <p className="font-semibold text-white mb-2">{f.achievement}</p>
-              <p className="text-white/65 text-sm leading-relaxed">{f.detail}</p>
-            </article>
-          ))}
+                {photoSrc && (
+                  <div className="relative h-44 w-full bg-utc-navy-deep">
+                    <Image
+                      src={photoSrc}
+                      alt={
+                        f.featured_photo?.caption ??
+                        `${f.canonical_name} featured photograph`
+                      }
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover"
+                    />
+                    {f.featured_photo?.attribution === "attributed" &&
+                      f.featured_photo?.submitter_name && (
+                        <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent text-white/85 text-[10px] px-3 py-1.5">
+                          Photo contributed by {f.featured_photo.submitter_name}
+                        </div>
+                      )}
+                  </div>
+                )}
+                <div className="p-6 flex flex-col">
+                  {f.featured_medal_label && (
+                    <div
+                      className={`inline-flex self-start items-center gap-1.5 bg-gradient-to-r ${tone} text-utc-navy-deep text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full mb-4`}
+                    >
+                      <MedalIcon className="w-3.5 h-3.5" />
+                      {f.featured_medal_label}
+                    </div>
+                  )}
+                  <h3 className="font-display text-xl font-bold leading-tight mb-1">
+                    {f.canonical_name}
+                  </h3>
+                  {f.featured_class_label && (
+                    <p className="text-utc-gold-bright text-sm font-medium mb-3">
+                      {f.featured_class_label}
+                    </p>
+                  )}
+                  {f.achievements && (
+                    <p className="font-semibold text-white mb-2">{f.achievements}</p>
+                  )}
+                  {f.bio && (
+                    <p className="text-white/65 text-sm leading-relaxed">{f.bio}</p>
+                  )}
+                </div>
+              </article>
+            );
+          })}
         </div>
 
         <p className="mt-10 text-center text-white/50 text-sm">
-          More alumni to surface as submissions come in. If you know a UTC rower whose story belongs
-          here,{" "}
+          More alumni to surface as submissions come in. If you know a UTC rower whose
+          story belongs here,{" "}
           <Link href="/submit" className="text-utc-gold-bright link-draw">
             tell us
           </Link>

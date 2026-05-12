@@ -1,18 +1,38 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useState, useTransition } from "react";
 import { searchAlumni } from "@/app/alumni/actions";
 import type { Alumni } from "@/types/domain";
-import { ERA_LABELS } from "@/types/domain";
+import { ERA_LABELS, photoUrl } from "@/types/domain";
+import { MedalIcon } from "./svg-rowing";
+
+type AlumWithPhoto = Alumni & {
+  featured_photo?: {
+    storage_path: string;
+    caption: string | null;
+    submitter_name: string | null;
+    attribution: string | null;
+  } | null;
+};
+
+const MEDAL_TONES: Record<string, string> = {
+  gold: "from-utc-gold-bright to-utc-gold-deep",
+  first: "from-utc-gold-bright to-utc-gold-deep",
+  national: "from-river-blue-light to-river-blue-dark",
+  coach: "from-utc-navy to-utc-navy-deep",
+};
 
 export function AlumniSearch({
   initialAlumni,
+  appearanceCounts = {},
 }: {
-  initialAlumni: Alumni[];
+  initialAlumni: AlumWithPhoto[];
+  appearanceCounts?: Record<string, number>;
 }) {
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState<Alumni[]>(initialAlumni);
+  const [results, setResults] = useState<AlumWithPhoto[]>(initialAlumni);
   const [isPending, startTransition] = useTransition();
 
   useEffect(() => {
@@ -22,7 +42,7 @@ export function AlumniSearch({
     }
     const handle = setTimeout(() => {
       startTransition(async () => {
-        const r = await searchAlumni(query);
+        const r = (await searchAlumni(query)) as AlumWithPhoto[];
         setResults(r);
       });
     }, 200);
@@ -32,7 +52,7 @@ export function AlumniSearch({
   // Group by era (memoized so it doesn't re-run every keystroke)
   const byEra = useMemo(
     () =>
-      results.reduce<Record<string, Alumni[]>>((acc, a) => {
+      results.reduce<Record<string, AlumWithPhoto[]>>((acc, a) => {
         (acc[a.era] ||= []).push(a);
         return acc;
       }, {}),
@@ -95,9 +115,21 @@ export function AlumniSearch({
                 </span>
               </h2>
               <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {list.map((a) => (
-                  <AlumniCard key={a.id} a={a} />
-                ))}
+                {list.map((a) =>
+                  shouldExpand(a) ? (
+                    <ExpandedAlumniCard
+                      key={a.id}
+                      a={a}
+                      appearanceCount={appearanceCounts[a.id] ?? 0}
+                    />
+                  ) : (
+                    <AlumniCard
+                      key={a.id}
+                      a={a}
+                      appearanceCount={appearanceCounts[a.id] ?? 0}
+                    />
+                  )
+                )}
               </ul>
             </section>
           );
@@ -107,7 +139,106 @@ export function AlumniSearch({
   );
 }
 
-function AlumniCard({ a }: { a: Alumni }) {
+function shouldExpand(a: AlumWithPhoto): boolean {
+  return Boolean(a.featured_photo) || Boolean(a.bio);
+}
+
+function ExpandedAlumniCard({
+  a,
+  appearanceCount = 0,
+}: {
+  a: AlumWithPhoto;
+  appearanceCount?: number;
+}) {
+  const years =
+    a.first_year && a.last_year
+      ? a.first_year === a.last_year
+        ? String(a.first_year)
+        : `${a.first_year}–${a.last_year}`
+      : null;
+  const tone =
+    MEDAL_TONES[a.featured_medal_kind ?? "gold"] ?? MEDAL_TONES.gold;
+  const photoSrc = a.featured_photo
+    ? photoUrl(a.featured_photo.storage_path)
+    : null;
+
+  return (
+    <li className="sm:col-span-2 lg:col-span-2 relative bg-gradient-to-br from-white to-paper-grain border-2 border-utc-gold/40 rounded-lg overflow-hidden hover:border-utc-gold transition-colors focus-within:ring-2 focus-within:ring-utc-gold">
+      {photoSrc && (
+        <div className="relative h-56 sm:h-72 w-full bg-utc-navy-deep">
+          <Image
+            src={photoSrc}
+            alt={a.featured_photo?.caption ?? `${a.canonical_name} featured photograph`}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 66vw"
+            className="object-cover"
+          />
+          {(a.featured_photo?.caption ||
+            (a.featured_photo?.attribution === "attributed" &&
+              a.featured_photo?.submitter_name)) && (
+            <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/85 to-transparent text-white text-xs px-4 py-2">
+              {a.featured_photo?.caption && <div>{a.featured_photo.caption}</div>}
+              {a.featured_photo?.attribution === "attributed" &&
+                a.featured_photo?.submitter_name && (
+                  <div className="text-[10px] text-white/75 mt-0.5">
+                    Contributed by {a.featured_photo.submitter_name}
+                  </div>
+                )}
+            </div>
+          )}
+        </div>
+      )}
+      <div className="p-5">
+        <div className="flex items-start justify-between gap-3 mb-2">
+          <div>
+            <div className="font-display text-2xl font-bold text-utc-navy leading-tight">
+              {a.canonical_name}
+            </div>
+            <div className="text-sm text-muted-foreground">
+              {a.featured_class_label ?? (years ? `Rowed ${years}` : "Years on file: unknown")}
+            </div>
+          </div>
+          {a.featured_medal_label && (
+            <div
+              className={`shrink-0 inline-flex items-center gap-1.5 bg-gradient-to-r ${tone} text-utc-navy-deep text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full`}
+            >
+              <MedalIcon className="w-3 h-3" />
+              {a.featured_medal_label}
+            </div>
+          )}
+        </div>
+
+        {a.achievements && (
+          <p className="text-sm font-semibold text-utc-navy mb-2">
+            {a.achievements}
+          </p>
+        )}
+        {a.bio && (
+          <p className="text-sm text-foreground/80 leading-relaxed">{a.bio}</p>
+        )}
+
+        {a.variants && (
+          <p className="text-xs text-muted-foreground/80 mt-3 italic">
+            also: {a.variants}
+          </p>
+        )}
+        {appearanceCount > 0 && (
+          <p className="text-xs text-utc-navy/80 mt-3 font-medium">
+            Appears in {appearanceCount} photo{appearanceCount === 1 ? "" : "s"} on the site.
+          </p>
+        )}
+      </div>
+    </li>
+  );
+}
+
+function AlumniCard({
+  a,
+  appearanceCount = 0,
+}: {
+  a: AlumWithPhoto;
+  appearanceCount?: number;
+}) {
   const years =
     a.first_year && a.last_year
       ? a.first_year === a.last_year
@@ -149,6 +280,11 @@ function AlumniCard({ a }: { a: Alumni }) {
           <div className="text-xs text-foreground/60 line-clamp-2 leading-snug">
             {a.sources}
           </div>
+        </div>
+      )}
+      {appearanceCount > 0 && (
+        <div className="mt-2 text-[11px] text-utc-navy/80 font-medium">
+          📷 Appears in {appearanceCount} photo{appearanceCount === 1 ? "" : "s"}
         </div>
       )}
     </li>
