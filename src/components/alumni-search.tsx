@@ -68,7 +68,7 @@ export function AlumniSearch({
 
   return (
     <div>
-      <div className="sticky top-[72px] bg-white border-b border-border z-10 -mx-4 px-4 py-4 mb-6">
+      <div className="sticky top-16 bg-white border-b border-border z-10 -mx-4 px-4 py-4 mb-6">
         <input
           type="search"
           placeholder="Search alumni by name..."
@@ -163,7 +163,7 @@ function ExpandedAlumniCard({
     : null;
 
   return (
-    <li className="sm:col-span-2 lg:col-span-2 relative bg-gradient-to-br from-white to-paper-grain border-2 border-utc-gold/40 rounded-lg overflow-hidden hover:border-utc-gold transition-colors focus-within:ring-2 focus-within:ring-utc-gold">
+    <li className="sm:col-span-2 lg:col-span-2 relative bg-white border border-utc-gold/40 rounded-lg overflow-hidden hover:border-utc-gold transition-colors focus-within:ring-2 focus-within:ring-utc-gold shadow-sm">
       {photoSrc && (
         <div className="relative h-56 sm:h-72 w-full bg-utc-navy-deep">
           <Image

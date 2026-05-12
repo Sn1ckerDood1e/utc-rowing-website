@@ -17,9 +17,9 @@ function timeAgo(iso: string): string {
   const hr = min / 60;
   if (hr < 48) return `${Math.round(hr)} hr ago`;
   const day = hr / 24;
-  if (day < 14) return `${Math.round(day)} days ago`;
+  if (day < 14) return `${Math.round(day)} d ago`;
   const wk = day / 7;
-  if (wk < 8) return `${Math.round(wk)} weeks ago`;
+  if (wk < 8) return `${Math.round(wk)} wk ago`;
   const mo = day / 30;
   return `${Math.round(mo)} mo ago`;
 }
@@ -30,47 +30,43 @@ export async function RecentActivity() {
     .from("v_recent_activity")
     .select("kind, title, created_at")
     .order("created_at", { ascending: false })
-    .limit(8);
+    .limit(6);
 
   if (error || !data || data.length === 0) return null;
 
   const rows = data as ActivityRow[];
 
   return (
-    <aside className="bg-white border border-utc-gold/30 rounded-lg p-4 mb-8">
-      <p className="text-xs uppercase tracking-[0.2em] text-utc-gold-deep font-semibold mb-3">
-        Recently on the roster
-      </p>
-      <ul className="grid gap-2 sm:grid-cols-2">
+    <aside className="bg-white border border-utc-gold/30 rounded-lg px-4 py-3 mb-6">
+      <div className="flex items-baseline justify-between gap-3 mb-2">
+        <p className="text-[10px] uppercase tracking-[0.18em] text-utc-gold-deep font-semibold">
+          Recently on the roster
+        </p>
+        <Link
+          href="/identify"
+          className="text-xs text-utc-navy font-medium underline decoration-utc-gold underline-offset-4 hover:text-utc-gold-deep transition-colors shrink-0"
+        >
+          Help name photos →
+        </Link>
+      </div>
+      <ul className="grid gap-x-4 gap-y-1.5 sm:grid-cols-2 lg:grid-cols-3 text-sm">
         {rows.map((r, i) => (
           <li
             key={i}
-            className="flex items-start gap-2 text-sm text-foreground/85"
+            className="flex items-baseline gap-2 text-foreground/85 leading-snug"
           >
-            <span aria-hidden className="text-utc-gold mt-1 shrink-0">
-              {r.kind === "photo_published" ? "📷" : "·"}
+            <span aria-hidden className="text-utc-gold shrink-0 text-xs">
+              {r.kind === "photo_published" ? "▣" : "+"}
             </span>
-            <span className="leading-snug">
-              <span className="font-medium text-utc-navy">
-                {r.kind === "photo_published" ? "Photo" : "Joined"}:
-              </span>{" "}
-              {r.title}
-              <span className="block text-xs text-muted-foreground">
-                {timeAgo(r.created_at)}
+            <span className="truncate">
+              <span className="font-medium text-utc-navy">{r.title}</span>
+              <span className="text-muted-foreground text-xs ml-1.5">
+                · {timeAgo(r.created_at)}
               </span>
             </span>
           </li>
         ))}
       </ul>
-      <p className="mt-3 text-xs text-muted-foreground">
-        Photos awaiting identification?{" "}
-        <Link
-          href="/identify"
-          className="text-utc-navy font-semibold underline decoration-utc-gold underline-offset-4"
-        >
-          Help name them →
-        </Link>
-      </p>
     </aside>
   );
 }
