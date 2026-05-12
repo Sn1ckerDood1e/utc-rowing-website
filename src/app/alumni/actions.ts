@@ -20,10 +20,13 @@ export async function searchAlumni(query: string): Promise<Alumni[]> {
 
   let q = supabase
     .from("alumni")
-    .select("*")
+    .select(
+      "*, featured_photo:featured_photo_id (storage_path, caption)"
+    )
     .eq("is_published", true)
+    .order("first_year", { ascending: true, nullsFirst: false })
     .order("canonical_name", { ascending: true })
-    .limit(500);
+    .limit(600);
 
   if (sanitized) {
     // Search canonical_name + variants. ILIKE on both.

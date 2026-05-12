@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { createSupabasePublicClient } from "@/lib/supabase/public";
 import { AlumniSearch } from "@/components/alumni-search";
+import { RecentActivity } from "@/components/recent-activity";
 import type { Alumni } from "@/types/domain";
 
 export const revalidate = 3600;
@@ -13,20 +14,31 @@ export const metadata = {
 
 export default async function AlumniPage() {
   let initial: Alumni[] = [];
+  let appearanceCounts: Record<string, number> = {};
   let dbReady = true;
   try {
     // Anon-only client — no cookies, so /alumni stays statically renderable / ISR-eligible.
     const supabase = createSupabasePublicClient();
-    const { data, error } = await supabase
-      .from("alumni")
-      .select(
-        "id, canonical_name, era, first_year, last_year, variants, regattas, achievements, sources"
-      )
-      .eq("is_published", true)
-      .order("canonical_name", { ascending: true })
-      .limit(500);
+    const [{ data, error }, { data: ppData }] = await Promise.all([
+      supabase
+        .from("alumni")
+        .select(
+          "id, canonical_name, era, first_year, last_year, variants, regattas, achievements, sources, bio, is_featured, featured_rank, featured_medal_label, featured_medal_kind, featured_class_label, featured_photo:featured_photo_id (storage_path, caption, submitter_name, attribution)"
+        )
+        .eq("is_published", true)
+        .order("first_year", { ascending: true, nullsFirst: false })
+        .order("canonical_name", { ascending: true })
+        .limit(600),
+      supabase
+        .from("photo_people")
+        .select("alumni_id")
+        .not("alumni_id", "is", null),
+    ]);
     if (error) throw error;
-    initial = (data ?? []) as Alumni[];
+    initial = (data ?? []) as unknown as Alumni[];
+    for (const row of (ppData ?? []) as { alumni_id: string }[]) {
+      appearanceCounts[row.alumni_id] = (appearanceCounts[row.alumni_id] ?? 0) + 1;
+    }
   } catch (e) {
     console.error("[/alumni] Supabase fetch failed", {
       message: e instanceof Error ? e.message : String(e),
@@ -97,7 +109,10 @@ export default async function AlumniPage() {
           {!dbReady ? (
             <DatabaseNotReady />
           ) : (
-            <AlumniSearch initialAlumni={initial} />
+            <>
+              <RecentActivity />
+              <AlumniSearch initialAlumni={initial} appearanceCounts={appearanceCounts} />
+            </>
           )}
         </div>
       </section>
