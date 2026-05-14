@@ -30,7 +30,7 @@ const ROSTER: Athlete[] = [
     classYear: "Class of 2027",
     hometown: "Chattanooga, TN",
     major: "Political Science & Public Service: Public Law",
-    bio: "The program's most experienced rower and the stroke seat of the M4x. Came up through Chattanooga Junior Rowing, then co-founded Chattanooga State Rowing with Jack Cawood before transferring to UTC and helping resurrect the program here in Fall 2025. Sets the rate the other three follow.",
+    bio: "The program's most experienced rower and the stroke seat of the M4x. Came up through Chattanooga Junior Rowing, then co-founded Chattanooga State Rowing with Jack Cawood before transferring to UTC and helping restart the program here in Fall 2025. Sets the rate the other three follow.",
     photo: {
       src: "/photos/abraham-single-aquarium.jpg",
       width: 1280,

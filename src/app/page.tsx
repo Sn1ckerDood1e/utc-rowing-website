@@ -109,8 +109,9 @@ export default async function Home() {
               and counting.
             </p>
             <p className="mt-3 text-lg text-white/70 max-w-2xl">
-              We&rsquo;re rebuilding the program from the same stretch of water under the Walnut
-              Street Bridge, and we need every alum to help us tell its story.
+              Under Coach Michael Kinsey, we&rsquo;re rebuilding the program from the same stretch
+              of water under the Walnut Street Bridge, and we need every alum to help us tell its
+              story.
             </p>
             <div className="mt-10 flex flex-wrap gap-3 animate-fade-up delay-200">
               <Link
@@ -169,7 +170,7 @@ export default async function Home() {
                     Racing Saturday · ACRA Nationals · May 17, 2026
                   </p>
                 </div>
-                <h2 className="font-display text-2xl sm:text-3xl font-bold text-utc-navy">
+                <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-utc-navy">
                   <span className="whitespace-nowrap">Abraham Mako</span>
                   {" · "}
                   <span className="whitespace-nowrap">Tyler Burkett</span>

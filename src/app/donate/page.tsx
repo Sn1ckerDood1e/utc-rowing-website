@@ -5,7 +5,7 @@ import { ChevronRight, RiverBendCurve } from "@/components/svg-rowing";
 export const metadata = {
   title: "Support UTC Rowing",
   description:
-    "Help rebuild UTC Rowing — covered racks at the boathouse, an on-campus indoor training room, and the path back to ACRA-level competition.",
+    "Help rebuild UTC Rowing — covered boathouse racks, fleet replacement, an on-campus indoor training room, and the path back to ACRA-level competition.",
 };
 
 const GIVING_URL =
@@ -75,12 +75,12 @@ const NEEDS: Need[] = [
     why: "Fifteen of UTC's sixteen shells were built before 2013. The Vespoli eights span 1988 through 2012, the Empacher 4x dates to the 1980s/90s, and the only modern hull is a 2020 Swift 1x. Boats of that vintage are heavier, slower, and not what crews race today. The path forward is replacement, not patching — one new hull at a time, starting with what the crew actually races. A modern fleet is what moves a program from rebuilding to contending.",
   },
   {
-    title: "Maclellan Gym indoor training room",
+    title: "Maclellan Gymnasium indoor training room",
     estimate: "On-campus",
-    why: "UTC has a room in Maclellan Gymnasium reserved for the team. It needs a clean-out, paint, lights, a roof repair (it leaks, with possible mold), and ergs to outfit it. Year-round training space on campus — not weather-dependent, not borrowed.",
+    why: "UTC has a room in Maclellan Gymnasium reserved for the team. It needs a clean-out, paint, lights, a roof repair (it leaks, with possible mold), and rowing machines (ergs) to outfit it. Year-round training space on campus — not weather-dependent, not borrowed.",
     photo: {
       src: "/photos/maclellan-gym.jpg",
-      alt: "The Maclellan Gym indoor training room — water-damaged walls, rowing equipment and oars stacked against the walls, wheelchairs from the HHP Sports Lab in the foreground",
+      alt: "The Maclellan Gymnasium indoor training room — water-damaged walls, rowing equipment and oars stacked against the walls, wheelchairs from the HHP Sports Lab in the foreground",
       caption: "The room as it is today.",
     },
   },
@@ -117,7 +117,7 @@ export default function DonatePage() {
                 aria-hidden
                 className="absolute inset-0 bg-gradient-to-t from-utc-navy-deep/60 via-transparent to-transparent"
               />
-              <p className="absolute bottom-4 left-4 right-4 text-white/95 text-sm font-medium tracking-wide">
+              <p className="absolute bottom-4 left-4 right-4 text-white/95 text-xs sm:text-sm font-medium leading-snug">
                 <span className="text-utc-gold-bright uppercase text-[10px] tracking-[0.25em] font-bold block mb-1">
                   Fund the boat
                 </span>
@@ -139,11 +139,11 @@ export default function DonatePage() {
                 the Tennessee River between the Walnut Street Bridge and Williams Island since 1971.
               </p>
               <p className="text-lg text-white/75 mt-3">
-                The program is back with four athletes and one M4x at ACRA this year, racing on a
-                Vespoli loaner &mdash; UTC&rsquo;s own 4x has a hole in the hull big enough to put a
-                fist through. The longer view is a fleet of eights to race and pairs to train. What
-                gets built — the racks, the boats, the training space — is decided by what alumni
-                and friends fund.
+                The program is back with four athletes and one men&rsquo;s quadruple sculls (M4x)
+                at ACRA this year, racing on a Vespoli loaner &mdash; UTC&rsquo;s own 4x has a hole
+                in the hull big enough to put a fist through. The longer view is a fleet of eights
+                to race and pairs to train. What gets built &mdash; the racks, the boats, the
+                training space &mdash; is decided by what alumni and friends fund.
               </p>
             </div>
           </div>

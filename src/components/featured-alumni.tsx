@@ -62,7 +62,7 @@ export async function FeaturedAlumni() {
           </p>
           <h2 className="font-display text-4xl sm:text-5xl font-bold leading-tight">
             UTC has produced{" "}
-            <span className="text-gradient-gold italic">Olympians, scholars, and lifers.</span>
+            <span className="text-gradient-gold italic">Olympians, scholars, and lifelong rowers.</span>
           </h2>
           <p className="mt-5 text-white/70 text-lg">
             These names came out of a club. They didn&rsquo;t act like one.
