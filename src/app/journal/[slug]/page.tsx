@@ -122,9 +122,26 @@ export default async function JournalPostPage({
       <section className="bg-paper">
         <article className="mx-auto max-w-2xl px-4 py-16 font-serif text-foreground/85 text-lg leading-[1.75]">
           {paragraphs.map((p, i) => (
-            <p key={i} className="mb-6 last:mb-0">
-              {p}
-            </p>
+            <span key={i}>
+              <p className="mb-6 last:mb-0">{p}</p>
+              {post.bodyImage && post.bodyImage.afterParagraph === i && (
+                <figure className="my-8 -mx-4 sm:mx-0">
+                  <div className="relative overflow-hidden rounded-lg shadow-2xl shadow-utc-navy-deep/30 ring-1 ring-utc-navy/10">
+                    <Image
+                      src={post.bodyImage.src}
+                      alt={post.bodyImage.alt}
+                      width={1800}
+                      height={1350}
+                      sizes="(min-width: 768px) 672px, 100vw"
+                      className="w-full h-auto block"
+                    />
+                  </div>
+                  <figcaption className="mt-3 text-sm text-foreground/65 italic font-sans px-1 sm:px-0">
+                    {post.bodyImage.caption}
+                  </figcaption>
+                </figure>
+              )}
+            </span>
           ))}
 
           <hr className="my-12 border-border" />

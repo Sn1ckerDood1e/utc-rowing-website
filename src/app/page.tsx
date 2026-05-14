@@ -173,9 +173,9 @@ export default async function Home() {
                 <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-utc-navy">
                   <span className="whitespace-nowrap">Abraham Mako</span>
                   {" · "}
-                  <span className="whitespace-nowrap">Tyler Burkett</span>
-                  {" · "}
                   <span className="whitespace-nowrap">Conner Richardson</span>
+                  {" · "}
+                  <span className="whitespace-nowrap">Tyler Burkett</span>
                   {" · "}
                   <span className="whitespace-nowrap">Jay Pollard</span>
                   <span className="block text-base font-normal text-utc-navy/65 font-sans mt-1">

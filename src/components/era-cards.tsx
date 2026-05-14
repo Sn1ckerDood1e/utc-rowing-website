@@ -50,7 +50,7 @@ export function EraCards({ eraCounts }: { eraCounts: Record<string, number> }) {
       count: eraCounts.worth ?? null,
       headline: "A roster we still need to fill in",
       detail:
-        "Racing through 2022, then the boats lost in the December 2022 – January 2023 ice and a slow exit from competition. Almost zero roster data on file — the biggest gap we're asking alumni to close.",
+        "Racing through 2022. Then the program's floating boathouse — its barges — was lost between December 2022 and January 2023, and the program stopped with it. Almost zero roster data on file — the biggest gap we're asking alumni to close.",
       gradient: "from-utc-gold-deep to-river-blue",
     },
     {
