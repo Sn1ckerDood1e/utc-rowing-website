@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { formatPostDate, getAllPosts } from "@/lib/journal";
+import { MailingListSignup } from "@/components/mailing-list-signup";
 
 export const metadata = {
   title: "Journal · UTC Rowing",
@@ -70,16 +71,24 @@ export default function JournalIndexPage() {
           )}
 
           {posts.length > 0 && (
-            <div className="mt-16 pt-10 border-t border-border text-center">
-              <p className="font-serif text-foreground/80 text-lg">
-                The crew races ACRA Nationals May 17.{" "}
-                <Link
-                  href="/donate"
-                  className="text-utc-navy font-semibold underline decoration-utc-gold underline-offset-4 hover:text-utc-gold-deep"
-                >
-                  Send the crew off →
-                </Link>
-              </p>
+            <div className="mt-16 pt-10 border-t border-border space-y-10">
+              <div className="text-center">
+                <p className="font-serif text-foreground/80 text-lg">
+                  The crew races ACRA Nationals May 17.{" "}
+                  <Link
+                    href="/donate"
+                    className="text-utc-navy font-semibold underline decoration-utc-gold underline-offset-4 hover:text-utc-gold-deep"
+                  >
+                    Send the crew off →
+                  </Link>
+                </p>
+              </div>
+              <MailingListSignup
+                variant="card"
+                source="journal-index"
+                heading="Get the next post in your inbox."
+                subhead="Race recaps and program updates from Coach Kinsey. No marketing — just the journal when there&rsquo;s something to write."
+              />
             </div>
           )}
         </div>

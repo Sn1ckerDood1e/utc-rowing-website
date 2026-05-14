@@ -1,15 +1,34 @@
 import Link from "next/link";
 import { UTCMark } from "./svg-rowing";
+import { MailingListSignup } from "./mailing-list-signup";
 
 export function Footer() {
   return (
     <footer className="bg-utc-navy text-white/80 mt-auto relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,rgba(200,182,130,0.06),transparent_50%)]" />
 
-      <div className="relative mx-auto max-w-6xl px-4 pt-10 pb-4">
+      <div className="relative mx-auto max-w-6xl px-4 pt-10 pb-8">
         <Link href="/" className="inline-flex items-center">
           <UTCMark className="text-lg text-white" />
         </Link>
+      </div>
+
+      {/* Mailing-list signup row — full-bleed inside the footer container,
+          above the link columns. Footer variant uses a slim input + gold button
+          on the navy background. */}
+      <div className="relative mx-auto max-w-6xl px-4 pb-10 border-b border-white/10 mb-10">
+        <div className="grid gap-6 sm:grid-cols-[1fr_minmax(0,420px)] sm:items-end">
+          <div>
+            <p className="font-semibold text-utc-gold uppercase text-xs tracking-[0.2em] mb-2">
+              Stay in the loop
+            </p>
+            <p className="text-white/75 text-sm leading-snug max-w-md">
+              Race recaps, journal posts, and the occasional alumni update. One
+              email per post. Unsubscribe in one click.
+            </p>
+          </div>
+          <MailingListSignup variant="footer" source="footer" />
+        </div>
       </div>
 
       <div className="relative mx-auto max-w-6xl px-4 pb-14 grid gap-10 sm:grid-cols-3 text-sm">

@@ -58,7 +58,51 @@ That's why Saturday's boat is a Vespoli loaner.
 
 If you rowed at UTC, send us your photos, your memories, the names of teammates we don't have on the roster yet. Drop them in. The program is back. It'll be built by the people who came before it.`;
 
+// =====================================================================
+// RACE-DAY POST SKELETON — uncomment and fill in Saturday May 17 evening.
+// Writing draft + voice notes live in:
+//   content/journal/2026-05-17-acra-results.md
+//
+// Steps to publish:
+//   1. Open the markdown file, pick the right opener (A/B/C), fill in
+//      the bracketed placeholders, delete the writing notes.
+//   2. Paste the final body text into ACRA_RESULTS_BODY below.
+//   3. Update title + excerpt. Confirm or change the hero photo/video.
+//      A photo from race day in /public/photos/ is ideal — drop a JPG
+//      and reference it as `hero`.
+//   4. Uncomment the posts[] entry below.
+//   5. `npm run build` locally to confirm, then commit + push.
+//      Vercel auto-deploys; the post is live in ~60s.
+// =====================================================================
+
+// const ACRA_RESULTS_BODY = `[PASTE FINAL BODY HERE — paragraphs separated by blank lines]`;
+
 export const posts: JournalPost[] = [
+  // {
+  //   slug: "2026-05-17-acra-results",
+  //   title: "Saturday at Oak Ridge",
+  //   date: "2026-05-17",
+  //   author: "Michael Kinsey, Head Coach",
+  //   excerpt:
+  //     "[ONE OR TWO SENTENCES that work as a teaser on /journal and as the OG description on social. Lead with the fact: place, time, or the moment that defined the race.]",
+  //   body: ACRA_RESULTS_BODY,
+  //   // Hero — pick ONE: a still photo from the dock or finish line is
+  //   // ideal. If you don't have one yet, leave the pre-ACRA poster as
+  //   // fallback (won't break, just looks generic).
+  //   hero: "/photos/[ACRA-RACE-DAY-PHOTO].jpg",
+  //   heroAlt: "[Describe the photo — e.g., 'UTC's M4x at the Melton Hill Lake finish line, Saturday afternoon.']",
+  //   // Optional: short video clip of the boat, dock interview, etc.
+  //   // heroVideo: "/videos/[CLIP].mp4",
+  //   // heroVideoPoster: "/videos/[POSTER].jpg",
+  //   // Optional inline body image (e.g. a finish-line shot, a podium photo,
+  //   // the boys at the trailer afterward). afterParagraph is zero-indexed.
+  //   // bodyImage: {
+  //   //   src: "/photos/[INLINE-PHOTO].jpg",
+  //   //   alt: "[Describe the photo]",
+  //   //   caption: "[One short caption.]",
+  //   //   afterParagraph: 1,
+  //   // },
+  // },
   {
     slug: "2026-05-10-pre-acra-where-we-are",
     title: "Pre-ACRA: Where We Are",

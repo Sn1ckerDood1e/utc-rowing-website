@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ChevronRight, UTCMark } from "@/components/svg-rowing";
+import { MailingListSignup } from "@/components/mailing-list-signup";
 
 export const metadata = {
   title: "Thanks — UTC Rowing",
@@ -59,6 +60,15 @@ export default function ThankYouPage() {
               Submit another →
             </Link>
           </p>
+
+          <div className="mt-12 max-w-xl mx-auto text-left">
+            <MailingListSignup
+              variant="card"
+              source="submit-thank-you"
+              heading="Stay in the loop."
+              subhead="Race recaps and journal posts from Coach Kinsey when there&rsquo;s something to write."
+            />
+          </div>
         </div>
       </section>
     </>

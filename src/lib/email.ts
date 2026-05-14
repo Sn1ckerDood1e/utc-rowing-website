@@ -75,6 +75,29 @@ ${
   });
 }
 
+export async function notifyAdminOfSubscription(args: {
+  email: string;
+  name?: string | null;
+  source?: string | null;
+}) {
+  const r = getResend();
+  if (!r) {
+    console.warn("RESEND_API_KEY not set — skipping subscriber admin email");
+    return;
+  }
+
+  return r.emails.send({
+    from: FROM,
+    to: ADMIN_TO,
+    subject: `[UTC Rowing] New mailing-list subscriber: ${args.email}`,
+    html: `<h3>New mailing-list subscriber</h3>
+<p><strong>Email:</strong> ${escapeHtml(args.email)}</p>
+${args.name ? `<p><strong>Name:</strong> ${escapeHtml(args.name)}</p>` : ""}
+${args.source ? `<p><strong>Source:</strong> ${escapeHtml(args.source)}</p>` : ""}
+<p>Manage in Supabase Studio &mdash; <code>public.subscribers</code>.</p>`,
+  });
+}
+
 function escapeHtml(s: string): string {
   return s
     .replace(/&/g, "&amp;")
