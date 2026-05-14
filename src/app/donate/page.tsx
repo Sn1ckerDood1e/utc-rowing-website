@@ -44,7 +44,7 @@ const TIERS = [
 // UTC fleet inventory (May 2026): 16 shells, all on the trailer outside since
 // 2023, all weather-damaged, several with structural damage.
 //   6× 8+    Vespoli (1988–2012) — Biderman, EPB Telecom, William Raoul,
-//            John Fish III, Dan Berry, Lee Patton
+//            John Fish III, Dan Beery, Lee Patton
 //   1× 4x    Empacher "Chattanooga" (1980s/90s) — hull breach
 //   5× 4+    Vespoli (1996–2009) — Little Debbie, Black Magic, Ultralight,
 //            SGA Walker, Ron Nelson
@@ -130,7 +130,7 @@ export default function DonatePage() {
                 Support the rebuild
               </p>
               <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] mb-6">
-                Help bring UTC Rowing
+                Get UTC Rowing
                 <br />
                 <span className="text-gradient-gold italic">back to ACRA.</span>
               </h1>
@@ -140,10 +140,10 @@ export default function DonatePage() {
               </p>
               <p className="text-lg text-white/75 mt-3">
                 The program is back with four athletes and one men&rsquo;s quadruple sculls (M4x)
-                at ACRA this year, racing on a Vespoli loaner &mdash; UTC&rsquo;s own 4x has a hole
-                in the hull big enough to put a fist through. The longer view is a fleet of eights
-                to race and pairs to train. What gets built &mdash; the racks, the boats, the
-                training space &mdash; is decided by what alumni and friends fund.
+                at ACRA this year, racing on a Vespoli loaner &mdash; UTC&rsquo;s own 4x has a soft
+                spot in the middle of the hull and isn&rsquo;t safe to race. The longer view is a
+                fleet of eights to race and pairs to train. What gets built &mdash; the racks, the
+                boats, the training space &mdash; is decided by what alumni and friends fund.
               </p>
             </div>
           </div>

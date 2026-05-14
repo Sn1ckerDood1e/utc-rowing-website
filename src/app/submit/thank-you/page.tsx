@@ -32,8 +32,8 @@ export default function ThankYouPage() {
             One more thing.
           </h2>
           <p className="text-foreground/80 mb-8 max-w-xl mx-auto">
-            UTC&rsquo;s first ACRA crew since the program restarted races in seven days. You just
-            helped the record. Help the boat get to the line.
+            UTC&rsquo;s first ACRA crew since the program restarted races this Saturday at Oak
+            Ridge. You just helped the record. Help the boat get to the line.
           </p>
           <div className="flex flex-wrap gap-3 justify-center items-center">
             <Link

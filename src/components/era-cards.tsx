@@ -73,7 +73,7 @@ export function EraCards({ eraCounts }: { eraCounts: Record<string, number> }) {
             Five eras
           </p>
           <h2 className="font-display text-4xl sm:text-5xl font-bold text-utc-navy leading-tight">
-            One Tennessee. Five chapters. <span className="italic text-utc-gold-deep">One program.</span>
+            Five chapters on the Tennessee River.
           </h2>
         </div>
 

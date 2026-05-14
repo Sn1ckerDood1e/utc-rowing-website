@@ -8,8 +8,8 @@ const links = [
   { href: "/history", label: "History" },
   { href: "/team", label: "Team" },
   { href: "/alumni", label: "Alumni" },
-  { href: "/identify", label: "Identify" },
   { href: "/journal", label: "Journal" },
+  { href: "/join", label: "Join" },
   { href: "/contact", label: "Contact" },
 ];
 

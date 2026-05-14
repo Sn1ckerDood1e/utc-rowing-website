@@ -127,21 +127,21 @@ export default async function Home() {
               >
                 I rowed at UTC →
               </Link>
-              {/* Desktop: tertiary text-link */}
+              {/* Desktop: tertiary text-link — recruit pathway */}
               <Link
-                href="/history"
+                href="/join"
                 className="hidden sm:inline-flex text-white/80 underline decoration-utc-gold underline-offset-8 decoration-2 px-3 py-3.5 text-base hover:text-utc-gold-bright transition-colors items-center"
               >
-                Read our history
+                Want to row at UTC? →
               </Link>
             </div>
             {/* Mobile: tertiary as quieter text-link on its own row */}
             <div className="mt-4 sm:hidden">
               <Link
-                href="/history"
+                href="/join"
                 className="text-white/75 underline decoration-utc-gold underline-offset-4 decoration-1 text-sm hover:text-utc-gold-bright transition-colors"
               >
-                Read our history
+                Want to row at UTC? →
               </Link>
             </div>
           </div>
@@ -212,7 +212,7 @@ export default async function Home() {
         <div className="relative mx-auto max-w-6xl px-4 py-20 sm:py-28">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 text-center">
             {/* TODO(2027): bump to 56 / derive from year */}
-            <Stat number={55} suffix="" label="years on the river" hint="1971 — present" />
+            <Stat number={55} suffix="" label="years on the river" hint="1971–present" />
             <Stat number={alumniCount} label="alumni on the roster" hint="and growing" />
             <Stat number={1} label="Olympic gold medal" hint="Beery · Athens 2004" />
           </div>
@@ -239,7 +239,7 @@ export default async function Home() {
             The biggest archive isn&rsquo;t institutional
           </p>
           <h2 className="font-display text-4xl sm:text-5xl font-bold mb-6 leading-tight">
-            It&rsquo;s in alumni filing cabinets, phones, and memory.
+            Most of it is in alumni filing cabinets and phones.
           </h2>
           <p className="text-lg text-white/75 max-w-2xl mx-auto mb-10">
             We have {alumniCount.toLocaleString()} names on file. We&rsquo;re missing thousands of

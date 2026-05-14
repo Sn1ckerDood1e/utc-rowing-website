@@ -121,9 +121,9 @@ export const ERAS: Era[] = [
       {
         year: "1985",
         sortYear: 1985,
-        title: "UTC's first medal — Head of the Chattahoochie",
+        title: "UTC's first medal — Head of the Chattahoochee",
         summary:
-          "A UTC Men's Novice 4+ wins the Head of the Chattahoochie regatta in Atlanta. The first competitive medal of any kind in program history, two years into Carney's tenure.",
+          "A UTC Men's Novice 4+ wins the Head of the Chattahoochee regatta in Atlanta. The first competitive medal of any kind in program history, two years into Carney's tenure.",
         kind: "achievement",
         source: "UTC Rowing Constitution Article 2a",
       },

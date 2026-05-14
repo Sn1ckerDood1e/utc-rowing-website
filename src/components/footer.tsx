@@ -18,13 +18,25 @@ export function Footer() {
             University of Tennessee at Chattanooga. Rowing at UTC since 1971 · Competing since
             1983. Olympic gold to ACRA, on the Tennessee River.
           </p>
-          <p className="mt-4">
-            <Link
-              href="/donate"
-              className="inline-flex items-center gap-1 text-utc-gold-bright link-draw font-semibold"
+          <p className="mt-4 text-white/70">
+            <a
+              href="https://www.instagram.com/utc_rowing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-draw text-utc-gold-bright font-semibold"
             >
-              Support the program →
-            </Link>
+              @utc_rowing
+            </a>
+            <span className="text-white/40"> · Instagram</span>
+          </p>
+          <p className="mt-2 text-white/70">
+            Press:{" "}
+            <a
+              href="mailto:kinseymi@radl.solutions?subject=Press%20inquiry%20%E2%80%94%20UTC%20Rowing"
+              className="link-draw text-utc-gold-bright font-semibold"
+            >
+              kinseymi@radl.solutions
+            </a>
           </p>
         </div>
 
@@ -58,6 +70,11 @@ export function Footer() {
                 Journal
               </Link>
             </li>
+            <li>
+              <Link href="/identify" className="hover:text-utc-gold-bright transition-colors">
+                Identify a photo
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -67,18 +84,28 @@ export function Footer() {
           </p>
           <ul className="space-y-2">
             <li>
-              <Link href="/submit" className="hover:text-utc-gold-bright transition-colors">
-                Submit your story
-              </Link>
-            </li>
-            <li>
               <Link href="/donate" className="hover:text-utc-gold-bright transition-colors">
                 Donate
               </Link>
             </li>
             <li>
+              <Link href="/join" className="hover:text-utc-gold-bright transition-colors">
+                Join the team
+              </Link>
+            </li>
+            <li>
+              <Link href="/submit" className="hover:text-utc-gold-bright transition-colors">
+                Submit your story
+              </Link>
+            </li>
+            <li>
               <Link href="/contact" className="hover:text-utc-gold-bright transition-colors">
                 Contact
+              </Link>
+            </li>
+            <li>
+              <Link href="/press" className="hover:text-utc-gold-bright transition-colors">
+                Press
               </Link>
             </li>
             <li>
