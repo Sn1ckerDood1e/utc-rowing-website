@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { formatPostDate, getAllPosts } from "@/lib/journal";
 import { MailingListSignup } from "@/components/mailing-list-signup";
@@ -13,8 +14,18 @@ export default function JournalIndexPage() {
   return (
     <>
       <section className="relative bg-utc-navy text-white overflow-hidden">
+        <Image
+          src="/photos/boats-sunset-silhouette.jpg"
+          alt="Multiple rowing shells silhouetted on the Tennessee River at sunset, late 1990s."
+          fill
+          sizes="100vw"
+          quality={75}
+          className="object-cover object-center opacity-40"
+          aria-hidden
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-utc-navy via-utc-navy/85 to-utc-navy/40 pointer-events-none" aria-hidden />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(200,182,130,0.12),transparent_55%)]" />
-        <div className="relative mx-auto max-w-3xl px-4 py-16">
+        <div className="relative mx-auto max-w-3xl px-4 py-20 sm:py-24">
           <p className="text-utc-gold uppercase text-sm tracking-[0.25em] font-semibold mb-3">
             From the boathouse
           </p>

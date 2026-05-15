@@ -36,6 +36,8 @@ export type Moment = {
   pageHref?: string;
   /** Label for the pageHref link. Defaults to "Read more →". */
   pageHrefLabel?: string;
+  /** Optional inline photo rendered above the moment summary. Use sparingly — reserve for moments where the photo carries information the prose can't. */
+  photo?: { src: string; alt: string; caption?: string };
 };
 
 export type Era = {
@@ -301,6 +303,11 @@ export const ERAS: Era[] = [
         source: "Trailer Arson 1996 folder, UTC ARC",
         pageHref: "/history/1996-arson",
         pageHrefLabel: "See the photo record →",
+        photo: {
+          src: "/photos/arson-1996/02-students-embrace.jpg",
+          alt: "Two UTC Rowing athletes embracing at the burn site, the morning of March 22, 1996.",
+          caption: "Two athletes at the site that morning. Photo: Ben Robbs.",
+        },
       },
       {
         year: "1996",

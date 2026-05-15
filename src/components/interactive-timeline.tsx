@@ -25,6 +25,15 @@ const ERA_COVER_PHOTOS: Partial<
     alt: "Black-and-white photo of UTC Crew athletes carrying a broken hull through a field after the 1996 trailer arson.",
     objectPosition: "center",
   },
+  espeseth: {
+    // The Espeseth era — atmospheric foggy 8+ silhouette on the Tennessee
+    // River at sunrise. From Ben Robbs' 1996-97 slideshow. Doesn't depict
+    // a specific moment; carries the tone of the era (long, durable,
+    // dawn-after-dawn).
+    src: "/photos/espeseth-era-foggy-eight.jpg",
+    alt: "Silhouetted UTC men's eight rowing through fog at sunrise on the Tennessee River, mid-1990s.",
+    objectPosition: "center",
+  },
   resurrection: {
     src: "/photos/m4x-acra-prep-distant.jpg",
     alt: "UTC Rowing's 2026 men's quad on the race course in ACRA preparation, distant view of the full lane.",
@@ -395,6 +404,26 @@ function MomentCard({
       <h3 className="font-display text-xl font-bold text-utc-navy leading-snug mb-2">
         {moment.title}
       </h3>
+
+      {moment.photo && (
+        <figure className="-mx-5 sm:-mx-6 my-3 first:mt-0">
+          <div className="relative aspect-[4/3] bg-utc-navy-deep overflow-hidden">
+            <Image
+              src={moment.photo.src}
+              alt={moment.photo.alt}
+              fill
+              sizes="(min-width: 768px) 28rem, 100vw"
+              className="object-cover"
+            />
+          </div>
+          {moment.photo.caption && (
+            <figcaption className="px-5 sm:px-6 mt-2 text-xs italic text-foreground/65">
+              {moment.photo.caption}
+            </figcaption>
+          )}
+        </figure>
+      )}
+
       <p className="text-foreground/85 leading-relaxed text-[0.95rem]">
         {moment.summary}
       </p>
