@@ -32,6 +32,10 @@ export type Moment = {
   kind: Kind;
   /** Optional source citation. */
   source?: string;
+  /** Optional URL to a dedicated sub-page (e.g. photo gallery, deeper write-up). Renders as a "View …" link inside the moment card. */
+  pageHref?: string;
+  /** Label for the pageHref link. Defaults to "Read more →". */
+  pageHrefLabel?: string;
 };
 
 export type Era = {
@@ -295,6 +299,8 @@ export const ERAS: Era[] = [
           attribution: "Chattanooga Free Press, March 24 1996",
         },
         source: "Trailer Arson 1996 folder, UTC ARC",
+        pageHref: "/history/1996-arson",
+        pageHrefLabel: "See the photo record →",
       },
       {
         year: "1996",

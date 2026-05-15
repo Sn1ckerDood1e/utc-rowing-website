@@ -59,6 +59,42 @@ That's why Saturday's boat is a Vespoli loaner.
 If you rowed at UTC, send us your photos, your memories, the names of teammates we don't have on the roster yet. Drop them in. The program is back. It'll be built by the people who came before it.`;
 
 // =====================================================================
+// ARSON PHOTOS POST SKELETON — uncomment and fill in any time after
+// the ACRA recap is published. Writing draft + voice notes live in:
+//   content/journal/_draft-arson-photos-after-30-years.md
+//
+// Steps to publish:
+//   1. Open the markdown draft, pick the right opener (A/B/C), fill in
+//      the bracketed placeholders, delete the writing notes.
+//   2. Pick a final title (4 options at the top of the markdown file).
+//   3. Pick a publish date and update both `slug` and `date`.
+//   4. Paste the final body into ARSON_POST_BODY below + uncomment the
+//      posts[] entry. Hero photo defaults to the gallery hero.
+//   5. `npm run build` locally, commit, push.
+// =====================================================================
+
+// const ARSON_POST_BODY = `[PASTE FINAL BODY HERE — paragraphs separated by blank lines]`;
+
+// {
+//   slug: "2026-05-XX-arson-photos-after-30-years",
+//   title: "Thirty years late, the arson photos arrived",
+//   date: "2026-05-XX",
+//   author: "Michael Kinsey, Head Coach",
+//   excerpt:
+//     "[ONE OR TWO SENTENCES — lead with the network beat, the date, or the human moment.]",
+//   body: ARSON_POST_BODY,
+//   hero: "/photos/arson-1996/01-trailer-skeleton-dawn.jpg",
+//   heroAlt:
+//     "The burnt steel skeleton of UTC Rowing's trailer the morning after the March 22, 1996 arson.",
+//   bodyImage: {
+//     src: "/photos/arson-1996/02-students-embrace.jpg",
+//     alt: "Two UTC Rowing athletes embracing at the burn site, March 22, 1996.",
+//     caption: "Two athletes at the site that morning. Photo by Ben Robbs.",
+//     afterParagraph: 2,
+//   },
+// },
+
+// =====================================================================
 // RACE-DAY POST SKELETON — uncomment and fill in Saturday May 17 evening.
 // Writing draft + voice notes live in:
 //   content/journal/2026-05-17-acra-results.md

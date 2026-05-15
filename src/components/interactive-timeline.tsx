@@ -449,6 +449,17 @@ function MomentCard({
         </>
       )}
 
+      {moment.pageHref && (
+        <p className="mt-3">
+          <a
+            href={moment.pageHref}
+            className="inline-flex items-center text-utc-navy text-sm font-semibold link-draw"
+          >
+            {moment.pageHrefLabel ?? "Read more →"}
+          </a>
+        </p>
+      )}
+
       {moment.source && (
         <p className="mt-3 text-[10px] uppercase tracking-widest text-muted-foreground/80">
           Source · {moment.source}
