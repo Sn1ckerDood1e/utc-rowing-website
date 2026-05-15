@@ -149,6 +149,11 @@ export const ERAS: Era[] = [
           "Coach Carney takes a UTC Women's Varsity 4+ to a third-place finish at the Dad Vail Regatta in Philadelphia — the program's first medal at a national-championship event. One year before Espeseth would take the program over.",
         kind: "achievement",
         source: "UTC Rowing Constitution",
+        photo: {
+          src: "/photos/clippings/1991-05-10-dad-vail-aerial-inquirer.jpg",
+          alt: "Aerial photograph of two crews racing the Dad Vail Regatta on the Schuylkill River, Philadelphia Inquirer, May 10, 1991. Photo by Charles Fox.",
+          caption: "Dad Vail Regatta on the Schuylkill, 1991. Photo: Charles Fox / Philadelphia Inquirer.",
+        },
       },
       {
         year: "1989",
