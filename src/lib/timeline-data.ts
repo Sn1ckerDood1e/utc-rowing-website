@@ -185,6 +185,11 @@ export const ERAS: Era[] = [
           attribution: "Chattanooga News-Free Press, Oct 29 1989",
         },
         source: "News-Free Press feature in UTC ARC",
+        photo: {
+          src: "/photos/clippings/1989-10-29-espeseth-hired-news-free-press.jpg",
+          alt: "Chattanooga News-Free Press article 'UTC's Rowing Team Seeks Fresh Start With Espeseth' by Christy Doyle, October 29, 1989.",
+          caption: "Chattanooga News-Free Press, Oct 29 1989. By Christy Doyle.",
+        },
       },
       {
         year: "1990",
@@ -201,6 +206,11 @@ export const ERAS: Era[] = [
         summary:
           "The Tennessee Indoor Rowing Championships — UTC's signature winter event — runs for the first time, born from the 1990 'Greenleaf Tennessee Indoor Regatta.' UTC will win it every documented year.",
         kind: "milestone",
+        photo: {
+          src: "/photos/clippings/1991-02-27-tirc-champions-calhoun-erg.jpg",
+          alt: "Student Echo, February 7 1991: photograph of Chris Calhoun pulling a Concept II ergometer at the inaugural Tennessee Indoor Rowing Championships at UTC's Maclellan Gymnasium.",
+          caption: "Student Echo, Feb 7 1991. Chris Calhoun on the erg at the inaugural TIRC. Photo by Kim Hubbard.",
+        },
       },
       {
         year: "1991",

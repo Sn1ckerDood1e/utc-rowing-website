@@ -194,8 +194,67 @@ export default function Arson1996Page() {
         </div>
       </section>
 
-      {/* What happened next */}
+      {/* How the press covered it */}
       <section className="bg-paper">
+        <div className="mx-auto max-w-5xl px-4 py-16">
+          <div className="mb-8 max-w-2xl">
+            <p className="text-utc-navy/60 uppercase text-xs tracking-[0.2em] font-semibold mb-3">
+              How the press covered it
+            </p>
+            <h2 className="font-display text-2xl sm:text-3xl font-bold text-utc-navy leading-tight mb-3">
+              The University Echo and the Free Press both ran it.
+            </h2>
+            <p className="text-foreground/80 text-sm leading-relaxed">
+              UTC&rsquo;s student paper led with the fire and the police
+              investigation. The Chattanooga Free Press ran the Augusta win
+              two days later under &ldquo;Area Spotlight.&rdquo; Both clippings
+              are part of the program archive.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-[3fr_2fr] items-start">
+            <figure className="bg-white border border-border rounded-md overflow-hidden shadow-sm">
+              <div className="relative w-full aspect-[3/2] bg-paper-grain">
+                <Image
+                  src="/photos/clippings/1996-03-28-university-echo-arson.jpg"
+                  alt="University Echo, March 28 1996, front-page article: 'Rowing team loses equipment in fire' by Rebecca Carlisle. Includes a photo of UTC athletes inspecting hull remains."
+                  fill
+                  sizes="(min-width: 768px) 60vw, 100vw"
+                  className="object-contain"
+                />
+              </div>
+              <figcaption className="p-4 text-sm text-foreground/80 leading-snug">
+                <strong className="text-utc-navy">University Echo, March 28 1996.</strong>
+                {" "}&ldquo;Rowing team loses equipment in fire.&rdquo; By Rebecca
+                Carlisle. The student paper&rsquo;s front-page coverage, with a
+                photo of athletes inspecting the remains.
+              </figcaption>
+            </figure>
+
+            <figure className="bg-white border border-border rounded-md overflow-hidden shadow-sm">
+              <div className="relative w-full aspect-[1/2] bg-paper-grain">
+                <Image
+                  src="/photos/clippings/1996-03-24-cfp-augusta-win.jpg"
+                  alt="Chattanooga Free Press, Area Spotlight, March 24 1996: 'UTC Novice Crew Wins' — coverage of the women's novice B 4+ Augusta Invitational victory two days after the trailer arson."
+                  fill
+                  sizes="(min-width: 768px) 40vw, 100vw"
+                  className="object-contain"
+                />
+              </div>
+              <figcaption className="p-4 text-sm text-foreground/80 leading-snug">
+                <strong className="text-utc-navy">Chattanooga Free Press, March 24 1996.</strong>
+                {" "}Area Spotlight: &ldquo;UTC Novice Crew Wins.&rdquo; The
+                Augusta Invitational story — borrowed boats from Clemson,
+                Stetson, Furman, Tennessee, Georgia State, Army, and Bucknell;
+                oars from McCallie and Chattanooga Junior Rowing.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      {/* What happened next */}
+      <section className="bg-paper-grain border-t border-border/60">
         <div className="mx-auto max-w-3xl px-4 py-14">
           <p className="text-utc-navy/60 uppercase text-xs tracking-[0.2em] font-semibold mb-3">
             Two days later
