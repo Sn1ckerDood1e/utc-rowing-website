@@ -97,7 +97,7 @@ export default function JournalIndexPage() {
               <MailingListSignup
                 variant="card"
                 source="journal-index"
-                heading="Get the next post in your inbox."
+                heading="Stay in the loop."
                 subhead="Race recaps and program updates from Coach Kinsey. No marketing — just the journal when there&rsquo;s something to write."
               />
             </div>

@@ -79,7 +79,7 @@ export function MailingListSignup({
     <form
       onSubmit={onSubmit}
       noValidate
-      className={`flex gap-2 ${isFooter ? "" : "max-w-md"}`}
+      className={`flex flex-col sm:flex-row gap-2 ${isFooter ? "" : "max-w-md"}`}
     >
       <input
         type="email"

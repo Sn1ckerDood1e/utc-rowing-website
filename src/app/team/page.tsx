@@ -492,7 +492,7 @@ export default function TeamPage() {
             Help the crew
           </p>
           <h2 className="font-display text-3xl sm:text-4xl font-bold mb-5 leading-tight">
-            ACRA is one week out.
+            ACRA is this Saturday.
             <br className="hidden sm:block" />
             <span className="italic text-utc-gold-bright">The boat goes where alumni take it.</span>
           </h2>
