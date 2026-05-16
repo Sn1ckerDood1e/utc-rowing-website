@@ -405,24 +405,34 @@ function MomentCard({
         {moment.title}
       </h3>
 
-      {moment.photo && (
-        <figure className="-mx-5 sm:-mx-6 my-3 first:mt-0">
-          <div className="relative aspect-[4/3] bg-utc-navy-deep overflow-hidden">
-            <Image
-              src={moment.photo.src}
-              alt={moment.photo.alt}
-              fill
-              sizes="(min-width: 768px) 28rem, 100vw"
-              className="object-cover"
-            />
-          </div>
-          {moment.photo.caption && (
-            <figcaption className="px-5 sm:px-6 mt-2 text-xs italic text-foreground/65">
-              {moment.photo.caption}
-            </figcaption>
-          )}
-        </figure>
-      )}
+      {moment.photo && (() => {
+        const fit = moment.photo.fit ?? "landscape";
+        const frameClass =
+          fit === "document"
+            ? "aspect-[3/4] bg-paper-grain"
+            : fit === "portrait"
+              ? "aspect-[3/4] bg-utc-navy-deep"
+              : "aspect-[4/3] bg-utc-navy-deep";
+        const objectClass = fit === "document" ? "object-contain" : "object-cover";
+        return (
+          <figure className="-mx-5 sm:-mx-6 my-3 first:mt-0">
+            <div className={`relative ${frameClass} overflow-hidden`}>
+              <Image
+                src={moment.photo.src}
+                alt={moment.photo.alt}
+                fill
+                sizes="(min-width: 768px) 28rem, 100vw"
+                className={objectClass}
+              />
+            </div>
+            {moment.photo.caption && (
+              <figcaption className="px-5 sm:px-6 mt-2 text-xs italic text-foreground/65">
+                {moment.photo.caption}
+              </figcaption>
+            )}
+          </figure>
+        );
+      })()}
 
       <p className="text-foreground/85 leading-relaxed text-[0.95rem]">
         {moment.summary}

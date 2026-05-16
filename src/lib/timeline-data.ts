@@ -37,7 +37,22 @@ export type Moment = {
   /** Label for the pageHref link. Defaults to "Read more →". */
   pageHrefLabel?: string;
   /** Optional inline photo rendered above the moment summary. Use sparingly — reserve for moments where the photo carries information the prose can't. */
-  photo?: { src: string; alt: string; caption?: string };
+  photo?: {
+    src: string;
+    alt: string;
+    caption?: string;
+    /**
+     * How to fit the image in the moment-card frame:
+     * - `landscape` (default): 4:3 frame, object-cover, navy background.
+     *   For action photos / wide shots where cropping the edges is fine.
+     * - `portrait`: 3:4 frame, object-cover, navy background.
+     *   For portrait photos where cropping is acceptable.
+     * - `document`: 3:4 frame, object-contain, paper-grain background.
+     *   For newspaper clippings + scanned documents — preserves the full
+     *   article instead of cropping the text out of frame.
+     */
+    fit?: "landscape" | "portrait" | "document";
+  };
 };
 
 export type Era = {
@@ -153,6 +168,7 @@ export const ERAS: Era[] = [
           src: "/photos/clippings/1991-05-10-dad-vail-aerial-inquirer.jpg",
           alt: "Aerial photograph of two crews racing the Dad Vail Regatta on the Schuylkill River, Philadelphia Inquirer, May 10, 1991. Photo by Charles Fox.",
           caption: "Dad Vail Regatta on the Schuylkill, 1991. Photo: Charles Fox / Philadelphia Inquirer.",
+          fit: "document",
         },
       },
       {
@@ -194,6 +210,7 @@ export const ERAS: Era[] = [
           src: "/photos/clippings/1989-10-29-espeseth-hired-news-free-press.jpg",
           alt: "Chattanooga News-Free Press article 'UTC's Rowing Team Seeks Fresh Start With Espeseth' by Christy Doyle, October 29, 1989.",
           caption: "Chattanooga News-Free Press, Oct 29 1989. By Christy Doyle.",
+          fit: "document",
         },
       },
       {
@@ -215,6 +232,7 @@ export const ERAS: Era[] = [
           src: "/photos/clippings/1991-02-27-tirc-champions-calhoun-erg.jpg",
           alt: "Student Echo, February 7 1991: photograph of Chris Calhoun pulling a Concept II ergometer at the inaugural Tennessee Indoor Rowing Championships at UTC's Maclellan Gymnasium.",
           caption: "Student Echo, Feb 7 1991. Chris Calhoun on the erg at the inaugural TIRC. Photo by Kim Hubbard.",
+          fit: "document",
         },
       },
       {
@@ -269,11 +287,6 @@ export const ERAS: Era[] = [
           'August 1994: the LRC newsletter announces "Rowing Center Opens." After three years of design and construction, UTC finally has a proper home.',
         kind: "milestone",
         source: "LRC Aug 1994 newsletter",
-        photo: {
-          src: "/photos/misty-dock-launch.jpg",
-          alt: "Sunrise launch from the Tennessee River dock: a UTC eight being readied at the William Raoul Rowing Center, mist on the water, Lookout Mountain in the background.",
-          caption: "Morning at the William Raoul Rowing Center dock. Photo: Ben Robbs.",
-        },
       },
       {
         year: "1995",
@@ -421,11 +434,6 @@ export const ERAS: Era[] = [
         summary:
           "After outgrowing Lake Lanier under Atlanta Rowing Club, the Head of the Hooch relocates to Chattanooga in 2005. UTC supplies the venue. Today it is the second-largest regatta in the United States.",
         kind: "milestone",
-        photo: {
-          src: "/photos/mens-eight-tennessee-river.jpg",
-          alt: "A UTC men's eight on the Tennessee River with the Chattanooga skyline visible in the background.",
-          caption: "UTC men's 8+ on the Tennessee River. Photo: Ben Robbs.",
-        },
       },
       {
         year: "2010-11",
