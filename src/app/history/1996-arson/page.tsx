@@ -232,7 +232,10 @@ export default function Arson1996Page() {
             </figure>
 
             <figure className="bg-white border border-border rounded-md overflow-hidden shadow-sm">
-              <div className="relative w-full aspect-[1/2] bg-paper-grain">
+              {/* Portrait newsprint clipping — narrow aspect would crop the body
+                  text illegibly. Use aspect-[2/3] + object-contain so the
+                  full column is always visible on mobile and desktop. */}
+              <div className="relative w-full aspect-[2/3] bg-paper-grain">
                 <Image
                   src="/photos/clippings/1996-03-24-cfp-augusta-win.jpg"
                   alt="Chattanooga Free Press, Area Spotlight, March 24 1996: 'UTC Novice Crew Wins' — coverage of the women's novice B 4+ Augusta Invitational victory two days after the trailer arson."

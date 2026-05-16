@@ -116,14 +116,14 @@ export default async function Home() {
             <div className="mt-10 flex flex-wrap gap-3 animate-fade-up delay-200">
               <Link
                 href="/donate"
-                className="bg-utc-gold text-utc-navy-deep font-semibold px-7 py-3.5 rounded-md hover:bg-utc-gold-bright transition-all hover:shadow-xl hover:shadow-utc-gold/30 inline-flex items-center gap-2"
+                className="bg-utc-gold text-utc-navy-deep font-semibold px-7 py-4 rounded-md hover:bg-utc-gold-bright transition-all hover:shadow-xl hover:shadow-utc-gold/30 inline-flex items-center gap-2"
               >
                 Send the crew off
                 <ChevronRight className="w-4 h-4" />
               </Link>
               <Link
                 href="/submit"
-                className="bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold px-7 py-3.5 rounded-md hover:bg-white/20 hover:border-utc-gold/60 transition-all"
+                className="bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold px-7 py-4 rounded-md hover:bg-white/20 hover:border-utc-gold/60 transition-all"
               >
                 I rowed at UTC →
               </Link>
@@ -171,13 +171,13 @@ export default async function Home() {
                   </p>
                 </div>
                 <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-utc-navy">
-                  <span className="whitespace-nowrap">Abraham Mako</span>
+                  <span className="sm:whitespace-nowrap">Abraham Mako</span>
                   {" · "}
-                  <span className="whitespace-nowrap">Conner Richardson</span>
+                  <span className="sm:whitespace-nowrap">Conner Richardson</span>
                   {" · "}
-                  <span className="whitespace-nowrap">Tyler Burkett</span>
+                  <span className="sm:whitespace-nowrap">Tyler Burkett</span>
                   {" · "}
-                  <span className="whitespace-nowrap">Jay Pollard</span>
+                  <span className="sm:whitespace-nowrap">Jay Pollard</span>
                   <span className="block text-base font-normal text-utc-navy/65 font-sans mt-1">
                     UTC&rsquo;s first ACRA crew since the program restarted Fall 2025.
                   </span>
@@ -250,13 +250,13 @@ export default async function Home() {
           <div className="flex flex-wrap gap-3 justify-center">
             <Link
               href="/submit"
-              className="bg-utc-gold text-utc-navy-deep font-semibold px-7 py-3.5 rounded-md hover:bg-utc-gold-bright transition-all hover:shadow-xl"
+              className="bg-utc-gold text-utc-navy-deep font-semibold px-7 py-4 rounded-md hover:bg-utc-gold-bright transition-all hover:shadow-xl"
             >
               Add yourself to the record
             </Link>
             <Link
               href="/alumni"
-              className="bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold px-7 py-3.5 rounded-md hover:bg-white/20 transition-all"
+              className="bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold px-7 py-4 rounded-md hover:bg-white/20 transition-all"
             >
               Browse the alumni roster
             </Link>

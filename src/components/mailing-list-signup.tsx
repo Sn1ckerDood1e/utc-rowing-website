@@ -101,8 +101,8 @@ export function MailingListSignup({
         disabled={status === "submitting"}
         className={
           isFooter
-            ? "bg-utc-gold text-utc-navy-deep font-semibold px-4 py-2 rounded text-sm hover:bg-utc-gold-bright transition-colors disabled:opacity-60 whitespace-nowrap"
-            : "bg-utc-navy text-white font-semibold px-5 py-2.5 rounded hover:bg-utc-navy-deep transition-colors disabled:opacity-60 whitespace-nowrap"
+            ? "bg-utc-gold text-utc-navy-deep font-semibold px-4 py-3 sm:py-2 rounded text-sm hover:bg-utc-gold-bright transition-colors disabled:opacity-60 whitespace-nowrap w-full sm:w-auto"
+            : "bg-utc-navy text-white font-semibold px-5 py-3 sm:py-2.5 rounded hover:bg-utc-navy-deep transition-colors disabled:opacity-60 whitespace-nowrap w-full sm:w-auto"
         }
       >
         {status === "submitting" ? "Adding…" : isFooter ? "Subscribe" : "Stay in the loop"}
