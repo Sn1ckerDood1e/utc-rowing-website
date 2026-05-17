@@ -257,11 +257,17 @@ export const ERAS: Era[] = [
         sortYear: 1993,
         title: "UTC wins the Florida Crew Classic — 1st of 10 teams",
         summary:
-          "March 21 1993: UTC wins six events at the Florida Crew Classic in Jacksonville, finishing 1st in team standings out of 10 schools. The strongest single-regatta team result documented in the early Espeseth era.",
+          "March 21 1993: UTC wins six events at the Florida Crew Classic in Jacksonville, finishing 1st in team standings out of 10 schools (83 points to Duke's 51). The strongest single-regatta team result documented in the early Espeseth era.",
         detail:
-          "Athletes named in the News-Free Press article: Robert Meeks (later 1995-96 USRowing AA), Phillip Daniels, Todd Stansbury, Ed McCormick, Howell Strain, Eric Gregory, Trae Calfee, Paul Brinkman, Andy Foxwell, Christi Pitner, Stephanie Martin, Tracey Davis, Renee Holeton, Kim Tatum.",
+          "Athletes named in the News-Free Press article: Amy Reeves, Teresa Rogerson, Kelly Byrd, Jeanette Reed, Jill Krusac, Michele Oravitz, Libby Bliss, Wendy Morgan, Stephanie Martin (W Novice 8+); Alan St. Clair, Phillip Daniels, Todd Stansbury, Seaton Green, Ed McCormick, Howell Strain, Phillip Blevins, Eric Gregory, Tracey Davis (M Novice Lightweight 8+); plus St. Clair, Daniels, Green, McCormick, Robert Meeks, Trae Calfee, Paul Brinkman, Andy Foxwell (M Novice 8+); Byrd, Bliss, Chris Kesick, Julie Jackson, Kim Tatum, Renee Holeton, Madia Swicord, Doddie Davis (W Varsity 8+); Reed, Terri Evon, Rogerson, Sabra Jenkins, Laurel Haynes, Becky Floyd, Lisa Miller, Amanda Gutridge, Christi Pitner (W Varsity Lightweight 8+); Stansbury, Strain, McCormick, Gregory, Davis (M Novice Lightweight 4+).",
         kind: "achievement",
         source: "News-Free Press, March 21 1993",
+        photo: {
+          src: "/photos/clippings/1993-03-21-utc-wins-florida-crew-classic.jpg",
+          alt: "Sunday March 21, 1993 News-Free Press headline 'UTC Rowing Team Wins Meet' — full article naming UTC's winning crews from the Florida Crew Classic in Jacksonville.",
+          caption: "News-Free Press, Sunday March 21 1993. The article naming every athlete in every winning boat.",
+          fit: "document",
+        },
       },
       {
         year: "1993-94",
