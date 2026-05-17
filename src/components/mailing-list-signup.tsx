@@ -63,7 +63,7 @@ export function MailingListSignup({
               : "rounded-md border border-utc-gold/40 bg-utc-gold/10 p-3 text-sm text-utc-navy"
         }
       >
-        You&rsquo;re on the list. We&rsquo;ll write when there&rsquo;s news worth your time.
+        You&rsquo;re in. We&rsquo;ll write after each regatta &mdash; and when there&rsquo;s other news worth your time.
       </div>
     );
   }

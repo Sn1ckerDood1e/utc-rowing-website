@@ -31,22 +31,43 @@ const MEDAL_TONES: Record<string, string> = {
 
 export async function FeaturedAlumni() {
   const supabase = createSupabasePublicClient();
+  // Pull all featured alumni, then rotate the window shown per day so repeat
+  // visitors don't see the same 12 every time. The ISR cache is 1 hour so
+  // there's a natural floor on render frequency; the daily offset gives the
+  // rotation some perceptible motion without churning the cache too hard.
   const { data, error } = await supabase
     .from("alumni")
     .select(
       "id, slug, canonical_name, achievements, bio, featured_medal_label, featured_medal_kind, featured_class_label, featured_rank, featured_photo:featured_photo_id (storage_path, caption, submitter_name, attribution)"
     )
     .eq("is_featured", true)
-    .order("featured_rank", { ascending: true, nullsFirst: false })
-    .limit(12);
+    .order("featured_rank", { ascending: true, nullsFirst: false });
 
   if (error) {
     console.error("[FeaturedAlumni] fetch failed", error.message);
     return null;
   }
 
-  const featured = (data ?? []) as unknown as FeaturedRow[];
-  if (featured.length === 0) return null;
+  const all = (data ?? []) as unknown as FeaturedRow[];
+  if (all.length === 0) return null;
+
+  // Daily rotating window of 12. When there are <=12 featured alumni, just
+  // show them all in the natural rank order. When there are more, slide the
+  // window by `(day-of-year) mod (count - 12 + 1)` so over time every
+  // featured rower gets a turn in the visible window.
+  const WINDOW = 12;
+  let featured: FeaturedRow[];
+  if (all.length <= WINDOW) {
+    featured = all;
+  } else {
+    const dayOfYear = Math.floor(
+      (Date.now() - new Date(new Date().getUTCFullYear(), 0, 0).getTime()) /
+        86_400_000
+    );
+    const maxOffset = all.length - WINDOW + 1;
+    const offset = ((dayOfYear % maxOffset) + maxOffset) % maxOffset;
+    featured = all.slice(offset, offset + WINDOW);
+  }
 
   return (
     <section className="bg-utc-navy text-white relative overflow-hidden">
