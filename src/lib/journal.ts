@@ -32,6 +32,12 @@ export type JournalPost = {
   /** Optional poster image for the hero video; shown until autoplay kicks in. */
   heroVideoPoster?: string;
   /**
+   * Optional lower-bitrate variant for mobile. When set, gets served via
+   * `<source media="(max-width: 768px)">` so 4G/LTE users don't pull the
+   * full-bitrate desktop file. Recommended target: ~2MB at 854x480.
+   */
+  heroVideoMobile?: string;
+  /**
    * Hero video orientation. Defaults to `portrait` (preserves the
    * narrow centered treatment used for phone-shot vertical clips).
    * Use `landscape` for 16:9 race-shot videos so they render at the
@@ -132,6 +138,7 @@ export const posts: JournalPost[] = [
     heroAlt:
       "UTC Rowing's 2026 ACRA M4x crew with Coach Kinsey on the dock at Melton Hill Lake after the B final — Abraham Mako, Conner Richardson, Tyler Burkett, Jay Pollard, and the coach.",
     heroVideo: "/videos/journal/2026-05-16-acra-b-final-start.mp4",
+    heroVideoMobile: "/videos/journal/2026-05-16-acra-b-final-start-mobile.mp4",
     heroVideoPoster: "/videos/journal/2026-05-16-acra-b-final-start-poster.jpg",
     heroVideoAspect: "landscape",
     bodyImage: {

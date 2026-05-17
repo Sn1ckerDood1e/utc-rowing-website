@@ -117,6 +117,32 @@ export default async function AlumniPage() {
         </div>
       </section>
 
+      {/* Worth-era callout — the program's documented biggest gap */}
+      <section className="bg-paper border-y border-border/60">
+        <div className="mx-auto max-w-3xl px-4 py-12">
+          <p className="text-utc-navy/60 uppercase text-xs tracking-[0.2em] font-semibold mb-3">
+            The biggest gap
+          </p>
+          <h2 className="font-display text-2xl sm:text-3xl font-bold text-utc-navy leading-tight mb-3">
+            The Worth era is almost undocumented.
+          </h2>
+          <p className="text-foreground/85 leading-relaxed mb-5">
+            UTC raced through 2018, 2019, 2022 — names and results we know
+            existed, but the rosters never reached us. The program went dark
+            after 2022/23 and a lot of that history sits in alumni heads,
+            inboxes, and old phones. If you rowed for Coach Worth, or you know
+            someone who did, send us anything you can find: names, race
+            results, photos, group texts. Even a partial roster closes the gap.
+          </p>
+          <Link
+            href="/submit"
+            className="inline-flex items-center gap-1 text-utc-navy font-semibold link-draw"
+          >
+            Submit a Worth-era name or photo &rarr;
+          </Link>
+        </div>
+      </section>
+
       <section className="bg-utc-navy text-white">
         <div className="mx-auto max-w-3xl px-4 py-16 text-center">
           <h2 className="font-display text-3xl sm:text-4xl font-bold mb-4 leading-tight">

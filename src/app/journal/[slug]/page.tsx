@@ -96,6 +96,13 @@ export default async function JournalPostPage({
                 poster={post.heroVideoPoster}
                 aria-label={post.heroAlt ?? post.title}
               >
+                {post.heroVideoMobile && (
+                  <source
+                    src={post.heroVideoMobile}
+                    type="video/mp4"
+                    media="(max-width: 768px)"
+                  />
+                )}
                 <source src={post.heroVideo} type="video/mp4" />
               </video>
               <div
