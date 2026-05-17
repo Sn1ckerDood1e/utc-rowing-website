@@ -50,7 +50,7 @@ Three of those four guys started rowing on April 6 — six weeks ago. Mako has b
 
 May 2 we took the boat to Oak Ridge for a scrimmage on the race course.
 
-I don't care what place they give us. These boys will compete against anything next to them. The only thing I don't want to see is a crab — an oar that stops the boat. Anything else, we live with.
+Saturday — I won't grade them on place. These boys will compete with whatever is next to them. The only thing I can't watch is a crab — an oar that stops the boat. Anything else, we live with.
 
 UTC's own 4x — an Empacher — isn't racing this weekend. Mako and I pulled it off the trailer two weeks ago to look it over. There's a soft spot in the middle of the hull. We're not racing it.
 
@@ -94,51 +94,43 @@ If you rowed at UTC, send us your photos, your memories, the names of teammates 
 //   },
 // },
 
-// =====================================================================
-// RACE-DAY POST SKELETON — uncomment and fill in Saturday May 17 evening.
-// Writing draft + voice notes live in:
-//   content/journal/2026-05-17-acra-results.md
-//
-// Steps to publish:
-//   1. Open the markdown file, pick the right opener (A/B/C), fill in
-//      the bracketed placeholders, delete the writing notes.
-//   2. Paste the final body text into ACRA_RESULTS_BODY below.
-//   3. Update title + excerpt. Confirm or change the hero photo/video.
-//      A photo from race day in /public/photos/ is ideal — drop a JPG
-//      and reference it as `hero`.
-//   4. Uncomment the posts[] entry below.
-//   5. `npm run build` locally to confirm, then commit + push.
-//      Vercel auto-deploys; the post is live in ~60s.
-// =====================================================================
+const ACRA_RESULTS_BODY = `We hadn't put a team boat on a national starting line in years. The M4x in lane six Friday morning was the first one back — and the first UTC team boat at ACRA since the program restarted in Fall 2025, six months ago. Mako on stroke; Richardson, Burkett, Pollard in the bow three. Three of them first sat in a shell on April 6.
 
-// const ACRA_RESULTS_BODY = `[PASTE FINAL BODY HERE — paragraphs separated by blank lines]`;
+Friday at 9:54 we went off the line in Heat 1 against Purdue, GMU, Bowdoin, Vanderbilt, and Grand Valley. We finished sixth in the heat. Time was 7:42.797. The heat winner, Purdue, posted 7:01.460. We weren't in the conversation. First 2k of their lives for the bow three. Nobody talked much at the dock after.
+
+Top two crews plus the next two fastest times moved on to the Grand Final. We dropped to the B final.
+
+Saturday at 15:37 the B final went off — five boats. UTC, Virginia RA, Vanderbilt, Bowdoin, Grand Valley. Photofinish on for the final lengths.
+
+We took third by 0.562 seconds. Time: 7:37.900 — almost five seconds faster than the heat. Bowdoin won the B final with 7:23.273. We held off Virginia RA at the line. Vanderbilt, who had been right behind us in the heat, finished five and a half seconds behind us in the B.
+
+Five seconds in a 2k overnight isn't fitness. Fitness takes months. Five seconds in twenty-four hours is the four of them figuring out how to row together under race conditions. None of the bow three had been in a 2k race before Friday morning.
+
+What I asked them to do before the heat was: don't catch a crab, and compete with whatever is next to you. They didn't crab in either race. They competed with what was next to them. Friday that wasn't enough. Saturday it was.
+
+The boat goes back on the trailer. Hooch is in the fall. The next thing is recruiting five more rowers who want to race against whatever is next to them — and getting enough of our own equipment in working order that we don't have to borrow it next time.
+
+If you rowed at UTC, the site is at utcrowing.org. Send your photos, your memories, the names of teammates we don't have on the roster yet. The program is back. It'll be built by the people who came before it — and by whoever shows up next.`;
 
 export const posts: JournalPost[] = [
-  // {
-  //   slug: "2026-05-17-acra-results",
-  //   title: "Saturday at Oak Ridge",
-  //   date: "2026-05-17",
-  //   author: "Michael Kinsey, Head Coach",
-  //   excerpt:
-  //     "[ONE OR TWO SENTENCES that work as a teaser on /journal and as the OG description on social. Lead with the fact: place, time, or the moment that defined the race.]",
-  //   body: ACRA_RESULTS_BODY,
-  //   // Hero — pick ONE: a still photo from the dock or finish line is
-  //   // ideal. If you don't have one yet, leave the pre-ACRA poster as
-  //   // fallback (won't break, just looks generic).
-  //   hero: "/photos/[ACRA-RACE-DAY-PHOTO].jpg",
-  //   heroAlt: "[Describe the photo — e.g., 'UTC's M4x at the Melton Hill Lake finish line, Saturday afternoon.']",
-  //   // Optional: short video clip of the boat, dock interview, etc.
-  //   // heroVideo: "/videos/[CLIP].mp4",
-  //   // heroVideoPoster: "/videos/[POSTER].jpg",
-  //   // Optional inline body image (e.g. a finish-line shot, a podium photo,
-  //   // the boys at the trailer afterward). afterParagraph is zero-indexed.
-  //   // bodyImage: {
-  //   //   src: "/photos/[INLINE-PHOTO].jpg",
-  //   //   alt: "[Describe the photo]",
-  //   //   caption: "[One short caption.]",
-  //   //   afterParagraph: 1,
-  //   // },
-  // },
+  {
+    slug: "2026-05-16-acra-third-in-the-b-final",
+    title: "Back at ACRA — and third in the B final",
+    date: "2026-05-16",
+    author: "Michael Kinsey, Head Coach",
+    excerpt:
+      "The last UTC team boat at ACRA was somewhere in the Worth years. Then the program went dark. Saturday, four guys in a Vespoli loaner — three of them six weeks into the sport — took third in the M4x B final by half a second in a photo finish.",
+    body: ACRA_RESULTS_BODY,
+    hero: "/photos/journal/2026-05-16-acra-team-post-race.jpg",
+    heroAlt:
+      "UTC Rowing's 2026 ACRA M4x crew with Coach Kinsey on the dock at Melton Hill Lake after the B final — Abraham Mako, Conner Richardson, Tyler Burkett, Jay Pollard, and the coach.",
+    bodyImage: {
+      src: "/photos/journal/2026-05-16-acra-boat-at-dock.jpg",
+      alt: "UTC Rowing's M4x at the dock after a race at ACRA Nationals on Melton Hill Lake, Oak Ridge TN — four rowers in UTC kit, course buoys stretching out behind them.",
+      caption: "The boat at the dock between races. Melton Hill Lake, Oak Ridge.",
+      afterParagraph: 5,
+    },
+  },
   {
     slug: "2026-05-10-pre-acra-where-we-are",
     title: "Pre-ACRA: Where We Are",
