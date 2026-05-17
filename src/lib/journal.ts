@@ -124,10 +124,12 @@ export const posts: JournalPost[] = [
     hero: "/photos/journal/2026-05-16-acra-team-post-race.jpg",
     heroAlt:
       "UTC Rowing's 2026 ACRA M4x crew with Coach Kinsey on the dock at Melton Hill Lake after the B final — Abraham Mako, Conner Richardson, Tyler Burkett, Jay Pollard, and the coach.",
+    heroVideo: "/videos/journal/2026-05-16-acra-b-final-start.mp4",
+    heroVideoPoster: "/videos/journal/2026-05-16-acra-b-final-start-poster.jpg",
     bodyImage: {
-      src: "/photos/journal/2026-05-16-acra-lane-six-launch.jpg",
-      alt: "UTC Rowing's M4x being walked to the water for the B final at ACRA Nationals on Melton Hill Lake, Oak Ridge TN — Lane 6 marker visible on the dock, four rowers in UTC kit carrying the boat alongside the coach.",
-      caption: "Walking the boat down to lane six. Melton Hill Lake, Oak Ridge.",
+      src: "/photos/journal/2026-05-16-acra-m4x-lane-six.jpg",
+      alt: "UTC Rowing's M4x in the water at ACRA Nationals, Melton Hill Lake, Oak Ridge TN — all four rowers (Mako, Richardson, Burkett, Pollard) seated in the boat, side profile, lane buoys visible.",
+      caption: "The M4x in lane six. Melton Hill Lake, Oak Ridge.",
       afterParagraph: 3,
     },
   },
