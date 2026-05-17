@@ -32,6 +32,13 @@ export type JournalPost = {
   /** Optional poster image for the hero video; shown until autoplay kicks in. */
   heroVideoPoster?: string;
   /**
+   * Hero video orientation. Defaults to `portrait` (preserves the
+   * narrow centered treatment used for phone-shot vertical clips).
+   * Use `landscape` for 16:9 race-shot videos so they render at the
+   * full article column width.
+   */
+  heroVideoAspect?: "portrait" | "landscape";
+  /**
    * Optional inline image rendered mid-body. Inserted *after* the Nth
    * paragraph (zero-indexed), with a captioned figure treatment matching
    * the donate-page need photos.
@@ -126,6 +133,7 @@ export const posts: JournalPost[] = [
       "UTC Rowing's 2026 ACRA M4x crew with Coach Kinsey on the dock at Melton Hill Lake after the B final — Abraham Mako, Conner Richardson, Tyler Burkett, Jay Pollard, and the coach.",
     heroVideo: "/videos/journal/2026-05-16-acra-b-final-start.mp4",
     heroVideoPoster: "/videos/journal/2026-05-16-acra-b-final-start-poster.jpg",
+    heroVideoAspect: "landscape",
     bodyImage: {
       src: "/photos/journal/2026-05-16-acra-m4x-lane-six.jpg",
       alt: "UTC Rowing's M4x in the water at ACRA Nationals, Melton Hill Lake, Oak Ridge TN — all four rowers (Mako, Richardson, Burkett, Pollard) seated in the boat, side profile, lane buoys visible.",

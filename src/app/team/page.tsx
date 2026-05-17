@@ -46,6 +46,12 @@ const ROSTER: Athlete[] = [
     major: "Applied Leadership",
     affiliation: "U.S. Army active duty",
     bio: "First pulled an oar on April 6, 2026 — the day after Easter, about six weeks before ACRA.",
+    photo: {
+      src: "/photos/team/richardson-acra-portrait.jpg",
+      width: 800,
+      height: 1000,
+      alt: "Conner Richardson at ACRA Nationals, Melton Hill Lake, May 16, 2026.",
+    },
   },
   {
     name: "Tyler Burkett",
@@ -55,6 +61,12 @@ const ROSTER: Athlete[] = [
     major: "Applied Leadership",
     affiliation: "U.S. Army active duty",
     bio: "First day in a boat: April 6, 2026. Six weeks of training before nationals.",
+    photo: {
+      src: "/photos/team/burkett-acra-portrait.jpg",
+      width: 800,
+      height: 1000,
+      alt: "Tyler Burkett at ACRA Nationals, Melton Hill Lake, May 16, 2026.",
+    },
   },
   {
     name: "Jay Pollard",
@@ -64,6 +76,12 @@ const ROSTER: Athlete[] = [
     major: "Applied Leadership",
     affiliation: "U.S. Army active duty",
     bio: "Started rowing April 6, 2026. Anchors the bow and balances the boat from the seat that feels every wobble first.",
+    photo: {
+      src: "/photos/team/pollard-acra-portrait.jpg",
+      width: 800,
+      height: 1000,
+      alt: "Jay Pollard at ACRA Nationals, Melton Hill Lake, May 16, 2026.",
+    },
   },
 ];
 

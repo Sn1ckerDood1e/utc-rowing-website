@@ -73,14 +73,19 @@ export default async function JournalPostPage({
       </section>
 
       {post.heroVideo ? (
-        // Portrait-orientation hero video (e.g. phone-shot quad clip,
-        // roughly 9:16). Constrained to a centered max-width column so
-        // it reads as the post's visual lead without dominating the
-        // viewport. Same chrome as the M4x video on /donate — rounded,
-        // shadowed, ring, navy-gradient overlay.
+        // Hero video. `heroVideoAspect` controls width:
+        //  - "portrait" (default): max-w-sm centered, suits phone-shot 9:16
+        //  - "landscape": fills the article column (max-w-3xl) so 16:9
+        //    race footage doesn't look like a thumbnail.
+        // Chrome: rounded, shadowed, ring, navy-gradient overlay — same as
+        // the M4x video on /donate.
         <section className="bg-paper">
           <div className="mx-auto max-w-3xl px-4 pt-10">
-            <figure className="relative overflow-hidden rounded-2xl shadow-2xl shadow-utc-navy-deep/40 ring-1 ring-utc-navy/10 max-w-sm mx-auto">
+            <figure
+              className={`relative overflow-hidden rounded-2xl shadow-2xl shadow-utc-navy-deep/40 ring-1 ring-utc-navy/10 mx-auto ${
+                post.heroVideoAspect === "landscape" ? "w-full" : "max-w-sm"
+              }`}
+            >
               <video
                 className="w-full h-auto block"
                 autoPlay
