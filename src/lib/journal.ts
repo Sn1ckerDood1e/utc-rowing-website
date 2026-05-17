@@ -94,7 +94,7 @@ If you rowed at UTC, send us your photos, your memories, the names of teammates 
 //   },
 // },
 
-const ACRA_RESULTS_BODY = `We hadn't put a team boat on a national starting line in years. The M4x in lane six Friday morning was the first one back — and the first UTC team boat at ACRA since the program restarted in Fall 2025, six months ago. Mako on stroke; Richardson, Burkett, Pollard in the bow three. Three of them first sat in a shell on April 6.
+const ACRA_RESULTS_BODY = `UTC's last team boat at ACRA was a Men's 2x in 2018 — second in the B final. McDarmont raced the W1x in 2019. Then COVID, then the program went dark for four years. The M4x in lane six Friday morning was the first UTC team boat at ACRA in eight years, and the first since the program restarted last fall. Mako on stroke; Richardson, Burkett, Pollard in the bow three. Three of them first sat in a shell on April 6.
 
 Friday at 9:54 we went off the line in Heat 1 against Purdue, GMU, Bowdoin, Vanderbilt, and Grand Valley. We finished sixth in the heat. Time was 7:42.797. The heat winner, Purdue, posted 7:01.460. We weren't in the conversation. First 2k of their lives for the bow three. Nobody talked much at the dock after.
 
@@ -119,7 +119,7 @@ export const posts: JournalPost[] = [
     date: "2026-05-16",
     author: "Michael Kinsey, Head Coach",
     excerpt:
-      "The last UTC team boat at ACRA was somewhere in the Worth years. Then the program went dark. Saturday, four guys in a Vespoli loaner — three of them six weeks into the sport — took third in the M4x B final by half a second in a photo finish.",
+      "UTC's last team boat at ACRA was an M2x in 2018 — second in the B final. Saturday, eight years and a program restart later, four guys in a Vespoli loaner — three of them six weeks into the sport — took third in the M4x B final by half a second in a photo finish.",
     body: ACRA_RESULTS_BODY,
     hero: "/photos/journal/2026-05-16-acra-team-post-race.jpg",
     heroAlt:

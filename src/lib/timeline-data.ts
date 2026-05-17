@@ -469,6 +469,15 @@ export const ERAS: Era[] = [
       },
       {
         year: "2017",
+        sortYear: 2016.9,
+        title: "Women's Novice 4+ to the ACRA B Final",
+        summary:
+          "May 26-28 2017, Lake Lanier: UTC's Women's Novice 4+ qualifies through Heat 2 (3rd, 9:00.7) and Rep 1 (2nd, 9:46.8) to the B Final, where they finish 3rd at 8:39.8 — Ohio State winning the B at 8:25.6. The last documented Espeseth-era team boat at ACRA.",
+        kind: "achievement",
+        source: "row2k 2017 ACRA results (20170528ACRA.pdf)",
+      },
+      {
+        year: "2017",
         sortYear: 2017,
         title: "Espeseth retires after 28 years",
         summary:
@@ -504,6 +513,15 @@ export const ERAS: Era[] = [
         summary:
           "Worth's staff: Drew Steadman (UTC alum, Lead Novice Coach), Jessica Brand and Aaron Shimel as assistants. Konstantine Vlasis joins Fall 2018. Dr. Brian O'Leary becomes faculty advisor in Fall 2017.",
         kind: "person",
+      },
+      {
+        year: "2018",
+        sortYear: 2017.9,
+        title: "Men's 2x — second in the ACRA B Final",
+        summary:
+          "May 25-27 2018, Lake Lanier: UTC's Men's Double Sculls makes the B Final and finishes 2nd at 7:44.949 — Michigan winning the B at 7:34.713. Time trial entry 11th of the field at 7:28.3; through Semi 2 (6th, 8:36.949) to the B. The last documented UTC team boat at ACRA until the 2026 M4x — eight years later.",
+        kind: "achievement",
+        source: "row2k 2018 ACRA results (20180527ACRA.pdf)",
       },
       {
         year: "2018",
