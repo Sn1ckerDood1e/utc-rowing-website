@@ -14,8 +14,9 @@ const QUICK_FACTS: { label: string; value: string }[] = [
   { label: "Boathouse", value: "William Raoul Rowing Center, 1001 Riverside Dr, Chattanooga, TN" },
   { label: "Olympic alumni", value: "Dan Beery, gold medalist, U.S. Men's Eight, Athens 2004" },
   { label: "Current head coach", value: "Michael Kinsey (since 2025)" },
-  { label: "Current roster", value: "Four athletes (M4x), Class of 2027 — first competitive entry since 2022" },
-  { label: "Next race", value: "ACRA Championships, May 17 2026, Melton Hill Lake, Oak Ridge TN" },
+  { label: "Current roster", value: "Four athletes (M4x), Class of 2027 — first UTC team boat at ACRA in eight years" },
+  { label: "Last race", value: "ACRA Nationals, May 15-17 2026, Melton Hill Lake, Oak Ridge TN — M4x 3rd in B Final (7:37.900)" },
+  { label: "Next race", value: "Head of the Hooch, Fall 2026, Chattanooga TN" },
 ];
 
 const CREW: { name: string; seat: string; hometown: string; affiliation?: string }[] = [

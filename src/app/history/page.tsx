@@ -79,7 +79,7 @@ export default function HistoryPage() {
               href="/donate"
               className="bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold px-7 py-3.5 rounded-md hover:bg-white/20 hover:border-utc-gold/60 transition-all"
             >
-              Send the crew off →
+              Back the rebuild →
             </Link>
             <Link
               href="/alumni"

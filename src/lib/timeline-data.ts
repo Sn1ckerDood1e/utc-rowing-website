@@ -623,7 +623,7 @@ export const ERAS: Era[] = [
         sortYear: 2026,
         title: "ACRA Nationals — May 17, Oak Ridge",
         summary:
-          "UTC's M4x — bow Jay Pollard, 2 Tyler Burkett, 3 Conner Richardson, stroke Abraham Mako — races at ACRA Nationals on Melton Hill Lake in Oak Ridge, TN, on May 17, 2026. The boat goes off the line in a Vespoli loaner 4x — UTC's own Empacher 'Chattanooga' is sidelined by a hull breach. All four are UTC class of 2027; Conner, Tyler, and Jay are U.S. Army active duty. Mako, the most experienced rower in the boat, started at Chattanooga Juniors and co-founded Chattanooga State Rowing before transferring to UTC. The other three first sat in a shell on April 6, 2026 — six weeks before the line. The first UTC ACRA crew since the program restarted.",
+          "UTC's M4x — bow Jay Pollard, 2 Tyler Burkett, 3 Conner Richardson, stroke Abraham Mako — raced at ACRA Nationals on Melton Hill Lake in Oak Ridge, TN, May 15-17, 2026. Sixth of six in the heat (7:42.797, Purdue winning at 7:01.460). Third in the B Final by 0.562 seconds in a photo finish over Virginia RA (7:37.900 — nearly five seconds faster than the heat). Bowdoin won the B at 7:23.273. The boat went off the line in a Vespoli loaner 4x — UTC's own Empacher 'Chattanooga' was sidelined by a hull breach. All four are UTC class of 2027; Conner, Tyler, and Jay are U.S. Army active duty. Mako, the most experienced rower in the boat, started at Chattanooga Juniors and co-founded Chattanooga State Rowing before transferring to UTC. The other three first sat in a shell on April 6, 2026 — six weeks before the line. The first UTC team boat at ACRA in eight years.",
         kind: "achievement",
       },
     ],

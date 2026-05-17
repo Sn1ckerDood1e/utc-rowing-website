@@ -109,9 +109,9 @@ type Regatta = {
 const UPCOMING: Regatta[] = [
   {
     name: "ACRA Championships",
-    date: "May 17, 2026",
+    date: "Completed May 16, 2026",
     location: "Melton Hill Lake · Oak Ridge, TN",
-    entries: "Men's M4x — the immediate target. Racing a 4x on loan from Vespoli.",
+    entries: "M4x — 3rd in the B Final (7:37.900, photo finish 0.562s over Virginia RA). First UTC team boat at ACRA in eight years.",
   },
   {
     name: "Head of the Hooch",
@@ -510,7 +510,7 @@ export default function TeamPage() {
             Help the crew
           </p>
           <h2 className="font-display text-3xl sm:text-4xl font-bold mb-5 leading-tight">
-            ACRA is this Saturday.
+            ACRA is in the books. Hooch is next.
             <br className="hidden sm:block" />
             <span className="italic text-utc-gold-bright">The boat goes where alumni take it.</span>
           </h2>
@@ -523,7 +523,7 @@ export default function TeamPage() {
               href="/donate"
               className="bg-utc-gold text-utc-navy-deep font-semibold px-7 py-3.5 rounded-md hover:bg-utc-gold-bright transition-all hover:shadow-xl"
             >
-              Send the crew off &rarr;
+              Back the rebuild &rarr;
             </Link>
             <Link
               href="/submit"

@@ -154,25 +154,19 @@ export default function DonatePage() {
         </div>
       </section>
 
-      {/* Pre-ACRA urgency banner */}
+      {/* Post-ACRA banner — the result + the next ask */}
       <section className="bg-paper relative">
         <div className="mx-auto max-w-6xl px-4 -mt-10 sm:-mt-12 relative z-10">
           <div className="bg-gradient-to-r from-utc-gold-bright via-utc-gold to-utc-gold-deep rounded-2xl shadow-2xl shadow-utc-navy/15 p-1">
             <div className="bg-white rounded-xl p-5 sm:p-6 flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between">
               <div>
-                <div className="flex items-center gap-2 mb-1.5">
-                  <span className="relative flex h-2.5 w-2.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75" />
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500" />
-                  </span>
-                  <p className="text-utc-navy uppercase text-xs tracking-[0.25em] font-bold">
-                    Pre-ACRA push · Send the crew off May 17
-                  </p>
-                </div>
+                <p className="text-utc-navy uppercase text-xs tracking-[0.25em] font-bold mb-1.5">
+                  Back from ACRA · 3rd in the B Final
+                </p>
                 <p className="text-utc-navy/80 text-base sm:text-lg leading-snug">
-                  Four athletes, one M4x, racing at Melton Hill Lake in Oak Ridge on Saturday,
-                  May 17. Every gift before then goes to this crew&rsquo;s travel and the next
-                  boat behind them.
+                  The first UTC team boat at ACRA in eight years went third in the B final by
+                  half a second. Hooch is next, and the path beyond it &mdash; new boats, covered
+                  racks, the indoor room &mdash; is funded by the people backing the rebuild.
                 </p>
               </div>
               <a

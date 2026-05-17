@@ -85,12 +85,12 @@ export default function JournalIndexPage() {
             <div className="mt-16 pt-10 border-t border-border space-y-10">
               <div className="text-center">
                 <p className="font-serif text-foreground/80 text-lg">
-                  The crew races ACRA Nationals May 17.{" "}
+                  Hooch is next.{" "}
                   <Link
                     href="/donate"
                     className="text-utc-navy font-semibold underline decoration-utc-gold underline-offset-4 hover:text-utc-gold-deep"
                   >
-                    Send the crew off →
+                    Back the rebuild →
                   </Link>
                 </p>
               </div>

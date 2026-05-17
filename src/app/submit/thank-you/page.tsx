@@ -41,7 +41,7 @@ export default function ThankYouPage() {
               href="/donate"
               className="bg-utc-gold text-utc-navy-deep font-semibold px-7 py-3.5 rounded-md hover:bg-utc-gold-bright transition-all hover:shadow-xl inline-flex items-center gap-2"
             >
-              Send the crew off
+              Back the rebuild
               <ChevronRight className="w-4 h-4" />
             </Link>
             <Link

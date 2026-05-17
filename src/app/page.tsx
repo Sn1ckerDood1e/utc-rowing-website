@@ -118,7 +118,7 @@ export default async function Home() {
                 href="/donate"
                 className="bg-utc-gold text-utc-navy-deep font-semibold px-7 py-4 rounded-md hover:bg-utc-gold-bright transition-all hover:shadow-xl hover:shadow-utc-gold/30 inline-flex items-center gap-2"
               >
-                Send the crew off
+                Back the rebuild
                 <ChevronRight className="w-4 h-4" />
               </Link>
               <Link
@@ -161,15 +161,9 @@ export default async function Home() {
           <div className="bg-gradient-to-r from-utc-gold-bright via-utc-gold to-utc-gold-deep rounded-2xl shadow-2xl shadow-utc-navy/15 p-1">
             <div className="bg-white rounded-xl p-6 sm:p-8 flex flex-col sm:flex-row gap-6 sm:items-center sm:justify-between">
               <div>
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="relative flex h-2.5 w-2.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75" />
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500" />
-                  </span>
-                  <p className="text-utc-navy uppercase text-xs tracking-[0.25em] font-bold">
-                    Racing Saturday · ACRA Nationals · May 17, 2026
-                  </p>
-                </div>
+                <p className="text-utc-navy uppercase text-xs tracking-[0.25em] font-bold mb-2">
+                  Back from ACRA Nationals · May 16, 2026
+                </p>
                 <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-utc-navy">
                   <span className="sm:whitespace-nowrap">Abraham Mako</span>
                   {" · "}
@@ -179,15 +173,16 @@ export default async function Home() {
                   {" · "}
                   <span className="sm:whitespace-nowrap">Jay Pollard</span>
                   <span className="block text-base font-normal text-utc-navy/65 font-sans mt-1">
-                    UTC&rsquo;s first ACRA crew since the program restarted Fall 2025.
+                    Third in the M4x B final by half a second &mdash; the first UTC team boat at
+                    ACRA in eight years.
                   </span>
                 </h2>
               </div>
               <Link
-                href="/donate"
+                href="/journal/2026-05-16-acra-third-in-the-b-final"
                 className="bg-utc-navy text-white font-semibold px-6 py-3.5 rounded-md hover:bg-utc-navy-deep transition-all hover:shadow-lg whitespace-nowrap inline-flex items-center justify-center gap-2"
               >
-                Send the crew off
+                Read the recap
                 <ChevronRight className="w-4 h-4" />
               </Link>
             </div>
