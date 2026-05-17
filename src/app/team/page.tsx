@@ -32,10 +32,10 @@ const ROSTER: Athlete[] = [
     major: "Political Science & Public Service: Public Law",
     bio: "The program's most experienced rower and the stroke seat of the M4x. Came up through Chattanooga Junior Rowing, then co-founded Chattanooga State Rowing with Jack Cawood before transferring to UTC and helping restart the program here in Fall 2025. Sets the rate the other three follow.",
     photo: {
-      src: "/photos/abraham-single-aquarium.jpg",
-      width: 1280,
-      height: 1752,
-      alt: "Abraham Mako rowing a single past the Tennessee Aquarium at sunset, the glass pyramid reflected in the river",
+      src: "/photos/team/mako-acra-portrait.jpg",
+      width: 800,
+      height: 1000,
+      alt: "Abraham Mako at ACRA Nationals, Melton Hill Lake, May 16, 2026.",
     },
   },
   {
