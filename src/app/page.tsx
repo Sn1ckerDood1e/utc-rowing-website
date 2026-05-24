@@ -94,7 +94,7 @@ export default async function Home() {
         <div className="relative mx-auto max-w-6xl px-4 pt-20 pb-32 sm:pt-28 sm:pb-44">
           <div className="max-w-3xl animate-fade-up">
             <p className="text-utc-gold uppercase text-sm tracking-[0.25em] font-semibold mb-5">
-              Rowing at UTC since 1971 · Competing since 1983
+              Year One · Rowing since 1971 · Competing since 1983
             </p>
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
               Fifty-five years on
@@ -108,7 +108,7 @@ export default async function Home() {
               </span>{" "}
               and counting.
             </p>
-            <p className="mt-3 text-lg text-white/70 max-w-2xl">
+            <p className="mt-3 text-lg text-white/90 max-w-2xl drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
               Under Coach Michael Kinsey, we&rsquo;re rebuilding the program from the same stretch
               of water under the Walnut Street Bridge, and we need every alum to help us tell its
               story.
@@ -237,7 +237,11 @@ export default async function Home() {
             Most of it is in alumni filing cabinets and phones.
           </h2>
           <p className="text-lg text-white/75 max-w-2xl mx-auto mb-10">
-            We have {alumniCount.toLocaleString()} names on file. We&rsquo;re missing thousands of
+            We have{" "}
+            <span className="font-semibold text-white">
+              {alumniCount.toLocaleString()}
+            </span>{" "}
+            names on file. We&rsquo;re missing thousands of
             stories, hundreds of photos, and most of what made each crew unforgettable to itself.
             If you rowed at UTC, or know someone who did, your contribution closes the gaps in
             the record.

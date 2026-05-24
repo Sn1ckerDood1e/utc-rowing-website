@@ -23,6 +23,7 @@ const TIERS = [
     detail: "Goes to the rowing program through UTC's official giving portal.",
     cta: "Give once",
     href: GIVING_URL,
+    primary: true,
   },
   {
     label: "Monthly sustaining donor",
@@ -97,7 +98,7 @@ export default function DonatePage() {
       {/* Hero */}
       <section className="relative bg-river-gradient text-white overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(200,182,130,0.15),transparent_50%)]" />
-        <div className="relative mx-auto max-w-6xl px-4 py-16 sm:py-24">
+        <div className="relative mx-auto max-w-6xl px-4 py-10 sm:py-14">
           <div className="grid gap-10 lg:gap-14 lg:grid-cols-[1.15fr_1fr] lg:items-center">
             {/* Photo first on mobile, second on lg */}
             <div className="order-1 lg:order-2 relative rounded-xl overflow-hidden shadow-2xl shadow-utc-navy-deep/50 ring-1 ring-white/10 max-w-md mx-auto lg:max-w-none">
@@ -183,7 +184,7 @@ export default function DonatePage() {
 
       {/* Where the money goes */}
       <section className="bg-paper">
-        <div className="mx-auto max-w-5xl px-4 py-20">
+        <div className="mx-auto max-w-3xl px-4 py-20">
           <div className="mb-12 max-w-2xl">
             <p className="text-utc-navy/60 uppercase text-xs tracking-[0.2em] font-semibold mb-3">
               Where the money goes
@@ -192,7 +193,7 @@ export default function DonatePage() {
               Concrete needs, in priority order.
             </h2>
           </div>
-          <div className="grid gap-5 sm:grid-cols-2">
+          <div className="grid gap-5">
             {NEEDS.map((n) => (
               <div
                 key={n.title}
@@ -200,7 +201,7 @@ export default function DonatePage() {
               >
                 <div className="flex items-start justify-between gap-4 mb-2">
                   <h3 className="font-display text-xl font-bold text-utc-navy">{n.title}</h3>
-                  <span className="text-utc-gold-deep text-xs font-semibold uppercase tracking-wider whitespace-nowrap mt-1.5">
+                  <span className="text-utc-navy/65 text-xs font-semibold uppercase tracking-wider whitespace-nowrap mt-1.5">
                     {n.estimate}
                   </span>
                 </div>
@@ -285,6 +286,8 @@ export default function DonatePage() {
                   className={`inline-flex items-center gap-1.5 font-semibold ${
                     t.featured
                       ? "bg-utc-navy text-white px-5 py-2.5 rounded-md hover:bg-utc-navy-deep transition-colors"
+                      : t.primary
+                      ? "bg-white/10 hover:bg-white/20 border border-white/35 text-white px-5 py-2.5 rounded-md transition-colors"
                       : "text-utc-gold-bright link-draw"
                   }`}
                 >

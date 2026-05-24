@@ -120,7 +120,9 @@ export function InteractiveTimeline() {
           }
         });
       },
-      { threshold: 0.1, rootMargin: "0px 0px -10% 0px" }
+      // Trigger early: start the reveal while the card is still 20% below
+      // the viewport so fast scrolls don't outrun the animation.
+      { threshold: 0, rootMargin: "0px 0px 20% 0px" }
     );
     cards.forEach((c) => obs.observe(c));
     return () => obs.disconnect();
@@ -278,7 +280,7 @@ export function InteractiveTimeline() {
                         key={id}
                         data-moment-card
                         data-testid={`moment-${era.slug}-${idx}`}
-                        className={`relative md:grid md:grid-cols-[1fr_auto_1fr] md:gap-6 md:items-start opacity-0 translate-y-3 transition-all duration-700 [&.is-visible]:opacity-100 [&.is-visible]:translate-y-0 motion-reduce:!opacity-100 motion-reduce:!translate-y-0`}
+                        className={`relative md:grid md:grid-cols-[1fr_auto_1fr] md:gap-6 md:items-start opacity-0 translate-y-3 transition-all duration-300 [&.is-visible]:opacity-100 [&.is-visible]:translate-y-0 motion-reduce:!opacity-100 motion-reduce:!translate-y-0`}
                       >
                         {/* Left side card (desktop only).
                             NOTE: when this row's card lives on the right, this

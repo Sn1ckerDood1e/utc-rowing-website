@@ -175,7 +175,7 @@ function IdentifyCard({ photo }: { photo: IdentifyPhoto }) {
 
           {unnamedRoles.length > 0 && (
             <div className="mb-3 text-xs">
-              <div className="font-semibold text-utc-gold-deep mb-1">
+              <div className="font-semibold text-utc-navy/75 mb-1">
                 Still unidentified
               </div>
               <ul className="text-foreground/80 space-y-0.5">

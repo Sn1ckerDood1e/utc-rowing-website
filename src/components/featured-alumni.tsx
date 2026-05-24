@@ -55,10 +55,13 @@ export async function FeaturedAlumni() {
   // show them all in the natural rank order. When there are more, slide the
   // window by `(day-of-year) mod (count - 12 + 1)` so over time every
   // featured rower gets a turn in the visible window.
+  // Cap to a multiple of 6 so the grid (2-col on sm, 3-col on lg) never has
+  // an orphan card on the last row. Below 6, accept the orphan rather than hide cards.
   const WINDOW = 12;
   let featured: FeaturedRow[];
   if (all.length <= WINDOW) {
-    featured = all;
+    const cap = all.length >= 6 ? Math.floor(all.length / 6) * 6 : all.length;
+    featured = all.slice(0, cap);
   } else {
     const dayOfYear = Math.floor(
       (Date.now() - new Date(new Date().getUTCFullYear(), 0, 0).getTime()) /

@@ -22,7 +22,7 @@ const SITE_TITLE = "UTC Rowing — Fifty-Five Years on the Tennessee River";
 const SITE_DESCRIPTION =
   "Rowing at the University of Tennessee at Chattanooga since 1971. Olympic gold, USRowing All-Americans, the Tennessee Indoor Rowing Championships, and a program rebuilding for ACRA. Alumni roster, history, and how to support the team.";
 const SHORT_DESCRIPTION =
-  "Olympic gold, three USRowing AAs in one year, and 500+ alumni. The UTC Rowing program — past, present, and how alumni are bringing it back.";
+  "Olympic gold, three USRowing AAs in one year, and 524 alumni. The UTC Rowing program — past, present, and how alumni are bringing it back.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

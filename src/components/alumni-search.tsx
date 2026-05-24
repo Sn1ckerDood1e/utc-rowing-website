@@ -210,7 +210,7 @@ function AlumniCard({
         )}
         {a.sources && (
           <div className="mt-2 pt-2 border-t border-border/50">
-            <div className="text-[9px] uppercase tracking-wider text-utc-gold font-semibold mb-0.5">
+            <div className="text-[9px] uppercase tracking-wider text-utc-navy/60 font-semibold mb-0.5">
               Documented in
             </div>
             <div className="text-xs text-foreground/60 line-clamp-2 leading-snug">

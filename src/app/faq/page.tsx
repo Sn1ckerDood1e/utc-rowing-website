@@ -23,7 +23,7 @@ const FAQS: QA[] = [
     ),
   },
   {
-    question: "I&rsquo;ve never rowed. Can I join?",
+    question: "I’ve never rowed. Can I join?",
     answer: (
       <>
         Yes. Most of the current crew started in spring 2026. Three of the four
@@ -123,7 +123,7 @@ const FAQS: QA[] = [
     ),
   },
   {
-    question: "What about women&rsquo;s rowing?",
+    question: "What about women’s rowing?",
     answer: (
       <>
         Historically a huge part of the program &mdash; the 1988 Dad Vail bronze

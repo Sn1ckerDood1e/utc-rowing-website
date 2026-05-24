@@ -190,7 +190,7 @@ export default function TeamPage() {
               The crew
             </p>
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-utc-navy leading-tight">
-              Bow to stroke. <span className="italic text-utc-gold-deep">Four seats, one boat.</span>
+              Bow to stroke. <span className="italic text-utc-navy/70">Four seats, one boat.</span>
             </h2>
             <p className="mt-4 text-foreground/75">
               UTC&rsquo;s 2026 ACRA M4x. Bios will fill in as the season rolls
@@ -229,8 +229,8 @@ export default function TeamPage() {
                       <UTCMark className="text-5xl text-white/70" />
                     </div>
                   )}
-                  <div className="p-6 flex flex-col min-h-[280px]">
-                    <p className="text-utc-gold-deep uppercase text-[11px] tracking-[0.22em] font-bold mb-2">
+                  <div className="p-6 flex flex-col flex-1 min-h-[360px]">
+                    <p className="text-utc-navy/65 uppercase text-[11px] tracking-[0.22em] font-bold mb-2">
                       {a.seat}
                     </p>
                     <h3 className="font-display text-2xl font-bold text-utc-navy mb-2">
@@ -308,23 +308,47 @@ export default function TeamPage() {
             {INCOMING.map((a) => (
               <li
                 key={a.name}
-                className="bg-white/70 border border-border/70 rounded-xl shadow-sm p-5 flex flex-col min-h-[280px]"
+                className="bg-white/70 border border-border/70 rounded-xl shadow-sm overflow-hidden flex flex-col"
               >
-                <p className="inline-flex self-start items-center text-utc-gold-deep uppercase text-[10px] tracking-[0.22em] font-bold bg-utc-gold/15 border border-utc-gold/30 rounded-full px-2.5 py-0.5 mb-3">
-                  Fall 2026
-                </p>
-                <h3 className="font-display text-xl font-bold text-utc-navy mb-2">
-                  {a.name}
-                </h3>
-                <p className="text-xs text-utc-navy/60 uppercase tracking-[0.18em] font-semibold mb-1">
-                  {a.classYear} · {a.hometown}
-                </p>
-                <p className="text-xs text-utc-navy/55 mb-3 leading-snug">
-                  {a.major}
-                </p>
-                <p className="text-sm text-foreground/75 leading-relaxed">
-                  {a.bio}
-                </p>
+                {a.photo ? (
+                  <div className="relative aspect-[4/5] bg-utc-navy-deep">
+                    <Image
+                      src={a.photo.src}
+                      alt={a.photo.alt}
+                      width={a.photo.width}
+                      height={a.photo.height}
+                      sizes="(min-width: 1024px) 320px, (min-width: 640px) 50vw, 100vw"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ) : (
+                  // Placeholder so incoming-athlete cards carry the same visual
+                  // weight as the ROSTER cards above. Same UTCMark-on-gradient
+                  // treatment used for missing M4x photos.
+                  <div
+                    aria-hidden
+                    className="relative aspect-[4/5] bg-gradient-to-br from-utc-navy-deep via-utc-navy to-utc-navy-deep flex items-center justify-center"
+                  >
+                    <UTCMark className="text-5xl text-white/70" />
+                  </div>
+                )}
+                <div className="p-5 flex flex-col flex-1 min-h-[280px]">
+                  <p className="inline-flex self-start items-center text-utc-navy uppercase text-[10px] tracking-[0.22em] font-bold bg-utc-gold/20 border border-utc-gold/40 rounded-full px-2.5 py-0.5 mb-3">
+                    Fall 2026
+                  </p>
+                  <h3 className="font-display text-xl font-bold text-utc-navy mb-2">
+                    {a.name}
+                  </h3>
+                  <p className="text-xs text-utc-navy/60 uppercase tracking-[0.18em] font-semibold mb-1">
+                    {a.classYear} · {a.hometown}
+                  </p>
+                  <p className="text-xs text-utc-navy/55 mb-3 leading-snug">
+                    {a.major}
+                  </p>
+                  <p className="text-sm text-foreground/75 leading-relaxed">
+                    {a.bio}
+                  </p>
+                </div>
               </li>
             ))}
           </ul>
@@ -475,7 +499,7 @@ export default function TeamPage() {
                 />
                 <div className="bg-white border border-border rounded-xl shadow-sm p-6 sm:p-7 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                   <div>
-                    <p className="text-utc-gold-deep uppercase text-[11px] tracking-[0.22em] font-bold mb-1.5">
+                    <p className="text-utc-navy/65 uppercase text-[11px] tracking-[0.22em] font-bold mb-1.5">
                       {r.date}
                     </p>
                     <h3 className="font-display text-2xl font-bold text-utc-navy">

@@ -39,12 +39,12 @@ export async function RecentActivity() {
   return (
     <aside className="bg-white border border-utc-gold/30 rounded-lg px-4 py-3 mb-6">
       <div className="flex items-baseline justify-between gap-3 mb-2">
-        <p className="text-[10px] uppercase tracking-[0.18em] text-utc-gold-deep font-semibold">
+        <p className="text-[10px] uppercase tracking-[0.18em] text-utc-navy/65 font-semibold">
           Recently on the roster
         </p>
         <Link
           href="/identify"
-          className="text-xs text-utc-navy font-medium underline decoration-utc-gold underline-offset-4 hover:text-utc-gold-deep transition-colors shrink-0"
+          className="text-xs text-utc-navy font-medium underline decoration-utc-gold underline-offset-4 hover:text-utc-navy/80 transition-colors shrink-0"
         >
           Help name photos →
         </Link>

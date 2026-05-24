@@ -27,7 +27,7 @@ export default function ContactPage() {
           aria-hidden
         />
 
-        <div className="relative mx-auto max-w-3xl px-4 pt-32 pb-16 sm:pt-44">
+        <div className="relative mx-auto max-w-3xl px-4 pt-16 pb-16 sm:pt-24">
           <p className="text-utc-gold uppercase text-sm tracking-[0.25em] font-semibold mb-3">
             Get in touch
           </p>

@@ -2,7 +2,7 @@
 
 /* Global focus-visible ring — overrides Tailwind reset */
 *:focus-visible {
-  outline: 2px solid var(--utc-gold-bright, #e6cf95);
+  outline: 2px solid var(--utc-gold-bright, #f4c42e);
   outline-offset: 2px;
   border-radius: 2px;
 }
@@ -11,13 +11,15 @@
   --background: #ffffff;
   --foreground: #0c1f3d;
 
-  /* UTC brand */
+  /* UTC brand — Old Gold is PMS 124 / #E0AA0F per brand palette sheet.
+     bright/deep are tints/shades of the same hue so the family stays unified
+     across the site without drifting away from the spec. */
   --utc-navy: #002649;
   --utc-navy-deep: #001633;
   --utc-navy-darker: #000d1f;
-  --utc-gold: #c8b682;
-  --utc-gold-bright: #e6cf95;
-  --utc-gold-deep: #a4925e;
+  --utc-gold: #e0aa0f;
+  --utc-gold-bright: #f4c42e;
+  --utc-gold-deep: #b08507;
 
   /* River accents */
   --river-blue: #2d5e8c;

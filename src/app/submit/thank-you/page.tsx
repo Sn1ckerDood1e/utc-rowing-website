@@ -26,7 +26,7 @@ export default function ThankYouPage() {
 
       <section className="bg-paper">
         <div className="mx-auto max-w-3xl px-4 py-16 text-center">
-          <p className="text-utc-gold-deep uppercase text-xs tracking-[0.25em] font-bold mb-3">
+          <p className="text-utc-navy/65 uppercase text-xs tracking-[0.25em] font-bold mb-3">
             ACRA Nationals · May 17
           </p>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-utc-navy mb-4 leading-tight">
