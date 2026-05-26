@@ -48,8 +48,11 @@ export default function PrivacyPage() {
             </li>
           </ul>
           <p>
-            We do not run analytics, ad trackers, or third-party scripts that
-            profile visitors. We do not require an account to read the site.
+            We use Vercel Web Analytics and Speed Insights to measure traffic
+            and page performance. These are cookieless, collect no personally
+            identifiable information, and do not profile or track visitors
+            across other sites. We run no ad trackers or third-party
+            advertising scripts. We do not require an account to read the site.
           </p>
 
           <h2>Why we collect it</h2>
