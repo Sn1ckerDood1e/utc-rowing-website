@@ -124,15 +124,17 @@ export default async function AlumniPage() {
             The biggest gap
           </p>
           <h2 className="font-display text-2xl sm:text-3xl font-bold text-utc-navy leading-tight mb-3">
-            The Worth era is almost undocumented.
+            The Worth era is starting to surface.
           </h2>
           <p className="text-foreground/85 leading-relaxed mb-5">
-            UTC raced through 2018, 2019, 2022 — names and results we know
-            existed, but the rosters never reached us. The program went dark
-            after 2022/23 and a lot of that history sits in alumni heads,
-            inboxes, and old phones. If you rowed for Coach Worth, or you know
+            Chynna Knight Cohen — team captain and president 2019-2022 — sent
+            us 37 photos and her race results on May 25, 2026. That&rsquo;s
+            one Worth-era voice. We still don&rsquo;t have rosters from 2018,
+            2019, or 2022, most of the season results, or the names from the
+            photos themselves. If you rowed for Coach Worth, or you know
             someone who did, send us anything you can find: names, race
-            results, photos, group texts. Even a partial roster closes the gap.
+            results, photos, group texts. Even a partial roster closes the
+            gap.
           </p>
           <Link
             href="/submit"
