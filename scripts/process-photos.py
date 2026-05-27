@@ -54,6 +54,17 @@ def main() -> None:
         out = bev / fname.replace(".jpeg", ".upload.jpg")
         to_jpeg(src, out)
 
+    print("\nBaking EXIF rotation into Chynna's photos...")
+    chy = ARC / "Submissions" / "2026-05-25 Chynna Knight Cohen" / "photos"
+    if chy.exists():
+        for src in sorted(chy.iterdir()):
+            if src.suffix.lower() not in {".jpg", ".jpeg", ".png"}:
+                continue
+            if src.name.endswith(".upload.jpg"):
+                continue
+            out = chy / (src.stem + ".upload.jpg")
+            to_jpeg(src, out)
+
     print("\nDone.")
 
 
