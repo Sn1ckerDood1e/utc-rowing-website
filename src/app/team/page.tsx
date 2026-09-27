@@ -431,8 +431,9 @@ export default function TeamPage() {
                 <p className="text-sm text-foreground/80 leading-relaxed mb-4">
                   Head coach from the Fall 2025 restart through the 2026 ACRA
                   M4x. Now leads alumni relations &mdash; the alumni roster,
-                  stories and photos from every era, and named giving. UTC
-                  mechatronics graduate and founder of Radl.
+                  stories and photos from every era, and named giving. A UTC
+                  mechatronics graduate, he is now a boatman for University
+                  of Wisconsin Rowing.
                 </p>
                 <p className="text-sm leading-relaxed mb-3">
                   <a

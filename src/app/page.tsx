@@ -56,8 +56,8 @@ export default async function Home() {
       <section className="relative bg-utc-navy-darker text-white overflow-hidden">
         {/* SSR baseline: photograph (LCP) — guaranteed paint, also the video poster fallback */}
         <Image
-          src="/photos/morning-row-tennessee.jpg"
-          alt="UTC Rowing crew on the Tennessee River, Chattanooga."
+          src="/videos/hero-river-poster.jpg"
+          alt="A UTC eight rowing toward the Walnut Street Bridge on the Tennessee River, Chattanooga."
           fill
           sizes="100vw"
           preload
@@ -67,9 +67,11 @@ export default async function Home() {
         />
 
         {/*
-          Atmospheric loop layered over the photo. Plays once it's playable;
-          poster covers the gap on slow connections. Muted + playsInline +
-          autoPlay are all required for iOS autoplay.
+          River montage (~27s loop, 1600x900, no audio): Veterans Bridge drone
+          -> UTC eight toward the Walnut Street Bridge -> bow-seat sunrise ->
+          ACRA 2026 M4x launching at Oak Ridge -> two sunset scullers
+          (silhouettes, Aug 2026 shoot). Poster = the Walnut Street frame.
+          Muted + playsInline + autoPlay are all required for iOS autoplay.
         */}
         <video
           className="absolute inset-0 w-full h-full object-cover"
@@ -78,11 +80,10 @@ export default async function Home() {
           loop
           playsInline
           preload="metadata"
-          poster="/videos/pair-tennessee-river-poster.jpg"
+          poster="/videos/hero-river-poster.jpg"
           aria-hidden="true"
         >
-          <source src="/videos/pair-tennessee-river.webm" type="video/webm" />
-          <source src="/videos/pair-tennessee-river.mp4" type="video/mp4" />
+          <source src="/videos/hero-river.mp4" type="video/mp4" />
         </video>
 
         {/* Navy gradient overlay for legibility — sits on TOP of both photo and video */}
@@ -94,7 +95,7 @@ export default async function Home() {
         <div className="relative mx-auto max-w-6xl px-4 pt-20 pb-32 sm:pt-28 sm:pb-44">
           <div className="max-w-3xl animate-fade-up">
             <p className="text-utc-gold uppercase text-sm tracking-[0.25em] font-semibold mb-5">
-              Year One · Rowing since 1971 · Competing since 1983
+              Year Two · Rowing since 1971 · Competing since 1983
             </p>
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
               Fifty-five years on

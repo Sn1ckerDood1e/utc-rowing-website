@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { InteractiveTimeline } from "@/components/interactive-timeline";
 import { TIMELINE_TOTAL_MOMENTS, ERAS } from "@/lib/timeline-data";
+import { ARCHIVE_GALLERY } from "@/lib/archive-gallery";
 
 export const metadata = {
   title: "History — UTC Rowing",
@@ -50,6 +51,52 @@ export default function HistoryPage() {
       {/* Interactive timeline */}
       <section className="bg-paper-grain">
         <InteractiveTimeline />
+      </section>
+
+      {/* From the archive — photo gallery (masonry via CSS columns) */}
+      <section className="bg-paper border-t border-border/60">
+        <div className="mx-auto max-w-6xl px-4 py-20">
+          <div className="mb-10 max-w-2xl">
+            <p className="text-utc-navy/60 uppercase text-xs tracking-[0.2em] font-semibold mb-3">
+              From the archive
+            </p>
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-utc-navy leading-tight">
+              The boathouse photo drawer.
+            </h2>
+            <p className="mt-4 text-foreground/75">
+              Scrapbook prints from the first seasons, and the 1990s as alumni
+              shot them. Recognize someone?{" "}
+              <Link href="/submit" className="link-draw text-utc-navy font-semibold">
+                Tell us who&rsquo;s in the boat
+              </Link>
+              .
+            </p>
+          </div>
+
+          <ul className="columns-1 sm:columns-2 lg:columns-3 gap-5 [&>li]:mb-5">
+            {ARCHIVE_GALLERY.map((p) => (
+              <li key={p.src} className="break-inside-avoid">
+                <figure className="bg-white border border-border rounded-xl shadow-sm overflow-hidden">
+                  <Image
+                    src={p.src}
+                    alt={p.caption}
+                    width={p.width}
+                    height={p.height}
+                    sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
+                    preload={false}
+                    className="w-full h-auto block"
+                  />
+                  <figcaption className="px-4 py-3">
+                    <p className="text-sm text-foreground/85 leading-snug">{p.caption}</p>
+                    <p className="mt-1 text-[11px] uppercase tracking-[0.18em] font-semibold text-utc-navy/55">
+                      {p.credit}
+                    </p>
+                  </figcaption>
+                </figure>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
 
       {/* Footer CTA */}
