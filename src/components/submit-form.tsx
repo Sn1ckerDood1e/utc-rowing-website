@@ -112,7 +112,7 @@ export function SubmitForm() {
         />
       </Field>
 
-      <Field label="Coach during your years" hint="Carney / Espeseth / Worth / Kinsey — whoever you remember.">
+      <Field label="Coach during your years" hint="Carney / Espeseth / Worth / Kinsey / Mako — whoever you remember.">
         <input
           type="text"
           {...register("coach_during_rowing")}

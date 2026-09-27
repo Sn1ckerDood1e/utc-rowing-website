@@ -66,7 +66,7 @@ export default function JoinPage() {
               Where we row
             </h2>
             <p className="text-foreground/80">
-              Chattanooga Rowing Club, 1001 Riverside Dr, Chattanooga, TN. Coach Abraham Mako
+              William G. Raoul Rowing Center, 1001 Riverside Dr, Chattanooga, TN. Coach Abraham Mako
               will set a first session, walk you through the equipment, and put you in a boat.
             </p>
           </div>

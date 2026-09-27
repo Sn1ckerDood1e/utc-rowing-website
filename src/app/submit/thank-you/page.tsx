@@ -27,14 +27,14 @@ export default function ThankYouPage() {
       <section className="bg-paper">
         <div className="mx-auto max-w-3xl px-4 py-16 text-center">
           <p className="text-utc-navy/65 uppercase text-xs tracking-[0.25em] font-bold mb-3">
-            ACRA Nationals · May 17
+            Head of the Hooch · Nov 7&ndash;8
           </p>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-utc-navy mb-4 leading-tight">
             One more thing.
           </h2>
           <p className="text-foreground/80 mb-8 max-w-xl mx-auto">
-            UTC&rsquo;s first ACRA crew since the program restarted races this Saturday at Oak
-            Ridge. You just helped the record. Help the boat get to the line.
+            Year two races on home water this November. You just helped the record. Help the
+            boats get to the line.
           </p>
           <div className="flex flex-wrap gap-3 justify-center items-center">
             <Link

@@ -484,7 +484,7 @@ export default function TeamPage() {
                   testing through the College of Health, Education and
                   Professional Studies. Agreed to advise the rowing program
                   in May 2026, formalizing the club&rsquo;s academic
-                  standing as the M4x heads to ACRA.
+                  standing.
                 </p>
               </div>
             </div>
@@ -500,7 +500,7 @@ export default function TeamPage() {
               On the calendar
             </p>
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-utc-navy leading-tight">
-              Where the boat goes next.
+              Where the boats go next.
             </h2>
             <p className="mt-4 text-foreground/75">
               Year two starts at home: the Head of the Hooch in November, then the
@@ -562,7 +562,7 @@ export default function TeamPage() {
             <span className="italic text-utc-gold-bright">The boat goes where alumni take it.</span>
           </h2>
           <p className="text-lg text-white/75 max-w-2xl mx-auto mb-10">
-            Travel, the Vespoli loaner, the next boat, racks at the boathouse — every
+            Travel, water fees, the next boat, racks at the boathouse — every
             piece of the rebuild rides on the people who came before this crew.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">

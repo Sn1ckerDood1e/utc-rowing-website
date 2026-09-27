@@ -4,7 +4,7 @@ export const metadata = {
     "How UTC Rowing collects, stores, and protects information submitted by alumni and supporters.",
 };
 
-const LAST_UPDATED = "May 11, 2026";
+const LAST_UPDATED = "September 27, 2026";
 
 export default function PrivacyPage() {
   return (
@@ -26,8 +26,9 @@ export default function PrivacyPage() {
       <section className="bg-paper">
         <div className="mx-auto max-w-3xl px-4 py-16 prose-utc">
           <p>
-            UTC Rowing is a small alumni-run rowing program at the University of
-            Tennessee at Chattanooga. This page explains, in plain language,
+            UTC Rowing is the student club rowing program at the University of
+            Tennessee at Chattanooga; this site is maintained by alumni
+            volunteers. This page explains, in plain language,
             what information we collect on this site, why we collect it, and
             what we do with it.
           </p>

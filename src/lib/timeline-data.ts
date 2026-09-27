@@ -635,7 +635,7 @@ export const ERAS: Era[] = [
     span: "2025 — now",
     gradient: "from-river-blue to-utc-gold-bright",
     intro:
-      "Four athletes, an aging fleet, and a roster back on the Tennessee. The program is back.",
+      "Four athletes in year one, nine in year two, an aging fleet, and a roster back on the Tennessee. The program is back.",
     moments: [
       {
         year: "2025",

@@ -58,9 +58,9 @@ export function EraCards({ eraCounts }: { eraCounts: Record<string, number> }) {
       label: "Resurrection",
       span: "2025 – now",
       count: eraCounts.resurrection ?? null,
-      headline: "ACRA-bound, Fall 2025 restart",
+      headline: "Restarted Fall 2025, year two underway",
       detail:
-        "Four athletes, a men's quadruple sculls (M4x) bound for ACRA, and the first competitive UTC entry in five years. The fleet is aging and the boathouse is shared, but the boat is on the water and the program is back.",
+        "Four athletes and an ACRA M4x in year one — third in the B final. Nine rowers and a new head coach in year two. The fleet is aging and the boathouse is shared, but the boats are on the water and the program is back.",
       gradient: "from-river-blue to-utc-gold-bright",
     },
   ];

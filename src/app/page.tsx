@@ -155,7 +155,7 @@ export default async function Home() {
       </section>
 
       {/* ============================================================
-          ACRA NATIONALS BANNER — pulse with urgency
+          YEAR-TWO BANNER — the current squad + next race (ACRA recap one click away)
          ============================================================ */}
       <section className="bg-paper relative">
         <div className="mx-auto max-w-6xl px-4 -mt-12 relative z-10">
@@ -163,27 +163,28 @@ export default async function Home() {
             <div className="bg-white rounded-xl p-6 sm:p-8 flex flex-col sm:flex-row gap-6 sm:items-center sm:justify-between">
               <div>
                 <p className="text-utc-navy uppercase text-xs tracking-[0.25em] font-bold mb-2">
-                  Back from ACRA Nationals · May 16, 2026
+                  Year two · 2026&ndash;27
                 </p>
                 <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-utc-navy">
-                  <span className="sm:whitespace-nowrap">Abraham Mako</span>
-                  {" · "}
-                  <span className="sm:whitespace-nowrap">Connor Richardson</span>
-                  {" · "}
-                  <span className="sm:whitespace-nowrap">Tyler Burkett</span>
-                  {" · "}
-                  <span className="sm:whitespace-nowrap">Jay Pollard</span>
+                  Nine rowers. Head of the Hooch, November 7&ndash;8.
                   <span className="block text-base font-normal text-utc-navy/65 font-sans mt-1">
-                    Third in the M4x B final by half a second &mdash; the first UTC team boat at
-                    ACRA in eight years.
+                    Head Coach Abraham Mako takes the squad onto home water &mdash; after
+                    last spring&rsquo;s{" "}
+                    <Link
+                      href="/journal/2026-05-16-acra-third-in-the-b-final"
+                      className="link-draw text-utc-navy font-semibold"
+                    >
+                      third in the ACRA B final
+                    </Link>
+                    , the first UTC team boat at nationals in eight years.
                   </span>
                 </h2>
               </div>
               <Link
-                href="/journal/2026-05-16-acra-third-in-the-b-final"
+                href="/team"
                 className="bg-utc-navy text-white font-semibold px-6 py-3.5 rounded-md hover:bg-utc-navy-deep transition-all hover:shadow-lg whitespace-nowrap inline-flex items-center justify-center gap-2"
               >
-                Read the recap
+                Meet the squad
                 <ChevronRight className="w-4 h-4" />
               </Link>
             </div>

@@ -87,8 +87,8 @@ const NEEDS: Need[] = [
   },
   {
     title: "Bridge: Lookout Rowing Club partnership",
-    estimate: "Spring 2026",
-    why: "This semester the four athletes joined Lookout Rowing Club so they could train and race on water-worthy equipment. LRC keeps the program on the water while the racks and the next hulls get funded. Membership and shared-equipment fees are real line items — a bridge, not the destination.",
+    estimate: "Ongoing",
+    why: "Since spring 2026, UTC rowers have trained as Lookout Rowing Club members so they can train and race on water-worthy equipment. LRC keeps the program on the water while the racks and the next hulls get funded. Membership and shared-equipment fees are real line items — a bridge, not the destination.",
   },
 ];
 
@@ -120,9 +120,9 @@ export default function DonatePage() {
               />
               <p className="absolute bottom-4 left-4 right-4 text-white/95 text-xs sm:text-sm font-medium leading-snug">
                 <span className="text-utc-gold-bright uppercase text-[10px] tracking-[0.25em] font-bold block mb-1">
-                  Fund the boat
+                  Where it started
                 </span>
-                Mako · Richardson · Burkett · Pollard — ACRA M4x
+                The 2026 ACRA M4x &mdash; Mako, Richardson, Burkett, Pollard
               </p>
             </div>
 
@@ -140,10 +140,10 @@ export default function DonatePage() {
                 the Tennessee River between the Walnut Street Bridge and Williams Island since 1971.
               </p>
               <p className="text-lg text-white/75 mt-3">
-                The program is back with four athletes and one men&rsquo;s quadruple sculls (M4x)
-                at ACRA this year, racing on a Vespoli loaner &mdash; UTC&rsquo;s own 4x has a soft
-                spot in the middle of the hull and isn&rsquo;t safe to race. The longer view is a
-                fleet of eights to race and pairs to train. What gets built &mdash; the racks, the
+                Year one put four athletes and a men&rsquo;s quad (M4x) on the line at ACRA in a
+                Vespoli loaner &mdash; UTC&rsquo;s own 4x has a soft spot in the middle of the hull
+                and isn&rsquo;t safe to race. Year two has nine rowers. The longer
+                view is a fleet of eights to race and pairs to train. What gets built &mdash; the racks, the
                 boats, the training space &mdash; is decided by what alumni and friends fund.
               </p>
             </div>

@@ -7,7 +7,7 @@ import { ARCHIVE_GALLERY } from "@/lib/archive-gallery";
 export const metadata = {
   title: "History — UTC Rowing",
   description:
-    "Fifty-five years of rowing at UTC. The interactive timeline from the 1971 Pocock donation through the 2026 ACRA crew.",
+    "Fifty-five years of rowing at UTC. The interactive timeline from the 1971 Pocock donation through the 2026–27 season.",
 };
 
 export default function HistoryPage() {
@@ -36,13 +36,13 @@ export default function HistoryPage() {
               <span className="italic text-gradient-gold">a history</span>
             </h1>
             <p className="font-display text-lg italic text-white/80 mt-6 max-w-2xl mx-auto">
-              From the 1971 Pocock donation through the 2026 ACRA crew —{" "}
+              From the 1971 Pocock donation through the 2026&ndash;27 season —{" "}
               {TIMELINE_TOTAL_MOMENTS} moments across {ERAS.length} eras of UTC Rowing.
               Compiled from primary sources in the program archive, public records,
               and alumni recollections.
             </p>
             <p className="text-xs text-white/60 mt-6 uppercase tracking-widest">
-              Tap any moment to read more · Last revised May 2026
+              Tap any moment to read more · Last revised September 2026
             </p>
           </div>
         </div>

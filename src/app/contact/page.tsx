@@ -57,7 +57,7 @@ export default function ContactPage() {
               scheduling a boathouse visit.
             </p>
             <p className="mt-3 text-sm text-foreground/80">
-              Chattanooga Rowing Club — 1001 Riverside Dr, Chattanooga, TN
+              William G. Raoul Rowing Center — 1001 Riverside Dr, Chattanooga, TN
             </p>
             <p className="mt-2 text-sm text-foreground/80">
               Instagram:{" "}

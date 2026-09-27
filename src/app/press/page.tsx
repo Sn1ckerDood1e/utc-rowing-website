@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Press — UTC Rowing",
   description:
-    "Press kit and media contact for UTC Rowing. Quick facts, current crew, coach bio, and direct phone/email.",
+    "Press kit and media contact for UTC Rowing. Quick facts, current crew, coach bio, and media contact.",
 };
 
 const QUICK_FACTS: { label: string; value: string }[] = [

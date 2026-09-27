@@ -26,9 +26,9 @@ const FAQS: QA[] = [
     question: "I’ve never rowed. Can I join?",
     answer: (
       <>
-        Yes. Most of the current crew started in spring 2026. Three of the four
-        athletes who raced ACRA this year sat in a boat for the first time on
-        April 6, six weeks before nationals. No experience is required.{" "}
+        Yes. Three of the four athletes in UTC&rsquo;s 2026 ACRA crew sat in a
+        boat for the first time on April 6, six weeks before nationals &mdash;
+        and all three are back for year two. No experience is required.{" "}
         <Link href="/join" className="link-draw text-utc-navy font-semibold">
           See /join for how to start &rarr;
         </Link>
@@ -50,10 +50,10 @@ const FAQS: QA[] = [
     question: "When do you practice?",
     answer: (
       <>
-        In season (fall and spring), 4&ndash;5 mornings a week on the
-        Tennessee River, typically before class. Off-season is erg work and
-        land training. Times shift with daylight; new rowers get a personalized
-        schedule on day one.
+        In season (fall and spring), three sessions a week on the Tennessee
+        River. Off-season is erg work and land training. Times shift with
+        daylight; the coach sets the schedule and new rowers get it on day
+        one.
       </>
     ),
   },
@@ -85,7 +85,7 @@ const FAQS: QA[] = [
     question: "Where do donations go?",
     answer: (
       <>
-        Tax-deductible through the UTC Foundation (campaign 42934). The current
+        Tax-deductible through UTC&rsquo;s official giving portal (campaign 42934, processed by the University of Chattanooga Foundation). The current
         priorities are{" "}
         <Link href="/donate" className="link-draw text-utc-navy font-semibold">
           on the donate page
@@ -129,7 +129,7 @@ const FAQS: QA[] = [
         Historically a huge part of the program &mdash; the 1988 Dad Vail bronze
         was UTC&rsquo;s first national medal (women&rsquo;s varsity 4+), and
         the 1995&ndash;96 Augusta Invitational sweep was driven by the
-        women&rsquo;s crews. The current restart is men only by accident, not
+        women&rsquo;s crews. This year&rsquo;s squad is men only by accident, not
         design. Women rowers are wanted; email rowutc@gmail.com or sign up at{" "}
         <Link href="/join" className="link-draw text-utc-navy font-semibold">
           /join
