@@ -78,7 +78,7 @@ export default function PrivacyPage() {
           <p>
             Submissions are stored in a Supabase database hosted on
             infrastructure operated by Supabase Inc. Access is restricted to the
-            head coach and any volunteers actively maintaining the roster. We
+            program&rsquo;s alumni relations director, the head coach, and any volunteers actively maintaining the roster. We
             keep submissions for as long as the program continues to operate, so
             that the historical record stays intact.
           </p>
@@ -134,8 +134,8 @@ export default function PrivacyPage() {
 
           <h2>Contact</h2>
           <p>
-            Questions, deletion requests, or concerns? Email Coach Michael
-            Kinsey at{" "}
+            Questions, deletion requests, or concerns? Email Michael Kinsey,
+            Alumni Relations Director, at{" "}
             <a href="mailto:kinseymi@radl.solutions">kinseymi@radl.solutions</a>
             .
           </p>

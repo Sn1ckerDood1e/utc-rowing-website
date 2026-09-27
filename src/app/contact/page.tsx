@@ -33,7 +33,7 @@ export default function ContactPage() {
           </p>
           <h1 className="font-display text-4xl sm:text-5xl font-bold">Contact</h1>
           <p className="mt-4 text-lg text-white/80 max-w-2xl">
-            One inbox. One coach.
+            One team inbox. Alumni have their own line.
           </p>
         </div>
       </section>
@@ -42,30 +42,22 @@ export default function ContactPage() {
         <div className="mx-auto max-w-3xl px-4 py-16 grid gap-10 sm:grid-cols-2">
           <div>
             <h2 className="font-display text-2xl font-bold text-utc-navy mb-3">
-              Coach Michael Kinsey
+              UTC Rowing
             </h2>
             <p className="text-foreground/80 mb-2">
               <a
-                href="mailto:kinseymi@radl.solutions"
+                href="mailto:rowutc@gmail.com"
                 className="link-draw text-utc-navy font-semibold"
               >
-                kinseymi@radl.solutions
+                rowutc@gmail.com
               </a>
             </p>
             <p className="text-sm text-muted-foreground">
-              Alumni outreach, fundraising coordination, named-giving opportunities, or scheduling
-              a boathouse visit.
+              The team inbox &mdash; Head Coach Abraham Mako. Joining, practice, racing, press, or
+              scheduling a boathouse visit.
             </p>
             <p className="mt-3 text-sm text-foreground/80">
               Chattanooga Rowing Club — 1001 Riverside Dr, Chattanooga, TN
-            </p>
-            <p className="mt-3 text-sm text-foreground/80">
-              <a
-                href="tel:+14236024277"
-                className="link-draw text-utc-navy font-semibold"
-              >
-                (423) 602-4277
-              </a>
             </p>
             <p className="mt-2 text-sm text-foreground/80">
               Instagram:{" "}
@@ -89,7 +81,32 @@ export default function ContactPage() {
               Want to row at UTC? No experience needed.
             </p>
             <p className="text-sm text-muted-foreground mt-1">
-              Email Coach Kinsey and we&rsquo;ll get you on the water.
+              Email{" "}
+              <a href="mailto:rowutc@gmail.com" className="link-draw text-utc-navy">
+                rowutc@gmail.com
+              </a>{" "}
+              and we&rsquo;ll get you on the water.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-display text-2xl font-bold text-utc-navy mb-3">
+              Alumni &amp; giving
+            </h2>
+            <p className="text-foreground/80 mb-2">
+              Michael Kinsey, Alumni Relations Director
+            </p>
+            <p className="text-foreground/80 mb-2">
+              <a
+                href="mailto:kinseymi@radl.solutions?subject=UTC%20Rowing%20alumni"
+                className="link-draw text-utc-navy font-semibold"
+              >
+                kinseymi@radl.solutions
+              </a>
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Alumni outreach, roster corrections, the program history, and named-giving
+              opportunities.
             </p>
           </div>
 
@@ -110,8 +127,8 @@ export default function ContactPage() {
                 expand the &ldquo;corrections&rdquo; section.
               </li>
               <li>
-                <span className="font-semibold text-utc-navy">Everything else:</span> email Coach
-                Kinsey directly.
+                <span className="font-semibold text-utc-navy">Everything else:</span> email the
+                team at rowutc@gmail.com.
               </li>
             </ol>
           </div>

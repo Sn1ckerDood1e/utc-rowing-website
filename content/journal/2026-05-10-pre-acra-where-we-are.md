@@ -8,7 +8,7 @@ heroAlt: "Abraham Mako rowing a single past the Lookout Rowing Club boathouse at
 excerpt: "Six weeks ago, three of the four guys in the M4x racing ACRA had never sat in a rowing shell. May 17 they go to Melton Hill against crews that have been rowing for years. The work is the work."
 ---
 
-Six weeks ago, three of the four guys in the M4x going to ACRA had never sat in a rowing shell. April 6, the day after Easter, Tyler Burkett, Conner Richardson, and Jay Pollard came down to the dock for their first row. They're all class of 2027. May 17 they race at Melton Hill Lake in Oak Ridge against crews that have been rowing for years.
+Six weeks ago, three of the four guys in the M4x going to ACRA had never sat in a rowing shell. April 6, the day after Easter, Tyler Burkett, Connor Richardson, and Jay Pollard came down to the dock for their first row. They're all class of 2027. May 17 they race at Melton Hill Lake in Oak Ridge against crews that have been rowing for years.
 
 We're not going up there for a medal. We're going to take clean strokes and keep taking them, and see what that gets us at the finish.
 

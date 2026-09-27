@@ -76,7 +76,7 @@ const FAQS: QA[] = [
         easiest race to spectate &mdash; UTC enters boats every year and the
         course runs through downtown. For practice, the boathouse is at the
         end of Riverside Drive and visible from the public Tennessee
-        Riverwalk. Email Coach Kinsey if you want a behind-the-scenes
+        Riverwalk. Email the team at rowutc@gmail.com if you want a behind-the-scenes
         boathouse visit.
       </>
     ),
@@ -92,7 +92,7 @@ const FAQS: QA[] = [
         </Link>
         : covered racks at the boathouse, a fleet replacement, an on-campus
         training room at Maclellan Gymnasium, and ongoing race travel. Named
-        gifts (boats, racks, seats) are welcomed &mdash; email Coach for those.
+        gifts (boats, racks, seats) are welcomed &mdash; email Michael Kinsey, Alumni Relations Director, at kinseymi@radl.solutions.
       </>
     ),
   },
@@ -130,7 +130,7 @@ const FAQS: QA[] = [
         was UTC&rsquo;s first national medal (women&rsquo;s varsity 4+), and
         the 1995&ndash;96 Augusta Invitational sweep was driven by the
         women&rsquo;s crews. The current restart is men only by accident, not
-        design. Women rowers are wanted; email Coach Kinsey or sign up at{" "}
+        design. Women rowers are wanted; email rowutc@gmail.com or sign up at{" "}
         <Link href="/join" className="link-draw text-utc-navy font-semibold">
           /join
         </Link>
@@ -208,13 +208,13 @@ export default function FaqPage() {
             Ask the coach.
           </h2>
           <p className="text-foreground/80 mb-6">
-            One inbox. One coach. He reads every email.
+            One team inbox. The coach reads every email.
           </p>
           <Link
             href="/contact"
             className="inline-flex items-center gap-1 text-utc-navy font-semibold link-draw"
           >
-            Email Coach Kinsey &rarr;
+            Contact the team &rarr;
           </Link>
         </div>
       </section>

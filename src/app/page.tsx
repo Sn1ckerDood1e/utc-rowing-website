@@ -109,7 +109,7 @@ export default async function Home() {
               and counting.
             </p>
             <p className="mt-3 text-lg text-white/90 max-w-2xl drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
-              Under Coach Michael Kinsey, we&rsquo;re rebuilding the program from the same stretch
+              Under Head Coach Abraham Mako, we&rsquo;re rebuilding the program from the same stretch
               of water under the Walnut Street Bridge, and we need every alum to help us tell its
               story.
             </p>
@@ -167,7 +167,7 @@ export default async function Home() {
                 <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-utc-navy">
                   <span className="sm:whitespace-nowrap">Abraham Mako</span>
                   {" · "}
-                  <span className="sm:whitespace-nowrap">Conner Richardson</span>
+                  <span className="sm:whitespace-nowrap">Connor Richardson</span>
                   {" · "}
                   <span className="sm:whitespace-nowrap">Tyler Burkett</span>
                   {" · "}

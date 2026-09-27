@@ -110,7 +110,7 @@ export default function DonatePage() {
                 playsInline
                 preload="metadata"
                 poster="/videos/m4x-acra-prep-poster.jpg"
-                aria-label="UTC Rowing's 2026 ACRA crew at the May 2 scrimmage in Oak Ridge — Abraham Mako, Conner Richardson, Tyler Burkett, Jay Pollard"
+                aria-label="UTC Rowing's 2026 ACRA crew at the May 2 scrimmage in Oak Ridge — Abraham Mako, Connor Richardson, Tyler Burkett, Jay Pollard"
               >
                 <source src="/videos/m4x-acra-prep.mp4" type="video/mp4" />
               </video>

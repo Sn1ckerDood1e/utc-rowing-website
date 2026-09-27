@@ -5,42 +5,27 @@ import { UTCMark } from "@/components/svg-rowing";
 export const metadata = {
   title: "Team · UTC Rowing",
   description:
-    "Meet UTC Rowing's 2026 crew and see what's next on the calendar.",
+    "Meet UTC Rowing's 2026–27 squad and coaching staff, and see what's next on the calendar.",
 };
 
 type Athlete = {
   name: string;
   seat: string;
-  classYear: string;
-  hometown: string;
-  major: string;
+  classYear?: string;
+  hometown?: string;
+  major?: string;
   affiliation?: string; // e.g. "U.S. Army active duty" — omit for civilian rowers
-  bio: string;
+  bio?: string;
   photo?: { src: string; width: number; height: number; alt: string };
 };
 
-// M4x lineup, stroke → bow (the order the boat is rigged from the coxswain's
-// view, and the order Coach Kinsey reads them off).
-// All UTC class of 2027. Only Burkett, Richardson, and Pollard are active-duty
-// U.S. Army — Mako is NOT military.
+// Returning rowers from the 2026 ACRA M4x. Abraham Mako (stroke) moved to
+// head coach for 2026–27 and is on the coaching card below.
+// Burkett, Richardson, and Pollard are active-duty U.S. Army.
 const ROSTER: Athlete[] = [
   {
-    name: "Abraham Mako",
-    seat: "Stroke · 4 seat",
-    classYear: "Class of 2027",
-    hometown: "Chattanooga, TN",
-    major: "Political Science & Public Service: Public Law",
-    bio: "The program's most experienced rower and the stroke seat of the M4x. Came up through Chattanooga Junior Rowing, then co-founded Chattanooga State Rowing with Jack Cawood before transferring to UTC and helping restart the program here in Fall 2025. Sets the rate the other three follow.",
-    photo: {
-      src: "/photos/team/mako-acra-portrait.jpg",
-      width: 800,
-      height: 1000,
-      alt: "Abraham Mako at ACRA Nationals, Melton Hill Lake, May 16, 2026.",
-    },
-  },
-  {
-    name: "Conner Richardson",
-    seat: "3 seat",
+    name: "Connor Richardson",
+    seat: "Returning · 2026 ACRA M4x",
     classYear: "Class of 2027",
     hometown: "Hanau, Germany",
     major: "Applied Leadership",
@@ -50,17 +35,17 @@ const ROSTER: Athlete[] = [
       src: "/photos/team/richardson-acra-portrait.jpg",
       width: 800,
       height: 1000,
-      alt: "Conner Richardson at ACRA Nationals, Melton Hill Lake, May 16, 2026.",
+      alt: "Connor Richardson at ACRA Nationals, Melton Hill Lake, May 16, 2026.",
     },
   },
   {
     name: "Tyler Burkett",
-    seat: "2 seat",
+    seat: "Returning · 2026 ACRA M4x",
     classYear: "Class of 2027",
     hometown: "Red Lion, PA",
     major: "Applied Leadership",
     affiliation: "U.S. Army active duty",
-    bio: "First day in a boat: April 6, 2026. Six weeks of training before nationals.",
+    bio: "First day in a boat: April 6, 2026. Six weeks of training later, he raced the B final at nationals.",
     photo: {
       src: "/photos/team/burkett-acra-portrait.jpg",
       width: 800,
@@ -70,12 +55,12 @@ const ROSTER: Athlete[] = [
   },
   {
     name: "Jay Pollard",
-    seat: "Bow · 1 seat",
+    seat: "Returning · 2026 ACRA M4x",
     classYear: "Class of 2027",
     hometown: "Kingston, NY",
     major: "Applied Leadership",
     affiliation: "U.S. Army active duty",
-    bio: "Started rowing April 6, 2026. Anchors the bow and balances the boat from the seat that feels every wobble first.",
+    bio: "Started rowing April 6, 2026. Rowed bow in the ACRA M4x — the seat that feels every wobble first.",
     photo: {
       src: "/photos/team/pollard-acra-portrait.jpg",
       width: 800,
@@ -85,16 +70,21 @@ const ROSTER: Athlete[] = [
   },
 ];
 
-// Athletes joining the program for 2026–27 — not in the ACRA M4x.
+// New to the squad for 2026–27. Names only until bios and portraits come in —
+// add classYear / hometown / major / bio / photo as they arrive.
 const INCOMING: Athlete[] = [
   {
     name: "Paxton Anderson",
-    seat: "Joining Fall 2026",
+    seat: "New for 2026–27",
     classYear: "Class of 2027",
     hometown: "Chattanooga, TN",
     major: "Mechanical Engineering",
-    bio: "Joins the squad over summer and fall 2026.",
   },
+  { name: "Ben Pesterfield", seat: "New for 2026–27" },
+  { name: "Joshua Newburry", seat: "New for 2026–27" },
+  { name: "Lucas Cupples", seat: "New for 2026–27" },
+  { name: "Luke Schomburg", seat: "New for 2026–27" },
+  { name: "Merrit DeVries", seat: "New for 2026–27" },
 ];
 
 type Regatta = {
@@ -104,8 +94,8 @@ type Regatta = {
   entries: string;
 };
 
-// "Where the boat goes next" — confirmed by Coach Kinsey, May 2026.
-// Dates beyond ACRA 2026 are seasonal only; do not invent exact days.
+// "Where the boat goes next." Hooch dates verified (hoochregatta);
+// spring dates stay seasonal until the regattas publish — do not invent days.
 const UPCOMING: Regatta[] = [
   {
     name: "ACRA Championships",
@@ -115,9 +105,9 @@ const UPCOMING: Regatta[] = [
   },
   {
     name: "Head of the Hooch",
-    date: "Fall 2026",
+    date: "November 7–8, 2026",
     location: "Chattanooga, TN",
-    entries: "UTC boats, including alumni boat(s)",
+    entries: "UTC boats on home water, plus alumni boat(s)",
   },
   {
     name: "TIRC — Tennessee Indoor Rowing Championships",
@@ -170,14 +160,15 @@ export default function TeamPage() {
 
         <div className="relative mx-auto max-w-3xl px-4 pt-32 pb-20 sm:pt-44 sm:pb-28">
           <p className="text-utc-gold uppercase text-sm tracking-[0.25em] font-semibold mb-3">
-            The 2026 program
+            The 2026&ndash;27 program
           </p>
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05]">
-            This year&rsquo;s boat.
+            This year&rsquo;s squad.
           </h1>
           <p className="mt-5 text-lg sm:text-xl text-white/85 max-w-2xl leading-relaxed">
-            On the Tennessee River out of the William Raoul Rowing Center,
-            training toward ACRA.
+            Nine rowers on the Tennessee River out of the William Raoul
+            Rowing Center &mdash; Hooch on home water this fall, then the
+            spring run to SIRA and ACRA.
           </p>
         </div>
       </section>
@@ -187,103 +178,102 @@ export default function TeamPage() {
         <div className="mx-auto max-w-6xl px-4 py-20">
           <div className="mb-12 max-w-2xl">
             <p className="text-utc-navy/60 uppercase text-xs tracking-[0.2em] font-semibold mb-3">
-              The crew
+              Returning
             </p>
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-utc-navy leading-tight">
-              Bow to stroke. <span className="italic text-utc-navy/70">Four seats, one boat.</span>
+              Back from Oak Ridge. <span className="italic text-utc-navy/70">Now they set the standard.</span>
             </h2>
             <p className="mt-4 text-foreground/75">
-              UTC&rsquo;s 2026 ACRA M4x. Bios will fill in as the season rolls
-              on &mdash; check back after Oak Ridge.
+              Three of the four who raced UTC&rsquo;s 2026 ACRA M4x to a
+              photo-finish third in the B final are back for year two.
             </p>
           </div>
 
-          <div className="grid gap-8 lg:grid-cols-[1fr_320px]">
-            {/* Athlete cards — stroke-to-bow (Mako → Richardson → Burkett → Pollard) */}
-            <ul className="grid gap-5 sm:grid-cols-2">
-              {ROSTER.map((a) => (
-                <li
-                  key={a.name}
-                  className="bg-white border border-border rounded-xl shadow-sm overflow-hidden flex flex-col"
-                >
-                  {a.photo ? (
-                    <div className="relative aspect-[4/5] bg-utc-navy-deep">
-                      <Image
-                        src={a.photo.src}
-                        alt={a.photo.alt}
-                        width={a.photo.width}
-                        height={a.photo.height}
-                        sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  ) : (
-                    // Placeholder photo slot so all four M4x cards carry equal
-                    // visual weight — Mako's portrait doesn't dominate the
-                    // stack. Same UTCMark-on-gradient treatment used on the
-                    // Harden faculty card below.
-                    <div
-                      aria-hidden
-                      className="relative aspect-[4/5] bg-gradient-to-br from-utc-navy-deep via-utc-navy to-utc-navy-deep flex items-center justify-center"
-                    >
-                      <UTCMark className="text-5xl text-white/70" />
-                    </div>
-                  )}
-                  <div className="p-6 flex flex-col flex-1 min-h-[360px]">
-                    <p className="text-utc-navy/65 uppercase text-[11px] tracking-[0.22em] font-bold mb-2">
-                      {a.seat}
-                    </p>
-                    <h3 className="font-display text-2xl font-bold text-utc-navy mb-2">
-                      {a.name}
-                    </h3>
-                    <p className="text-xs text-utc-navy/60 uppercase tracking-[0.18em] font-semibold mb-1">
-                      {a.classYear} · {a.hometown}
-                    </p>
-                    <p className="text-xs text-utc-navy/55 mb-3 leading-snug">
-                      {a.major}
-                      {a.affiliation && (
-                        <>
-                          {" · "}
-                          <span className="text-utc-navy/70 font-medium">
-                            {a.affiliation}
-                          </span>
-                        </>
-                      )}
-                    </p>
-                    <p className="text-sm text-foreground/80 leading-relaxed">
-                      {a.bio}
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-
-            {/* Vertical M4x video panel */}
-            <figure className="relative rounded-xl overflow-hidden shadow-lg ring-1 ring-utc-navy/10 bg-utc-navy-deep self-start">
-              <video
-                className="w-full h-auto block"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                poster="/videos/m4x-acra-prep-poster.jpg"
-                aria-label="UTC Rowing's 2026 ACRA crew at the May 2 scrimmage in Oak Ridge — Abraham Mako, Tyler Burkett, Conner Richardson, Jay Pollard"
+          {/* 3 returning athletes + the ACRA-prep video = one 4-tile row on lg */}
+          <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {ROSTER.map((a) => (
+              <li
+                key={a.name}
+                className="bg-white border border-border rounded-xl shadow-sm overflow-hidden flex flex-col"
               >
-                <source src="/videos/m4x-acra-prep.mp4" type="video/mp4" />
-              </video>
-              <div
-                aria-hidden
-                className="absolute inset-0 bg-gradient-to-t from-utc-navy-deep/70 via-transparent to-transparent pointer-events-none"
-              />
-              <figcaption className="absolute bottom-4 left-4 right-4 text-white/95 text-sm font-medium">
-                <span className="text-utc-gold-bright uppercase text-[10px] tracking-[0.25em] font-bold block mb-1">
-                  ACRA prep
-                </span>
-                Scrimmage at Oak Ridge &mdash; May 2, 2026.
-              </figcaption>
-            </figure>
-          </div>
+                {a.photo ? (
+                  <div className="relative aspect-[4/5] bg-utc-navy-deep">
+                    <Image
+                      src={a.photo.src}
+                      alt={a.photo.alt}
+                      width={a.photo.width}
+                      height={a.photo.height}
+                      sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ) : (
+                  // Placeholder photo slot so all four M4x cards carry equal
+                  // visual weight — Mako's portrait doesn't dominate the
+                  // stack. Same UTCMark-on-gradient treatment used on the
+                  // Harden faculty card below.
+                  <div
+                    aria-hidden
+                    className="relative aspect-[4/5] bg-gradient-to-br from-utc-navy-deep via-utc-navy to-utc-navy-deep flex items-center justify-center"
+                  >
+                    <UTCMark className="text-5xl text-white/70" />
+                  </div>
+                )}
+                <div className="p-6 flex flex-col flex-1 min-h-[360px]">
+                  <p className="text-utc-navy/65 uppercase text-[11px] tracking-[0.22em] font-bold mb-2">
+                    {a.seat}
+                  </p>
+                  <h3 className="font-display text-2xl font-bold text-utc-navy mb-2">
+                    {a.name}
+                  </h3>
+                  <p className="text-xs text-utc-navy/60 uppercase tracking-[0.18em] font-semibold mb-1">
+                    {a.classYear} · {a.hometown}
+                  </p>
+                  <p className="text-xs text-utc-navy/55 mb-3 leading-snug">
+                    {a.major}
+                    {a.affiliation && (
+                      <>
+                        {" · "}
+                        <span className="text-utc-navy/70 font-medium">
+                          {a.affiliation}
+                        </span>
+                      </>
+                    )}
+                  </p>
+                  <p className="text-sm text-foreground/80 leading-relaxed">
+                    {a.bio}
+                  </p>
+                </div>
+              </li>
+            ))}
+            {/* Vertical M4x video panel — fourth tile */}
+            <li>
+              <figure className="relative rounded-xl overflow-hidden shadow-lg ring-1 ring-utc-navy/10 bg-utc-navy-deep h-full min-h-[480px]">
+                <video
+                  className="absolute inset-0 w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  poster="/videos/m4x-acra-prep-poster.jpg"
+                  aria-label="UTC Rowing's 2026 ACRA crew at the May 2 scrimmage in Oak Ridge — Abraham Mako, Tyler Burkett, Connor Richardson, Jay Pollard"
+                >
+                  <source src="/videos/m4x-acra-prep.mp4" type="video/mp4" />
+                </video>
+                <div
+                  aria-hidden
+                  className="absolute inset-0 bg-gradient-to-t from-utc-navy-deep/70 via-transparent to-transparent pointer-events-none"
+                />
+                <figcaption className="absolute bottom-4 left-4 right-4 text-white/95 text-sm font-medium">
+                  <span className="text-utc-gold-bright uppercase text-[10px] tracking-[0.25em] font-bold block mb-1">
+                    ACRA prep
+                  </span>
+                  Scrimmage at Oak Ridge &mdash; May 2, 2026.
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -292,15 +282,14 @@ export default function TeamPage() {
         <div className="mx-auto max-w-6xl px-4 py-16">
           <div className="mb-8 max-w-2xl">
             <p className="text-utc-navy/60 uppercase text-xs tracking-[0.2em] font-semibold mb-3">
-              Joining the program
+              New this year
             </p>
             <h2 className="font-display text-2xl sm:text-3xl font-bold text-utc-navy leading-tight">
-              Coming in this fall.
+              Six new rowers in the boathouse.
             </h2>
             <p className="mt-3 text-sm text-foreground/70">
-              Athletes confirmed for 2026&ndash;27 who aren&rsquo;t in the
-              ACRA boat. They start over the summer and join the squad
-              full-time in the fall.
+              New to the squad for 2026&ndash;27. Bios and portraits fill in
+              as the season goes.
             </p>
           </div>
 
@@ -327,27 +316,33 @@ export default function TeamPage() {
                   // treatment used for missing M4x photos.
                   <div
                     aria-hidden
-                    className="relative aspect-[4/5] bg-gradient-to-br from-utc-navy-deep via-utc-navy to-utc-navy-deep flex items-center justify-center"
+                    className="relative aspect-[16/9] bg-gradient-to-br from-utc-navy-deep via-utc-navy to-utc-navy-deep flex items-center justify-center"
                   >
-                    <UTCMark className="text-5xl text-white/70" />
+                    <UTCMark className="text-4xl text-white/60" />
                   </div>
                 )}
-                <div className="p-5 flex flex-col flex-1 min-h-[280px]">
+                <div className="p-5 flex flex-col flex-1">
                   <p className="inline-flex self-start items-center text-utc-navy uppercase text-[10px] tracking-[0.22em] font-bold bg-utc-gold/20 border border-utc-gold/40 rounded-full px-2.5 py-0.5 mb-3">
-                    Fall 2026
+                    2026&ndash;27
                   </p>
                   <h3 className="font-display text-xl font-bold text-utc-navy mb-2">
                     {a.name}
                   </h3>
-                  <p className="text-xs text-utc-navy/60 uppercase tracking-[0.18em] font-semibold mb-1">
-                    {a.classYear} · {a.hometown}
-                  </p>
-                  <p className="text-xs text-utc-navy/55 mb-3 leading-snug">
-                    {a.major}
-                  </p>
-                  <p className="text-sm text-foreground/75 leading-relaxed">
-                    {a.bio}
-                  </p>
+                  {(a.classYear || a.hometown) && (
+                    <p className="text-xs text-utc-navy/60 uppercase tracking-[0.18em] font-semibold mb-1">
+                      {[a.classYear, a.hometown].filter(Boolean).join(" · ")}
+                    </p>
+                  )}
+                  {a.major && (
+                    <p className="text-xs text-utc-navy/55 mb-3 leading-snug">
+                      {a.major}
+                    </p>
+                  )}
+                  {a.bio && (
+                    <p className="text-sm text-foreground/75 leading-relaxed">
+                      {a.bio}
+                    </p>
+                  )}
                 </div>
               </li>
             ))}
@@ -355,8 +350,8 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Program leadership — head coach + faculty sponsor, demoted to roughly
-          athlete-card visual weight. Two cards side-by-side on md+. */}
+      {/* Program leadership — head coach, alumni relations, faculty sponsor.
+          Three equal cards, athlete-card visual weight, all 4:5 photos. */}
       <section className="bg-paper-grain border-t border-border/60">
         <div className="mx-auto max-w-6xl px-4 py-16">
           <div className="mb-8 max-w-2xl">
@@ -368,19 +363,18 @@ export default function TeamPage() {
             </h2>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-2">
-            {/* Head coach card — same visual weight as an athlete card.
-                Aspect ratio matches the source headshot (1280×824 ≈ 16:10)
-                so the photo isn't cropped vertically. */}
+          <div className="grid gap-5 md:grid-cols-3">
+            {/* Head coach — Abraham Mako took over for 2026–27 after stroking
+                the 2026 ACRA M4x. Photo: single scull at the Tennessee
+                Aquarium (portrait source, 1280×1752). */}
             <div className="bg-white border border-border rounded-xl shadow-sm overflow-hidden flex flex-col">
-              <div className="relative aspect-[16/10] bg-utc-navy-deep">
+              <div className="relative aspect-[4/5] bg-utc-navy-deep">
                 <Image
-                  src="/photos/kinsey-headshot.jpg"
-                  alt="Coach Michael Kinsey at a UTC men's basketball game"
-                  width={1280}
-                  height={824}
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  className="w-full h-full object-cover object-center"
+                  src="/photos/abraham-single-aquarium.jpg"
+                  alt="Head Coach Abraham Mako sculling past the Tennessee Aquarium at dusk"
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="w-full h-full object-cover object-[center_55%]"
                 />
               </div>
               <div className="p-6 flex flex-col">
@@ -388,42 +382,71 @@ export default function TeamPage() {
                   Head Coach
                 </p>
                 <h3 className="font-display text-2xl font-bold text-utc-navy mb-2">
-                  Michael Kinsey
+                  Abraham Mako
                 </h3>
-                <p className="text-sm text-foreground/80 leading-relaxed mb-3">
-                  Has been on the launch at Chattanooga Rowing since 2022,
-                  mentored under Bill Zack, and spent his last two summers
-                  coaching at the Craftsbury Outdoor Center in Vermont.
-                  Founder of Radl and a UTC mechatronics graduate
-                  (December 2025). Spent time at UTSI &mdash; the
-                  University of Tennessee Space Institute &mdash;
-                  researching deposition onto carbon fiber for hypersonic
-                  travel, outside his mechatronics coursework.
-                </p>
                 <p className="text-sm text-foreground/80 leading-relaxed mb-4">
-                  Also coaches at Chattanooga State, out of the same
-                  boathouse.
+                  Came up through Chattanooga Junior Rowing and co-founded
+                  Chattanooga State Rowing before transferring to UTC, where
+                  he helped restart the program in Fall 2025 and stroked the
+                  2026 ACRA M4x. Head coach of UTC Rowing for 2026&ndash;27.
                 </p>
                 <p className="text-sm leading-relaxed mb-3">
-                  <span className="block">
-                    <a
-                      href="mailto:kinseymi@radl.solutions"
-                      className="link-draw text-utc-navy font-semibold"
-                    >
-                      kinseymi@radl.solutions
-                    </a>
-                  </span>
-                  <span className="block font-mono-numbers text-utc-navy/85">
-                    <a href="tel:+14236024277" className="link-draw">
-                      (423) 602-4277
-                    </a>
-                  </span>
+                  <a
+                    href="mailto:rowutc@gmail.com"
+                    className="link-draw text-utc-navy font-semibold"
+                  >
+                    rowutc@gmail.com
+                  </a>
                 </p>
                 <Link
                   href="/contact"
                   className="inline-flex items-center text-utc-navy font-semibold link-draw text-sm"
                 >
                   More ways to get in touch &rarr;
+                </Link>
+              </div>
+            </div>
+
+            {/* Alumni relations — Michael Kinsey, head coach from the Fall 2025
+                restart through ACRA 2026. Headshot source is 1280×824; the
+                subject is centered so the 4:5 crop holds. */}
+            <div className="bg-white border border-border rounded-xl shadow-sm overflow-hidden flex flex-col">
+              <div className="relative aspect-[4/5] bg-utc-navy-deep">
+                <Image
+                  src="/photos/kinsey-headshot.jpg"
+                  alt="Michael Kinsey at a UTC men's basketball game"
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  preload={false}
+                  className="w-full h-full object-cover object-[47%_center]"
+                />
+              </div>
+              <div className="p-6 flex flex-col">
+                <p className="text-utc-gold-deep uppercase text-[11px] tracking-[0.22em] font-bold mb-2">
+                  Alumni Relations Director
+                </p>
+                <h3 className="font-display text-2xl font-bold text-utc-navy mb-2">
+                  Michael Kinsey
+                </h3>
+                <p className="text-sm text-foreground/80 leading-relaxed mb-4">
+                  Head coach from the Fall 2025 restart through the 2026 ACRA
+                  M4x. Now leads alumni relations &mdash; the alumni roster,
+                  stories and photos from every era, and named giving. UTC
+                  mechatronics graduate and founder of Radl.
+                </p>
+                <p className="text-sm leading-relaxed mb-3">
+                  <a
+                    href="mailto:kinseymi@radl.solutions?subject=UTC%20Rowing%20alumni"
+                    className="link-draw text-utc-navy font-semibold"
+                  >
+                    kinseymi@radl.solutions
+                  </a>
+                </p>
+                <Link
+                  href="/submit"
+                  className="inline-flex items-center text-utc-navy font-semibold link-draw text-sm"
+                >
+                  Share a story or photo &rarr;
                 </Link>
               </div>
             </div>
@@ -438,9 +461,8 @@ export default function TeamPage() {
                 <Image
                   src="/photos/joel-harden.jpg"
                   alt="Dr. Joel Harden, UTC Health & Human Performance"
-                  width={800}
-                  height={1200}
-                  sizes="(min-width: 768px) 50vw, 100vw"
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
                   preload={false}
                   className="w-full h-full object-cover object-center"
                 />
@@ -480,7 +502,7 @@ export default function TeamPage() {
               Where the boat goes next.
             </h2>
             <p className="mt-4 text-foreground/75">
-              ACRA first. Then a full year of racing &mdash; Hooch in the fall, the
+              Year two starts at home: the Head of the Hooch in November, then the
               spring circuit through TIRC, SIRA, and back to ACRA.
             </p>
           </div>
@@ -521,7 +543,7 @@ export default function TeamPage() {
           </ol>
 
           <p className="mt-6 text-sm text-muted-foreground">
-            Dates beyond ACRA 2026 firm up as regatta calendars publish.
+            Spring dates firm up as regatta calendars publish.
           </p>
         </div>
       </section>

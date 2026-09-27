@@ -51,10 +51,10 @@ export function Footer() {
           <p className="mt-2 text-white/70">
             Press:{" "}
             <a
-              href="mailto:kinseymi@radl.solutions?subject=Press%20inquiry%20%E2%80%94%20UTC%20Rowing"
+              href="mailto:rowutc@gmail.com?subject=Press%20inquiry%20%E2%80%94%20UTC%20Rowing"
               className="link-draw text-utc-gold-bright font-semibold"
             >
-              kinseymi@radl.solutions
+              rowutc@gmail.com
             </a>
           </p>
         </div>

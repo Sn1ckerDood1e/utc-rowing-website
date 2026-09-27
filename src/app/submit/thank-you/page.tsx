@@ -18,7 +18,7 @@ export default function ThankYouPage() {
           </p>
           <h1 className="font-display text-5xl sm:text-6xl font-bold mb-5">Thank you.</h1>
           <p className="text-lg text-white/85 max-w-xl mx-auto">
-            Your submission is in. Coach Kinsey or a volunteer will review it shortly. If you
+            Your submission is in. Michael Kinsey (alumni relations) or a volunteer will review it shortly. If you
             provided an email, you should receive a confirmation in a few minutes.
           </p>
         </div>
@@ -66,7 +66,7 @@ export default function ThankYouPage() {
               variant="card"
               source="submit-thank-you"
               heading="Stay in the loop."
-              subhead="Race recaps and journal posts from Coach Kinsey when there&rsquo;s something to write."
+              subhead="Race recaps and journal posts from the program when there&rsquo;s something to write."
             />
           </div>
         </div>

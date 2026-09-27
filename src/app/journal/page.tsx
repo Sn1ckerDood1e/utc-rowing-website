@@ -5,7 +5,7 @@ import { MailingListSignup } from "@/components/mailing-list-signup";
 
 export const metadata = {
   title: "Journal · UTC Rowing",
-  description: "Notes from Coach Kinsey and the program.",
+  description: "Notes from the UTC Rowing program.",
 };
 
 export default function JournalIndexPage() {
@@ -33,7 +33,7 @@ export default function JournalIndexPage() {
             Journal
           </h1>
           <p className="text-lg text-white/80 max-w-2xl">
-            Notes from Coach Kinsey and the program — what we&rsquo;re doing, why
+            Notes from the program — what we&rsquo;re doing, why
             we&rsquo;re doing it, and where we&rsquo;re headed.
           </p>
         </div>
@@ -98,7 +98,7 @@ export default function JournalIndexPage() {
                 variant="card"
                 source="journal-index"
                 heading="Stay in the loop."
-                subhead="Race recaps and program updates from Coach Kinsey. No marketing — just the journal when there&rsquo;s something to write."
+                subhead="Race recaps and program updates. No marketing — just the journal when there&rsquo;s something to write."
               />
             </div>
           )}

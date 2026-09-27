@@ -121,6 +121,12 @@ export const ERAS: Era[] = [
         year: "1983",
         sortYear: 1983,
         title: "UTC begins competing as its own program",
+        photo: {
+          src: "/photos/archive/1983-85-randy-larramore-sunset-silhouette.jpg",
+          alt: "Newspaper clipping titled 'Row, Row Your Boat': UTC sculling team member Randy Larramore silhouetted in a single at sunset on the Tennessee River. Staff photo by Barry Aslinger.",
+          caption: "“Sunset Silhouette” — UTC sculler Randy Larramore, from the 1983–85 LRC scrapbook. Staff photo by Barry Aslinger.",
+          fit: "document",
+        },
         summary:
           "Coach Terry Carney — Kent School and MIT alumnus — takes UTC's first crews to regattas under the UTC banner. Randy Larramore is the first UTC-specific alumnus identified in the archive (1983-85 LRC scrapbook).",
         kind: "transition",
@@ -143,6 +149,11 @@ export const ERAS: Era[] = [
         year: "1985",
         sortYear: 1985,
         title: "UTC's first medal — Head of the Chattahoochee",
+        photo: {
+          src: "/photos/archive/1983-85-four-on-the-tennessee.jpg",
+          alt: "A four rows on the Tennessee River in the mid-1980s, from a faded color print in the 1983–85 LRC scrapbook.",
+          caption: "A four on the Tennessee, from the 1983–85 LRC scrapbook.",
+        },
         summary:
           "A UTC Men's Novice 4+ wins the Head of the Chattahoochee regatta in Atlanta. The first competitive medal of any kind in program history, two years into Carney's tenure.",
         kind: "achievement",
@@ -374,6 +385,11 @@ export const ERAS: Era[] = [
         year: "1997",
         sortYear: 1997.5,
         title: "William G. Raoul passes",
+        photo: {
+          src: "/photos/archive/1996-97-eight-in-the-fog.jpg",
+          alt: "An eight rowing through golden morning fog on the Tennessee River, 1996–97 season.",
+          caption: "Morning fog on Raoul's river, 1996–97. From Ben Robbs' slide collection.",
+        },
         summary:
           "Bill Raoul — co-founder of LRC, donor of the original Pocock fleet, and namesake of the Rowing Center — dies in 1997. The LRC newsletter runs his obituary that November.",
         kind: "person",
@@ -382,6 +398,11 @@ export const ERAS: Era[] = [
         year: "1998",
         sortYear: 1998,
         title: "Dan Beery on the Raoul Cup MV8+",
+        photo: {
+          src: "/photos/archive/1996-97-eight-on-the-river.jpg",
+          alt: "A UTC men's eight rowing on the Tennessee River during the 1996–97 season.",
+          caption: "A UTC eight on the Tennessee, 1996–97. From Ben Robbs' slide collection.",
+        },
         summary:
           "Aug 21 1998: Espeseth's memo to Chancellor Bill Stacy lists upcoming UTC Rowing functions and the 1998 Raoul Cup men's varsity 8+ — Dan Beery seated #7. Beery is a UTC sophomore. Six years before he'll win Olympic gold.",
         kind: "person",
@@ -456,6 +477,12 @@ export const ERAS: Era[] = [
         year: "2010-2015",
         sortYear: 2012,
         title: "TIRC: undefeated home stronghold",
+        photo: {
+          src: "/photos/archive/1996-97-tirc-erg.jpg",
+          alt: "A UTC rower on a Concept2 ergometer under the Tennessee Indoor Rowing Championship banner at Maclellan Gymnasium, 1996–97.",
+          caption: "TIRC at Maclellan Gym, 1996–97 — the home stronghold long before 2010. From Ben Robbs' slide collection.",
+          fit: "portrait",
+        },
         summary:
           "UTC wins TIRC every documented year. 2015 standings: UTC 403.5 · Murray State 386.5 · UT-Knoxville 255.5 · Berry 181.5 · NSU 157. Axel Marshall is the most-documented athlete of the 2010-13 cohort.",
         kind: "achievement",
@@ -508,6 +535,11 @@ export const ERAS: Era[] = [
         year: "2017",
         sortYear: 2017.5,
         title: "Ryan Worth is hired",
+        photo: {
+          src: "/photos/archive/worth-era-mocs-banner-hooch.jpg",
+          alt: "A U.T. Chattanooga Mocs banner hung on UTC's boat racks at the Head of the Hooch, with crews racing on the Tennessee River behind.",
+          caption: "The Mocs banner on the racks at the Hooch, Worth era. Photo: Chynna Knight Cohen.",
+        },
         summary:
           "Spring 2017: Ryan Worth is hired (interview April 17, 2017) and takes over for the 2017-18 season. A Chattanooga Junior Rowing alum (first documented at TIRC 2005 Never-Ever Men). Concept2 24-hour World Record holder in his age category. Two Guinness World Records for ocean rowing.",
         kind: "person",
@@ -558,6 +590,11 @@ export const ERAS: Era[] = [
         year: "2020-21",
         sortYear: 2021,
         title: "Pandemic-era leadership",
+        photo: {
+          src: "/photos/archive/worth-era-womens-squad-carrying-eight.jpg",
+          alt: "UTC women's squad carrying an eight overhead down to the water, Worth era.",
+          caption: "UTC women carrying an eight to the water, Worth era. Photo: Chynna Knight Cohen.",
+        },
         summary:
           "Officers Virginia Willis (President), Emily Murr (VP), Omar Morales (Treasurer). Women's captain Chynna Knight, men's captain Brandon Humphrys lead the boats through reduced operations.",
         kind: "person",
@@ -628,9 +665,22 @@ export const ERAS: Era[] = [
         year: "2026",
         sortYear: 2026,
         title: "ACRA Nationals — May 17, Oak Ridge",
+        photo: {
+          src: "/photos/journal/2026-05-16-acra-m4x-lane-six.jpg",
+          alt: "UTC's M4x on the water in lane six at ACRA Nationals, Melton Hill Lake, May 2026.",
+          caption: "Lane six, Melton Hill Lake — ACRA Nationals, May 2026.",
+        },
         summary:
-          "UTC's M4x — bow Jay Pollard, 2 Tyler Burkett, 3 Conner Richardson, stroke Abraham Mako — raced at ACRA Nationals on Melton Hill Lake in Oak Ridge, TN, May 15-17, 2026. Sixth of six in the heat (7:42.797, Purdue winning at 7:01.460). Third in the B Final by 0.562 seconds in a photo finish over Virginia RA (7:37.900 — nearly five seconds faster than the heat). Bowdoin won the B at 7:23.273. The boat went off the line in a Vespoli loaner 4x — UTC's own Empacher 'Chattanooga' was sidelined by a hull breach. All four are UTC class of 2027; Conner, Tyler, and Jay are U.S. Army active duty. Mako, the most experienced rower in the boat, started at Chattanooga Juniors and co-founded Chattanooga State Rowing before transferring to UTC. The other three first sat in a shell on April 6, 2026 — six weeks before the line. The first UTC team boat at ACRA in eight years.",
+          "UTC's M4x — bow Jay Pollard, 2 Tyler Burkett, 3 Connor Richardson, stroke Abraham Mako — raced at ACRA Nationals on Melton Hill Lake in Oak Ridge, TN, May 15-17, 2026. Sixth of six in the heat (7:42.797, Purdue winning at 7:01.460). Third in the B Final by 0.562 seconds in a photo finish over Virginia RA (7:37.900 — nearly five seconds faster than the heat). Bowdoin won the B at 7:23.273. The boat went off the line in a Vespoli loaner 4x — UTC's own Empacher 'Chattanooga' was sidelined by a hull breach. All four are UTC class of 2027; Connor, Tyler, and Jay are U.S. Army active duty. Mako, the most experienced rower in the boat, started at Chattanooga Juniors and co-founded Chattanooga State Rowing before transferring to UTC. The other three first sat in a shell on April 6, 2026 — six weeks before the line. The first UTC team boat at ACRA in eight years.",
         kind: "achievement",
+      },
+      {
+        year: "2026",
+        sortYear: 2026.6,
+        title: "A new head coach for year two",
+        summary:
+          "Fall 2026: Abraham Mako, stroke of the ACRA M4x, takes over as head coach for 2026–27 with a nine-rower squad — Connor Richardson, Tyler Burkett, and Jay Pollard back from Oak Ridge, plus six new rowers. Michael Kinsey, head coach through the restart, moves to Alumni Relations Director.",
+        kind: "transition",
       },
     ],
   },

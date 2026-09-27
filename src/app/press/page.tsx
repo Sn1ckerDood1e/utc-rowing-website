@@ -13,16 +13,17 @@ const QUICK_FACTS: { label: string; value: string }[] = [
   { label: "Status", value: "Club sport — UTC Club Sports + USRowing" },
   { label: "Boathouse", value: "William Raoul Rowing Center, 1001 Riverside Dr, Chattanooga, TN" },
   { label: "Olympic alumni", value: "Dan Beery, gold medalist, U.S. Men's Eight, Athens 2004" },
-  { label: "Current head coach", value: "Michael Kinsey (since 2025)" },
-  { label: "Current roster", value: "Four athletes (M4x), Class of 2027 — first UTC team boat at ACRA in eight years" },
+  { label: "Head coach", value: "Abraham Mako (2026–27; stroke of the 2026 ACRA M4x)" },
+  { label: "Alumni relations", value: "Michael Kinsey (head coach, Fall 2025 – ACRA 2026)" },
+  { label: "Current roster", value: "Nine athletes for 2026–27 — three returning from the 2026 ACRA M4x, six new" },
   { label: "Last race", value: "ACRA Nationals, May 15-17 2026, Melton Hill Lake, Oak Ridge TN — M4x 3rd in B Final (7:37.900)" },
-  { label: "Next race", value: "Head of the Hooch, Fall 2026, Chattanooga TN" },
+  { label: "Next race", value: "Head of the Hooch, November 7–8 2026, Chattanooga TN" },
 ];
 
 const CREW: { name: string; seat: string; hometown: string; affiliation?: string }[] = [
   { name: "Abraham Mako", seat: "Stroke · 4 seat", hometown: "Chattanooga, TN" },
   {
-    name: "Conner Richardson",
+    name: "Connor Richardson",
     seat: "3 seat",
     hometown: "Hanau, Germany",
     affiliation: "U.S. Army active duty",
@@ -65,8 +66,8 @@ export default function PressPage() {
           </p>
           <h1 className="font-display text-4xl sm:text-5xl font-bold">Press kit.</h1>
           <p className="mt-4 text-lg text-white/85 max-w-2xl">
-            Quick facts, the current crew, the coach, and a phone number that goes to the actual
-            coach. No PR layer.
+            Quick facts, the crew, the coach, and an inbox the coaching staff actually reads.
+            No PR layer.
           </p>
         </div>
       </section>
@@ -78,24 +79,26 @@ export default function PressPage() {
             Press contact
           </p>
           <h2 className="font-display text-2xl sm:text-3xl font-bold text-utc-navy mb-3">
-            Coach Michael Kinsey
+            UTC Rowing
           </h2>
           <p className="text-foreground/85 mb-1">
             <a
-              href="mailto:kinseymi@radl.solutions?subject=Press%20inquiry%20%E2%80%94%20UTC%20Rowing"
+              href="mailto:rowutc@gmail.com?subject=Press%20inquiry%20%E2%80%94%20UTC%20Rowing"
               className="link-draw text-utc-navy font-semibold"
             >
-              kinseymi@radl.solutions
-            </a>
-          </p>
-          <p className="text-foreground/85 mb-1">
-            <a href="tel:+14236024277" className="link-draw text-utc-navy font-semibold">
-              (423) 602-4277
+              rowutc@gmail.com
             </a>
           </p>
           <p className="text-sm text-muted-foreground mt-2">
-            Reach out directly. Coach handles his own press; expect a same-day response in race
-            week.
+            Reach out directly &mdash; the team inbox goes to Head Coach Abraham Mako. Alumni and
+            history questions go to Michael Kinsey,{" "}
+            <a
+              href="mailto:kinseymi@radl.solutions?subject=UTC%20Rowing%20alumni"
+              className="link-draw text-utc-navy"
+            >
+              kinseymi@radl.solutions
+            </a>
+            .
           </p>
         </div>
       </section>
@@ -159,31 +162,33 @@ export default function PressPage() {
       <section className="bg-paper">
         <div className="mx-auto max-w-3xl px-4 py-14">
           <h2 className="font-display text-2xl sm:text-3xl font-bold text-utc-navy mb-6">
-            Coach Michael Kinsey
+            Head Coach Abraham Mako
           </h2>
           <div className="grid gap-6 sm:grid-cols-[180px_1fr]">
             <div className="relative aspect-[4/5] rounded-md overflow-hidden bg-utc-navy-deep ring-1 ring-utc-navy/10 max-w-[180px]">
               <Image
-                src="/photos/kinsey-headshot.jpg"
-                alt="Coach Michael Kinsey, head coach of UTC Rowing."
+                src="/photos/abraham-single-aquarium.jpg"
+                alt="Head Coach Abraham Mako sculling past the Tennessee Aquarium at dusk."
                 width={1280}
-                height={824}
+                height={1752}
                 sizes="180px"
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover object-[center_55%]"
               />
             </div>
             <div className="text-foreground/85 text-sm leading-relaxed space-y-3">
               <p>
-                Head coach of UTC Rowing since the program restarted in Fall 2025. Has been on the
-                launch at Chattanooga Rowing since 2022, mentored under Bill Zack, and spent his
-                last two summers coaching at the Craftsbury Outdoor Center in Vermont.
+                Head coach of UTC Rowing for 2026&ndash;27. Came up through Chattanooga Junior
+                Rowing and co-founded Chattanooga State Rowing before transferring to UTC.
               </p>
               <p>
-                Founder of Radl and a UTC mechatronics graduate (December 2025). Spent time at
-                UTSI &mdash; the University of Tennessee Space Institute &mdash; researching
-                deposition onto carbon fiber for hypersonic travel.
+                Helped restart the UTC program in Fall 2025 and stroked the 2026 ACRA M4x to a
+                photo-finish third in the B final &mdash; the first UTC team boat at ACRA in eight
+                years.
               </p>
-              <p>Also coaches at Chattanooga State, out of the same boathouse.</p>
+              <p>
+                Michael Kinsey, head coach through the restart, now serves as the program&rsquo;s
+                Alumni Relations Director.
+              </p>
             </div>
           </div>
         </div>
@@ -197,13 +202,13 @@ export default function PressPage() {
           </h2>
           <p className="text-foreground/80 mb-3 text-sm">
             Anything visible on this site is available at higher resolution on request &mdash;
-            email Coach Kinsey with the page or asset you need. The sources currently in use:
+            email rowutc@gmail.com with the page or asset you need. The sources currently in use:
           </p>
           <ul className="text-foreground/80 text-sm space-y-1.5 list-disc list-inside">
             <li>M4x ACRA-prep video (May 2 2026 scrimmage at Oak Ridge)</li>
             <li>Empacher hull-damage photograph (May 2026, the boat UTC isn&rsquo;t racing)</li>
-            <li>Coach Kinsey headshot</li>
-            <li>Athlete portraits (Mako)</li>
+            <li>Coach Mako single-scull photography (Tennessee River at dusk)</li>
+            <li>Athlete portraits (2026 ACRA crew)</li>
             <li>River photography (sunrise pair on the Tennessee River)</li>
           </ul>
           <p className="text-sm text-muted-foreground mt-4">

@@ -136,7 +136,7 @@ export const posts: JournalPost[] = [
     body: ACRA_RESULTS_BODY,
     hero: "/photos/journal/2026-05-16-acra-team-post-race.jpg",
     heroAlt:
-      "UTC Rowing's 2026 ACRA M4x crew with Coach Kinsey on the dock at Melton Hill Lake after the B final — Abraham Mako, Conner Richardson, Tyler Burkett, Jay Pollard, and the coach.",
+      "UTC Rowing's 2026 ACRA M4x crew with Coach Kinsey on the dock at Melton Hill Lake after the B final — Abraham Mako, Connor Richardson, Tyler Burkett, Jay Pollard, and the coach.",
     heroVideo: "/videos/journal/2026-05-16-acra-b-final-start.mp4",
     heroVideoMobile: "/videos/journal/2026-05-16-acra-b-final-start-mobile.mp4",
     heroVideoPoster: "/videos/journal/2026-05-16-acra-b-final-start-poster.jpg",

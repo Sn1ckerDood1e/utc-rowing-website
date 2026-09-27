@@ -26,7 +26,7 @@ export async function generateMetadata({
   if (!post) {
     return {
       title: "Journal · UTC Rowing",
-      description: "Notes from Coach Kinsey and the program.",
+      description: "Notes from the UTC Rowing program.",
     };
   }
   return {

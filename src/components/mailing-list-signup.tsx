@@ -39,7 +39,7 @@ export function MailingListSignup({
       if (!res.ok) {
         const text = await res.text().catch(() => "");
         console.error("[mailing-list] subscribe failed", { status: res.status, body: text });
-        setErrorMsg("Something went wrong. Try again or email Coach Kinsey.");
+        setErrorMsg("Something went wrong. Try again or email rowutc@gmail.com.");
         setStatus("error");
         return;
       }
