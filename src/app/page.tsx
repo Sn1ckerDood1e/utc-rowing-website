@@ -166,7 +166,7 @@ export default async function Home() {
                   Year two · 2026&ndash;27
                 </p>
                 <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-utc-navy">
-                  Nine rowers. Head of the Hooch, November 7&ndash;8.
+                  Eleven on the roster. Head of the Hooch, November 7&ndash;8.
                   <span className="block text-base font-normal text-utc-navy/65 font-sans mt-1">
                     Head Coach Abraham Mako takes the squad onto home water &mdash; after
                     last spring&rsquo;s{" "}

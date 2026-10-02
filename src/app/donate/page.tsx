@@ -86,9 +86,9 @@ const NEEDS: Need[] = [
     },
   },
   {
-    title: "Bridge: Lookout Rowing Club partnership",
+    title: "Boathouse access: Chattanooga Rowing agreement",
     estimate: "Ongoing",
-    why: "Since spring 2026, UTC rowers have trained as Lookout Rowing Club members so they can train and race on water-worthy equipment. LRC keeps the program on the water while the racks and the next hulls get funded. Membership and shared-equipment fees are real line items — a bridge, not the destination.",
+    why: "This summer Chattanooga Rowing agreed to rent UTC storage space at the Raoul Rowing Center, with access to the dock, facilities, and coaching equipment. That keeps the program on the water while the racks and the next hulls get funded. Rent is a real line item every year.",
   },
 ];
 
@@ -142,7 +142,7 @@ export default function DonatePage() {
               <p className="text-lg text-white/75 mt-3">
                 Year one put four athletes and a men&rsquo;s quad (M4x) on the line at ACRA in a
                 Vespoli loaner &mdash; UTC&rsquo;s own 4x has a soft spot in the middle of the hull
-                and isn&rsquo;t safe to race. Year two has nine rowers. The longer
+                and isn&rsquo;t safe to race. Year two has nine rowers and two coxswains. The longer
                 view is a fleet of eights to race and pairs to train. What gets built &mdash; the racks, the
                 boats, the training space &mdash; is decided by what alumni and friends fund.
               </p>

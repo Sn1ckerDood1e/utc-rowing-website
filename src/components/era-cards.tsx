@@ -60,7 +60,7 @@ export function EraCards({ eraCounts }: { eraCounts: Record<string, number> }) {
       count: eraCounts.resurrection ?? null,
       headline: "Restarted Fall 2025, year two underway",
       detail:
-        "Four athletes and an ACRA M4x in year one — third in the B final. Nine rowers and a new head coach in year two. The fleet is aging and the boathouse is shared, but the boats are on the water and the program is back.",
+        "Four athletes and an ACRA M4x in year one — third in the B final. Eleven on the roster and a new head coach in year two. The fleet is aging and the boathouse is shared, but the boats are on the water and the program is back.",
       gradient: "from-river-blue to-utc-gold-bright",
     },
   ];

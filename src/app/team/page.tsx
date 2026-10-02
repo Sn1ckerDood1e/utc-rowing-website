@@ -166,8 +166,8 @@ export default function TeamPage() {
             This year&rsquo;s squad.
           </h1>
           <p className="mt-5 text-lg sm:text-xl text-white/85 max-w-2xl leading-relaxed">
-            Nine rowers on the Tennessee River out of the William Raoul
-            Rowing Center &mdash; Hooch on home water this fall, then the
+            Nine rowers and two coxswains on the Tennessee River out of the
+            William Raoul Rowing Center &mdash; Hooch on home water this fall, then the
             spring run to SIRA and ACRA.
           </p>
         </div>

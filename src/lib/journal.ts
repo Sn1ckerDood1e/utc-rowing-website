@@ -55,7 +55,24 @@ export type JournalPost = {
     caption: string;
     afterParagraph: number;
   };
+  /**
+   * Optional additional inline images (same placement rule as bodyImage).
+   * width/height are the source pixel dimensions, used for the aspect ratio.
+   */
+  bodyImages?: {
+    src: string;
+    alt: string;
+    caption: string;
+    afterParagraph: number;
+    width: number;
+    height: number;
+  }[];
 };
+
+// Body syntax (rendered by renderInline / list detection on the post page):
+// - a paragraph whose every line starts with "- " renders as a bulleted list
+// - **bold** and [label](href) are supported inline
+// - single newlines inside a paragraph are kept as line breaks (sign-offs)
 
 const PRE_ACRA_BODY = `Saturday is the ACRA Championships at Melton Hill Lake in Oak Ridge. UTC races a men's quadruple sculls (M4x) — Mako on stroke, then Richardson, Burkett, Pollard. First UTC crew at ACRA since the program restarted in Fall 2025.
 
@@ -125,7 +142,73 @@ The boat goes back on the trailer. Hooch is in the fall. The next thing is recru
 
 If you rowed at UTC, the site is at utcrowing.org. Send your photos, your memories, the names of teammates we don't have on the roster yet. The program is back. It'll be built by the people who came before it — and by whoever shows up next.`;
 
+const OCT_2026_NEWSLETTER_BODY = `Fall racing is upon us at UTC Rowing and I wanted to use this as an opportunity to introduce myself, share some progress updates, and talk about the vision I have for the team during the 2026-2027 season.
+
+My name is Abraham Mako and I have been rowing in Chattanooga since 2020. I started at Chattanooga Junior Rowing and fell in love with the sport. I didn't realize how much I truly loved rowing until I stopped after graduating high school. 18 months later I was back on the erg and trying to figure out how I could get on the water. I joined Lookout Rowing Club and spent many days in the 1x as things came back to me. Masters racing is fun, but there is nothing like collegiate regattas. I knew I wanted to race at that level, but I ran into a problem. There existed no collegiate rowing teams at any college or university in Chattanooga or the surrounding area. With the help of Michael Kinsey and fellow rower Jack Cawood, we created the Chattanooga State Rowing Club and raced the Men's 2- across the southeast. When I transferred to UTC, Kinsey and I worked to rebuild the program.
+
+Entering my senior year, and with Kinsey off doing greater things in the world of rowing, I was presented with two options. Let the program fizzle out, or step up and try to lead the team into another year of growth and success. I chose the latter.
+
+As the program stands now, we have a thin budget and are utilizing old equipment. The shells are solid and the oars in good shape, however, we are currently plagued by repeated shoe failure. Years in the elements have not treated our shoes well. That being said, we have a fantastic group of athletes currently training. 9 rowers and 2 coxswains make up the current roster. We will be competing at the Head of the Hooch this November. Line ups and more information will follow in next month's letter.
+
+Chattanooga Rowing graciously reached an agreement with us this summer, allowing us to rent storage space. We are granted access to a dock, facilities, and coaching equipment. What we are doing would not be possible without the generosity and cooperation from Chattanooga Rowing.
+
+The continuation and growth of the program is reliant on two parties, the students and the alumni. Over the next year I plan to operate the program under a simple philosophy. UTC Rowing will be student led and alumni backed. As students who love UTC and the sport of rowing, we take responsibility to grow this team and earn the status as a regional powerhouse for collegiate club rowing. Here are my goals over the next 9 months to make that happen:
+
+- **Medal:** Win at least one medal in one event. Whether it be at Hooch, Tennessee Indoors, SIRA, or ACRA Nationals, UTC Rowing will be taking home hardware this year.
+- **Growth:** Expand the current roster from 11 to at least 15 by the end of the Spring season.
+- **Financial Responsibility:** Manage expenses in a responsible manner so that future students can have the opportunity to make the club succeed.
+- **Inclusion:** Ensure that the team remains welcoming and affordable so that any student interested can give the sport a shot.
+- **Succession and Sustainability:** Clearly establish the next round of leadership by the end of the year so that the club remains active in the coming years.
+
+None of these goals are possible without your support. Here is what I am asking of you to support our endeavours.
+
+- **Engagement:** Share your stories, reach out to our email, keep up on Facebook, or come say hi at a regatta. Your input is immensely valuable and we'd love to hear from each and every one of you.
+- **Volunteering:** The Head of the Hooch presents us with an excellent opportunity to fundraise. If you are in the Chattanooga area, please consider volunteering at Hooch on behalf of UTC Rowing. Every hour you volunteer means support for the team. Scheduling opens October 14th: [headofthehooch.org/volunteers](https://headofthehooch.org/volunteers)
+- **Financial:** Please consider making a financial donation to the team. Every dollar donated goes directly towards helping us achieve our goals: [give to UTC Rowing](/donate).
+
+Thank you for taking the time to catch up on the club and for considering ways in which you may be able to help. I believe we are in a truly unique position to do something very special with this program. If you have any questions, concerns, or would just like to talk about rowing, I am only an email away.
+
+Go Mocs,
+Abraham`;
+
 export const posts: JournalPost[] = [
+  {
+    slug: "2026-10-01-state-of-the-program",
+    title: "State of the Program — where we're at and where we're going",
+    date: "2026-10-01",
+    author: "Abraham Mako, Head Coach",
+    excerpt:
+      "Fall racing is upon us. The new head coach introduces himself, shares where the program stands — nine rowers, two coxswains, a new home at Chattanooga Rowing — and lays out five goals for 2026–27.",
+    body: OCT_2026_NEWSLETTER_BODY,
+    hero: "/photos/journal/2026-10-01-racks-at-sunset.jpg",
+    heroAlt: "UTC's shells on the racks at sunset beside the Tennessee River, August 2026.",
+    bodyImages: [
+      {
+        src: "/photos/journal/2026-10-01-repairs-under-the-trailer.jpg",
+        alt: "A UTC rower lying under a shell on the boat trailer, working on repairs.",
+        caption: "Repairs on the trailer, September 1.",
+        afterParagraph: 3,
+        width: 1800,
+        height: 1350,
+      },
+      {
+        src: "/photos/journal/2026-10-01-eight-at-the-dock.jpg",
+        alt: "A UTC eight sitting at the dock at dawn, rowers in the boat, the Tennessee River glowing orange.",
+        caption: "At the dock before sunrise, September 2.",
+        afterParagraph: 4,
+        width: 1350,
+        height: 1800,
+      },
+      {
+        src: "/photos/journal/2026-10-01-eight-at-sunset.jpg",
+        alt: "A UTC eight rowing on glassy water at sunset, the crew silhouetted against an orange sky.",
+        caption: "Fall 2026 on the Tennessee.",
+        afterParagraph: 6,
+        width: 630,
+        height: 711,
+      },
+    ],
+  },
   {
     slug: "2026-05-16-acra-third-in-the-b-final",
     title: "Back at ACRA — and third in the B final",

@@ -15,7 +15,7 @@ const QUICK_FACTS: { label: string; value: string }[] = [
   { label: "Olympic alumni", value: "Dan Beery, gold medalist, U.S. Men's Eight, Athens 2004" },
   { label: "Head coach", value: "Abraham Mako (2026–27; stroke of the 2026 ACRA M4x)" },
   { label: "Alumni relations", value: "Michael Kinsey (head coach, Fall 2025 – ACRA 2026)" },
-  { label: "Current roster", value: "Nine athletes for 2026–27 — three returning from the 2026 ACRA M4x, six new" },
+  { label: "Current roster", value: "Nine rowers and two coxswains for 2026–27 — three rowers returning from the 2026 ACRA M4x" },
   { label: "Last race", value: "ACRA Nationals, May 15-17 2026, Melton Hill Lake, Oak Ridge TN — M4x 3rd in B Final (7:37.900)" },
   { label: "Next race", value: "Head of the Hooch, November 7–8 2026, Chattanooga TN" },
 ];

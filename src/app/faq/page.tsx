@@ -39,8 +39,8 @@ const FAQS: QA[] = [
     question: "What does it cost?",
     answer: (
       <>
-        A small annual club fee (covers USRowing membership, equipment shared
-        with Lookout Rowing Club, and event entries). Travel to away regattas
+        A small annual club fee (covers USRowing membership, boathouse
+        storage and dock access, and event entries). Travel to away regattas
         is on the athletes &mdash; UTC Club Sports covers insurance for
         practice and travel; the rest is fundraising.
       </>
@@ -63,8 +63,9 @@ const FAQS: QA[] = [
       <>
         Out of the <strong>William G. Raoul Rowing Center</strong> at 1001
         Riverside Drive, Chattanooga &mdash; the home of Chattanooga Rowing
-        and Lookout Rowing Club. We share equipment and water with Lookout
-        Rowing Club while we rebuild UTC&rsquo;s own fleet.
+        and Lookout Rowing Club. Since summer 2026, UTC rents storage from
+        Chattanooga Rowing, with access to the dock, facilities, and coaching
+        equipment.
       </>
     ),
   },

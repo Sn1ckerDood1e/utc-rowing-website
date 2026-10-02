@@ -12,6 +12,52 @@ import {
 
 type Params = { slug: string };
 
+// Inline markup for journal bodies: **bold** and [label](href).
+function renderInline(text: string): React.ReactNode[] {
+  const out: React.ReactNode[] = [];
+  const re = /\*\*(.+?)\*\*|\[([^\]]+)\]\(([^)\s]+)\)/g;
+  let last = 0;
+  let m: RegExpExecArray | null;
+  let k = 0;
+  while ((m = re.exec(text))) {
+    if (m.index > last) out.push(text.slice(last, m.index));
+    if (m[1] !== undefined) {
+      out.push(
+        <strong key={k++} className="font-semibold text-utc-navy">
+          {m[1]}
+        </strong>
+      );
+    } else {
+      const href = m[3];
+      const external = /^https?:/.test(href);
+      out.push(
+        external ? (
+          <a
+            key={k++}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link-draw text-utc-navy font-semibold"
+          >
+            {m[2]}
+          </a>
+        ) : (
+          <Link key={k++} href={href} className="link-draw text-utc-navy font-semibold">
+            {m[2]}
+          </Link>
+        )
+      );
+    }
+    last = re.lastIndex;
+  }
+  if (last < text.length) out.push(text.slice(last));
+  return out;
+}
+
+function isList(p: string): boolean {
+  return p.split("\n").every((l) => l.trim().startsWith("- "));
+}
+
 export function generateStaticParams(): Params[] {
   return getAllSlugs().map((slug) => ({ slug }));
 }
@@ -52,6 +98,10 @@ export default async function JournalPostPage({
   if (!post) notFound();
 
   const paragraphs = splitParagraphs(post.body);
+  const inlineImages = [
+    ...(post.bodyImage ? [{ ...post.bodyImage, width: 1800, height: 1350 }] : []),
+    ...(post.bodyImages ?? []),
+  ];
 
   return (
     <>
@@ -134,26 +184,40 @@ export default async function JournalPostPage({
       <section className="bg-paper">
         <article className="mx-auto max-w-2xl px-4 py-16 font-serif text-foreground/85 text-lg leading-[1.75]">
           {paragraphs.map((p, i) => (
-            <span key={i}>
-              <p className="mb-6 last:mb-0">{p}</p>
-              {post.bodyImage && post.bodyImage.afterParagraph === i && (
-                <figure className="my-8 -mx-4 sm:mx-0">
-                  <div className="relative overflow-hidden rounded-lg shadow-2xl shadow-utc-navy-deep/30 ring-1 ring-utc-navy/10">
-                    <Image
-                      src={post.bodyImage.src}
-                      alt={post.bodyImage.alt}
-                      width={1800}
-                      height={1350}
-                      sizes="(min-width: 768px) 672px, 100vw"
-                      className="w-full h-auto block"
-                    />
-                  </div>
-                  <figcaption className="mt-3 text-sm text-foreground/65 italic font-sans px-1 sm:px-0">
-                    {post.bodyImage.caption}
-                  </figcaption>
-                </figure>
+            <div key={i}>
+              {isList(p) ? (
+                <ul className="mb-6 list-disc pl-6 space-y-3 marker:text-utc-gold-deep">
+                  {p.split("\n").map((l, j) => (
+                    <li key={j}>{renderInline(l.trim().slice(2))}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="mb-6 whitespace-pre-line">{renderInline(p)}</p>
               )}
-            </span>
+              {inlineImages
+                .filter((img) => img.afterParagraph === i)
+                .map((img) => (
+                  <figure key={img.src} className="my-8 -mx-4 sm:mx-0">
+                    <div
+                      className={`relative overflow-hidden rounded-lg shadow-2xl shadow-utc-navy-deep/30 ring-1 ring-utc-navy/10 ${
+                        img.height > img.width ? "max-w-md mx-auto" : ""
+                      }`}
+                    >
+                      <Image
+                        src={img.src}
+                        alt={img.alt}
+                        width={img.width}
+                        height={img.height}
+                        sizes="(min-width: 768px) 672px, 100vw"
+                        className="w-full h-auto block"
+                      />
+                    </div>
+                    <figcaption className="mt-3 text-sm text-foreground/65 italic font-sans px-1 sm:px-0 text-center">
+                      {img.caption}
+                    </figcaption>
+                  </figure>
+                ))}
+            </div>
           ))}
 
           <hr className="my-12 border-border" />
