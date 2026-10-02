@@ -221,6 +221,15 @@ export default function PressPage() {
             >
               @utc_rowing
             </a>
+            {" · "}Facebook:{" "}
+            <a
+              href="https://www.facebook.com/utcrowing/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-draw text-utc-navy font-semibold"
+            >
+              facebook.com/utcrowing
+            </a>
           </p>
         </div>
       </section>

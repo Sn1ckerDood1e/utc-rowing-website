@@ -49,6 +49,17 @@ export function Footer() {
             <span className="text-white/40"> · Instagram</span>
           </p>
           <p className="mt-2 text-white/70">
+            <a
+              href="https://www.facebook.com/utcrowing/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-draw text-utc-gold-bright font-semibold"
+            >
+              facebook.com/utcrowing
+            </a>
+            <span className="text-white/40"> · Facebook</span>
+          </p>
+          <p className="mt-2 text-white/70">
             Press:{" "}
             <a
               href="mailto:rowutc@gmail.com?subject=Press%20inquiry%20%E2%80%94%20UTC%20Rowing"

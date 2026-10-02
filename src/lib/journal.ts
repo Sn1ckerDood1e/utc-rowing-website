@@ -164,7 +164,7 @@ None of these goals are possible without your support. Here is what I am asking 
 
 - **Engagement:** Share your stories, reach out to our email, keep up on Facebook, or come say hi at a regatta. Your input is immensely valuable and we'd love to hear from each and every one of you.
 - **Volunteering:** The Head of the Hooch presents us with an excellent opportunity to fundraise. If you are in the Chattanooga area, please consider volunteering at Hooch on behalf of UTC Rowing. Every hour you volunteer means support for the team. Scheduling opens October 14th: [headofthehooch.org/volunteers](https://headofthehooch.org/volunteers)
-- **Financial:** Please consider making a financial donation to the team. Every dollar donated goes directly towards helping us achieve our goals: [give to UTC Rowing](/donate).
+- **Financial:** Please consider making a financial donation to the team. Every dollar donated goes directly towards helping us achieve our goals: [giving.utc.edu/campaigns/42934](https://giving.utc.edu/campaigns/42934/donations/new) (select "Club Sports - Rowing" for the area of support)
 
 Thank you for taking the time to catch up on the club and for considering ways in which you may be able to help. I believe we are in a truly unique position to do something very special with this program. If you have any questions, concerns, or would just like to talk about rowing, I am only an email away.
 

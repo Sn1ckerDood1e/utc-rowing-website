@@ -70,7 +70,17 @@ export default function ContactPage() {
                 @utc_rowing
               </a>
             </p>
-            {/* TODO(launch): Facebook handle — coach hasn't provided one yet */}
+            <p className="mt-2 text-sm text-foreground/80">
+              Facebook:{" "}
+              <a
+                href="https://www.facebook.com/utcrowing/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-draw text-utc-navy font-semibold"
+              >
+                facebook.com/utcrowing
+              </a>
+            </p>
           </div>
 
           <div>
